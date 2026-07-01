@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>03_threat.md.web</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1 id="sec:threat">The Insect as Threat: Quarantine, Invasion, and
+Vector Control</h1>
+<p>Where forensic law asks insects to <em>speak</em>, regulatory law
+tries to <em>stop them from moving</em>. The architecture is dense and
+federal. In the registry the threat role is statute-driven rather than
+case-driven: it is anchored by 10 instruments spanning the quarantine
+and public-health categories, summarized in the statutes-by-category
+figure.</p>
+<figure id="fig:statutes_by_category">
+<img src="../figures/statutes_by_category.png" style="width:85.0%"
+alt="The 34 registered instruments grouped across 9 structural categories — forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category." />
+<figcaption aria-hidden="true">The 34 registered instruments grouped
+across 9 structural categories — forensic, quarantine, conservation,
+property, biotech/IP, food, welfare, public-health, and warfare. Read
+as: regulation follows the legal problem insects pose, not insect
+taxonomy itself. Why it matters: it shows why the same organism can move
+between food, biosecurity, conservation, and weapons law. Provenance:
+<code>src/statutes.py</code> via <code>src.metrics</code>. Caveat: a
+representative backbone, not every instrument in each
+category.</figcaption>
+</figure>
+<h2 id="us-quarantine-authority-and-plant-pest-movement">US quarantine
+authority and plant-pest movement</h2>
+<p>The master statute is the Plant Protection Act, cited here at 7
+U.S.C. §§ 7701–7786, which empowers the U.S. Department of Agriculture’s
+Animal and Plant Health Inspection Service (APHIS) to prohibit movement,
+declare quarantines, require permits, and seize or destroy infested
+articles [ppa2000; usc7_7712]. Moving a live insect interstate or
+importing one requires an APHIS permit and an approved containment
+facility. The rogues’ gallery of regulated pests is encoded in the
+species registry: the spotted lanternfly under active quarantine
+[aphis_slf], the Asian longhorned beetle under eradication, the emerald
+ash borer whose <em>federal</em> quarantine was lifted in 2021, and the
+northern giant hornet — the “murder hornet” — declared eradicated from
+the United States in 2024, the first <em>Vespa</em> eradication in North
+America [guardian_hornet].</p>
+<h2 id="international-ippc-and-eu-risk-layers">International, IPPC, and
+EU risk layers</h2>
+<p>Above the US sits the International Plant Protection Convention,
+whose International Standards for Phytosanitary Measures (ISPMs) serve
+as the benchmark under the World Trade Organization (WTO) Agreement on
+the Application of Sanitary and Phytosanitary Measures (SPS Agreement)
+for judging whether a quarantine is science-based or a disguised trade
+barrier [ippc_ispm]. IPPC’s pest-status standard makes pest records,
+status categories, and uncertainty part of the legal infrastructure for
+deciding whether a pest is present in an area [ippc_ispm8]. The European
+Union (EU) runs its own priority-pest list and plant-passport system
+under the Plant Health Law [eu2016_2031]. The EU also treats invasive
+alien species as a separate Union-wide risk category: Regulation (EU)
+1143/2014 creates a Union list whose species face restrictions on
+keeping, importing, selling, breeding, growing, and release, and the
+European Commission says the fourth update of that list entered into
+force on 7 August 2025 [eu1143_2014; ec_ias2026].</p>
+<p>That architecture makes invasive-insect law a risk-allocation system,
+not merely a list of pests. The legal decision is whether uncertain
+ecological evidence justifies stopping trade, seizing property,
+requiring treatment, or spending public money on surveillance and
+eradication. Bioeconomic scholarship on invasive species frames that
+choice as an institutional problem of pathways, probabilities, expected
+harms, and management cost under uncertainty
+[lodge2016bioeconomics_invasive_species]. Insects make the problem
+unusually sharp because the same shipment, nursery stock, package, or
+animal wound can be legally ordinary until an expert identifies a life
+stage, pathway, or reproductive risk that moves it into quarantine
+law.</p>
+<h2 id="liability-gaps-when-pest-movement-is-indirect">Liability gaps
+when pest movement is indirect</h2>
+<p>The Lacey Act’s injurious-species provision at 18 U.S.C. § 42 is a
+strict-liability criminal statute, but it conspicuously <strong>does not
+list insects</strong>, deferring to the Plant Protection Act for plant
+pests and leaving non-plant-pest insects in a regulatory gap [lacey42;
+crs_lacey]. Recent enforcement marks the limits of secondary liability:
+in <em>Amazon Services LLC v. USDA</em> the D.C. Circuit held that
+aiding or inducing a regulated-pest movement requires conscious and
+culpable participation, not mere fulfilment services [amazon2024]. And
+in a Minnesota tree-infestation suit the claim failed for lack of an
+entomological expert — proof that forensic and regulatory entomology
+converge, because invasive-pest causation cannot be shown without expert
+insect testimony [minnlawyer_lac].</p>
+<h2 id="vectors-as-public-health-infrastructure">Vectors as
+public-health infrastructure</h2>
+<p>The same regulatory logic extends to insects as disease vectors.
+California has operated mosquito-abatement and vector-control districts
+since 1915 under a statute declaring organized public programs the best
+protection against vector-borne disease [ca_vector_hsc2001], and federal
+mosquito-control funding has been advanced as national public-health law
+[asthovector]. International animal-health law adds a standards layer:
+WOAH’s Terrestrial Code includes a chapter on surveillance for arthropod
+vectors of animal diseases, showing how vector law crosses animal
+health, human health, and trade [woah_vector_surveillance]. This
+vector-control strand is where the threat role brushes against the
+weapon role of <span class="citation"
+data-cites="sec:weapon">@sec:weapon</span>.</p>
+</body>
+</html>

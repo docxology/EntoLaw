@@ -1,0 +1,59 @@
+{
+  "case_count": 18,
+  "cases_by_jurisdiction": {
+    "Canada": 1,
+    "England & Wales": 2,
+    "U.S. Court of Appeals": 3,
+    "U.S. Patent": 2,
+    "U.S. Supreme Court": 4,
+    "U.S. state court": 6
+  },
+  "cases_by_role": {
+    "defendant": 0,
+    "invention": 3,
+    "moral_patient": 0,
+    "property": 5,
+    "protected": 3,
+    "threat": 1,
+    "weapon": 0,
+    "witness": 6
+  },
+  "category_count": 9,
+  "institution_count": 12,
+  "interconnection_count": 5,
+  "milestone_count": 32,
+  "role_count": 8,
+  "roles_with_case_law": 5,
+  "species_by_role": {
+    "defendant": 1,
+    "invention": 5,
+    "moral_patient": 1,
+    "property": 1,
+    "protected": 6,
+    "threat": 7,
+    "weapon": 1,
+    "witness": 2
+  },
+  "species_count": 24,
+  "statute_count": 34,
+  "statutes_by_category": {
+    "biotech_ip": 6,
+    "conservation": 6,
+    "food": 4,
+    "forensic": 1,
+    "property": 2,
+    "public_health": 2,
+    "quarantine": 8,
+    "warfare": 2,
+    "welfare": 3
+  },
+  "statutes_by_jurisdiction": {
+    "EU": 7,
+    "UK": 1,
+    "US-colonial": 2,
+    "US-federal": 12,
+    "US-state": 5,
+    "international": 7
+  },
+  "timeline_span_years": 3676
+}

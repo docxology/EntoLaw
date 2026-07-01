@@ -1,0 +1,51 @@
+# EntoLaw — manuscript metadata
+paper:
+  title: "Entomological Law"
+  subtitle: "A Field Map of Insects as Evidence, Threat, Property, Product, Patient, and Weapon"
+  version: "0.1.0"
+  date: ""
+  cover:
+    image: "figures/cover.png"
+
+authors:
+  - name: "Daniel Ari Friedman"
+    orcid: "0000-0001-6232-9096"
+    email: "daniel@activeinference.institute"
+    affiliations:
+      - "Active Inference Institute"
+    corresponding: true
+
+publication:
+  doi: ""
+  github_repository: "docxology/EntoLaw"
+  repository_url: "https://github.com/docxology/EntoLaw"
+  repository_label: "docxology/EntoLaw"
+  year: "2026"
+
+keywords:
+  - "entomological law"
+  - "legal entomology"
+  - "forensic entomology"
+  - "endangered species"
+  - "invasive species"
+  - "insect welfare"
+  - "gene drive"
+  - "biological weapons convention"
+  - "reproducible legal scholarship"
+
+metadata:
+  license: "CC-BY-4.0"
+  language: "en"
+
+render:
+  formats:
+    pdf: true
+    html: true
+    slides: false
+    docx: false
+    epub: false
+
+testing:
+  max_test_failures: 0
+  max_infra_test_failures: 0
+  max_project_test_failures: 0

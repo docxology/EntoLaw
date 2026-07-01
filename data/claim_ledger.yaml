@@ -1,0 +1,305 @@
+# claim_ledger.yaml — registers externally-sourced prose statistics that do
+# NOT come from src.manuscript_variables (they are not registry-derived counts
+# but external facts). Each entry pins the claim, a references.bib source key,
+# the manuscript anchor, AND a verification record capturing the real external
+# evidence: the source URL, a verbatim supporting quote, the as-of date, a
+# confidence label, and the date the check was last run.
+#
+# WHY a verification block. The bibkey + anchor checks (src/claim_ledger.py)
+# prove a claim is *attributed and anchored*; they cannot prove the *number is
+# true*. The verification block makes each prose statistic auditable: a reader
+# (or the @pytest.mark.live oracle in tests/test_live_claim_sources.py) can
+# fetch source_url and confirm the quote appears. status vocabulary:
+#   verified              — external source fetched; quote supports the claim
+#   verified_with_nuance  — numbers are real but the claim was rephrased
+#   documented            — grounded in the project's own registry module
+#
+claims:
+  - id: esa-invertebrate-definition
+    claim: "The Endangered Species Act defines 'fish or wildlife' to include any 'arthropod or other invertebrate'"
+    source: "usc16_1532"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "16 U.S.C. § 1532(8) defines 'fish or wildlife' to mean any member of the animal kingdom including, without limitation, any mammal, fish, bird, amphibian, reptile, mollusk, crustacean, arthropod or other invertebrate."
+      source_url: "https://www.law.cornell.edu/uscode/text/16/1532"
+      source_quote: "arthropod or other invertebrate"
+      as_of: "2026"
+      confidence: high
+      checked: "2026-06-27"
+  - id: flying-insect-biomass-decline
+    claim: "Flying-insect biomass declined more than 75 percent (a 76 percent seasonal and 82 percent mid-summer decline) over 27 years"
+    source: "hallmann2017"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "Hallmann et al. (2017) estimate a seasonal decline of 76 percent and a mid-summer decline of 82 percent in total flying-insect biomass over the 27 years of study in German protected areas."
+      source_url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0185809"
+      source_quote: "a seasonal decline of 76%, and mid-summer decline of 82%"
+      source_quotes:
+        - "More than 75 percent decline over 27 years in total flying insect biomass"
+      as_of: "2017"
+      confidence: high
+      checked: "2026-06-27"
+  - id: north-american-insect-protection-gap-2026
+    claim: "A 2026 PNAS study reports that the conservation status of 88.5 percent of described North American insect and arachnid species is unknown, and that 94.7 percent of at-risk U.S. insects and arachnids are not protected by any state or federal law."
+    source: "pnas2026insects"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "Walsh and Figueroa (2026) report that 88.5 percent of described North American insect and arachnid species have unknown conservation status, 94.7 percent of at-risk U.S. insects and arachnids lack state or federal protection, 2.5 percent are protected nationwide under the federal ESA, and 27.7 percent of range-wide at-risk U.S. bird species are federally protected."
+      source_url: "https://pubmed.ncbi.nlm.nih.gov/41770926/"
+      source_quote: "the conservation status of 88.5% of described insect and arachnid species in North America is unknown"
+      source_quotes:
+        - "94.7% are not protected by any state or federal law"
+        - "only 2.5% are protected nationwide under the federal Endangered Species Act compared to 27.7%"
+      as_of: "2026"
+      confidence: high
+      checked: "2026-06-29"
+  - id: uk-sentience-decapods-cephalopods
+    claim: "The UK Animal Welfare (Sentience) Act 2022 covers decapod crustaceans and cephalopod molluscs"
+    source: "uksentience2022"
+    anchor: "sec:welfare"
+    verification:
+      status: verified
+      verified_value: "Section 5(1) defines 'animal' to include any vertebrate other than homo sapiens, any cephalopod mollusc, and any decapod crustacean."
+      source_url: "https://www.legislation.gov.uk/ukpga/2022/22/section/5/enacted"
+      source_quote: "any decapod crustacean"
+      source_quotes:
+        - "any cephalopod mollusc"
+      as_of: "2022"
+      confidence: high
+      checked: "2026-06-27"
+  - id: ca-vector-districts-1915
+    claim: "California mosquito abatement and vector control districts have operated under a statutory public-health framework since 1915"
+    source: "ca_vector_hsc2001"
+    anchor: "sec:threat"
+    verification:
+      status: verified
+      verified_value: "California Health and Safety Code section 2001 states that since 1915, mosquito abatement and vector control districts have protected Californians against vectorborne disease."
+      source_url: "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=HSC&division=3.&title=&part=&chapter=1.&article=1."
+      source_quote: "Since 1915, mosquito abatement and vector control districts"
+      as_of: "2026-06-27"
+      confidence: high
+      checked: "2026-06-27"
+  - id: eu-ias-union-list-2026
+    claim: "The European Commission describes the Union list under Regulation (EU) 1143/2014 as imposing restrictions on listed invasive alien species, and says the fourth update of the Union list entered into force on 7 August 2025."
+    source: "ec_ias2026"
+    anchor: "sec:threat"
+    verification:
+      status: verified
+      verified_value: "The European Commission states that the Union list of invasive alien species of Union concern imposes restrictions including keeping, importing, selling, breeding, growing, and releasing listed species, and that the fourth update of the Union list entered into force on 7 August 2025."
+      source_url: "https://environment.ec.europa.eu/topics/nature-and-biodiversity/invasive-alien-species_en"
+      source_quote: "The species included on this list are subject to restrictions and measures set out in the Regulation"
+      source_quotes:
+        - "These include restrictions on keeping, importing, selling, breeding, growing and releasing into the environment"
+        - "entered into force on 7 August 2025"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: monarch-proposed-not-final-2026
+    claim: "The monarch butterfly had proposed threatened status, but ESA protections had not applied before a final rule as of June 29, 2026"
+    source: "fws_monarch_status"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "FWS states that it has proposed to list the monarch butterfly as threatened and that protections would not apply until the effective date of a final rule."
+      source_url: "https://www.fws.gov/initiative/pollinators/save-monarch"
+      source_quote: "Protections would not apply until the effective date of a final rule"
+      source_quotes:
+        - "proposed to list the monarch butterfly as threatened"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: eu-pollinator-reversal-2030
+    claim: "The European Commission says the EU Biodiversity Strategy for 2030 and EU Pollinators Initiative commit to reversing wild-pollinator decline by 2030, while reporting that 1 in 3 bee, butterfly, and hoverfly species is proven to be in decline and 1 in 10 bee and butterfly species is threatened with extinction."
+    source: "ec_pollinators2026"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "The European Commission states that the EU Biodiversity Strategy for 2030 and EU Pollinators Initiative set the commitment to reverse the decline in wild pollinators by 2030; the same page reports that 1 in 3 bee, butterfly and hoverfly species is proven to be in decline and 1 in 10 bee and butterfly species is threatened with extinction."
+      source_url: "https://environment.ec.europa.eu/topics/nature-and-biodiversity/pollinators_en"
+      source_quote: "set the commitment to reverse the decline in wild pollinators by 2030"
+      source_quotes:
+        - '<div class="ecl-list-illustration__title">1 in 3</div>'
+        - "bee, butterfly and hoverfly species is proven to be in decline"
+        - '<div class="ecl-list-illustration__title">1 in 10</div>'
+        - "bee and butterfly species is threatened with extinction"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: cites-birdwing-current-listing-2026
+    claim: "The official Species+/CITES checklist identifies Ornithoptera alexandrae as an Insecta taxon with current CITES listing I."
+    source: "cites_checklist2026"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "The Species+/CITES checklist endpoint for Ornithoptera alexandrae returns full_name Ornithoptera alexandrae, class_name Insecta, and current_listing I."
+      source_url: "https://www.speciesplus.net/checklist/taxon_concepts?scientific_name=Ornithoptera+alexandrae&locale=en&page=1&per_page=10"
+      source_quote: '"full_name":"Ornithoptera alexandrae"'
+      source_quotes:
+        - '"class_name":"Insecta"'
+        - '"current_listing":"I"'
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: colorado-invertebrate-conservation-2024
+    claim: "Colorado HB24-1117 adds rare plants and invertebrates to Colorado's nongame conservation statute and authorizes voluntary programs to conserve, protect, and perpetuate invertebrates."
+    source: "co_hb24_1117"
+    anchor: "sec:protected"
+    verification:
+      status: verified
+      verified_value: "The Colorado General Assembly bill page states that the act adds rare plants and invertebrates to species that may be studied and conserved under the renamed Nongame, Endangered, or Threatened Wildlife and Rare Plant Conservation Act, and that the Division of Parks and Wildlife may undertake voluntary programs to conserve, protect, and perpetuate invertebrates."
+      source_url: "https://leg.colorado.gov/bills/hb24-1117"
+      source_quote: "The act adds rare plants and invertebrates"
+      source_quotes:
+        - "may undertake voluntary programs to conserve, protect, and perpetuate invertebrates"
+        - "Nongame, Endangered, or Threatened Wildlife and Rare Plant Conservation Act"
+      as_of: "2026-06-30"
+      confidence: high
+      checked: "2026-06-30"
+  - id: new-world-screwworm-texas-2026
+    claim: "New World screwworm was confirmed in a calf in Zavala County, Texas, on June 3, 2026"
+    source: "tahc_nws2026"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "The Texas Animal Health Commission states that New World screwworm was confirmed in a calf in Zavala County, Texas, on June 3, 2026."
+      source_url: "https://www.tahc.texas.gov/emergency/nws.html"
+      source_quote: "New World screwworm (NWS) was confirmed in a calf in Zavala County, Texas"
+      source_quotes:
+        - "first detection of New World screwworm in Texas was confirmed on June 3, 2026"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: new-world-screwworm-spread-2026
+    claim: "The Texas Animal Health Commission described a New World screwworm quarantine in parts of Texas counties and an established infested zone as of June 29, 2026."
+    source: "tahc_nws2026"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "TAHC states that there is currently a quarantine in place due to an established New World Screwworm Infested Zone in parts of Texas counties, and that warm-blooded animals in a zone may not move out without prior TAHC authorization."
+      source_url: "https://www.tahc.texas.gov/emergency/nws.html"
+      source_quote: "There is currently a quarantine in place due to an established New World Screwworm Infested Zone"
+      source_quotes:
+        - "all warm-blooded animals in a zone may not move out of the zone without prior authorization"
+        - "Federal and State partners work jointly in the infested zone"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: eu-authorised-insect-novel-foods-2026
+    claim: "The European Commission describes authorised insect-derived novel foods including yellow mealworm, migratory locust, house cricket, and lesser mealworm, and reiterates that novel foods require authorisation before placement on the Union market."
+    source: "ec_insect_novel_foods2026"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "The European Commission states that the Novel Food Regulation requires authorisation before a novel food product can be placed on the Union market, and its insect-derived food page lists yellow mealworm, migratory locust, house cricket, lesser mealworm, and a January 2025 authorisation for UV-treated powder of whole Tenebrio molitor larvae."
+      source_url: "https://food.ec.europa.eu/food-safety/novel-food/authorisations/approval-insect-novel-food_en"
+      source_quote: "The Novel Food Regulation requires an authorisation before a novel food product can be placed on the Union market"
+      source_quotes:
+        - "yellow mealworm, migratory locust, house cricket, lesser mealworm"
+        - "On 20 January 2025, the Commission has authorised the placing on the market"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: utah-insect-meat-substitute-labeling-2025
+    claim: "Utah H.B. 138 requires labeling for foods containing plant or insect-based meat substitutes."
+    source: "utah_hb138_2025"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "The official Utah Legislature bill-data endpoint for H.B. 138 states that the bill requires labeling of food containing plant or insect based meat substitutes and identifies the bill's last action as Governor Signed."
+      source_url: "https://le.utah.gov/data/2025GS/HB0138.json"
+      source_quote: "requires labeling of food containing plant or insect based meat substitutes"
+      source_quotes:
+        - "plant or insect based meat substitutes"
+        - '"lastAction":"Governor Signed"'
+      as_of: "2026-06-30"
+      confidence: high
+      checked: "2026-06-30"
+  - id: epa-ge-mosquito-sap-2025
+    claim: "EPA released genetically engineered mosquito documents for FIFRA Scientific Advisory Panel public comment and peer review that address analytical methods for determining the absence of novel proteins in the saliva of GE female mosquitoes."
+    source: "epa_ge_mosquito_sap2025"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "EPA states that its GE mosquito materials outline design considerations and propose analytical methods for determining the absence of novel proteins in the saliva of GE female mosquitoes, and that the materials were released for public comment and peer review by the FIFRA Scientific Advisory Panel."
+      source_url: "https://www.epa.gov/pesticides/epa-releases-documents-genetically-engineered-mosquitoes-public-comment-and-peer-review"
+      source_quote: "propose analytical methods for determining the absence of novel proteins in the saliva of GE female mosquitoes"
+      source_quotes:
+        - "These materials are being released for public comment and peer review by the Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA) Scientific Advisory Panel (SAP)"
+      as_of: "2026-06-29"
+      confidence: high
+      checked: "2026-06-29"
+  - id: epa-ge-mosquito-no-release-2026
+    claim: "EPA stated on May 27, 2026, that a previously issued genetically engineered mosquito experimental use permit expired in 2024 and that no GE mosquito releases were currently authorized in the United States."
+    source: "epa_ge_mosquito_factcheck2026"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "EPA's May 27, 2026 fact check states that a previously issued Experimental Use Permit expired in 2024 and that no releases of genetically engineered mosquitoes are currently authorized in the United States."
+      source_url: "https://www.epa.gov/newsreleases/fact-check-release-genetically-engineered-mosquitoes-not-authorized-epa"
+      source_quote: "No releases are currently authorized in the United States"
+      source_quotes:
+        - "A previously issued Experimental Use Permit (EUP) expired in 2024"
+        - "EPA is not aware of any releases in the U.S. following the expiration of the EUP"
+      as_of: "2026-05-27"
+      confidence: high
+      checked: "2026-06-29"
+  - id: eu-live-insects-feed-2024
+    claim: "A peer-reviewed EU insect-farming legal-barriers study reports that SCoPAFF clarified in February 2024 that live insects may be used as feed in the EU except for ruminants."
+    source: "ziety2026_insect_farming_barriers"
+    anchor: "sec:invention"
+    verification:
+      status: verified
+      verified_value: "Ziety et al. (2026) report that in February 2024, SCoPAFF clarified that live insects, considered as feed materials, may be legally used as feed in the EU except for ruminants."
+      source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13026134/?report=printable"
+      source_quote: "In February 2024, the SCoPAFF clarified that"
+      source_quotes:
+        - "live insects, considered as feed materials"
+        - "may be legally used as feed in the EU, except for ruminants"
+      as_of: "2026-06-30"
+      confidence: high
+      checked: "2026-06-30"
+  - id: farmed-insects-trillion-scale
+    claim: "Rethink Priorities estimates that roughly 1 trillion to 1.2 trillion insects are raised on farms annually for food and feed"
+    source: "rethink_farmed_insects"
+    anchor: "sec:welfare"
+    verification:
+      status: verified
+      verified_value: "Rethink Priorities reports that currently 1 trillion to 1.2 trillion insects are raised on farms annually for food and animal feed."
+      source_url: "https://rethinkpriorities.org/research-area/insects-raised-for-food-and-feed/"
+      source_quote: "1 trillion to 1.2 trillion insects are raised on farms annually"
+      as_of: "2026-06-27"
+      confidence: medium
+      checked: "2026-06-27"
+  - id: uk-asc-insect-arachnid-sentience-2026
+    claim: "The UK Animal Sentience Committee reported in January 2026 that animal-sentience discussions are gathering momentum in relation to some insects and arachnids, and recommended clear processes to review sentience evidence."
+    source: "uk_asc_definitions2026"
+    anchor: "sec:welfare"
+    verification:
+      status: verified
+      verified_value: "The Animal Sentience Committee states that discussions around animal sentience are gathering momentum in relation to some insects and arachnids, and recommends clear processes to review evidence for animal sentience so legislation can be updated in a timely manner."
+      source_url: "https://www.gov.uk/government/publications/animal-sentience-committee-impact-of-definitions-of-animals-in-law/animal-sentience-committee-welfare-implications-of-legislative-differences-in-the-definition-of-animals"
+      source_quote: "Discussions around animal sentience, including which species and developmental stages are sentient, are also gathering momentum, for example in relation to some insects and arachnids"
+      source_quotes:
+        - "The Committee recommends that clear processes are established to review evidence for animal sentience"
+        - "Animals defined as sentient under this act include all vertebrates (other than humans), cephalopod molluscs and decapod crustaceans"
+      as_of: "2026-01-08"
+      confidence: high
+      checked: "2026-06-29"
+  - id: us-awa-warmblooded-definition-2026
+    claim: "USDA describes the Animal Welfare Act's animal definition as centered on named taxa and other warmblooded animals, a boundary that leaves insects outside the federal animal-welfare baseline."
+    source: "usda_awa2026"
+    anchor: "sec:welfare"
+    verification:
+      status: verified
+      verified_value: "USDA's National Agricultural Library states that 'animal' is generally defined as listed taxa and any other warmblooded animal used for research, teaching, testing, experimentation, exhibition, or as a pet, and then lists exclusions."
+      source_url: "https://www.nal.usda.gov/animal-health-and-welfare/animal-welfare-act"
+      source_quote: "any live or dead dog, cat, nonhuman primate"
+      source_quotes:
+        - "any other warmblooded animal"
+        - "This term excludes birds, rats of the genus"
+      as_of: "2026-06-30"
+      confidence: high
+      checked: "2026-06-30"

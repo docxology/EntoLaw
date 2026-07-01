@@ -1,0 +1,9 @@
+slug,title,domain,core_question,anchor
+witness,Witness / evidence,Forensic entomology,"When did death occur, and where?",sec:witness
+threat,Regulated threat,Quarantine & invasive-species law,May this organism cross a border?,sec:threat
+protected,Protected subject,Conservation / endangered-species law,Does the state owe this species survival?,sec:protected
+property,Property,Common law of wild animals,"Who owns this swarm, hive, or specimen?",sec:property
+invention,Invention / product,"IP, biotech & food law","Can this insect be patented, engineered, or eaten?",sec:invention
+defendant,Defendant,Historical animal trials,Can a pest be tried and punished?,sec:defendant
+moral_patient,Moral patient,Emerging welfare & sentience law,Can an insect be wronged?,sec:welfare
+weapon,Weapon,International humanitarian law & biosecurity,May insects be used in war?,sec:weapon

@@ -1,0 +1,31 @@
+# Mapping Entomological Law: Roles, Evidence, and Limits {#sec:introduction}
+
+"Entomological law" — or, from the other direction, "legal entomology" — is not a single discipline but a multi-domain complex in which insects and their biology touch legal norms at dozens of points. A bibliometric analysis of the research literature found that "forensic entomology" and "legal entomology" are used interchangeably and span well over a thousand articles across more than a hundred contributing countries [@magana2019bibliometric]. This reference treats the field in a broad sense: domains in which insects become objects or instruments of legal regulation.
+
+Recent animal-law scholarship now names "insect law" directly, but this reference uses "entomological law" to keep the lens wider than animal-welfare doctrine: the same organism may enter evidence, quarantine, conservation, food, biotechnology, and weapons law before moral status is even at issue [@reddy2025insect_law].
+
+The deeper connective problem is that courts and agencies repeatedly need insect biology to become what science-and-law scholarship calls a serviceable truth: reliable enough for action, bounded enough to expose uncertainty, and explicit enough to be revisited when the evidence changes [@jasanoff2015serviceable]. Forensic entomology translates larval development into time; quarantine law translates ecological risk into movement controls; conservation law translates population decline into listing decisions; welfare law translates sentience evidence into moral and statutory thresholds. The same epistemic move recurs across the field.
+
+The second connective problem is classification. Classification systems are not neutral filing cabinets: they allocate visibility, responsibility, and institutional action [@bowker1999sorting]. Insects reveal that point with unusual force because they move across ordinary legal boundaries so easily. A fly can be an expert's clock, a statutory animal, a constitutional hook, or a nuisance depending on which classificatory gate opens first. The field therefore also depends on boundary-work: courts and agencies must decide when entomology is sufficiently scientific for evidence, sufficiently uncertain for precaution, sufficiently economic for trade restrictions, or sufficiently moral for welfare concern [@gieryn1983boundary_work; @jasanoff2004states_of_knowledge].
+
+## The role model: what law needs insects to be
+
+The field has no master statute and no single agency, yet it coheres. Its organizing principle is the **legal status the insect occupies in a given dispute**. The same organism is, in turn, a witness, a regulated threat, a protected subject, property, an invention, a defendant, a moral patient, or a weapon — and each role poses a question the legal system was not built to answer. The {{ROLE_COUNT}} roles, their domains, and their core questions are listed below and visualized with their registry evidence in the roles-overview figure.
+
+{{ROLE_TABLE}}
+
+![{{FIGURE_CAPTION_ROLES_OVERVIEW}}](../output/figures/roles_overview.png){#fig:roles_overview width=95%}
+
+## Why the registry comes first
+
+A typical survey of this material mixes prose summaries of statutes with anecdotes of famous cases; both rot quickly as section numbers are recodified and holdings are distinguished. This reference inverts that pattern. Every legal role, case, statute, taxon, institution, and milestone cited in the prose comes from a Python registry under `src/`, and every count — "{{CASE_COUNT}} cases", "{{STATUTE_COUNT}} statutes", "{{SPECIES_COUNT}} taxa" — is a double-brace token resolved at build time by `src.manuscript_variables.generate_variables`. The discipline this enforces is the same reproducibility model the wider template uses: a count that drifts from its registry cannot reach a green PDF without the manuscript-token closure test flipping red first (@sec:methods).
+
+## A legal history from bee swarms to gene drives
+
+The field is old in more than one way. Its property lineage now reaches back before Rome: the Hittite Laws tariff stolen bees and bee hives, Mishnah Bava Batra treats bees as both beehive property and neighbor-law risk, and Roman law then turns swarms into the classic problem of wildness, sight, and pursuit [@hittite_laws_bees; @mishnah_bava_batra2_10_bees; @mishnah_bava_batra5_3_beehive; @justinian533; @justinian_digest41]. That lineage also passes through successor-kingdom tariff law: the Salic Law makes stolen bees a named theft subject, and Rothari's Lombard code distinguishes an apiary vessel from bees taken out of a marked tree [@lex_salica_bees; @edictum_rothari_bees]. Medieval English restatements such as *Fleta* then carry the occupation problem forward, while the evidentiary lineage begins with the 1235 Sickle Murder recounted by Song Ci in *The Washing Away of Wrongs* (1247), where flies settling on an apparently clean blade exposed invisible blood and forced a confession [@fleta1290_bees; @songci1247; @simplyforensic_songci]. Its product-law lineage is old as well: early colonial instruments treated mulberries, silk inputs, silks, and wax as objects of public economic policy rather than merely private agricultural choices [@virginia_assembly1619_mulberry; @carolina_charter1663_silks_wax]. From there the registry traces {{MILESTONE_COUNT}} milestones across {{TIMELINE_SPAN_YEARS}} years — bee property, medieval animal trials, colonial silk policy, succession-based time-of-death estimation, twentieth-century conservation and biotechnology statutes, and twenty-first-century sentience and gene-drive debates shown in the timeline figure.
+
+![{{FIGURE_CAPTION_TIMELINE}}](../output/figures/timeline.png){#fig:timeline width=98%}
+
+## Boundaries of the field map
+
+This reference is a map, not a treatise. The registries are curated to anchor each role with its leading authorities, not to enumerate every decision, instrument, or species; the figures throughout describe the *encoded registries*, and their captions state that scope explicitly. Sections @sec:witness through @sec:weapon treat each role in turn; @sec:interconnections shows how they share legal machinery; and @sec:methods documents the reproducibility contract and its honesty boundary.

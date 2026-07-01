@@ -1,0 +1,13 @@
+slug,name,acronym,role,function,founded
+abfe,American Board of Forensic Entomology,ABFE,witness,"Certifies North American forensic entomologists (Diplomate, Member, Technician) and can revoke certification for casework beyond scope.",
+eafe,European Association for Forensic Entomology,EAFE,witness,Professional body coordinating forensic-entomology practice and standards in Europe.,1996
+nafea,North American Forensic Entomology Association,NAFEA,witness,Hosts certification examinations and convenes North American forensic entomologists.,1991
+osac,NIST OSAC Forensic Entomology Task Group,OSAC,witness,Develops documentary standards for forensic entomology within the US standards infrastructure.,
+aphis_ppq,USDA APHIS Plant Protection and Quarantine,APHIS PPQ,threat,Determines what plants and pests may be imported or moved interstate and runs federal quarantines under the Plant Protection Act.,
+ippc_secretariat,International Plant Protection Convention Secretariat,IPPC,threat,Maintains the ISPMs that serve as the phytosanitary benchmark under the WTO SPS Agreement.,
+usfws,U.S. Fish and Wildlife Service,USFWS,protected,Lists and protects endangered insects under the ESA and enforces CITES insect-trade controls.,
+xerces,Xerces Society for Invertebrate Conservation,Xerces,protected,"Advocates for invertebrate listings and petitions, including the bumblebee CESA effort.",
+cdfw,California Department of Fish and Wildlife,CDFW,protected,"Administers the California Endangered Species Act, whose 'fish' definition reaches invertebrates after Almond Alliance.",
+epa_opp,EPA Office of Pesticide Programs,EPA OPP,invention,Registers pesticides and engineered insect releases under FIFRA and the Coordinated Framework.,
+efsa,European Food Safety Authority,EFSA,invention,Issues the safety opinions that underpin EU novel-food authorizations for edible insects.,
+central_silk_board,Central Silk Board (India),CSB,invention,"Statutory body regulating silkworm seed quality, the silk cess, and export policy under the Central Silk Board Act.",1948
