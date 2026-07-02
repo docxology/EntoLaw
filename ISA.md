@@ -62,6 +62,8 @@ oracle.
 --project working/EntoLaw` → combined PDF + 14 HTML sections, no unresolved
 tokens.
 
+**Published (2026-07-02):** `uv run python -m infrastructure.publishing.transmission_page_check output/pdf/EntoLaw_combined.pdf` → `OK: begin page 1, end page 42, 42 pages total`. Concept DOI `10.5281/zenodo.21137276` and version DOI `10.5281/zenodo.21137277` both resolve (`curl -sI https://doi.org/...` → `302` to `zenodo.org`). Live Zenodo record confirmed `related_identifiers` cross-linking to `github.com/docxology/EntoLaw` and its `v1.0.0` release. GitHub release `v1.0.0` confirmed via `gh release view` with the DOI-bearing PDF attached. Both pushes' CI runs confirmed `success` via `gh run list --json status,conclusion`.
+
 ## Decisions
 
 - 2026-07-02: Redesigned `src/viz_cover.py` end-to-end — the prior layout had
@@ -130,3 +132,85 @@ tokens.
 - criterion_now: figure relocations that cross section-file boundaries must
   replace the old embed with plain prose, never a crossref token, unless the
   project drops standalone per-section rendering as a supported output.
+
+## Decisions (continued — 2026-07-02, second pass)
+
+- Bigger cover-art fonts (title 28→31pt, subtitle/stats/pull-quote/panel
+  labels scaled proportionally); re-verified no new overlaps at the larger
+  sizes via rasterized-page inspection.
+- Condensed `11_methods.md` from 4 subsections to 2 ("Token closure" +
+  "Claim ledger, validation, and reproducibility") specifically to pull the
+  Contents page back under one page (it was one line — the Conclusion
+  entry — over budget). Page count 38→37 pre-bookends.
+- Rewrote the architecture figure's caption (`figure_caption_records.py`
+  `architecture` entry): "...to reproducible outputs: {N} registries feed..."
+  read as a garden-path list where "N registries" appeared to enumerate the
+  outputs rather than start a new clause. New phrasing: "How {N} source-owned
+  registries become reproducible outputs. Pure generator methods — ... —
+  turn registry data into...".
+- Added a verified-verbatim William Blake epigraph (`blake1790_marriage` —
+  Project Gutenberg #45315, confirmed live before citing) after "'Entomological
+  law' is not a claim that insects should have one code" in `12_conclusion.md`.
+- Added `johnson2023honeybeebiology` (Johnson, *Honey Bee Biology*, Princeton
+  UP, 2023, ISBN 9780691204888) at the *animus revertendi* swarming/absconding
+  sentence in `05_property.md` — the one place the manuscript states a
+  biological fact a biology textbook, not a legal citation, should ground.
+- **Publication (real, production, irreversible):** fixed a schema mismatch
+  in `config.yaml` (`authors[].affiliations:` list → the metadata-export
+  tool's expected `authors[].affiliation:` string) that was silently
+  dropping "Active Inference Institute" from `CITATION.cff`/`.zenodo.json`.
+  Added `LICENSE` (CC-BY-4.0, fetched verbatim), `.gitignore` (untracked 125
+  accidentally-committed `__pycache__`/`.egg-info`/`.coverage` files),
+  `.github/workflows/ci.yml` (test/lint/live-claims jobs; validated with
+  `actionlint` and dry-run-tested in a fully isolated clone before trusting
+  it). Fixed `tests/test_render_hydration.py`, which hard-assumed a sibling
+  template checkout only present on the dev machine — would have failed on
+  every standalone GitHub Actions run; now `skipif`s cleanly when absent.
+  Enabled `publication.transmission_bookends` (the template's existing
+  begin/end DOI-pairing page system) rather than hand-rolling a colophon.
+  Created `docxology/EntoLaw` (public), pushed, minted a real Zenodo DOI via
+  `scripts/publish_project_release.py --production --reserve-doi-first`
+  (concept DOI `10.5281/zenodo.21137276`, version DOI `10.5281/zenodo.21137277`).
+  The script's own GitHub-release step 403'd (`GITHUB_TOKEN` in `.env` lacks
+  release-creation scope, unlike the `gh` CLI's own login) *after* the Zenodo
+  deposit had already gone live — created the release manually via `gh
+  release create` instead. Caught and cleared a stale dry-run's placeholder
+  DOI (`10.5281/zenodo.1000001`) that had backfilled into
+  `output/data/publication_ledger.json` and was rendering as fake "State:
+  published" data on the bookend pages *before* the real publish ran — see
+  Changelog entry below.
+- **Known residual issue (2026-07-02, second session):** the live Zenodo
+  record's description still opens with the redundant restated-title text
+  ("A Source-Anchored Map of Entomological Law There is no statute…")
+  because the underlying `strip_leading_abstract_heading()` bug (see
+  root-repo `CHANGELOG.md`) wasn't caught until after publish. The user
+  hand-removed the literal word "Abstract:" via the Zenodo web UI but the
+  subtitle text remains glued onto the abstract body. The code bug is now
+  fixed (`infrastructure/prose/markdown.py`), but Zenodo published-record
+  metadata can't be patched over the API (404) — cleaning up the live
+  description needs another manual web-UI edit or a `--new-version`
+  republish. Not done in this session; flagged, not silently left unstated.
+
+## Changelog (continued)
+
+- conjectured: a dry-run (`--dry-run`) of `publish_project_release.py`
+  writes only to its own throwaway output location and leaves no trace a
+  subsequent real render could pick up.
+- refuted_by: the *first* pre-publish render after the dry-run showed
+  "State: published" with the dry-run's placeholder DOI
+  (`10.5281/zenodo.1000001`) on the transmission-bookend pages — because
+  `load_publication_ledger()` backfills `output/data/publication_ledger.json`
+  from `RELEASE_RECEIPT.json` (including dry-run receipts) the first time
+  it's read, and that ledger then persists across renders regardless of the
+  `dry_run: true` flag on the backfilled entry.
+- learned: a dry-run of this release tooling is not side-effect-free for a
+  project's own `output/`. Delete
+  `<repo_root>/output/<qualified_project_name>/release_bundle/` and the
+  project's own `output/data/publication_ledger.json` between a dry-run
+  rehearsal and the real publish, or the bookend pages will render fabricated
+  "published" state built from placeholder data.
+- criterion_now: before any real `--reserve-doi-first` run, verify
+  `output/data/publication_ledger.json` is absent or contains only entries
+  with real (non-`dry_run`) receipts; a `dry_run: true` entry backfilled into
+  the ledger is guilty of contaminating the next honest render until proven
+  otherwise.
