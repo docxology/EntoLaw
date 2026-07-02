@@ -15,7 +15,7 @@ authors:
     corresponding: true
 
 publication:
-  doi: ""
+  doi: "10.5281/zenodo.21137276"
   github_repository: "docxology/EntoLaw"
   repository_url: "https://github.com/docxology/EntoLaw"
   repository_label: "docxology/EntoLaw"
@@ -24,6 +24,8 @@ publication:
     enabled: true
     max_prior_releases: 5
     show_steganography: false
+  version_doi: "10.5281/zenodo.21137277"
+  version_record: "https://zenodo.org/records/21137277"
 
 keywords:
   - "entomological law"

@@ -1,0 +1,17 @@
+{
+  "releases": [
+    {
+      "doi": "10.5281/zenodo.21137277",
+      "dry_run": false,
+      "github_release_url": "https://github.com/docxology/EntoLaw/releases/tag/v1.0.0",
+      "github_repo": "docxology/EntoLaw",
+      "pairing_valid": true,
+      "pdf_sha256": "5a1891704c285491c97297dea66e9a4ea019b2dabddcc28cb5aeb18d6a335225",
+      "pdf_sha512": "a3e8e04267dbefa74d3b92c913c8a6e0a7aaddc47f39dab500ebe68a3a18ff0fc3a41e79ec375c96e0b3072c440a3053e68fbc838d72085b18587c1ec1c382de",
+      "sandbox": false,
+      "tag": "v1.0.0",
+      "timestamp": "2026-07-02T17:25:05+00:00"
+    }
+  ],
+  "schema": "template-publication-ledger-v1"
+}

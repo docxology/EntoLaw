@@ -149,29 +149,35 @@
 \section*{BEGINNING OF TRANSMISSION}
 \phantomsection\label{beginning-of-transmission}
 
-\textbf{State:} unpublished / pending pairing
+\textbf{State:} published
 
-\textbf{Pairing:} pending --- unresolved: - ✗ DOI minted:
-\texttt{pending} - ✗ GitHub release URL: \texttt{pending} - ✗ PDF
-SHA-256: \texttt{pending}
+\textbf{Pairing:} complete (DOI, GitHub, SHA-256, Zenodo URL)
 
 \subsubsection*{Release metadata}
 
 {\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}ll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \toprule\noalign{}
-Field & Value \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
 Title & Entomological Law \\
 Version & 1.0.0 \\
-Concept DOI & pending \\
-GitHub & docxology/EntoLaw \\
-Zenodo & pending \\
-SHA-256 & pending \\
-SHA-512 & pending \\
+Concept DOI & 10.5281/zenodo.21137276 \\
+Version DOI & 10.5281/zenodo.21137277 \\
+GitHub &
+\url{https://github.com/docxology/EntoLaw/releases/tag/v1.0.0} \\
+Zenodo & \url{https://zenodo.org/records/21137276} \\
+SHA-256 & \breaktt{5a1891704c285491…} \\
+SHA-512 & \breaktt{a3e8e04267dbefa7…} \\
 \end{longtable}
 }
 
@@ -219,6 +225,7 @@ Structured manifest: \breaktt{../data/transmission\_manifest.json}
 {\small\sffamily\texttt{daniel@activeinference.institute}\par}
 {\small\sffamily\href{https://orcid.org/0000-0001-6232-9096}{ORCID: 0000-0001-6232-9096}\par}
 \vspace{0.08em}
+{\small\sffamily DOI: \href{https://doi.org/10.5281/zenodo.21137276}{10.5281/zenodo.21137276}\par}
 \vspace{0.35em}
 \makeatletter
 {\@date\par}
@@ -1689,7 +1696,7 @@ scholarship, and where it is official current-status material.
 
 Finally, this build carries its own provenance: generated on
 \texttt{Darwin\ arm64} under Python \texttt{3.12.13} from configuration
-hash \breaktt{a7e9f5a6eb0a80e0} at \breaktt{2026-07-02T17:17:30Z}. The
+hash \breaktt{ff3e82bfba8aada9} at \breaktt{2026-07-02T17:31:17Z}. The
 same version-controlled inputs regenerate the inventories, the
 validation report, the figures, the manuscript variables, and this
 document with identical registry-derived content, modulo the provenance
@@ -1778,8 +1785,8 @@ Map}\label{sec:references}
 \section*{END OF TRANSMISSION}
 \phantomsection\label{end-of-transmission}
 
-\textbf{Release:} v1.0.0 \texorpdfstring{\ensuremath{\cdot}}{.} DOI \texttt{pending} \texorpdfstring{\ensuremath{\cdot}}{.} SHA-256
-\texttt{pending…} \texorpdfstring{\ensuremath{\cdot}}{.} pairing pending
+\textbf{Release:} v1.0.0 \texorpdfstring{\ensuremath{\cdot}}{.} DOI \breaktt{10.5281/zenodo.21137276} \texorpdfstring{\ensuremath{\cdot}}{.}
+SHA-256 \texttt{5a1891704c28…} \texorpdfstring{\ensuremath{\cdot}}{.} pairing complete
 
 \begin{figure}
 \centering

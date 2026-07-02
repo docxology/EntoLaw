@@ -10,12 +10,9 @@
 \section*{BEGINNING OF TRANSMISSION}\label{beginning-of-transmission}
 ```
 
-**State:** unpublished / pending pairing
+**State:** published
 
-**Pairing:** pending — unresolved:
-- ✗ DOI minted: `pending`
-- ✗ GitHub release URL: `pending`
-- ✗ PDF SHA-256: `pending`
+**Pairing:** complete (DOI, GitHub, SHA-256, Zenodo URL)
 
 ```{=latex}
 \subsubsection*{Release metadata}
@@ -25,11 +22,12 @@
 | --- | --- |
 | Title | Entomological Law |
 | Version | 1.0.0 |
-| Concept DOI | pending |
-| GitHub | docxology/EntoLaw |
-| Zenodo | pending |
-| SHA-256 | pending |
-| SHA-512 | pending |
+| Concept DOI | 10.5281/zenodo.21137276 |
+| Version DOI | 10.5281/zenodo.21137277 |
+| GitHub | [https://github.com/docxology/EntoLaw/releases/tag/v1.0.0](https://github.com/docxology/EntoLaw/releases/tag/v1.0.0) |
+| Zenodo | [https://zenodo.org/records/21137276](https://zenodo.org/records/21137276) |
+| SHA-256 | `5a1891704c285491…` |
+| SHA-512 | `a3e8e04267dbefa7…` |
 
 ```{=latex}
 \subsubsection*{How to verify}
@@ -384,7 +382,7 @@ Counts come from the registries; *external* and volatile current-status claims d
 
 Citations, cross-references, and statistics all pass through their own validation gates. A cross-registry validator fails closed on a malformed citation, an out-of-vocabulary role or category, a duplicate slug, or an empty required field, and writes its findings to `output/reports/validation.json`. A separate gate scans the manuscript for any numeral-form magnitude that is neither a generated token nor a value present in the claim ledger, with a negative control proving the detector fires on a planted statistic. Together these gates make the reference's central promise machine-checkable: no numeral-form statistic reaches the page unbacked. The bibliography is also treated as data. The citation-date figure, previewed at the start of this reference, parses `references.bib` directly, so the reader can see where the source base is early legal text, where it is modern scholarship, and where it is official current-status material.
 
-Finally, this build carries its own provenance: generated on `Darwin arm64` under Python `3.12.13` from configuration hash `a7e9f5a6eb0a80e0` at `2026-07-02T17:17:30Z`. The same version-controlled inputs regenerate the inventories, the validation report, the figures, the manuscript variables, and this document with identical registry-derived content, modulo the provenance stamp.
+Finally, this build carries its own provenance: generated on `Darwin arm64` under Python `3.12.13` from configuration hash `ff3e82bfba8aada9` at `2026-07-02T17:31:17Z`. The same version-controlled inputs regenerate the inventories, the validation report, the figures, the manuscript variables, and this document with identical registry-derived content, modulo the provenance stamp.
 
 
 
@@ -435,7 +433,7 @@ The contribution of this reference is not a new doctrine but a new *substrate*: 
 \section*{END OF TRANSMISSION}\label{end-of-transmission}
 ```
 
-**Release:** v1.0.0 · DOI `pending` · SHA-256 `pending…` · pairing pending
+**Release:** v1.0.0 · DOI `10.5281/zenodo.21137276` · SHA-256 `5a1891704c28…` · pairing complete
 
 ![Integrity QR strip](../figures/transmission_integrity_strip.png){width=88%}
 

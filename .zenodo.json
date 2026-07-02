@@ -19,6 +19,13 @@
     "reproducible legal scholarship"
   ],
   "license": "CC-BY-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21137276",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    }
+  ],
   "title": "Entomological Law",
   "upload_type": "software",
   "version": "1.0.0"

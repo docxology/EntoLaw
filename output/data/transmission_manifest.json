@@ -1,11 +1,11 @@
 {
-  "doi": null,
-  "github_release_url": null,
+  "doi": "10.5281/zenodo.21137276",
+  "github_release_url": "https://github.com/docxology/EntoLaw/releases/tag/v1.0.0",
   "github_repository": "docxology/EntoLaw",
-  "pdf_sha256": null,
-  "pdf_sha512": null,
-  "published": false,
+  "pdf_sha256": "5a1891704c285491c97297dea66e9a4ea019b2dabddcc28cb5aeb18d6a335225",
+  "pdf_sha512": "a3e8e04267dbefa74d3b92c913c8a6e0a7aaddc47f39dab500ebe68a3a18ff0fc3a41e79ec375c96e0b3072c440a3053e68fbc838d72085b18587c1ec1c382de",
+  "published": true,
   "title": "Entomological Law",
   "version": "1.0.0",
-  "zenodo_record_url": null
+  "zenodo_record_url": "https://zenodo.org/records/21137276"
 }

@@ -1,5 +1,9 @@
 # EntoLaw — A Field Map of Entomological Law
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21137276.svg)](https://doi.org/10.5281/zenodo.21137276)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/docxology/EntoLaw)](https://github.com/docxology/EntoLaw/releases)
+
 A source-anchored, reproducible reference for **entomological law** (legal
 entomology): the synthetic field where insects and the legal system collide.
 The reference is organized around eight registered legal **roles** an insect can
@@ -65,3 +69,23 @@ and [`docs/REVIEW_PROTOCOL.md`](docs/REVIEW_PROTOCOL.md) for the full boundary.
 The registries are curated to anchor each role with its leading authorities —
 they are not a census of the entire field, and every figure caption states that
 scope.
+
+## Citation
+
+Cite via [`CITATION.cff`](CITATION.cff), or:
+
+```bibtex
+@software{friedman2026entomologicallaw,
+  title   = {Entomological Law},
+  author  = {Friedman, Daniel Ari},
+  year    = {2026},
+  version = {1.0.0},
+  doi     = {10.5281/zenodo.21137276},
+  url     = {https://github.com/docxology/EntoLaw}
+}
+```
+
+**Concept DOI** (always resolves to the latest version): [10.5281/zenodo.21137276](https://doi.org/10.5281/zenodo.21137276)
+**v1.0.0 record:** [10.5281/zenodo.21137277](https://doi.org/10.5281/zenodo.21137277) · [GitHub release](https://github.com/docxology/EntoLaw/releases/tag/v1.0.0)
+
+Licensed under [CC-BY-4.0](LICENSE).
