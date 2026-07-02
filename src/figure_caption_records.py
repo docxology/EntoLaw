@@ -125,7 +125,8 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
         title="Statutes and treaties by jurisdiction",
         manuscript_caption=(
             "The same {STATUTE_COUNT} instruments partitioned by issuing "
-            "jurisdiction — US-federal, US-state, US-colonial, UK, EU, and international — "
+            "jurisdiction — US-federal, US-state, US-colonial, UK, India, "
+            "Muscovy, Russian Empire, USSR, EU, and international — "
             "showing the field's multi-level legal architecture. Read as: "
             "insect law is built through stacked authority, with local movement "
             "rules, national statutes, and international instruments all "
@@ -228,7 +229,10 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
         manuscript_caption=(
             "Date distribution for every bibliography entry with a parseable "
             "year, split into broad bands and individual source-date strips "
-            "with the pre-1950 layer separated from later consolidation. Read "
+            "with pre-1700 and 1700-1999 layers separated from the 2000+ "
+            "consolidation, including labelled pre-1800 Rus', Muscovite, "
+            "and Russian-Imperial legal/scientific sources plus pre-1950 "
+            "Russian and Soviet entomology/legal sources. Read "
             "as: EntoLaw's evidence base is anchored by early legal, "
             "regulatory, and treatise sources but interpreted through modern "
             "scholarship, cases, statutes, and official materials. Why it "
@@ -236,30 +240,31 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "stack visible instead of leaving it implicit in the reference "
             "list. Provenance: `manuscript/references.bib` parsed by "
             "`src.viz_citation_dates`. Caveat: the date is the bibliography "
-            "year, so modern editions of older texts appear at their declared "
-            "source date when that is how the project cites them."
+            "year, so modern editions appear at edition date unless the "
+            "bibliography declares a source-date anchor."
         ),
         alt_text=(
             "Multi-panel chart showing citation counts by date band and every "
             "parseable source year by citation family."
         ),
         provenance="Generated from `manuscript/references.bib`.",
-        caveat="Shows parseable bibliography years, not archival composition dates.",
+        caveat="Shows parseable bibliography years and declared source-date anchors.",
     ),
     FigureCaption(
         slug="architecture",
         anchor="fig:architecture",
         title="Package architecture: registries to manuscript",
         manuscript_caption=(
-            "Data flow from the source-owned registries through pure generator "
-            "methods to reproducible outputs: {REGISTRY_COUNT} registries feed "
-            "metrics, validation, manuscript-variable generation, and figure "
-            "rendering, which produce inventories, reports, figures, and the "
-            "rendered manuscript. Read as: the package treats the manuscript as "
-            "a compiled artifact, not as the source of legal facts. Why it "
-            "matters: readers can audit whether prose, visuals, and counts share "
-            "the same inputs. Provenance: `src/package_map.py`. Caveat: a local "
-            "build-pipeline description, not a deployment diagram."
+            "How {REGISTRY_COUNT} source-owned registries become reproducible "
+            "outputs. Pure generator methods — metrics, validation, "
+            "manuscript-variable generation, and figure rendering — turn "
+            "registry data into inventories, reports, figures, and the "
+            "rendered manuscript itself. Read as: the package treats the "
+            "manuscript as a compiled artifact, not as the source of legal "
+            "facts. Why it matters: readers can audit whether prose, visuals, "
+            "and counts share the same inputs. Provenance: "
+            "`src/package_map.py`. Caveat: a local build-pipeline "
+            "description, not a deployment diagram."
         ),
         alt_text=(
             "Left-to-right pipeline diagram from registries through methods to outputs."

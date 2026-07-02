@@ -1,0 +1,23 @@
+authors:
+- affiliation: Active Inference Institute
+  family-names: Friedman
+  given-names: Daniel Ari
+  orcid: 0000-0001-6232-9096
+cff-version: 1.2.0
+date-released: '2026-07-02'
+keywords:
+- entomological law
+- legal entomology
+- forensic entomology
+- endangered species
+- invasive species
+- insect welfare
+- gene drive
+- biological weapons convention
+- reproducible legal scholarship
+license: CC-BY-4.0
+message: If you use this software, please cite it using the metadata from this file.
+repository-code: https://github.com/docxology/EntoLaw
+title: Entomological Law
+type: software
+version: 1.0.0

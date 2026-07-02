@@ -42,6 +42,7 @@ JURISDICTION_COLORS: dict[str, str] = {
     "EU": "#7c3aed",
     "UK": "#be123c",
     "India": "#c2410c",
+    "USSR": "#b91c1c",
     "international": "#334155",
     "Canada": "#dc2626",
     "England & Wales": "#9333ea",

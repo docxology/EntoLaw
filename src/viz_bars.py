@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 
 from . import cases, claim_ledger, metrics, roles, species
 from .viz_theme import (
@@ -20,6 +21,13 @@ from .viz_theme import (
     _save,
     _style_axes,
     _wrap_label,
+)
+
+
+#: Sequential scale for the coverage heatmap, in the same blue family as the
+#: rest of the figure system (replaces a generic stock colormap).
+_COVERAGE_CMAP = LinearSegmentedColormap.from_list(
+    "entolaw_coverage", ["#f8fafc", "#bfdbfe", "#3b82f6", "#1e3a8a"]
 )
 
 
@@ -202,7 +210,7 @@ def role_coverage(path: Path) -> Path:
     summary_grid.append(col_totals + [total])
     fig, ax = plt.subplots(figsize=(9.0, 6.9))
     ax.set_facecolor(_PANEL)
-    im = ax.imshow(summary_grid, cmap="YlGnBu", aspect="auto")
+    im = ax.imshow(summary_grid, cmap=_COVERAGE_CMAP, aspect="auto")
     xlabels = [k.capitalize() for k in kinds] + ["Total"]
     ylabels = [r.title for r in role_list] + ["Total"]
     ax.set_xticks(range(len(xlabels)))
@@ -238,9 +246,7 @@ def claim_ledger_coverage(path: Path) -> Path:
     labels = [anchor.removeprefix("sec:").replace("_", " ") for anchor in coverage]
     values = list(coverage.values())
     colors = [
-        ANCHOR_COLORS.get(anchor.removeprefix("sec:"), _ACCENT)
-        if value
-        else "#d0d7de"
+        ANCHOR_COLORS.get(anchor.removeprefix("sec:"), _ACCENT) if value else "#d0d7de"
         for anchor, value in coverage.items()
     ]
     fig, ax = plt.subplots(figsize=(9.4, 7.1))

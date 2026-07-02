@@ -1,4 +1,4 @@
-\begin{thebibliography}{156}
+\begin{thebibliography}{181}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -41,6 +41,15 @@ Jens Amendt, Carlo~P. Campobasso, Emmanuel Gaudry, Christian Reiter, Helene~N.
 {Babylonian Talmud}.
 \newblock \emph{Bava Batra 18a: Bees and Mustard}.
 \newblock 500.
+
+\bibitem[Bailly(1668)]{bailly1668_monitoires_insectes}
+Gaspard Bailly.
+\newblock \emph{Trait{\'e} des monitoires, avec un plaidoyer contre les
+  insectes par G. Bally}.
+\newblock 1668.
+\newblock Bibliotheque municipale de Grenoble catalogue record; Evans reprints
+  the insect pleading in the appendix to The Criminal Prosecution and Capital
+  Punishment of Animals.
 
 \bibitem[Barrett and Fischer(2023)]{barrett2023farmed_insect_welfare}
 Meghan Barrett and Bob Fischer.
@@ -93,6 +102,11 @@ Andrew~J. Bladon, Perpetra Akite, Shawan Chowdhury, Federico Riva, Rob Cooke,
 \newblock \emph{Conservation Letters}, 19\penalty0 (2):\penalty0 e70025, 2026.
 \newblock \doi{10.1111/con4.70025}.
 
+\bibitem[Blake(1790)]{blake1790_marriage}
+William Blake.
+\newblock \emph{The Marriage of Heaven and Hell}.
+\newblock 1790.
+
 \bibitem[{Board of Patent Appeals}(1987)]{exparteallen1987}
 {Board of Patent Appeals}.
 \newblock Ex parte allen, 2 uspq2d 1425, 1987.
@@ -112,6 +126,16 @@ Henry~de Bracton.
 {California Court of Appeal, Third District}.
 \newblock Almond alliance of california v. fish \& game commission, 79
   cal.app.5th 337, 2022.
+
+\bibitem[{California Legislature}(1897)]{california_horticulture1897}
+{California Legislature}.
+\newblock An act to promote the horticultural interests of the state by
+  providing county boards of horticulture.
+\newblock
+  \url{https://upload.wikimedia.org/wikipedia/commons/2/25/Recent_laws_against_injurious_insects_in_North_America_-_together_with_the_laws_relative_to_foul_brood_%28IA_recentlawsagains13howa%29.pdf},
+  1897.
+\newblock Cal. Stat. 1897, ch. 183, reprinted in U.S. Department of
+  Agriculture, Division of Entomology Bulletin No. 13.
 
 \bibitem[{California Legislature}(1915)]{ca_vector_hsc2001}
 {California Legislature}.
@@ -133,6 +157,12 @@ Pedro Cardoso, Philip~S. Barton, Klaus Birkhofer, Filipe Chichorro, Charl
 \newblock \emph{Biological Conservation}, 242:\penalty0 108426, 2020.
 \newblock \doi{10.1016/j.biocon.2020.108426}.
 
+\bibitem[Catts and Goff(1992)]{catts_goff1992_forensic_entomology}
+E.~P. Catts and M.~L. Goff.
+\newblock Forensic entomology in criminal investigations.
+\newblock \emph{Annual Review of Entomology}, 37:\penalty0 253--272, 1992.
+\newblock \doi{10.1146/annurev.en.37.010192.001345}.
+
 \bibitem[Charles-Edwards and Kelly(1983)]{bechbretha1983}
 T.~M. Charles-Edwards and Fergus Kelly.
 \newblock \emph{Bechbretha: An Old Irish Law-Tract on Bee-Keeping}.
@@ -145,6 +175,14 @@ T.~M. Charles-Edwards and Fergus Kelly.
 \newblock
   \url{https://archive.org/stream/bim_eighteenth-century_the-laws-of-the-province_south-carolina_1736_1/bim_eighteenth-century_the-laws-of-the-province_south-carolina_1736_1_djvu.txt},
   1663.
+
+\bibitem[Chasseneuz(1581)]{chasseneuz1581_consilia}
+Barthelemy~de Chasseneuz.
+\newblock \emph{Responsa seu Consilia}.
+\newblock Apud Philippum et Iacobum Iuntam, 1581.
+\newblock Google Books scan of the 1581 Chasseneuz consilia; Evans identifies
+  the first consilium as De excommunicatione animalium insectorum, originally
+  published in 1531 and reprinted in 1581.
 
 \bibitem[Ci(1247)]{songci1247}
 Song Ci.
@@ -220,6 +258,18 @@ Song Ci.
 \newblock \url{https://www.law.cornell.edu/wex/frye_standard},
   2024{\natexlab{b}}.
 
+\bibitem[{Council of People's Commissars of the
+  USSR}(1934)]{snk_locust_afghanistan1934}
+{Council of People's Commissars of the USSR}.
+\newblock Postanovlenie o bor'be s saranchoi v pogranichnykh raionakh sssr i
+  afganistana.
+\newblock
+  \url{https://docs.historyrussia.org/ru/nodes/290164-postanovlenie-soveta-narodnyh-komissarov-soyuza-ssr-o-borbe-s-saranchoy-v-pogranichnyh-rayonah-sssr-i-afganistana-19-dekabrya-1934-g},
+  1934.
+\newblock Electronic Library of Historical Documents scan metadata for the 19
+  December 1934 Soviet decree on locust control in border regions of the USSR
+  and Afghanistan.
+
 \bibitem[{Court of Appeal for Ontario}(2007)]{truscott2007}
 {Court of Appeal for Ontario}.
 \newblock R. v. truscott, 2007 onca 575, 2007.
@@ -231,6 +281,16 @@ Andrew Crump, Matilda Gibbons, Megan Barrett, Jonathan Birch, and Lars Chittka.
   welfare?
 \newblock \emph{PLOS Biology}, 21\penalty0 (6):\penalty0 e3002138, 2023.
 \newblock \doi{10.1371/journal.pbio.3002138}.
+
+\bibitem[Danilevsky(1882)]{danilevsky1882_phylloxera}
+Nikolai~Ya. Danilevsky.
+\newblock O sposobakh bor'by s fillokseroyu.
+\newblock
+  \url{https://danilevsky.ru/tvorcheskoe-nasledie-danilevskogo/po-hronologii-napisaniya/o-sposobah-borbyi-s-fillokseroyu/},
+  1882.
+\newblock Report by the chair of the phylloxera commission; reprinted in
+  Sbornik politicheskikh i ekonomicheskikh statei N. Ya. Danilevskogo, St.
+  Petersburg, 1890, pp. 624--671.
 
 \bibitem[{D.C. Circuit}(1923)]{frye1923}
 {D.C. Circuit}.
@@ -255,6 +315,20 @@ Cecilia de~Souza~Valente.
   (1):\penalty0 3, 2025.
 \newblock \doi{10.1007/s10806-024-09940-2}.
 
+\bibitem[DeFoliart(1988)]{food_insects_newsletter1988}
+Gene~R. DeFoliart.
+\newblock Food insects newsletter archive.
+\newblock \url{https://insectsasfood.russell.wisc.edu/newsletter-archive/},
+  1988.
+\newblock University of Wisconsin archive of The Food Insects Newsletter,
+  Volumes 1--8(2), 1988--1995.
+
+\bibitem[DeFoliart(1999)]{defoliart1999_insects_as_food}
+Gene~R. DeFoliart.
+\newblock Insects as food: Why the western attitude is important.
+\newblock \emph{Annual Review of Entomology}, 44:\penalty0 21--50, 1999.
+\newblock \doi{10.1146/annurev.ento.44.1.21}.
+
 \bibitem[Demirel(2022)]{demirel2022_hittite_apiculture}
 Serkan Demirel.
 \newblock Apiculture in hittite cuneiform texts.
@@ -262,11 +336,27 @@ Serkan Demirel.
   1215--1222, 2022.
 \newblock \doi{10.1080/24750263.2022.2135782}.
 
+\bibitem[{Early Irish Law}(700)]{bechbretha_bee_judgments}
+{Early Irish Law}.
+\newblock Bechbretha: Bee judgments.
+\newblock \url{https://archive.org/details/bechbrethaoldiri01thom}, 700.
+\newblock Approximate source-date anchor for the Old Irish bee-law tract; cited
+  through the Charles-Edwards and Kelly edition, whose contents identify bee
+  trespass penalties and distraint of bees.
+
 \bibitem[Egmont(1962)]{egmont_georgia_trustees1736}
 John~Perceval Egmont.
 \newblock \emph{The Journal of the Earl of Egmont: Abstract of the Trustees
   Proceedings for Establishing the Colony of Georgia, 1732--1738}.
 \newblock University of Georgia Press, 1962.
+
+\bibitem[Eisemann et~al.(1984)Eisemann, Jorgensen, Merritt, Rice, Cribb, Webb,
+  and Zalucki]{eisemann1984_insect_pain}
+C.~H. Eisemann, W.~K. Jorgensen, D.~J. Merritt, M.~J. Rice, B.~W. Cribb, P.~D.
+  Webb, and M.~P. Zalucki.
+\newblock Do insects feel pain? a biological view.
+\newblock \emph{Experientia}, 40:\penalty0 164--167, 1984.
+\newblock \doi{10.1007/BF01963580}.
 
 \bibitem[Elderfield(1650)]{elderfield1650_tythes_bees}
 Christopher Elderfield.
@@ -385,6 +475,15 @@ Thomas~F. Gieryn.
   781--795, 1983.
 \newblock \doi{10.2307/2095325}.
 
+\bibitem[{Governing Senate of the Russian
+  Empire}(1749)]{russian_senate1749_locust_belgorod}
+{Governing Senate of the Russian Empire}.
+\newblock O sposobakh k iskoreneniiu saranchi v belogorodskoi gubernii.
+\newblock \url{https://ru.wikisource.org/w/index.php?curid=121399}, 1749.
+\newblock Polnoe sobranie zakonov Rossiiskoi imperii, no. 9624; published 6
+  June (17 June) 1749; Senate decree on locust extermination in Belogorod
+  Province.
+
 \bibitem[Greenberg and Kunich(2004)]{greenberg2004}
 Bernard Greenberg and John~Charles Kunich.
 \newblock \emph{Entomology and the Law: Flies as Forensic Indicators}.
@@ -407,6 +506,16 @@ Samuel Hartlib.
 \newblock
   \url{https://e-edu.nbu.bg/pluginfile.php/743607/mod_resource/content/1/Hittite%20Laws.pdf},
   -1650.
+
+\bibitem[Howard(1898)]{howard1898_injurious_insect_laws}
+L.~O. Howard.
+\newblock Recent laws against injurious insects in north america, together with
+  the laws relative to foul brood.
+\newblock
+  \url{https://upload.wikimedia.org/wikipedia/commons/2/25/Recent_laws_against_injurious_insects_in_North_America_-_together_with_the_laws_relative_to_foul_brood_%28IA_recentlawsagains13howa%29.pdf},
+  1898.
+\newblock Bulletin No. 13, New Series; Government Printing Office compilation
+  of state and provincial insect-pest and foul-brood laws.
 
 \bibitem[{India Legislative Department}(1914)]{india_destructive_insects1914}
 {India Legislative Department}.
@@ -459,6 +568,12 @@ Sheila Jasanoff.
 \newblock Serviceable truths: Science for action in law and policy.
 \newblock \emph{Texas Law Review}, 93\penalty0 (7):\penalty0 1723--1749, 2015.
 
+\bibitem[Johnson(2023)]{johnson2023honeybeebiology}
+Brian~R. Johnson.
+\newblock \emph{Honey Bee Biology}.
+\newblock Princeton University Press, 2023.
+\newblock ISBN 9780691204888.
+
 \bibitem[Joseph(2018)]{joseph2018_comparative_bee_law}
 Brian~D. Joseph.
 \newblock Comparative perspectives on bee law in indo-european.
@@ -481,6 +596,22 @@ Justinian.
 \bibitem[{Kansas Court of Appeals}(1993)]{horsch1993}
 {Kansas Court of Appeals}.
 \newblock Horsch v. terminex international co., 19 kan. app. 2d 134, 1993.
+
+\bibitem[Keppen(1881)]{keppen1881_harmful_insects}
+Fedor~P. Keppen.
+\newblock \emph{Vrednye nasekomye}.
+\newblock {Department of Agriculture and Rural Industry}, Saint Petersburg,
+  1881.
+\newblock Russian title: Vrednye nasekomye; RUSNEB Book Monuments records
+  volumes 1--3, published in 1881--1883.
+
+\bibitem[{Kievan Rus' Princely Law}(1050)]{ruskaia_pravda_bees}
+{Kievan Rus' Princely Law}.
+\newblock Ruskaia pravda: Bort signs, bee trees, and removed bees.
+\newblock \url{https://nnov.hse.ru/ba/law/igpr/ruspravda}, 1050.
+\newblock Approximate source-date anchor for the eleventh--thirteenth-century
+  Ruskaia Pravda redactions; the HSE text gives clauses on destroying bort
+  signs, cutting bee trees, and removing bees.
 
 \bibitem[{King's Bench}(1939)]{kearry1939}
 {King's Bench}.
@@ -544,6 +675,13 @@ Carlos Maga{\~n}a et~al.
 \newblock \emph{Forensic Science International}, 2019.
 \newblock Identifies forensic/legal entomology as topical synonyms; ~1,087
   articles 1998--2017 across 136 countries.
+
+\bibitem[Markushkin(1927)]{markushkin1927_beekeeper_legal_handbook}
+I.~T. Markushkin.
+\newblock \emph{Iuridicheskii spravochnik dlia pchelovoda}.
+\newblock 1927.
+\newblock Catalogued by Cornell University Library as a Soviet legal guidebook
+  for beekeepers; call number SF531.R9 M34 1927.
 
 \bibitem[Marsh(2020{\natexlab{a}})]{marsh2020_england_virginia_sericulture}
 Ben Marsh.
@@ -660,9 +798,33 @@ Kenneth~A. Oye, Kevin Esvelt, Evan Appleton, Flaminia Catteruccia, George
 \newblock \emph{Science}, 345\penalty0 (6197):\penalty0 626--628, 2014.
 \newblock \doi{10.1126/science.1254287}.
 
+\bibitem[Pallas(1781)]{pallas1781_icones_insectorum}
+Peter~Simon Pallas.
+\newblock \emph{Icones Insectorum Praesertim Rossiae Sibiriaeque Peculiarium}.
+\newblock Sumptu Wolfgangi Waltheri, Erlangae, 1781.
+\newblock Biodiversity Heritage Library record for the Latin insect volume,
+  published 1781[-1798], with subjects Insects, Russia, and Siberia.
+
 \bibitem[{Parliament of India}(1948)]{csb1948}
 {Parliament of India}.
 \newblock Central silk board act, 1948 (india), 1948.
+
+\bibitem[Pavlovsky(1939)]{pavlovsky1939_natural_focality}
+Evgenii~N. Pavlovsky.
+\newblock O prirodnoi ochagovosti infektsionnykh i parazitarnykh boleznei.
+\newblock \emph{Vestnik Akademii Nauk SSSR}, \penalty0 (10):\penalty0 98--108,
+  1939.
+\newblock Original Russian article; metadata and publication history reproduced
+  in Korenberg's anniversary review of Pavlovsky's natural-focality theory.
+
+\bibitem[Pavlovsky(1946)]{pavlovsky1946_vector_nidality}
+Evgenii~N. Pavlovsky.
+\newblock Osnovy ucheniia o prirodnoi ochagovosti transmissivnykh boleznei
+  cheloveka.
+\newblock \emph{Zhurnal obshchei biologii}, 7\penalty0 (1):\penalty0 3--33,
+  1946.
+\newblock Original Russian article; reference metadata reproduced in
+  Korenberg's anniversary review of Pavlovsky's natural-focality theory.
 
 \bibitem[Quintilian(100)]{quintilian_decl13_bees}
 Quintilian.
@@ -704,6 +866,17 @@ Carol~M. Rose.
 Lizzie Rowe.
 \newblock Insects, ai systems, and the future of legal personhood.
 \newblock \emph{Animal Law Review}, 2025.
+
+\bibitem[{Russian Entomological
+  Society}(1864)]{russian_entomological_society1864_charter}
+{Russian Entomological Society}.
+\newblock Ustav russkogo entomologicheskogo obshchestva.
+\newblock
+  \url{https://docs.historyrussia.org/ru/nodes/428505-1864-yanvarya-3-ustav-russkogo-entomologicheskogo-obschestva},
+  1864.
+\newblock Russian Empire historical-document record for the 3 January 1864
+  charter, published in Zhurnal Ministerstva narodnogo prosveshcheniia, part
+  CXXI, section I, p. 22.
 
 \bibitem[{Salian Franks}(507)]{lex_salica_bees}
 {Salian Franks}.
@@ -773,6 +946,15 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
 \newblock \emph{Annual Review of Entomology}, 56:\penalty0 401--421, 2011.
 \newblock \doi{10.1146/annurev-ento-051710-103143}.
 
+\bibitem[{Tsardom of Russia}(1649)]{sobornoe_ulozhenie1649_bees}
+{Tsardom of Russia}.
+\newblock Sobornoe ulozhenie: Chapter x, articles 218--219, on bees and bee
+  trees.
+\newblock \url{https://www.hist.msu.ru/ER/Etext/1649/10.htm}, 1649.
+\newblock MSU e-text of the 1649 Council Code; Chapter X separately prices bee
+  trees with and without bees, removed bee colonies, stolen hives with bees,
+  and deliberate destruction of bee trees.
+
 \bibitem[{UK Parliament}(2022)]{uksentience2022}
 {UK Parliament}.
 \newblock Animal welfare (sentience) act 2022 (c. 22).
@@ -787,6 +969,14 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
   1877.
 \newblock Official King's Printer PDF; authorizes orders to prevent
   introduction and spread of Colorado beetle.
+
+\bibitem[{United Kingdom Parliament}(1967)]{uk_plant_health1967}
+{United Kingdom Parliament}.
+\newblock Plant health act 1967, c. 8.
+\newblock \url{https://www.legislation.gov.uk/ukpga/1967/8}, 1967.
+\newblock Official legislation.gov.uk text; consolidates the Destructive
+  Insects and Pests Acts 1877--1927 and treats pests as including insects at
+  any stage of existence.
 
 \bibitem[{U.S. Congress}(1900)]{lacey42}
 {U.S. Congress}.
@@ -877,6 +1067,15 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
 \newblock Save the monarch butterfly: status and proposed listing process.
 \newblock \url{https://www.fws.gov/initiative/pollinators/save-monarch}, 2026.
 
+\bibitem[{U.S. Food and Drug Administration}(1988)]{fda_cpg_wheat_filth1988}
+{U.S. Food and Drug Administration}.
+\newblock Cpg sec. 578.300 wheat: Adulteration by insect and rodent filth.
+\newblock
+  \url{https://www.hhs.gov/guidance/document/cpg-sec-578300-wheat-adulteration-insect-and-rodent-filth},
+  1988.
+\newblock FDA compliance policy guide issued June 6, 1988, under the FFDCA
+  adulteration provision.
+
 \bibitem[{U.S. Food and Drug Administration}(2018)]{fda_defect_levels}
 {U.S. Food and Drug Administration}.
 \newblock Food defect levels handbook.
@@ -918,6 +1117,15 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
 {Utah Legislature}.
 \newblock H.b. 138 food amendments.
 \newblock \url{https://le.utah.gov/~2025/bills/static/HB0138.html}, 2025.
+
+\bibitem[Uvarov(1921)]{uvarov1921_locusta_phase}
+Boris~P. Uvarov.
+\newblock A revision of the genus locusta, l. (= pachytylus, fieb.), with a new
+  theory as to the periodicity and migrations of locusts.
+\newblock \emph{Bulletin of Entomological Research}, 12:\penalty0 135--163,
+  1921.
+\newblock Biodiversity Heritage Library and BioStor scan; article by
+  Russian-born entomologist Boris P. Uvarov.
 
 \bibitem[van Huis(2021)]{vanhuis2021welfare}
 Arnold van Huis.

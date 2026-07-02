@@ -1,13 +1,20 @@
 from __future__ import annotations
 
-import math
 from pathlib import Path
+from typing import Any, Callable
 
 import matplotlib.pyplot as plt
 from matplotlib import patches
 
 from . import metrics, roles
 from .viz_theme import ROLE_COLORS, _INK, _MUTED, _save, _wrap_label
+
+#: Which pinned specimen stands for which registered role on the cover board.
+#: Chosen for narrative fit with the manuscript: the monarch is the field's
+#: own protected-subject example, the honeybee swarm is the classic property
+#: dispute, the mosquito is the recurring regulated-threat/gene-drive vector,
+#: and the weevil is the historical animal-trial defendant.
+_SPECIMEN_ROLES = {"butterfly": "protected", "mosquito": "threat", "bee": "property", "beetle": "defendant"}
 
 
 def _draw_butterfly(ax: plt.Axes, x: float, y: float, scale: float, color: str) -> None:
@@ -64,125 +71,79 @@ def _draw_pin(ax: plt.Axes, x: float, y: float, scale: float = 1.0) -> None:
     ax.plot([x, x], [y - 0.012 * scale, y - 0.07 * scale], color="#64748b", linewidth=0.6, zorder=4)
 
 
+def _draw_specimen_card(ax: plt.Axes, *, draw_fn: Callable[..., None], draw_kwargs: dict[str, Any], x: float, y: float, scale: float, role: roles.LegalRole) -> None:
+    """One pinned specimen: glyph, pin, and a role-tagged caption tick."""
+    _draw_pin(ax, x, y + 0.145 * scale, scale=1.15)
+    draw_fn(ax, x, y, scale, **draw_kwargs)
+    tick_y = y - 0.135 * scale
+    ax.plot([x - 0.05, x - 0.05], [tick_y + 0.006, tick_y - 0.006], color=ROLE_COLORS[role.slug], linewidth=2.2, solid_capstyle="round")
+    ax.text(x - 0.035, tick_y, role.title, ha="left", va="center", fontsize=8.6, color=_INK)
+
+
 def cover(path: Path) -> Path:
     m = metrics.compute()
+    role_by_slug = {r.slug: r for r in roles.all_roles()}
     fig, ax = plt.subplots(figsize=(13.6, 7.4))
     fig.patch.set_facecolor("#f6f1e8")
     ax.set_facecolor("#f6f1e8")
     ax.set_axis_off()
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
-    ax.add_patch(
-        patches.Rectangle(
-            (0, 0),
-            1,
-            1,
-            facecolor="#f6f1e8",
-            edgecolor="none",
-            zorder=-5,
-        )
-    )
-    ax.add_patch(
-        patches.FancyBboxPatch(
-            (0.035, 0.07),
-            0.93,
-            0.84,
-            boxstyle="round,pad=0.016",
-            facecolor="#fffaf2",
-            edgecolor="#b7c2d0",
-            linewidth=1.6,
-        )
-    )
-
+    ax.add_patch(patches.Rectangle((0, 0), 1, 1, facecolor="#f6f1e8", edgecolor="none", zorder=-5))
+    ax.add_patch(patches.FancyBboxPatch((0.035, 0.07), 0.93, 0.84, boxstyle="round,pad=0.016", facecolor="#fffaf2", edgecolor="#b7c2d0", linewidth=1.6))
     ax.add_patch(patches.Rectangle((0.064, 0.11), 0.006, 0.75, facecolor="#94a3b8", edgecolor="none", alpha=0.55))
-    for y in (0.18, 0.31, 0.44, 0.57, 0.70, 0.83):
-        ax.plot([0.07, 0.935], [y, y + 0.018 * math.sin(y * 20)], color="#e3dccf", linewidth=0.8, zorder=0)
-    for x in (0.25, 0.43, 0.61, 0.79):
-        ax.plot([x, x + 0.045], [0.12, 0.87], color="#ece4d7", linewidth=0.7, zorder=0)
 
-    ax.add_patch(
-        patches.FancyBboxPatch(
-            (0.545, 0.205),
-            0.37,
-            0.55,
-            boxstyle="round,pad=0.010",
-            facecolor="#f8fafc",
-            edgecolor="#cbd5e1",
-            linewidth=1.15,
-            alpha=0.96,
-        )
-    )
-    ax.text(0.73, 0.725, "specimen-to-doctrine map", ha="center", va="center", fontsize=8.7, color=_MUTED)
-
-    _draw_butterfly(ax, 0.18, 0.58, 0.78, ROLE_COLORS["protected"])
-    _draw_bee(ax, 0.34, 0.30, 0.62)
-    _draw_mosquito(ax, 0.72, 0.61, 0.92)
-    _draw_beetle(ax, 0.82, 0.37, 0.78, ROLE_COLORS["defendant"])
-    for x, y, s in ((0.18, 0.65, 0.76), (0.34, 0.35, 0.60), (0.72, 0.69, 0.80), (0.82, 0.47, 0.75)):
-        _draw_pin(ax, x, y, s)
-
-    links = (
-        (0.39, 0.61, 0.61, 0.61, "witness", "threat"),
-        (0.41, 0.325, 0.67, 0.325, "property", "moral_patient"),
-        (0.46, 0.49, 0.56, 0.68, "invention", "protected"),
-    )
-    for x1, y1, x2, y2, left, right in links:
-        ax.plot([x1, x2], [y1, y2], color="#b8c4d2", linewidth=1.0)
-        ax.add_patch(patches.Circle((x1, y1), 0.012, facecolor=ROLE_COLORS[left], edgecolor="white"))
-        ax.add_patch(patches.Circle((x2, y2), 0.012, facecolor=ROLE_COLORS[right], edgecolor="white"))
-
-    ax.text(0.088, 0.82, "Entomological Law", ha="left", va="center", fontsize=34, fontweight="bold", color=_INK)
+    # --- Left column: masthead typography -------------------------------
+    left_x = 0.09
+    ax.text(left_x, 0.862, "FIELD RECORD  ·  REGISTRY-FIRST REFERENCE", ha="left", va="center", fontsize=9.6, color="#9ca3af", fontweight="bold")
+    ax.text(left_x - 0.002, 0.80, "Entomological Law", ha="left", va="center", fontsize=31, fontweight="bold", color=_INK)
+    ax.text(left_x, 0.723, "A field map of insects as evidence, threat, property,\nproduct, patient, and weapon", ha="left", va="center", fontsize=14.2, style="italic", color=_MUTED, linespacing=1.5)
+    ax.plot([left_x, left_x + 0.415], [0.652, 0.652], color="#d8cdb8", linewidth=1.0)
     ax.text(
-        0.09,
-        0.75,
-        "A field map of insects as evidence, threat, property,\nproduct, patient, and weapon",
-        ha="left",
-        va="center",
-        fontsize=14.5,
-        style="italic",
-        color=_MUTED,
-    )
-    ax.text(0.09, 0.665, "FIELD RECORD", ha="left", va="center", fontsize=8.5, color="#9ca3af", fontweight="bold")
-    ax.text(
-        0.09,
-        0.445,
+        left_x,
+        0.598,
         f"{m.role_count} mapped roles / {m.case_count} cases / {m.statute_count} instruments\n"
         f"{m.species_count} taxa / {m.milestone_count} milestones across {m.timeline_span_years} years",
         ha="left",
         va="center",
-        fontsize=12.3,
+        fontsize=13.0,
         color=_INK,
+        linespacing=1.55,
     )
-    ax.text(
-        0.09,
-        0.37,
-        "source-owned registries compile figures, claims, and rendered manuscript",
-        ha="left",
-        va="center",
-        fontsize=9.4,
-        color=_MUTED,
-    )
-    ax.text(0.075, 0.205, "registered roles in this release", ha="left", va="center", fontsize=8.2, color="#64748b")
+    ax.text(left_x, 0.518, "source-owned registries compile figures, claims,\nand rendered manuscript", ha="left", va="center", fontsize=10.3, color=_MUTED, linespacing=1.4)
+
+    # Pull-quote: a contiguous, verbatim excerpt of the abstract's opening
+    # questions (not a paraphrase, and not a skip-and-splice) — an editorial
+    # hook, not a new claim.
+    ax.text(left_x, 0.425, "“", ha="left", va="center", fontsize=34, color="#d8cdb8", fontweight="bold")
+    ax.text(left_x + 0.025, 0.405, "Can a fly testify? Who owns a swarm?\nIs a bumblebee a fish?", ha="left", va="center", fontsize=13.4, style="italic", color="#3f3a33", linespacing=1.6)
+
+    ax.text(left_x - 0.015, 0.205, "registered roles in this release", ha="left", va="center", fontsize=9.4, color="#64748b")
     for i, role in enumerate(roles.all_roles()):
-        x = 0.075 + i * 0.107
-        ax.add_patch(
-            patches.FancyBboxPatch(
-                (x, 0.135),
-                0.092,
-                0.045,
-                boxstyle="round,pad=0.003",
-                facecolor=ROLE_COLORS[role.slug],
-                edgecolor="#ffffff",
-                linewidth=0.8,
-            )
-        )
-        ax.text(
-            x + 0.046,
-            0.105,
-            _wrap_label(role.title, 11),
-            ha="center",
-            va="top",
-            fontsize=6.2,
-            color=_MUTED,
-        )
+        x = left_x - 0.015 + i * 0.107
+        ax.add_patch(patches.FancyBboxPatch((x, 0.135), 0.092, 0.045, boxstyle="round,pad=0.003", facecolor=ROLE_COLORS[role.slug], edgecolor="#ffffff", linewidth=0.8))
+        ax.text(x + 0.046, 0.105, _wrap_label(role.title, 11), ha="center", va="top", fontsize=7.1, color=_MUTED)
+
+    # --- Right panel: the specimen-to-doctrine board ---------------------
+    panel_x0, panel_y0, panel_w, panel_h = 0.548, 0.205, 0.367, 0.55
+    ax.add_patch(patches.FancyBboxPatch((panel_x0, panel_y0), panel_w, panel_h, boxstyle="round,pad=0.010", facecolor="#f8fafc", edgecolor="#cbd5e1", linewidth=1.15, alpha=0.97, zorder=1))
+    for frac in (0.30, 0.45, 0.60, 0.75, 0.90):
+        yy = panel_y0 + 0.05 + frac * (panel_h - 0.10)
+        ax.plot([panel_x0 + 0.02, panel_x0 + panel_w - 0.02], [yy, yy], color="#e7edf3", linewidth=0.7, zorder=1)
+    panel_cx = panel_x0 + panel_w / 2
+    ax.text(panel_cx, panel_y0 + panel_h - 0.045, "specimen-to-doctrine map", ha="center", va="center", fontsize=10.0, color=_MUTED, zorder=3)
+    ax.plot([panel_cx - 0.11, panel_cx + 0.11], [panel_y0 + panel_h - 0.075, panel_y0 + panel_h - 0.075], color="#cbd5e1", linewidth=0.8, zorder=3)
+
+    col_x = (panel_cx - 0.093, panel_cx + 0.093)
+    row_y = (panel_y0 + panel_h - 0.205, panel_y0 + 0.145)
+    specimens: tuple[tuple[str, Callable[..., None], dict[str, Any], float, float, float], ...] = (
+        ("butterfly", _draw_butterfly, dict(color=ROLE_COLORS["protected"]), col_x[0], row_y[0], 0.46),
+        ("mosquito", _draw_mosquito, {}, col_x[1], row_y[0], 0.50),
+        ("bee", _draw_bee, {}, col_x[0], row_y[1], 0.44),
+        ("beetle", _draw_beetle, dict(color=ROLE_COLORS["defendant"]), col_x[1], row_y[1], 0.48),
+    )
+    for name, draw_fn, kwargs, x, y, scale in specimens:
+        role = role_by_slug[_SPECIMEN_ROLES[name]]
+        _draw_specimen_card(ax, draw_fn=draw_fn, draw_kwargs=kwargs, x=x, y=y, scale=scale, role=role)
+
     return _save(fig, path)

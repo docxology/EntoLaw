@@ -293,13 +293,37 @@ grammar before the doctrinal sections specialize it. Provenance:
 the encoded registries, not the entirety of each legal
 sub-field.</figcaption>
 </figure>
+<h2 id="how-the-roles-cohere-a-preview">How the roles cohere: a
+preview</h2>
+<p>The 8 roles above are not silos; the registry also encodes 5
+recurring themes that cut across them, and that synthesis is worth
+seeing before the per-role sections rather than only after them. The
+network below previews the connective tissue <span class="citation"
+data-cites="sec:interconnections">@sec:interconnections</span> unpacks
+in full: it is the map the rest of this reference keeps returning to, so
+it is placed here as an orientation figure rather than left to surface
+only at the end.</p>
+<figure id="fig:role_interconnections">
+<img src="../figures/role_interconnections.png" style="width:85.0%"
+alt="Network of the 5 recurring themes that link the legal roles — the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association." />
+<figcaption aria-hidden="true">Network of the 5 recurring themes that
+link the legal roles — the definitional problem, the expert-testimony
+bridge, the biotechnology pivot, the property/conservation mirror, and
+the ancient/modern rhyme. Edge bundles share a theme colour. Read as:
+category changes, not species names, are what move a dispute from one
+legal regime into another. Provenance:
+<code>src/interconnections.py</code>. Why it matters: the synthesis
+depends on transfers among categories rather than parallel lists of
+topics. Caveat: the graph encodes declared thematic links, not
+statistical association.</figcaption>
+</figure>
 <h2 id="why-the-registry-comes-first">Why the registry comes first</h2>
 <p>A typical survey of this material mixes prose summaries of statutes
 with anecdotes of famous cases; both rot quickly as section numbers are
 recodified and holdings are distinguished. This reference inverts that
 pattern. Every legal role, case, statute, taxon, institution, and
 milestone cited in the prose comes from a Python registry under
-<code>src/</code>, and every count — “18 cases”, “38 statutes”, “24
+<code>src/</code>, and every count — “18 cases”, “43 statutes”, “24
 taxa” — is a double-brace token resolved at build time by
 <code>src.manuscript_variables.generate_variables</code>. The discipline
 this enforces is the same reproducibility model the wider template uses:
@@ -315,25 +339,41 @@ neighbor-law risk, and Roman law then turns swarms into the classic
 problem of wildness, sight, and pursuit [hittite_laws_bees;
 mishnah_bava_batra2_10_bees; mishnah_bava_batra5_3_beehive;
 justinian533; justinian_digest41]. That lineage also passes through
-successor-kingdom tariff law: the Salic Law makes stolen bees a named
-theft subject, and Rothari’s Lombard code distinguishes an apiary vessel
-from bees taken out of a marked tree [lex_salica_bees;
-edictum_rothari_bees]. Medieval English restatements such as
-<em>Fleta</em> then carry the occupation problem forward, while the
-evidentiary lineage begins with the 1235 Sickle Murder recounted by Song
-Ci in <em>The Washing Away of Wrongs</em> (1247), where flies settling
-on an apparently clean blade exposed invisible blood and forced a
-confession; the claim is bound here both to a Library of Congress record
-for the Chinese text and to McKnight’s scholarly English translation
-[fleta1290_bees; songci1247; songci_mcknight1981]. Its product-law
-lineage is old as well: early colonial instruments treated mulberries,
-silk inputs, silks, and wax as objects of public economic policy rather
-than merely private agricultural choices
-[virginia_assembly1619_mulberry; carolina_charter1663_silks_wax]. From
-there the registry traces 34 milestones across 3676 years — bee
-property, medieval animal trials, colonial silk policy, succession-based
-time-of-death estimation, twentieth-century conservation and
-biotechnology statutes, and twenty-first-century sentience and
+successor-kingdom and East Slavic tariff law: the Salic Law makes stolen
+bees a named theft subject, Rothari’s Lombard code distinguishes an
+apiary vessel from bees taken out of a marked tree, and <em>Ruskaia
+Pravda</em> protects bort signs, bee trees, and removed bees as legally
+priced forest-apiculture injuries [lex_salica_bees;
+edictum_rothari_bees; ruskaia_pravda_bees]. Muscovite law then makes the
+valuation still more granular: the 1649 <em>Sobornoe Ulozhenie</em>
+separately prices bee trees with and without bees, removed colonies,
+stolen hives, and deliberate destruction [sobornoe_ulozhenie1649_bees].
+Medieval English restatements such as <em>Fleta</em> then carry the
+occupation problem forward, while the evidentiary lineage begins with
+the 1235 Sickle Murder recounted by Song Ci in <em>The Washing Away of
+Wrongs</em> (1247), where flies settling on an apparently clean blade
+exposed invisible blood and forced a confession; the claim is bound here
+both to a Library of Congress record for the Chinese text and to
+McKnight’s scholarly English translation [fleta1290_bees; songci1247;
+songci_mcknight1981]. Its product-law lineage is old as well: early
+colonial instruments treated mulberries, silk inputs, silks, and wax as
+objects of public economic policy rather than merely private
+agricultural choices [virginia_assembly1619_mulberry;
+carolina_charter1663_silks_wax]. A Russian and Russian-Imperial
+threat-law lineage also begins before professional society
+infrastructure: a 1749 Senate decree made locust extermination a
+provincial administrative duty, Pallas’s 1781 <em>Icones Insectorum</em>
+made insects of Russia and Siberia a taxonomic object, and later the
+chartered Russian Entomological Society, Keppen’s harmful-insect
+compendium, and Danilevsky’s phylloxera commission report show insect
+expertise entering administrative governance before modern plant-health
+law [russian_senate1749_locust_belgorod; pallas1781_icones_insectorum;
+russian_entomological_society1864_charter; keppen1881_harmful_insects;
+danilevsky1882_phylloxera]. From there the registry traces 44 milestones
+across 3676 years — bee property, medieval animal trials, colonial silk
+policy, succession-based time-of-death estimation, eighteenth- and
+nineteenth-century pest administration, twentieth-century conservation
+and biotechnology statutes, and twenty-first-century sentience and
 gene-drive debates shown in the timeline figure.</p>
 <figure id="fig:timeline">
 <img src="../figures/timeline.png" style="width:98.0%"
@@ -347,6 +387,34 @@ matters: the chronology shows recurrence rather than novelty as the
 field’s basic pattern. Provenance: <code>src/timeline.py</code>. Caveat:
 a selected chronology, not a comprehensive history.</figcaption>
 </figure>
+<p>The same arc appears twice in this reference, for two different
+reasons. The timeline above shows the milestones the law itself created;
+the figure below shows the sources that document them — every
+bibliography entry with a parseable date, not just the ones that became
+milestones. Reading the two side by side up front makes an honesty point
+before any doctrinal argument starts: the evidence base is not a thin
+modern layer with a few decorative antiquities, it has real pre-modern
+depth, and <span class="citation"
+data-cites="sec:methods">@sec:methods</span> explains exactly how that
+bibliography is validated.</p>
+<figure id="fig:citation_dates">
+<img src="../figures/citation_dates.png" style="width:95.0%"
+alt="Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with pre-1700 and 1700-1999 layers separated from the 2000+ consolidation, including labelled pre-1800 Rus’, Muscovite, and Russian-Imperial legal/scientific sources plus pre-1950 Russian and Soviet entomology/legal sources. Read as: EntoLaw’s evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz_citation_dates. Caveat: the date is the bibliography year, so modern editions appear at edition date unless the bibliography declares a source-date anchor." />
+<figcaption aria-hidden="true">Date distribution for every bibliography
+entry with a parseable year, split into broad bands and individual
+source-date strips with pre-1700 and 1700-1999 layers separated from the
+2000+ consolidation, including labelled pre-1800 Rus’, Muscovite, and
+Russian-Imperial legal/scientific sources plus pre-1950 Russian and
+Soviet entomology/legal sources. Read as: EntoLaw’s evidence base is
+anchored by early legal, regulatory, and treatise sources but
+interpreted through modern scholarship, cases, statutes, and official
+materials. Why it matters: the figure makes the historical depth of the
+citation stack visible instead of leaving it implicit in the reference
+list. Provenance: <code>manuscript/references.bib</code> parsed by
+<code>src.viz_citation_dates</code>. Caveat: the date is the
+bibliography year, so modern editions appear at edition date unless the
+bibliography declares a source-date anchor.</figcaption>
+</figure>
 <h2 id="boundaries-of-the-field-map">Boundaries of the field map</h2>
 <p>This reference is a map, not a treatise. The registries are curated
 to anchor each role with its leading authorities, not to enumerate every
@@ -356,9 +424,10 @@ explicitly. Sections <span class="citation"
 data-cites="sec:witness">@sec:witness</span> through <span
 class="citation" data-cites="sec:weapon">@sec:weapon</span> treat each
 role in turn; <span class="citation"
-data-cites="sec:interconnections">@sec:interconnections</span> shows how
-they share legal machinery; and <span class="citation"
-data-cites="sec:methods">@sec:methods</span> documents the
-reproducibility contract and its honesty boundary.</p>
+data-cites="sec:interconnections">@sec:interconnections</span> revisits
+the synthesis figure above in full, theme by theme; and <span
+class="citation" data-cites="sec:methods">@sec:methods</span> documents
+the reproducibility contract, the claim ledger, and the honesty boundary
+behind the citation-date figure above.</p>
 </body>
 </html>

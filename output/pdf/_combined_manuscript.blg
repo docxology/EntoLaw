@@ -2,118 +2,135 @@ This is BibTeX, Version 0.99e (TeX Live 2026)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: _combined_manuscript.aux
 The style file: plainnat.bst
+Reallocated field_info (elt_size=4) to 10068 items from 5000.
 Database file #1: references.bib
 Warning--entry type for "frye1923" isn't style-file defined
---line 90 of file references.bib
+--line 107 of file references.bib
 Warning--entry type for "daubert1993" isn't style-file defined
---line 96 of file references.bib
+--line 113 of file references.bib
 Warning--entry type for "kumho1999" isn't style-file defined
---line 103 of file references.bib
+--line 120 of file references.bib
 Warning--entry type for "auker1996" isn't style-file defined
---line 109 of file references.bib
+--line 126 of file references.bib
 Warning--entry type for "westerfield2019" isn't style-file defined
---line 116 of file references.bib
+--line 133 of file references.bib
 Warning--entry type for "truscott2007" isn't style-file defined
---line 122 of file references.bib
+--line 139 of file references.bib
+Warning--entry type for "sobornoe_ulozhenie1649_bees" isn't style-file defined
+--line 241 of file references.bib
+Warning--entry type for "russian_senate1749_locust_belgorod" isn't style-file defined
+--line 249 of file references.bib
 Warning--entry type for "destructive_insects1877" isn't style-file defined
---line 213 of file references.bib
+--line 293 of file references.bib
+Warning--entry type for "uk_plant_health1967" isn't style-file defined
+--line 301 of file references.bib
+Warning--entry type for "california_horticulture1897" isn't style-file defined
+--line 309 of file references.bib
 Warning--entry type for "federal_insecticide1910" isn't style-file defined
---line 221 of file references.bib
+--line 317 of file references.bib
 Warning--entry type for "plant_quarantine1912" isn't style-file defined
---line 229 of file references.bib
+--line 325 of file references.bib
 Warning--entry type for "india_destructive_insects1914" isn't style-file defined
---line 237 of file references.bib
-Warning--entry type for "ppa2000" isn't style-file defined
---line 245 of file references.bib
-Warning--entry type for "usc7_7712" isn't style-file defined
---line 252 of file references.bib
-Warning--entry type for "lacey42" isn't style-file defined
---line 259 of file references.bib
-Warning--entry type for "amazon2024" isn't style-file defined
---line 272 of file references.bib
-Warning--entry type for "eu2016_2031" isn't style-file defined
---line 326 of file references.bib
-Warning--entry type for "eu1143_2014" isn't style-file defined
 --line 333 of file references.bib
-Warning--entry type for "esa1973" isn't style-file defined
---line 347 of file references.bib
-Warning--entry type for "usc16_1532" isn't style-file defined
---line 353 of file references.bib
-Warning--entry type for "homebuilders1997" isn't style-file defined
+Warning--entry type for "snk_locust_afghanistan1934" isn't style-file defined
 --line 360 of file references.bib
+Warning--entry type for "ppa2000" isn't style-file defined
+--line 391 of file references.bib
+Warning--entry type for "usc7_7712" isn't style-file defined
+--line 398 of file references.bib
+Warning--entry type for "lacey42" isn't style-file defined
+--line 405 of file references.bib
+Warning--entry type for "amazon2024" isn't style-file defined
+--line 418 of file references.bib
+Warning--entry type for "eu2016_2031" isn't style-file defined
+--line 481 of file references.bib
+Warning--entry type for "eu1143_2014" isn't style-file defined
+--line 488 of file references.bib
+Warning--entry type for "esa1973" isn't style-file defined
+--line 502 of file references.bib
+Warning--entry type for "usc16_1532" isn't style-file defined
+--line 508 of file references.bib
+Warning--entry type for "homebuilders1997" isn't style-file defined
+--line 515 of file references.bib
 Warning--entry type for "sweethome1995" isn't style-file defined
---line 387 of file references.bib
+--line 542 of file references.bib
 Warning--entry type for "almond2022" isn't style-file defined
---line 393 of file references.bib
+--line 548 of file references.bib
 Warning--entry type for "cesa_fgc45" isn't style-file defined
---line 399 of file references.bib
+--line 554 of file references.bib
 Warning--entry type for "co_hb24_1117" isn't style-file defined
---line 482 of file references.bib
+--line 637 of file references.bib
 Warning--entry type for "eu_nature_restoration2024" isn't style-file defined
---line 527 of file references.bib
+--line 682 of file references.bib
 Warning--entry type for "cites1973" isn't style-file defined
---line 541 of file references.bib
+--line 696 of file references.bib
 Warning--entry type for "hittite_laws_bees" isn't style-file defined
---line 555 of file references.bib
+--line 710 of file references.bib
 Warning--entry type for "justinian533" isn't style-file defined
---line 597 of file references.bib
+--line 752 of file references.bib
 Warning--entry type for "lex_salica_bees" isn't style-file defined
---line 613 of file references.bib
+--line 768 of file references.bib
 Warning--entry type for "edictum_rothari_bees" isn't style-file defined
---line 620 of file references.bib
+--line 775 of file references.bib
+Warning--entry type for "ruskaia_pravda_bees" isn't style-file defined
+--line 782 of file references.bib
+Warning--entry type for "bechbretha_bee_judgments" isn't style-file defined
+--line 798 of file references.bib
 Warning--entry type for "caseofswans1592" isn't style-file defined
---line 689 of file references.bib
+--line 860 of file references.bib
 Warning--entry type for "goff1836" isn't style-file defined
---line 709 of file references.bib
+--line 880 of file references.bib
 Warning--entry type for "kearry1939" isn't style-file defined
---line 723 of file references.bib
+--line 894 of file references.bib
 Warning--entry type for "ferreira1963" isn't style-file defined
---line 729 of file references.bib
+--line 900 of file references.bib
 Warning--entry type for "horsch1993" isn't style-file defined
---line 735 of file references.bib
+--line 906 of file references.bib
 Warning--entry type for "honeybee1922" isn't style-file defined
---line 741 of file references.bib
+--line 912 of file references.bib
 Warning--entry type for "virginia_mulberry1658" isn't style-file defined
---line 747 of file references.bib
+--line 918 of file references.bib
 Warning--entry type for "virginia_assembly1619_mulberry" isn't style-file defined
---line 754 of file references.bib
+--line 925 of file references.bib
 Warning--entry type for "carolina_charter1663_silks_wax" isn't style-file defined
---line 761 of file references.bib
+--line 932 of file references.bib
 Warning--entry type for "chakrabarty1980" isn't style-file defined
---line 805 of file references.bib
+--line 976 of file references.bib
 Warning--entry type for "exparteallen1987" isn't style-file defined
---line 811 of file references.bib
-Warning--entry type for "oncomouse1988" isn't style-file defined
---line 817 of file references.bib
-Warning--entry type for "cartagena2000" isn't style-file defined
---line 857 of file references.bib
-Warning--entry type for "nagoya2010" isn't style-file defined
---line 896 of file references.bib
-Warning--entry type for "eu2015_2283" isn't style-file defined
---line 902 of file references.bib
-Warning--entry type for "ffdca342" isn't style-file defined
---line 909 of file references.bib
-Warning--entry type for "eu2017_893" isn't style-file defined
---line 922 of file references.bib
-Warning--entry type for "utah_hb138_2025" isn't style-file defined
---line 928 of file references.bib
-Warning--entry type for "csb1948" isn't style-file defined
---line 955 of file references.bib
-Warning--entry type for "uksentience2022" isn't style-file defined
---line 961 of file references.bib
-Warning--entry type for "eudir2010_63" isn't style-file defined
 --line 982 of file references.bib
-Warning--entry type for "tfeu_art13" isn't style-file defined
+Warning--entry type for "oncomouse1988" isn't style-file defined
 --line 988 of file references.bib
+Warning--entry type for "cartagena2000" isn't style-file defined
+--line 1028 of file references.bib
+Warning--entry type for "nagoya2010" isn't style-file defined
+--line 1067 of file references.bib
+Warning--entry type for "eu2015_2283" isn't style-file defined
+--line 1073 of file references.bib
+Warning--entry type for "ffdca342" isn't style-file defined
+--line 1080 of file references.bib
+Warning--entry type for "eu2017_893" isn't style-file defined
+--line 1101 of file references.bib
+Warning--entry type for "utah_hb138_2025" isn't style-file defined
+--line 1107 of file references.bib
+Warning--entry type for "csb1948" isn't style-file defined
+--line 1153 of file references.bib
+Warning--entry type for "uksentience2022" isn't style-file defined
+--line 1170 of file references.bib
+Warning--entry type for "eudir2010_63" isn't style-file defined
+--line 1191 of file references.bib
+Warning--entry type for "tfeu_art13" isn't style-file defined
+--line 1197 of file references.bib
 Warning--entry type for "bwc1972" isn't style-file defined
---line 1092 of file references.bib
+--line 1301 of file references.bib
 Warning--entry type for "agbioterror2002" isn't style-file defined
---line 1099 of file references.bib
+--line 1308 of file references.bib
 Warning--entry type for "ca_vector_hsc2001" isn't style-file defined
---line 1125 of file references.bib
+--line 1334 of file references.bib
 Warning--to sort, need author or key in caseofswans1592
 Warning--empty publisher in talmud_bava_batra18a_bees
+Warning--empty publisher in bailly1668_monitoires_insectes
 Warning--there's a number but no volume in bergeret1855_infanticide
+Warning--empty publisher in blake1790_marriage
 Warning--can't use both author and editor fields in bracton_bees_thorne
 Warning--empty publisher in songci1247
 Warning--can't use both author and editor fields in songci_mcknight1981
@@ -122,49 +139,51 @@ Warning--can't use both author and editor fields in egmont_georgia_trustees1736
 Warning--empty publisher in elderfield1650_tythes_bees
 Warning--empty publisher in fleta1290_bees
 Warning--empty publisher in justinian_digest41
+Warning--empty publisher in markushkin1927_beekeeper_legal_handbook
 Warning--empty publisher in mishnah_bava_batra2_10_bees
 Warning--empty publisher in mishnah_bava_batra5_3_beehive
+Warning--there's a number but no volume in pavlovsky1939_natural_focality
 Warning--empty publisher in quintilian_decl13_bees
 Warning--empty publisher in selden1618_tithes_bees
-You've used 156 entries,
+You've used 181 entries,
             2773 wiz_defined-function locations,
-            1389 strings with 35050 characters,
-and the built_in function-call counts, 53777 in all, are:
-= -- 4656
-> -- 2372
-< -- 142
-+ -- 887
-- -- 722
-* -- 3307
-:= -- 8367
-add.period$ -- 489
-call.type$ -- 156
-change.case$ -- 676
-chr.to.int$ -- 147
-cite$ -- 328
-duplicate$ -- 2707
-empty$ -- 5259
-format.name$ -- 900
-if$ -- 11388
+            1545 strings with 42829 characters,
+and the built_in function-call counts, 62249 in all, are:
+= -- 5421
+> -- 2689
+< -- 166
++ -- 1008
+- -- 818
+* -- 3791
+:= -- 9705
+add.period$ -- 588
+call.type$ -- 181
+change.case$ -- 776
+chr.to.int$ -- 172
+cite$ -- 382
+duplicate$ -- 3148
+empty$ -- 6098
+format.name$ -- 1023
+if$ -- 13182
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 90
-newline$ -- 805
-num.names$ -- 625
-pop$ -- 1815
+missing$ -- 110
+newline$ -- 954
+num.names$ -- 725
+pop$ -- 2087
 preamble$ -- 1
-purify$ -- 544
+purify$ -- 626
 quote$ -- 0
-skip$ -- 2116
+skip$ -- 2429
 stack$ -- 0
-substring$ -- 1004
-swap$ -- 187
+substring$ -- 1186
+swap$ -- 212
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1596
-warning$ -- 15
-while$ -- 520
+type$ -- 1836
+warning$ -- 19
+while$ -- 607
 width$ -- 0
-write$ -- 1944
-(There were 69 warnings)
+write$ -- 2297
+(There were 80 warnings)

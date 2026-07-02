@@ -19,9 +19,9 @@
     "witness": 6
   },
   "category_count": 9,
-  "institution_count": 12,
+  "institution_count": 13,
   "interconnection_count": 5,
-  "milestone_count": 34,
+  "milestone_count": 44,
   "role_count": 8,
   "roles_with_case_law": 5,
   "species_by_role": {
@@ -35,25 +35,28 @@
     "witness": 2
   },
   "species_count": 24,
-  "statute_count": 38,
+  "statute_count": 43,
   "statutes_by_category": {
     "biotech_ip": 6,
     "conservation": 6,
     "food": 4,
     "forensic": 1,
-    "property": 2,
+    "property": 3,
     "public_health": 2,
-    "quarantine": 12,
+    "quarantine": 16,
     "warfare": 2,
     "welfare": 3
   },
   "statutes_by_jurisdiction": {
     "EU": 7,
     "India": 1,
-    "UK": 2,
+    "Muscovy": 1,
+    "Russian Empire": 1,
+    "UK": 3,
     "US-colonial": 2,
     "US-federal": 14,
-    "US-state": 5,
+    "US-state": 6,
+    "USSR": 1,
     "international": 7
   },
   "timeline_span_years": 3676

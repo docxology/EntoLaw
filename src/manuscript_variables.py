@@ -18,6 +18,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import yaml
+
 from . import (
     cases,
     figure_captions,
@@ -105,6 +107,13 @@ def generate_variables(project_root: Path) -> dict[str, str]:
     variables["PYTHON_VERSION"] = platform.python_version()
     variables["PLATFORM"] = f"{platform.system()} {platform.machine()}"
 
+    # ── Publication metadata (for colophon / back-matter tokens) ───────────
+    pub = _load_publication_config(project_root)
+    variables["PUBLICATION_DOI"] = pub.get("doi") or "not yet minted"
+    variables["PUBLICATION_REPO"] = pub.get("github_repository", "")
+    variables["PUBLICATION_VERSION"] = pub.get("version", "")
+    variables["PUBLICATION_LICENSE"] = pub.get("license", "")
+
     return variables
 
 
@@ -124,6 +133,24 @@ def _config_hash(project_root: Path) -> str:
     if not config.exists():
         return "N/A"
     return hashlib.sha256(config.read_bytes()).hexdigest()[:16]
+
+
+def _load_publication_config(project_root: Path) -> dict[str, str]:
+    """Flatten the ``publication``/``paper``/``metadata`` blocks of
+    ``manuscript/config.yaml`` into the fields the colophon needs."""
+    config_path = project_root / "manuscript" / "config.yaml"
+    if not config_path.exists():
+        return {}
+    raw = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+    publication = raw.get("publication") or {}
+    paper = raw.get("paper") or {}
+    metadata = raw.get("metadata") or {}
+    return {
+        "doi": publication.get("doi", ""),
+        "github_repository": publication.get("github_repository", ""),
+        "version": paper.get("version", ""),
+        "license": metadata.get("license", ""),
+    }
 
 
 # ── Manuscript inventories (token / anchor / citation closure) ─────────────

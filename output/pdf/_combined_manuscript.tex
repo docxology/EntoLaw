@@ -120,7 +120,7 @@
 \protected\def\breaktt#1{\begingroup\ttfamily\seqsplit{#1}\endgroup}
 \title{Entomological Law}
 \author{Daniel Ari Friedman}
-\date{\today}
+\date{2026-07-02}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -139,6 +139,73 @@
 \usepackage{natbib}
 
 \begin{document}
+
+\thispagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\begin{samepage}
+\scriptsize
+
+\section*{BEGINNING OF TRANSMISSION}
+\phantomsection\label{beginning-of-transmission}
+
+\textbf{State:} unpublished / pending pairing
+
+\textbf{Pairing:} pending --- unresolved: - ✗ DOI minted:
+\texttt{pending} - ✗ GitHub release URL: \texttt{pending} - ✗ PDF
+SHA-256: \texttt{pending}
+
+\subsubsection*{Release metadata}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Field & Value \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Title & Entomological Law \\
+Version & 1.0.0 \\
+Concept DOI & pending \\
+GitHub & docxology/EntoLaw \\
+Zenodo & pending \\
+SHA-256 & pending \\
+SHA-512 & pending \\
+\end{longtable}
+}
+
+\subsubsection*{How to verify}
+
+\begin{itemize}
+\tightlist
+\item
+  Scan \textbf{Integrity} QR and compare the embedded SHA-256 prefix to
+  the table above.
+\item
+  Scan \textbf{Zenodo} / \textbf{GitHub} QR codes and confirm they
+  resolve to this release pairing.
+\item
+  Full hashes and structured fields:
+  \breaktt{../data/transmission\_manifest.json}.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio,alt={Integrity QR strip}]{../figures/transmission_integrity_strip.png}
+\caption{Integrity QR strip}
+\end{figure}
+
+Structured manifest: \breaktt{../data/transmission\_manifest.json}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.35\linewidth,height=0.50\textheight,keepaspectratio,alt={Publication pairing flow}]{../figures/transmission_pairing.png}
+\caption{Publication pairing flow}
+\end{figure}
+
+\end{samepage}
+\newpage
 
 \begin{titlepage}
 \centering
@@ -161,9 +228,13 @@
 \vfill
 \end{titlepage}
 \thispagestyle{empty}
+\newpage
+
 \tableofcontents
 \newpage
 
+
+\newpage
 
 \section{Abstract: A Source-Anchored Map of Entomological
 Law}\label{sec:abstract}
@@ -179,9 +250,9 @@ machine-readable and reproducible artifact organized around the legal
 \emph{role} an insect occupies in a given dispute. It encodes 8 legal
 roles --- witness, regulated threat, protected subject, property,
 invention, defendant, moral patient, and weapon --- and binds to them 18
-landmark decisions, 38 statutes and treaties across 9 categories and 7
-jurisdictions, 24 insect taxa, 12 certifying and regulatory
-institutions, 34 historical milestones spanning 3676 years, and 5
+landmark decisions, 43 statutes and treaties across 9 categories and 10
+jurisdictions, 24 insect taxa, 13 certifying and regulatory
+institutions, 44 historical milestones spanning 3676 years, and 5
 cross-domain themes that knit the roles together. Every count in this
 prose is generated from the source registries under \texttt{src/}, legal
 propositions are source-bound in the bibliography, every
@@ -302,6 +373,31 @@ describe the encoded registries, not the entirety of each legal
 sub-field.}\label{fig:roles_overview}
 \end{figure}
 
+\subsection{How the roles cohere: a
+preview}\label{how-the-roles-cohere-a-preview}
+
+The 8 roles above are not silos; the registry also encodes 5 recurring
+themes that cut across them, and that synthesis is worth seeing before
+the per-role sections rather than only after them. The network below
+previews the connective tissue sec.~\ref{sec:interconnections} unpacks
+in full: it is the map the rest of this reference keeps returning to, so
+it is placed here as an orientation figure rather than left to surface
+only at the end.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={Network of the 5 recurring themes that link the legal roles --- the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association.}]{../figures/role_interconnections.png}
+\caption{Network of the 5 recurring themes that link the legal roles ---
+the definitional problem, the expert-testimony bridge, the biotechnology
+pivot, the property/conservation mirror, and the ancient/modern rhyme.
+Edge bundles share a theme colour. Read as: category changes, not
+species names, are what move a dispute from one legal regime into
+another. Provenance: \protect\breaktt{src/interconnections.py}. Why it
+matters: the synthesis depends on transfers among categories rather than
+parallel lists of topics. Caveat: the graph encodes declared thematic
+links, not statistical association.}\label{fig:role_interconnections}
+\end{figure}
+
 \subsection{Why the registry comes
 first}\label{why-the-registry-comes-first}
 
@@ -310,7 +406,7 @@ anecdotes of famous cases; both rot quickly as section numbers are
 recodified and holdings are distinguished. This reference inverts that
 pattern. Every legal role, case, statute, taxon, institution, and
 milestone cited in the prose comes from a Python registry under
-\texttt{src/}, and every count --- ``18 cases'', ``38 statutes'', ``24
+\texttt{src/}, and every count --- ``18 cases'', ``43 statutes'', ``24
 taxa'' --- is a double-brace token resolved at build time by
 \breaktt{src.manuscript\_variables.generate\_variables}. The discipline
 this enforces is the same reproducibility model the wider template uses:
@@ -327,27 +423,42 @@ Mishnah Bava Batra treats bees as both beehive property and neighbor-law
 risk, and Roman law then turns swarms into the classic problem of
 wildness, sight, and pursuit
 \citep{hittite_laws_bees, mishnah_bava_batra2_10_bees, mishnah_bava_batra5_3_beehive, justinian533, justinian_digest41}.
-That lineage also passes through successor-kingdom tariff law: the Salic
-Law makes stolen bees a named theft subject, and Rothari's Lombard code
-distinguishes an apiary vessel from bees taken out of a marked tree
-\citep{lex_salica_bees, edictum_rothari_bees}. Medieval English
-restatements such as \emph{Fleta} then carry the occupation problem
-forward, while the evidentiary lineage begins with the 1235 Sickle
-Murder recounted by Song Ci in \emph{The Washing Away of Wrongs} (1247),
-where flies settling on an apparently clean blade exposed invisible
-blood and forced a confession; the claim is bound here both to a Library
-of Congress record for the Chinese text and to McKnight's scholarly
-English translation
+That lineage also passes through successor-kingdom and East Slavic
+tariff law: the Salic Law makes stolen bees a named theft subject,
+Rothari's Lombard code distinguishes an apiary vessel from bees taken
+out of a marked tree, and \emph{Ruskaia Pravda} protects bort signs, bee
+trees, and removed bees as legally priced forest-apiculture injuries
+\citep{lex_salica_bees, edictum_rothari_bees, ruskaia_pravda_bees}.
+Muscovite law then makes the valuation still more granular: the 1649
+\emph{Sobornoe Ulozhenie} separately prices bee trees with and without
+bees, removed colonies, stolen hives, and deliberate destruction
+\citep{sobornoe_ulozhenie1649_bees}. Medieval English restatements such
+as \emph{Fleta} then carry the occupation problem forward, while the
+evidentiary lineage begins with the 1235 Sickle Murder recounted by Song
+Ci in \emph{The Washing Away of Wrongs} (1247), where flies settling on
+an apparently clean blade exposed invisible blood and forced a
+confession; the claim is bound here both to a Library of Congress record
+for the Chinese text and to McKnight's scholarly English translation
 \citep{fleta1290_bees, songci1247, songci_mcknight1981}. Its product-law
 lineage is old as well: early colonial instruments treated mulberries,
 silk inputs, silks, and wax as objects of public economic policy rather
 than merely private agricultural choices
 \citep{virginia_assembly1619_mulberry, carolina_charter1663_silks_wax}.
-From there the registry traces 34 milestones across 3676 years --- bee
+A Russian and Russian-Imperial threat-law lineage also begins before
+professional society infrastructure: a 1749 Senate decree made locust
+extermination a provincial administrative duty, Pallas's 1781
+\emph{Icones Insectorum} made insects of Russia and Siberia a taxonomic
+object, and later the chartered Russian Entomological Society, Keppen's
+harmful-insect compendium, and Danilevsky's phylloxera commission report
+show insect expertise entering administrative governance before modern
+plant-health law
+\citep{russian_senate1749_locust_belgorod, pallas1781_icones_insectorum, russian_entomological_society1864_charter, keppen1881_harmful_insects, danilevsky1882_phylloxera}.
+From there the registry traces 44 milestones across 3676 years --- bee
 property, medieval animal trials, colonial silk policy, succession-based
-time-of-death estimation, twentieth-century conservation and
-biotechnology statutes, and twenty-first-century sentience and
-gene-drive debates shown in the timeline figure.
+time-of-death estimation, eighteenth- and nineteenth-century pest
+administration, twentieth-century conservation and biotechnology
+statutes, and twenty-first-century sentience and gene-drive debates
+shown in the timeline figure.
 
 \begin{figure}
 \centering
@@ -362,6 +473,35 @@ pattern. Provenance: \protect\texttt{src/timeline.py}. Caveat: a
 selected chronology, not a comprehensive history.}\label{fig:timeline}
 \end{figure}
 
+The same arc appears twice in this reference, for two different reasons.
+The timeline above shows the milestones the law itself created; the
+figure below shows the sources that document them --- every bibliography
+entry with a parseable date, not just the ones that became milestones.
+Reading the two side by side up front makes an honesty point before any
+doctrinal argument starts: the evidence base is not a thin modern layer
+with a few decorative antiquities, it has real pre-modern depth, and
+sec.~\ref{sec:methods} explains exactly how that bibliography is
+validated.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with pre-1700 and 1700-1999 layers separated from the 2000+ consolidation, including labelled pre-1800 Rus', Muscovite, and Russian-Imperial legal/scientific sources plus pre-1950 Russian and Soviet entomology/legal sources. Read as: EntoLaw's evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz\_citation\_dates. Caveat: the date is the bibliography year, so modern editions appear at edition date unless the bibliography declares a source-date anchor.}]{../figures/citation_dates.png}
+\caption{Date distribution for every bibliography entry with a parseable
+year, split into broad bands and individual source-date strips with
+pre-1700 and 1700-1999 layers separated from the 2000+ consolidation,
+including labelled pre-1800 Rus', Muscovite, and Russian-Imperial
+legal/scientific sources plus pre-1950 Russian and Soviet
+entomology/legal sources. Read as: EntoLaw's evidence base is anchored
+by early legal, regulatory, and treatise sources but interpreted through
+modern scholarship, cases, statutes, and official materials. Why it
+matters: the figure makes the historical depth of the citation stack
+visible instead of leaving it implicit in the reference list.
+Provenance: \protect\breaktt{manuscript/references.bib} parsed by
+\protect\breaktt{src.viz\_citation\_dates}. Caveat: the date is the
+bibliography year, so modern editions appear at edition date unless the
+bibliography declares a source-date anchor.}\label{fig:citation_dates}
+\end{figure}
+
 \subsection{Boundaries of the field
 map}\label{boundaries-of-the-field-map}
 
@@ -371,9 +511,10 @@ decision, instrument, or species; the figures throughout describe the
 \emph{encoded registries}, and their captions state that scope
 explicitly. Sections sec.~\ref{sec:witness} through
 sec.~\ref{sec:weapon} treat each role in turn;
-sec.~\ref{sec:interconnections} shows how they share legal machinery;
-and sec.~\ref{sec:methods} documents the reproducibility contract and
-its honesty boundary.
+sec.~\ref{sec:interconnections} revisits the synthesis figure above in
+full, theme by theme; and sec.~\ref{sec:methods} documents the
+reproducibility contract, the claim ledger, and the honesty boundary
+behind the citation-date figure above.
 
 \newpage
 
@@ -425,13 +566,18 @@ since first colonization --- using accumulated degree-days, summing
 temperature above a developmental threshold and matching it to
 species-specific growth tables. For older remains they fall back on the
 succession model of arthropod waves first systematized by Jean-Pierre
-Mégnin in \emph{La Faune des Cadavres} \citep{megnin1894}. A sub-branch,
-entomotoxicology, recovers drugs and metals from maggots when blood and
-tissue are gone --- substances that themselves distort larval growth and
-so must be accounted for in the estimate. The foundational legal text
-remains Greenberg and Kunich's \emph{Entomology and the Law}, written
-expressly to prepare both the entomologist and the trial lawyer for the
-courtroom \citep{greenberg2004}.
+Mégnin in \emph{La Faune des Cadavres} \citep{megnin1894}. Catts and
+Goff's 1992 review marks the pre-\emph{Daubert} professionalization
+point: forensic entomology was already being synthesized as a
+legal-scientific field around PMI, succession, collection, environmental
+temperature, and casework limits before reliability gatekeeping became
+the modern evidentiary idiom \citep{catts_goff1992_forensic_entomology}.
+A sub-branch, entomotoxicology, recovers drugs and metals from maggots
+when blood and tissue are gone --- substances that themselves distort
+larval growth and so must be accounted for in the estimate. The
+foundational legal text remains Greenberg and Kunich's \emph{Entomology
+and the Law}, written expressly to prepare both the entomologist and the
+trial lawyer for the courtroom \citep{greenberg2004}.
 
 \subsection{Admissibility: Frye, Daubert, and Rule
 702}\label{admissibility-frye-daubert-and-rule-702}
@@ -444,11 +590,16 @@ testability, peer review, error rate, acceptance, and fit
 \citep{daubert1993}; and \emph{Kumho Tire} extends that inquiry to all
 expert testimony \citep{kumho1999}. Federal Rule of Evidence 702
 codifies the requirement that reliable principles be reliably applied to
-the facts \citep{cornell_fre702}. In the reported authorities encoded
-here, disputes focus less on excluding forensic entomology wholesale
-than on \emph{application} --- wrong geographic dataset, microsite
-temperature error, species misidentification --- and whether reliable
-principles were reliably applied to the case facts.
+the facts \citep{cornell_fre702}. That chronology matters: the pre-2000
+source base shows a discipline with articulated methods before the
+courtroom asked the \emph{Daubert} question, so the recurrent dispute is
+not whether insect succession can ever be law-relevant but whether the
+expert controlled the biological assumptions in the case at hand. In the
+reported authorities encoded here, disputes focus less on excluding
+forensic entomology wholesale than on \emph{application} --- wrong
+geographic dataset, microsite temperature error, species
+misidentification --- and whether reliable principles were reliably
+applied to the case facts.
 
 \subsection{Cases where insect evidence
 mattered}\label{cases-where-insect-evidence-mattered}
@@ -509,13 +660,13 @@ Control}\label{sec:threat}
 Where forensic law asks insects to \emph{speak}, regulatory law tries to
 \emph{stop them from moving}. The architecture is dense and federal. In
 the registry the threat role is statute-driven rather than case-driven:
-it is anchored by 14 instruments spanning the quarantine and
+it is anchored by 18 instruments spanning the quarantine and
 public-health categories, summarized in the statutes-by-category figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 38 registered instruments grouped across 9 structural categories --- forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category.}]{../figures/statutes_by_category.png}
-\caption{The 38 registered instruments grouped across 9 structural
+\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 43 registered instruments grouped across 9 structural categories --- forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category.}]{../figures/statutes_by_category.png}
+\caption{The 43 registered instruments grouped across 9 structural
 categories --- forensic, quarantine, conservation, property, biotech/IP,
 food, welfare, public-health, and warfare. Read as: regulation follows
 the legal problem insects pose, not insect taxonomy itself. Why it
@@ -529,22 +680,76 @@ category.}\label{fig:statutes_by_category}
 \subsection{US quarantine authority and plant-pest
 movement}\label{us-quarantine-authority-and-plant-pest-movement}
 
-The modern statute sits on a pre-1950 statutory architecture rather than
-a blank slate. Britain's Destructive Insects Act made Colorado beetle an
-object of border prohibition, crop destruction, entry on land, official
-records, compensation, and penalties; India's Destructive Insects and
-Pests Act then cast insects, fungi, and other crop pests as import and
-interprovincial-movement risks
-\citep{destructive_insects1877, india_destructive_insects1914}. In the
-United States, the Federal Insecticide Act treated insect-killing
-chemistry as a misbranding and adulteration problem in commerce, while
-the Plant Quarantine Act gave USDA authority over import exclusion,
-interstate quarantine, inspection, disinfection, certification, and a
-Federal Horticultural Board that included the Bureau of Entomology
+The modern statute sits on a nineteenth-century administrative
+architecture rather than a blank slate. Britain's Destructive Insects
+Act made Colorado beetle an object of border prohibition, crop
+destruction, entry on land, official records, compensation, and
+penalties \citep{destructive_insects1877}. Across North America, L. O.
+Howard's 1898 USDA compilation shows states and provinces already
+translating insect damage into inspection offices, plant-trade controls,
+public-nuisance abatement, and model legislation before a national
+plant-quarantine statute existed
+\citep{howard1898_injurious_insect_laws}. California's 1897 horticulture
+act is the sharpest example: scale insects, codling moth, and other
+destructive orchard pests could trigger county horticultural boards,
+entry and inspection, notice to eradicate or destroy eggs and larvae,
+summary abatement as a public nuisance, county-paid costs, and liens on
+the infested premises \citep{california_horticulture1897}. India's
+Destructive Insects and Pests Act later cast insects, fungi, and other
+crop pests as import and interprovincial-movement risks
+\citep{india_destructive_insects1914}. Britain's Plant Health Act 1967
+then consolidated the 1877-1927 pest-law lineage, defining pests broadly
+enough to include insects at any life stage and preserving
+landing-control and destruction powers for articles likely to introduce
+a pest \citep{uk_plant_health1967}. In the United States, the Federal
+Insecticide Act treated insect-killing chemistry as a misbranding and
+adulteration problem in commerce, while the Plant Quarantine Act gave
+USDA authority over import exclusion, interstate quarantine, inspection,
+disinfection, certification, and a Federal Horticultural Board that
+included the Bureau of Entomology
 \citep{federal_insecticide1910, plant_quarantine1912}. The point is
 analytical: before modern environmental law, insect threat was already
-split among border control, crop police powers, chemical-product
-integrity, and administrative entomology.
+split among border control, local crop police powers, chemical-product
+integrity, federal entomology, and property-backed abatement.
+
+Russian and Soviet sources add a second route into the same
+architecture, and the route starts before the Soviet state. A 1749
+Governing Senate decree on locusts in Belogorod Province ordered local
+authorities to trample and burn newly emerged swarms, plow breeding
+places, use smoke and noise against flying locusts, and report
+repeatedly to the Senate; in that instrument the insect is not just a
+crop injury but an administrative emergency with provincial labor,
+animal power, fire, plowing, ritual, courier, and reporting dimensions
+\citep{russian_senate1749_locust_belgorod}. Pallas's 1781 \emph{Icones
+Insectorum Praesertim Rossiae Sibiriaeque Peculiarium} adds the
+scientific bridge: insects of Russia and Siberia became objects that
+imperial natural history could name, illustrate, and compare before
+later agricultural law asked which named species required control
+\citep{pallas1781_icones_insectorum}. The Russian Entomological
+Society's 1864 charter then made entomology a recognized expert
+institution; Keppen's 1881-1883 \emph{Vrednye nasekomye}, issued through
+the Department of Agriculture and Rural Industry, translated harmful
+insects into an administrative catalogue of species, crops, and control
+problems; and Danilevsky's 1882 phylloxera commission report framed an
+insect as a contagion-like object of eradication, customs control,
+host-plant destruction, and quarantine
+\citep{russian_entomological_society1864_charter, keppen1881_harmful_insects, danilevsky1882_phylloxera}.
+Uvarov's 1921 revision of \emph{Locusta} then made locust swarming a
+problem of phase, periodicity, and migration rather than a mere episodic
+plague; that entomological move helps explain why a Soviet decree could
+treat locust control in the USSR-Afghanistan borderlands as an
+administrative and diplomatic problem
+\citep{uvarov1921_locusta_phase, snk_locust_afghanistan1934}.
+Pavlovsky's natural-focality doctrine did comparable work for
+vector-borne disease: ticks, mosquitoes, and other arthropod vectors
+became parts of landscape-specific disease foci that public-health
+authorities could map, surveil, and manage
+\citep{pavlovsky1939_natural_focality, pavlovsky1946_vector_nidality}.
+The comparative point is that Russian entomological governance was
+administrative before it was Soviet and ecological before it was
+environmental. Law did not merely name a pest; it borrowed from natural
+history and entomology to decide which institution, movement, landscape,
+host plant, or vector relation should trigger state action.
 
 The master contemporary statute is the Plant Protection Act, cited here
 at 7 U.S.C. §§ 7701--7786, which empowers the U.S. Department of
@@ -772,29 +977,43 @@ it, and beehive produce is handled through swarms and honeycombs
 \citep{mishnah_bava_batra5_3_beehive}. Roman law then classed bees as
 \emph{ferae naturae} --- wild by nature, owned only through capture and
 lost when they abandon the \emph{animus revertendi}, the intention to
-return. The Institutes say a swarm on another's tree is not owned until
-hived, while the Digest adds the pursuit rule that a swarm leaving a
-hive remains the keeper's only while it is visible and not difficult to
-follow \citep{justinian533, justinian_digest41}. Early medieval law did
-not merely repeat that Roman template. The Salic Law gives stolen bees
-their own theft title, while Rothari's Lombard code separates theft from
-an apiary vessel from taking bees out of another person's marked tree;
+return, a legal gloss on the real swarming and absconding behavior of
+honeybee colonies \citep{johnson2023honeybeebiology}. The Institutes say
+a swarm on another's tree is not owned until hived, while the Digest
+adds the pursuit rule that a swarm leaving a hive remains the keeper's
+only while it is visible and not difficult to follow
+\citep{justinian533, justinian_digest41}. Early medieval law did not
+merely repeat that Roman template. The Salic Law gives stolen bees their
+own theft title, while Rothari's Lombard code separates theft from an
+apiary vessel from taking bees out of another person's marked tree;
 those clauses make enclosure, marking, and woodland claim legible before
 the later common-law vocabulary arrives
-\citep{lex_salica_bees, edictum_rothari_bees}. Irish \emph{Bechbretha}
-treats hives, swarms, bee trespass penalties, and distraint of bees as
-legal subjects; Bracton repeats the hiving and pursuit rules in English
-legal vocabulary; \emph{Fleta} gives the same occupation rule in
-medieval English legal Latin, using bees to show that enclosure and
-practicable pursuit matter more than mere presence on the owner's land;
-and the Welsh laws give both valuation rules for bee stocks and swarms
-and recovery rules for bees that enter another person's skep
-\citep{bechbretha1983, bracton_bees_thorne, fleta1290_bees, welsh_laws1841_bees}.
-Recent scholarship on early medieval apiculture captures the broader
-shift: successor-kingdom legislation often moved bees from pure wildness
-toward beekeeper property, while comparative Indo-European scholarship
-treats Hittite, Irish, and later bee-law parallels as suggestive but not
-proof of a single inherited rule
+\citep{lex_salica_bees, edictum_rothari_bees}. The Russian line is not
+derivative background. \emph{Ruskaia Pravda} punishes destruction of
+bort signs, cutting of bee trees, and removal of bees, while the 1649
+\emph{Sobornoe Ulozhenie} separately values a bee tree with bees, a tree
+without bees, removed bee colonies, stolen hives with bees, and
+deliberate destruction of a hollow bee tree
+\citep{ruskaia_pravda_bees, sobornoe_ulozhenie1649_bees}. That
+distinction matters: Muscovite law could price the insect colony, the
+marked arboreal habitat, and the hive-like human apparatus as separable
+legal harms. Early Irish \emph{Bechbretha} is a separate legal
+technology rather than a mere parallel: its bee judgments organize
+hives, swarms, bee trespass penalties, and distraint of bees, so the
+insect is at once livestock, neighbor-law hazard, and distrainable
+object \citep{bechbretha_bee_judgments, bechbretha1983}. Bracton repeats
+the hiving and pursuit rules in English legal vocabulary; \emph{Fleta}
+gives the same occupation rule in medieval English legal Latin, using
+bees to show that enclosure and practicable pursuit matter more than
+mere presence on the owner's land; and the Welsh laws give both
+valuation rules for bee stocks and swarms and recovery rules for bees
+that enter another person's skep
+\citep{bracton_bees_thorne, fleta1290_bees, welsh_laws1841_bees}. Recent
+scholarship on early medieval apiculture captures the broader shift:
+successor-kingdom legislation often moved bees from pure wildness toward
+beekeeper property, while comparative Indo-European scholarship treats
+Hittite, Irish, and later bee-law parallels as suggestive but not proof
+of a single inherited rule
 \citep{martinez_jimenez2022_apiculture_law, joseph2018_comparative_bee_law}.
 Blackstone then carried the Roman structure into common-law commentary,
 describing hived and reclaimed bees as qualified property under natural
@@ -837,19 +1056,25 @@ bees, while the other can complain about bees eating mustard plants
 Quintilian's legal declamation imagines a poor beekeeper whose bees die
 after a rich neighbor poisons flowers, framing the loss as wrongful
 damage rather than a mere natural misfortune
-\citep{quintilian_decl13_bees}. Modern law translates that same problem
-into regulation and tort. The federal Honeybee Act restricts bee
-importation, and states layer apiary registration, disease protocols,
-and Africanized-bee controls on top \citep{honeybee1922}. Keeping bees
-near neighbours carries tort exposure: in \emph{Ferreira v. D'Asaro} a
-Florida court addressed liability for sting injuries from hives
-maintained close to a residential property line \citep{ferreira1963}.
-The same property/tort logic reaches the structures insects damage --- a
-pest-control firm faced professional liability for a negligent
-wood-destroying-insect inspection in \emph{Horsch v. Terminex}
-\citep{horsch1993}. Bees are now serious crime targets as well: within
-California's almond-pollination economy, large-scale hive thefts have
-been prosecuted as agricultural or livestock theft.
+\citep{quintilian_decl13_bees}. Soviet apiculture supplies a modern
+comparative bridge: Markushkin's 1927 legal handbook for beekeepers,
+catalogued as answering legal questions from Soviet apiarists, shows bee
+ownership becoming an advice-and-administration problem inside early
+Soviet agricultural life
+\citep{markushkin1927_beekeeper_legal_handbook}. Modern law translates
+that same problem into regulation and tort. The federal Honeybee Act
+restricts bee importation, and states layer apiary registration, disease
+protocols, and Africanized-bee controls on top \citep{honeybee1922}.
+Keeping bees near neighbours carries tort exposure: in \emph{Ferreira v.
+D'Asaro} a Florida court addressed liability for sting injuries from
+hives maintained close to a residential property line
+\citep{ferreira1963}. The same property/tort logic reaches the
+structures insects damage --- a pest-control firm faced professional
+liability for a negligent wood-destroying-insect inspection in
+\emph{Horsch v. Terminex} \citep{horsch1993}. Bees are now serious crime
+targets as well: within California's almond-pollination economy,
+large-scale hive thefts have been prosecuted as agricultural or
+livestock theft.
 
 \subsection{Owned honeybees and protected wild
 bees}\label{owned-honeybees-and-protected-wild-bees}
@@ -934,20 +1159,27 @@ relative to many national systems \citep{lahteenmaki2021insectfoodfeed}.
 The United Nations food-and-feed literature supplies the policy
 backdrop: insects are framed simultaneously as food security
 infrastructure, waste-conversion technology, and farmed animals
-\citep{fao2013edible_insects}. The US does not have a single insect-food
-pathway comparable to the EU's novel-food authorizations: edible insects
-sit awkwardly between the adulteration and ``filth'' provisions of the
-Food, Drug, and Cosmetic Act and the Generally Recognized as Safe (GRAS)
-framework \citep{ffdca342, fda_defect_levels}. But US state law is
-beginning to name insect protein as a product category: Utah's H.B. 138
-requires labeling for foods containing plant or insect-based meat
-substitutes, making insect substitutes legible as alternative-protein
-products rather than mere contaminants \citep{utah_hb138_2025}. On the
-feed side, the EU has progressively relaxed its post-bovine spongiform
-encephalopathy (BSE) feed ban to admit processed insect protein,
-beginning with aquaculture \citep{eu2017_893}. A recent EU
-legal-barriers study adds a live-feed boundary: SCoPAFF clarified that
-live insects may be used as feed in the EU except for ruminants
+\citep{fao2013edible_insects}. The pre-2000 US record already carried
+the central ambiguity: FDA's 1988 wheat-filth compliance guide used the
+adulteration provision to police insect-damaged grain, while DeFoliart's
+\emph{Food Insects Newsletter} and 1999 review framed entomophagy as a
+food-security, ecological, and cultural-bias question rather than simply
+a contamination problem
+\citep{fda_cpg_wheat_filth1988, food_insects_newsletter1988, defoliart1999_insects_as_food}.
+The US does not have a single insect-food pathway comparable to the EU's
+novel-food authorizations: edible insects sit awkwardly between the
+adulteration and ``filth'' provisions of the Food, Drug, and Cosmetic
+Act and the Generally Recognized as Safe (GRAS) framework
+\citep{ffdca342, fda_defect_levels}. But US state law is beginning to
+name insect protein as a product category: Utah's H.B. 138 requires
+labeling for foods containing plant or insect-based meat substitutes,
+making insect substitutes legible as alternative-protein products rather
+than mere contaminants \citep{utah_hb138_2025}. On the feed side, the EU
+has progressively relaxed its post-bovine spongiform encephalopathy
+(BSE) feed ban to admit processed insect protein, beginning with
+aquaculture \citep{eu2017_893}. A recent EU legal-barriers study adds a
+live-feed boundary: SCoPAFF clarified that live insects may be used as
+feed in the EU except for ruminants
 \citep{ziety2026_insect_farming_barriers}.
 
 \subsection{Genetic resources, silk, and colonial
@@ -986,32 +1218,39 @@ Across late medieval and early modern Europe, courts literally
 \textbf{prosecuted insects}. This is the field's most astonishing
 chapter, and its most history-driven: the registry encodes no modern
 reporter case for the defendant role, but 5 timeline milestones and the
-trial weevils themselves carry it. The pre-1900 source base is stronger
-than a single retrospective curiosity. Ménabréa's 1846 Savoy academy
-study organizes the material around proceedings against insects, civil
-and criminal animal proceedings, pleadings for and against the insects,
-prosecutorial conclusions, and an ecclesiastical sentence; Evans's 1884
-Atlantic article then makes that procedural archive available in English
-before his later book becomes the canonical synthesis
-\citep{menabrea1846_animal_judgments, evans1884_bugs_beasts, evans1906, beirne1994_evans}.
+trial weevils themselves carry it. The source base now has a clearer
+pre-1700 core rather than only a nineteenth-century retrospective layer.
+Chasseneuz's 1581 consilia place insect prosecution inside learned legal
+opinion; Bailly's 1668 treatise on monitories and a pleading against
+insects shows the genre persisting as a procedural form; Ménabréa's 1846
+Savoy academy study and Evans's 1884 Atlantic article then organize and
+translate that archive for modern readers
+\citep{chasseneuz1581_consilia, bailly1668_monitoires_insectes, menabrea1846_animal_judgments, evans1884_bugs_beasts, evans1906, beirne1994_evans}.
 
 \subsection{Chassenée and the prosecuted
 weevils}\label{chassenuxe9e-and-the-prosecuted-weevils}
 
 The jurist Bartholomew Chassenée built his career defending vermin and
-wrote the first legal treatise on insect prosecution, arguing that
-animals were ``lay persons'' entitled to counsel before ecclesiastical
-courts. Evans's 1884 account is useful because it treats the Chassenée
-episode as law rather than folklore: summons, notice, default, counsel,
-jurisdiction, judge, and forum all matter before any malediction can
-issue \citep{evans1884_bugs_beasts}. Ménabréa supplies the complementary
-French documentary frame, including the St-Julien materials and a
-preserved ``plea for the insects'' that makes the insects procedurally
-visible even though they remain nonrational pests
-\citep{menabrea1846_animal_judgments}. The vine-weevils of St-Julien
-were first treated as a divine scourge and later met with a proposed
-preserve for the insects; earlier proceedings against the slugs of Autun
-round out the registry's defendant milestones \citep{evans1906}.
+wrote the first legal treatise on insect prosecution. His own consilia
+matter because they move the argument upstream from antiquarian
+retelling into pre-1700 legal reasoning: the insect problem is framed
+through summons, representation, competent forum, sentence, and the
+distinction between anathema and excommunication
+\citep{chasseneuz1581_consilia}. Evans's 1884 account remains useful
+because it treats the Chassenée episode as law rather than folklore:
+notice, default, counsel, jurisdiction, judge, and forum all matter
+before any malediction can issue \citep{evans1884_bugs_beasts}. Ménabréa
+supplies the complementary French documentary frame, including the
+St-Julien materials and a preserved ``plea for the insects'' that makes
+the insects procedurally visible even though they remain nonrational
+pests \citep{menabrea1846_animal_judgments}. Bailly's later pleading
+against insects tightens the point: early modern procedure could script
+advocacy around insect populations without making insects ordinary moral
+agents or rights-bearing persons \citep{bailly1668_monitoires_insectes}.
+The vine-weevils of St-Julien were first treated as a divine scourge and
+later met with a proposed preserve for the insects; earlier proceedings
+against the slugs of Autun round out the registry's defendant milestones
+\citep{evans1906}.
 
 \subsection{What animal trials reveal about modern
 law}\label{what-animal-trials-reveal-about-modern-law}
@@ -1046,30 +1285,34 @@ grounds the role in emerging legislation rather than reporter case law.
 \subsection{Sentience evidence and statutory
 expansion}\label{sentience-evidence-and-statutory-expansion}
 
-A London School of Economics (LSE) review built a multi-criterion
-sentience framework from a large body of studies \citep{lse_birch2021}.
-The UK Animal Welfare (Sentience) Act 2022, cited at Animal Welfare
-(Sentience) Act 2022, acted on it: its interpretation section defines
-``animal'' to include any vertebrate other than humans, any cephalopod
-mollusc, and any decapod crustacean, and reserves a regulatory power to
-extend coverage to other invertebrates \citep{uksentience2022}. The
-Animal Sentience Committee now makes the insect question institutionally
-visible: in January 2026 it said discussions around animal sentience
-were gathering momentum for some insects and arachnids, and recommended
-clear processes for reviewing sentience evidence so legislation can be
-updated in time \citep{uk_asc_definitions2026}. The US Animal Welfare
-Act draws the opposite boundary from within federal animal-welfare law:
-USDA describes the statutory definition as centered on named taxa and
-other warmblooded animals, leaving insects outside that baseline
-\citep{usda_awa2026}. Strikingly, the comparative-evidence literature
-finds that adult flies and cockroaches satisfy a majority of the
-established sentience criteria --- scoring higher than some of the very
-decapods the Act already covers --- and has begun to ask whether routine
-insect research should itself adopt welfare review
-\citep{gibbons2022, crump2023insectwelfare}. Recent ethical scholarship
-pushes the same debate beyond proof of pain alone, arguing that
-precaution and intrinsic value can matter when invertebrate sentience
-remains hard to demonstrate conclusively
+The pre-2000 baseline was already explicit but cautious: Eisemann and
+coauthors asked whether insects feel pain and treated nociception,
+neural organization, behavior, and learning as biological tests that did
+not map neatly onto vertebrate pain doctrine
+\citep{eisemann1984_insect_pain}. A London School of Economics (LSE)
+review later built a multi-criterion sentience framework from a large
+body of studies \citep{lse_birch2021}. The UK Animal Welfare (Sentience)
+Act 2022, cited at Animal Welfare (Sentience) Act 2022, acted on it: its
+interpretation section defines ``animal'' to include any vertebrate
+other than humans, any cephalopod mollusc, and any decapod crustacean,
+and reserves a regulatory power to extend coverage to other
+invertebrates \citep{uksentience2022}. The Animal Sentience Committee
+now makes the insect question institutionally visible: in January 2026
+it said discussions around animal sentience were gathering momentum for
+some insects and arachnids, and recommended clear processes for
+reviewing sentience evidence so legislation can be updated in time
+\citep{uk_asc_definitions2026}. The US Animal Welfare Act draws the
+opposite boundary from within federal animal-welfare law: USDA describes
+the statutory definition as centered on named taxa and other warmblooded
+animals, leaving insects outside that baseline \citep{usda_awa2026}.
+Strikingly, the comparative-evidence literature finds that adult flies
+and cockroaches satisfy a majority of the established sentience criteria
+--- scoring higher than some of the very decapods the Act already covers
+--- and has begun to ask whether routine insect research should itself
+adopt welfare review \citep{gibbons2022, crump2023insectwelfare}. Recent
+ethical scholarship pushes the same debate beyond proof of pain alone,
+arguing that precaution and intrinsic value can matter when invertebrate
+sentience remains hard to demonstrate conclusively
 \citep{desouzavalente2025invertebrate_sentience}.
 
 \subsection{Exclusion, scale, and the farmed-insect
@@ -1142,26 +1385,12 @@ overseen by the Cartagena Protocol \citep{cartagena2000}.
 \section{Interconnections: How Insects Move Between Legal
 Roles}\label{sec:interconnections}
 
-The 8 roles are not silos. They share recurring legal machinery, and the
-registry encodes 5 themes that knit them together in the
-interconnections figure. The role-coverage matrix makes the field's
-structure visible at a glance: some roles are case-driven, some
-statute-driven, and some --- the defendant and the weapon --- almost
-entirely history-driven.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={Network of the 5 recurring themes that link the legal roles --- the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association.}]{../figures/role_interconnections.png}
-\caption{Network of the 5 recurring themes that link the legal roles ---
-the definitional problem, the expert-testimony bridge, the biotechnology
-pivot, the property/conservation mirror, and the ancient/modern rhyme.
-Edge bundles share a theme colour. Read as: category changes, not
-species names, are what move a dispute from one legal regime into
-another. Provenance: \protect\breaktt{src/interconnections.py}. Why it
-matters: the synthesis depends on transfers among categories rather than
-parallel lists of topics. Caveat: the graph encodes declared thematic
-links, not statistical association.}\label{fig:role_interconnections}
-\end{figure}
+The 8 roles are not silos. They share recurring legal machinery, encoded
+as the 5 themes previewed in the interconnections network figure at the
+start of this reference and unpacked theme by theme below. The
+role-coverage matrix makes the field's structure visible at a glance:
+some roles are case-driven, some statute-driven, and some --- the
+defendant and the weapon --- almost entirely history-driven.
 
 \begin{figure}
 \centering
@@ -1246,17 +1475,18 @@ legally actionable insect status. \\
   can own (sec.~\ref{sec:property}) and the bumblebee the state protects
   (sec.~\ref{sec:protected}) sit on opposite ends of the same
   \emph{ferae naturae} doctrine, a line running from Hittite, rabbinic,
-  Salic, and Lombard bee clauses through Justinian, Fleta, and
-  Blackstone to modern listing law
-  \citep{hittite_laws_bees, mishnah_bava_batra5_3_beehive, lex_salica_bees, edictum_rothari_bees, justinian533, fleta1290_bees, blackstone1766_bees}.
+  Salic, Lombard, Rus', Muscovite, and Irish bee clauses through
+  Justinian, Fleta, and Blackstone to modern listing law
+  \citep{hittite_laws_bees, mishnah_bava_batra5_3_beehive, lex_salica_bees, edictum_rothari_bees, ruskaia_pravda_bees, sobornoe_ulozhenie1649_bees, bechbretha_bee_judgments, justinian533, fleta1290_bees, blackstone1766_bees}.
 \item
   \textbf{The ancient and the cutting-edge rhyme}: Hittite hive theft,
   rabbinic bee nuisance, Roman bee pursuit, Irish bee trespass,
-  Quintilian's poisoned-flower bee claim, and the St-Julien weevil
-  proceedings all foreshadow modern fights over habitat, rights, and
-  legally actionable insect status (sec.~\ref{sec:defendant},
-  sec.~\ref{sec:protected}, sec.~\ref{sec:welfare})
-  \citep{hittite_laws_bees, mishnah_bava_batra2_10_bees, justinian_digest41, bechbretha1983, quintilian_decl13_bees, menabrea1846_animal_judgments, evans1884_bugs_beasts}.
+  Quintilian's poisoned-flower bee claim, Chasseneuz's insect-process
+  consilium, and the St-Julien weevil proceedings all foreshadow modern
+  fights over habitat, rights, and legally actionable insect status
+  (sec.~\ref{sec:defendant}, sec.~\ref{sec:protected},
+  sec.~\ref{sec:welfare})
+  \citep{hittite_laws_bees, mishnah_bava_batra2_10_bees, justinian_digest41, bechbretha_bee_judgments, bechbretha1983, quintilian_decl13_bees, chasseneuz1581_consilia, bailly1668_monitoires_insectes, menabrea1846_animal_judgments, evans1884_bugs_beasts}.
 \end{itemize}
 
 The connective tissue is not metaphorical. It is a recurring translation
@@ -1279,18 +1509,19 @@ eaten, and become rights candidates when sentience or ecological
 standing enters the frame. The pre-modern sources show that this
 migration is not new: bees were already stolen swarms, hive contents,
 neighbor-law hazards, marked-tree resources, tithable yields,
-trespassers, and objects of neighborly remedy before modern conservation
-and biotech vocabularies existed, while colonial silk and wax
-instruments show insect-derived commodities becoming public economic
-policy before modern biotechnology law had a name
-\citep{hittite_laws_bees, mishnah_bava_batra5_3_beehive, mishnah_bava_batra2_10_bees, lex_salica_bees, edictum_rothari_bees, selden1618_tithes_bees, elderfield1650_tythes_bees, virginia_assembly1619_mulberry, carolina_charter1663_silks_wax}.
+trespassers, distrainable objects, and objects of neighborly remedy
+before modern conservation and biotech vocabularies existed, while
+colonial silk and wax instruments show insect-derived commodities
+becoming public economic policy before modern biotechnology law had a
+name
+\citep{hittite_laws_bees, mishnah_bava_batra5_3_beehive, mishnah_bava_batra2_10_bees, lex_salica_bees, edictum_rothari_bees, ruskaia_pravda_bees, sobornoe_ulozhenie1649_bees, bechbretha_bee_judgments, selden1618_tithes_bees, elderfield1650_tythes_bees, virginia_assembly1619_mulberry, carolina_charter1663_silks_wax}.
 The animal-trial sources add a separate lesson: legal procedure can
 organize a conflict around insects even when doctrine refuses to treat
 insects as morally accountable persons
-\citep{menabrea1846_animal_judgments, evans1884_bugs_beasts}. Legal
-scholarship on living property and standing for natural objects helps
-explain why insects are such good stress tests: they sit at the edge of
-every familiar boundary while remaining biologically central to
+\citep{chasseneuz1581_consilia, bailly1668_monitoires_insectes, menabrea1846_animal_judgments, evans1884_bugs_beasts}.
+Legal scholarship on living property and standing for natural objects
+helps explain why insects are such good stress tests: they sit at the
+edge of every familiar boundary while remaining biologically central to
 ecosystems, agriculture, evidence, and public health
 \citep{favre2010living_property, stone1972trees, cardoso2020scientists_warning, fao2013edible_insects}.
 
@@ -1305,6 +1536,25 @@ comparative food-and-feed regulation, and invertebrate ethics supplies
 the missing bridge: each field has built a translation apparatus for
 moving from uncertain insect science to a legal decision
 \citep{lodge2016bioeconomics_invasive_species, lugo2006insect_conservation_esa, lahteenmaki2021insectfoodfeed, mikhalevich2020minds}.
+The pre-2000 layer now does analytic work across that bridge rather than
+serving as background color: Rus' and Muscovite bee clauses show
+property law distinguishing colony, marked tree, and hive; the Russian
+Senate's locust decree shows a swarm converted into provincial
+administrative work; Pallas shows Russian and Siberian insects becoming
+taxonomic objects; the Russian Entomological Society shows expert
+authority becoming chartered infrastructure; Keppen shows harmful
+insects being organized as a Department-of-Agriculture problem;
+Danilevsky's phylloxera report turns eradication, customs control,
+host-plant destruction, and quarantine into a legal-political choice;
+Uvarov turns locust movement into a population-state and border-control
+problem; Markushkin shows beekeeping as Soviet legal advice; Pavlovsky
+turns arthropod vectors into landscape-governance units; Catts and Goff
+show witness science professionalizing before \emph{Daubert}; the Plant
+Health Act shows pest-police powers being consolidated before
+contemporary biosecurity; FDA wheat-filth guidance and DeFoliart show
+edible insects divided between contaminant and resource; and Eisemann
+gives welfare law its pre-statute biological question
+\citep{ruskaia_pravda_bees, sobornoe_ulozhenie1649_bees, russian_senate1749_locust_belgorod, pallas1781_icones_insectorum, russian_entomological_society1864_charter, keppen1881_harmful_insects, danilevsky1882_phylloxera, uvarov1921_locusta_phase, snk_locust_afghanistan1934, markushkin1927_beekeeper_legal_handbook, pavlovsky1939_natural_focality, pavlovsky1946_vector_nidality, catts_goff1992_forensic_entomology, uk_plant_health1967, fda_cpg_wheat_filth1988, defoliart1999_insects_as_food, eisemann1984_insect_pain}.
 
 The newest sources sharpen that bridge. The Global Biodiversity
 Framework turns insect recovery into an indicator problem, because
@@ -1343,11 +1593,11 @@ regenerated from them, as shown in the architecture figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={Data flow from the source-owned registries through pure generator methods to reproducible outputs: 7 registries feed metrics, validation, manuscript-variable generation, and figure rendering, which produce inventories, reports, figures, and the rendered manuscript. Read as: the package treats the manuscript as a compiled artifact, not as the source of legal facts. Why it matters: readers can audit whether prose, visuals, and counts share the same inputs. Provenance: src/package\_map.py. Caveat: a local build-pipeline description, not a deployment diagram.}]{../figures/architecture.png}
-\caption{Data flow from the source-owned registries through pure
-generator methods to reproducible outputs: 7 registries feed metrics,
-validation, manuscript-variable generation, and figure rendering, which
-produce inventories, reports, figures, and the rendered manuscript. Read
+\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={How 7 source-owned registries become reproducible outputs. Pure generator methods --- metrics, validation, manuscript-variable generation, and figure rendering --- turn registry data into inventories, reports, figures, and the rendered manuscript itself. Read as: the package treats the manuscript as a compiled artifact, not as the source of legal facts. Why it matters: readers can audit whether prose, visuals, and counts share the same inputs. Provenance: src/package\_map.py. Caveat: a local build-pipeline description, not a deployment diagram.}]{../figures/architecture.png}
+\caption{How 7 source-owned registries become reproducible outputs. Pure
+generator methods --- metrics, validation, manuscript-variable
+generation, and figure rendering --- turn registry data into
+inventories, reports, figures, and the rendered manuscript itself. Read
 as: the package treats the manuscript as a compiled artifact, not as the
 source of legal facts. Why it matters: readers can audit whether prose,
 visuals, and counts share the same inputs. Provenance:
@@ -1364,27 +1614,28 @@ Every magnitude-bearing number in this prose is a double-brace token (a
 asserts that every token referenced in the manuscript is generated and
 that the generator emits no orphan, so a registry edit that changes a
 count (say, adding a case) updates the prose automatically, and a
-hand-typed count that drifts from its registry fails the build. The 38
-statutes span 7 jurisdictions, shown in the statutes-by-jurisdiction
+hand-typed count that drifts from its registry fails the build. The 43
+statutes span 10 jurisdictions, shown in the statutes-by-jurisdiction
 figure; that number, like the 18 cases and the 12 figures, is generated,
 never typed.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={The same 38 instruments partitioned by issuing jurisdiction --- US-federal, US-state, US-colonial, UK, EU, and international --- showing the field's multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field's risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement.}]{../figures/statutes_by_jurisdiction.png}
-\caption{The same 38 instruments partitioned by issuing jurisdiction ---
-US-federal, US-state, US-colonial, UK, EU, and international --- showing
-the field's multi-level legal architecture. Read as: insect law is built
-through stacked authority, with local movement rules, national statutes,
-and international instruments all operating at once. Why it matters: no
-single legal layer owns the field's risk decisions. Provenance:
+\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={The same 43 instruments partitioned by issuing jurisdiction --- US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire, USSR, EU, and international --- showing the field's multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field's risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement.}]{../figures/statutes_by_jurisdiction.png}
+\caption{The same 43 instruments partitioned by issuing jurisdiction ---
+US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire,
+USSR, EU, and international --- showing the field's multi-level legal
+architecture. Read as: insect law is built through stacked authority,
+with local movement rules, national statutes, and international
+instruments all operating at once. Why it matters: no single legal layer
+owns the field's risk decisions. Provenance:
 \protect\texttt{src/statutes.py}. Caveat: jurisdiction is the issuing
 level, not a measure of reach or
 enforcement.}\label{fig:statutes_by_jurisdiction}
 \end{figure}
 
-\subsection{Claim ledger: volatile facts need source
-quotes}\label{claim-ledger-volatile-facts-need-source-quotes}
+\subsection{Claim ledger, validation, and
+reproducibility}\label{claim-ledger-validation-and-reproducibility}
 
 Counts come from the registries; \emph{external} and volatile
 current-status claims do not. Each externally-sourced statistic written
@@ -1421,51 +1672,28 @@ external/current claims that require a quote-backed verification
 block.}\label{fig:claim_ledger_coverage}
 \end{figure}
 
-\subsection{Validation gates for citations, cross-references, and
-statistics}\label{validation-gates-for-citations-cross-references-and-statistics}
-
-A cross-registry validator fails closed on a malformed citation, an
-out-of-vocabulary role or category, a duplicate slug, or an empty
-required field, and writes its findings to
+Citations, cross-references, and statistics all pass through their own
+validation gates. A cross-registry validator fails closed on a malformed
+citation, an out-of-vocabulary role or category, a duplicate slug, or an
+empty required field, and writes its findings to
 \breaktt{output/reports/validation.json}. A separate gate scans the
 manuscript for any numeral-form magnitude that is neither a generated
 token nor a value present in the claim ledger, with a negative control
 proving the detector fires on a planted statistic. Together these gates
 make the reference's central promise machine-checkable: no numeral-form
-statistic reaches the page unbacked.
+statistic reaches the page unbacked. The bibliography is also treated as
+data. The citation-date figure, previewed at the start of this
+reference, parses \texttt{references.bib} directly, so the reader can
+see where the source base is early legal text, where it is modern
+scholarship, and where it is official current-status material.
 
-The bibliography is also treated as data. The citation-date figure
-parses \texttt{references.bib} directly, so the reader can see where the
-source base is early legal text, where it is modern scholarship, and
-where it is official current-status material.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with the pre-1950 layer separated from later consolidation. Read as: EntoLaw's evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz\_citation\_dates. Caveat: the date is the bibliography year, so modern editions of older texts appear at their declared source date when that is how the project cites them.}]{../figures/citation_dates.png}
-\caption{Date distribution for every bibliography entry with a parseable
-year, split into broad bands and individual source-date strips with the
-pre-1950 layer separated from later consolidation. Read as: EntoLaw's
-evidence base is anchored by early legal, regulatory, and treatise
-sources but interpreted through modern scholarship, cases, statutes, and
-official materials. Why it matters: the figure makes the historical
-depth of the citation stack visible instead of leaving it implicit in
-the reference list. Provenance:
-\protect\breaktt{manuscript/references.bib} parsed by
-\protect\breaktt{src.viz\_citation\_dates}. Caveat: the date is the
-bibliography year, so modern editions of older texts appear at their
-declared source date when that is how the project cites
-them.}\label{fig:citation_dates}
-\end{figure}
-
-\subsection{Reproducibility metadata and render
-provenance}\label{reproducibility-metadata-and-render-provenance}
-
-This build was generated on \texttt{Darwin\ arm64} under Python
-\texttt{3.12.13} from configuration hash \breaktt{a10accdf96648136} at
-\breaktt{2026-07-01T23:58:18Z}. The same version-controlled inputs
-regenerate the inventories, the validation report, the figures, the
-manuscript variables, and this document with identical registry-derived
-content, modulo the provenance stamp.
+Finally, this build carries its own provenance: generated on
+\texttt{Darwin\ arm64} under Python \texttt{3.12.13} from configuration
+hash \breaktt{a7e9f5a6eb0a80e0} at \breaktt{2026-07-02T17:17:30Z}. The
+same version-controlled inputs regenerate the inventories, the
+validation report, the figures, the manuscript variables, and this
+document with identical registry-derived content, modulo the provenance
+stamp.
 
 \newpage
 
@@ -1505,13 +1733,15 @@ without erasing biological uncertainty
 \citep{jasanoff2015serviceable, lodge2016bioeconomics_invasive_species, lugo2006insect_conservation_esa}.
 
 That is why the field deserves a shared name. ``Entomological law'' is
-not a claim that insects should have one code. It is a claim that a
-recurring classificatory transaction has become visible across many
-codes: insects become legal actors when scientific expertise,
-institutional jurisdiction, and social value line up enough to support
-action. The same transaction appears when possession turns a swarm into
-property, ecosystem services turn a fly or bee into a protected subject,
-and sentience evidence turns a cricket or fruit fly into a candidate for
+not a claim that insects should have one code (William Blake's warning
+still stands: ``One law for the lion and ox is Oppression''
+\citep{blake1790_marriage}). It is a claim that a recurring
+classificatory transaction has become visible across many codes: insects
+become legal actors when scientific expertise, institutional
+jurisdiction, and social value line up enough to support action. The
+same transaction appears when possession turns a swarm into property,
+ecosystem services turn a fly or bee into a protected subject, and
+sentience evidence turns a cricket or fruit fly into a candidate for
 moral consideration
 \citep{rose1985possession_property, losey2006economic_value_insects, bowker1999sorting}.
 
@@ -1527,9 +1757,38 @@ documents exactly how far its guarantees reach --- and where they stop.
 
 \newpage
 
+\section{References: Sources Cited in the Field
+Map}\label{sec:references}
+
+\newpage
+
 
 
 \clearpage
 
 \bibliography{references}
+% transmission-end-bookend
+\clearpage
+\thispagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\begin{samepage}
+\scriptsize
+
+\section*{END OF TRANSMISSION}
+\phantomsection\label{end-of-transmission}
+
+\textbf{Release:} v1.0.0 \texorpdfstring{\ensuremath{\cdot}}{.} DOI \texttt{pending} \texorpdfstring{\ensuremath{\cdot}}{.} SHA-256
+\texttt{pending…} \texorpdfstring{\ensuremath{\cdot}}{.} pairing pending
+
+\begin{figure}
+\centering
+\includegraphics[width=0.88\linewidth,height=0.50\textheight,keepaspectratio,alt={Integrity QR strip}]{../figures/transmission_integrity_strip.png}
+\caption{Integrity QR strip}
+\end{figure}
+
+\textbf{Prior:} \emph{No prior releases.}
+
+\end{samepage}
+
 \end{document}

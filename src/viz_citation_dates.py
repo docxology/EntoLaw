@@ -8,6 +8,14 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
+from .viz_citation_date_records import (
+    DATE_BANDS,
+    FAMILY_COLORS,
+    FAMILY_ORDER,
+    FOCAL_CALLOUTS,
+    PRE_2000_BRIDGE_CALLOUT_KEYS,
+    SOURCE_FAMILIES,
+)
 from .viz_theme import _INK, _save, _style_axes
 
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -27,62 +35,7 @@ class CitationDate:
 
     @property
     def family(self) -> str:
-        return _SOURCE_FAMILIES.get(self.entry_type.lower(), "other sources")
-
-
-_SOURCE_FAMILIES = {
-    "article": "scholarship",
-    "book": "books and treatises",
-    "case": "case reports",
-    "incollection": "books and treatises",
-    "institutes": "primary law",
-    "misc": "official and web",
-    "patent": "primary law",
-    "statute": "primary law",
-}
-_FAMILY_ORDER = (
-    "primary law",
-    "case reports",
-    "books and treatises",
-    "scholarship",
-    "official and web",
-    "other sources",
-)
-_FAMILY_COLORS = {
-    "primary law": "#7c3aed",
-    "case reports": "#0f766e",
-    "books and treatises": "#b45309",
-    "scholarship": "#2563eb",
-    "official and web": "#64748b",
-    "other sources": "#111827",
-}
-_DATE_BANDS = (
-    (-9999, 999, "before 1000 CE"),
-    (1000, 1499, "1000-1499"),
-    (1500, 1699, "1500-1699"),
-    (1700, 1899, "1700-1899"),
-    (1900, 1949, "1900-1949"),
-    (1950, 1969, "1950-1969"),
-    (1970, 2009, "1970-2009"),
-    (2010, 9999, "2010+"),
-)
-_FOCAL_CALLOUTS = {
-    "hittite_laws_bees": ("Hittite\nbee theft", (0, 12)),
-    "mishnah_bava_batra5_3_beehive": ("Mishnah\nbeehive sale", (0, -22)),
-    "lex_salica_bees": ("Salic\nbee theft", (22, 42)),
-    "songci1247": ("Song Ci\nsickle", (34, 18)),
-    "justinian533": ("Justinian\nInstitutes", (70, -2)),
-    "edictum_rothari_bees": ("Rothari\nhives", (26, 14)),
-    "fleta1290_bees": ("Fleta\nbees", (-20, -24)),
-    "menabrea1846_animal_judgments": ("Menabrea\ninsect trial", (42, 20)),
-    "bergeret1855_infanticide": ("Bergeret\ninfanticide", (-70, -16)),
-    "evans1884_bugs_beasts": ("Evans\n1884", (-18, -28)),
-    "megnin1894": ("Megnin\ncadavers", (-36, 28)),
-    "destructive_insects1877": ("UK pest\norders", (-52, 18)),
-    "federal_insecticide1910": ("Insecticide\nAct", (-32, 20)),
-    "plant_quarantine1912": ("Plant\nquarantine", (32, -22)),
-    "india_destructive_insects1914": ("India pest\nAct", (42, 18)),
-}
+        return SOURCE_FAMILIES.get(self.entry_type.lower(), "other sources")
 
 
 def bibliography_dates(path: Path = _REFERENCES_BIB) -> tuple[CitationDate, ...]:
@@ -115,34 +68,37 @@ def citation_dates(path: Path) -> Path:
         width_ratios=(1.1, 1.0),
     )
     ax_bands = fig.add_subplot(grid[0, :])
-    ax_pre1950 = fig.add_subplot(grid[1, :])
-    ax_1950s = fig.add_subplot(grid[2, 0])
-    ax_recent = fig.add_subplot(grid[2, 1], sharey=ax_1950s)
+    ax_pre1700 = fig.add_subplot(grid[1, :])
+    ax_1700_to_1999 = fig.add_subplot(grid[2, 0])
+    ax_recent = fig.add_subplot(grid[2, 1], sharey=ax_1700_to_1999)
 
     _plot_date_bands(ax_bands, citations)
     _plot_citation_strip(
-        ax_pre1950,
-        [entry for entry in citations if entry.year < 1950],
-        xlim=(min(entry.year for entry in citations) - 25, 1950),
-        title="Pre-1950 legal-historical, regulatory, and scientific foundations",
+        ax_pre1700,
+        [entry for entry in citations if entry.year < 1700],
+        xlim=(min(entry.year for entry in citations) - 25, 1700),
+        title="Pre-1700 legal-historical, regulatory, and scientific foundations",
         annotate_focal=True,
+        annotate_keys=None,
     )
     _plot_citation_strip(
-        ax_1950s,
-        [entry for entry in citations if 1950 <= entry.year < 2010],
-        xlim=(1950, 2010),
-        title="1950-2009 scholarship, statutes, and case-law consolidation",
-        annotate_focal=False,
+        ax_1700_to_1999,
+        [entry for entry in citations if 1700 <= entry.year < 2000],
+        xlim=(1700, 2000),
+        title="1700-1999 scholarship, statutes, and case-law consolidation",
+        annotate_focal=True,
+        annotate_keys=PRE_2000_BRIDGE_CALLOUT_KEYS,
     )
     _plot_citation_strip(
         ax_recent,
-        [entry for entry in citations if entry.year >= 2010],
-        xlim=(2010, max(entry.year for entry in citations) + 1),
-        title="2010+ current law, official sources, and live scholarship",
+        [entry for entry in citations if entry.year >= 2000],
+        xlim=(2000, max(entry.year for entry in citations) + 1),
+        title="2000+ current law, official sources, and live scholarship",
         annotate_focal=False,
+        annotate_keys=None,
     )
     ax_recent.tick_params(labelleft=False)
-    handles, labels = _legend_items((ax_pre1950, ax_1950s, ax_recent))
+    handles, labels = _legend_items((ax_pre1700, ax_1700_to_1999, ax_recent))
     if handles:
         fig.legend(
             handles,
@@ -160,10 +116,20 @@ def _plot_date_bands(ax: plt.Axes, citations: tuple[CitationDate, ...]) -> None:
     _style_axes(ax, grid_axis="y")
     counts = [
         sum(start <= entry.year <= end for entry in citations)
-        for start, end, _label in _DATE_BANDS
+        for start, end, _label in DATE_BANDS
     ]
-    labels = [label for _start, _end, label in _DATE_BANDS]
-    colors = ["#d8b4fe", "#c4b5fd", "#fbbf24", "#f97316", "#f59e0b", "#93c5fd", "#34d399", "#2563eb"]
+    labels = [label for _start, _end, label in DATE_BANDS]
+    colors = [
+        "#d8b4fe",
+        "#c4b5fd",
+        "#fbbf24",
+        "#f97316",
+        "#f59e0b",
+        "#93c5fd",
+        "#34d399",
+        "#14b8a6",
+        "#2563eb",
+    ]
     bars = ax.bar(labels, counts, color=colors, edgecolor="white", linewidth=1)
     for bar, count in zip(bars, counts, strict=True):
         ax.annotate(
@@ -187,10 +153,11 @@ def _plot_citation_strip(
     xlim: tuple[int, int],
     title: str,
     annotate_focal: bool,
+    annotate_keys: set[str] | None,
 ) -> None:
     _style_axes(ax, grid_axis="x")
-    y_lookup = {family: i for i, family in enumerate(_FAMILY_ORDER)}
-    for family in _FAMILY_ORDER:
+    y_lookup = {family: i for i, family in enumerate(FAMILY_ORDER)}
+    for family in FAMILY_ORDER:
         family_entries = [entry for entry in citations if entry.family == family]
         if not family_entries:
             continue
@@ -200,18 +167,18 @@ def _plot_citation_strip(
             xs,
             ys,
             s=54,
-            color=_FAMILY_COLORS[family],
+            color=FAMILY_COLORS[family],
             edgecolor="white",
             linewidth=0.6,
             alpha=0.9,
             label=family,
         )
     if annotate_focal:
-        _annotate_focal_sources(ax, citations, y_lookup)
-    ax.set_yticks(range(len(_FAMILY_ORDER)))
-    ax.set_yticklabels([family.title() for family in _FAMILY_ORDER], fontsize=8)
+        _annotate_focal_sources(ax, citations, y_lookup, annotate_keys)
+    ax.set_yticks(range(len(FAMILY_ORDER)))
+    ax.set_yticklabels([family.title() for family in FAMILY_ORDER], fontsize=8)
     ax.set_xlim(*xlim)
-    ax.set_ylim(-0.65, len(_FAMILY_ORDER) - 0.35)
+    ax.set_ylim(-0.65, len(FAMILY_ORDER) - 0.35)
     ax.xaxis.set_major_formatter(FuncFormatter(_format_year))
     xlabel = "Source date (negative years are BCE)" if xlim[0] < 0 else "Source date"
     ax.set_xlabel(xlabel)
@@ -222,10 +189,12 @@ def _annotate_focal_sources(
     ax: plt.Axes,
     citations: list[CitationDate],
     y_lookup: dict[str, int],
+    annotation_keys: set[str] | None,
 ) -> None:
-    labeled = [entry for entry in citations if entry.key in _FOCAL_CALLOUTS]
+    allowed = FOCAL_CALLOUTS.keys() if annotation_keys is None else annotation_keys
+    labeled = [entry for entry in citations if entry.key in allowed]
     for entry in labeled:
-        label, offset = _FOCAL_CALLOUTS[entry.key]
+        label, offset = FOCAL_CALLOUTS[entry.key]
         ax.annotate(
             label,
             (entry.year, y_lookup[entry.family] + _stable_jitter(entry.key)),

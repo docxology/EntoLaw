@@ -2,8 +2,8 @@
 paper:
   title: "Entomological Law"
   subtitle: "A Field Map of Insects as Evidence, Threat, Property, Product, Patient, and Weapon"
-  version: "0.1.0"
-  date: ""
+  version: "1.0.0"
+  date: "2026-07-02"
   cover:
     image: "figures/cover.png"
 
@@ -11,8 +11,7 @@ authors:
   - name: "Daniel Ari Friedman"
     orcid: "0000-0001-6232-9096"
     email: "daniel@activeinference.institute"
-    affiliations:
-      - "Active Inference Institute"
+    affiliation: "Active Inference Institute"
     corresponding: true
 
 publication:
@@ -21,6 +20,10 @@ publication:
   repository_url: "https://github.com/docxology/EntoLaw"
   repository_label: "docxology/EntoLaw"
   year: "2026"
+  transmission_bookends:
+    enabled: true
+    max_prior_releases: 5
+    show_steganography: false
 
 keywords:
   - "entomological law"

@@ -68,7 +68,7 @@ _RULE_RE = re.compile(
 # noun ("the Act") does not match, loose enough to admit "Endangered Species
 # Act of 1973", "Biological Weapons Convention (1972)", "Fish & Game Code § 45".
 _NAMED_INSTRUMENT_RE = re.compile(
-    r"\b(?:Act|Convention|Protocol|Treaty|Framework|Regulation|Directive|"
+    r"\b(?:Act|Convention|Protocol|Treaty|Framework|Regulation|Directive|Decree|"
     r"Order|Code|Rules?|Amendment|Institutes|Agreement)\b[^\n]*?"
     r"(?:\b(?:1[5-9]\d{2}|20\d{2})\b|§|\bch\.|\bArt(?:icle)?\.?\b|/)",
     re.IGNORECASE,

@@ -78,6 +78,16 @@ INSTITUTIONS: tuple[Institution, ...] = (
         "interstate and runs federal quarantines under the Plant Protection Act.",
     ),
     Institution(
+        slug="russian_entomological_society",
+        name="Russian Entomological Society",
+        acronym="RES",
+        role="threat",
+        function="Chartered Russian Empire learned society that helped turn "
+        "insect classification and applied entomology into administrative "
+        "knowledge for pest governance.",
+        founded=1864,
+    ),
+    Institution(
         slug="ippc_secretariat",
         name="International Plant Protection Convention Secretariat",
         acronym="IPPC",

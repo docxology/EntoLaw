@@ -15,16 +15,16 @@ def timeline_figure(path: Path) -> Path:
     fig, ax = plt.subplots(figsize=(13.4, 6.4))
     _style_axes(ax, grid_axis="x")
     eras = (
-        (-1700, 500, "ancient\napiculture law", "#fff7ed"),
-        (500, 1800, "pre-modern\nproperty, trials + silk", "#f8fafc"),
-        (1800, 1970, "evidence\n+ property", "#eef6ff"),
-        (1970, 2027, "modern regulation\n+ welfare", "#f0fdf4"),
+        (-1700, 500, "ancient\napiculture law", "#fff7ed", 0.5),
+        (500, 1800, "pre-modern\nproperty, trials + silk", "#f8fafc", 0.5),
+        (1800, 1970, "evidence\n+ property", "#eef6ff", 0.16),
+        (1970, 2027, "modern regulation\n+ welfare", "#f0fdf4", 0.5),
     )
-    for start, end, label, color in eras:
+    for start, end, label, color, label_frac in eras:
         ax.axvspan(start, end, color=color, alpha=0.8, zorder=0)
-        label_y = len(role_order) - (1.65 if start >= 1970 else 0.08)
+        label_y = len(role_order) - (1.75 if start >= 1970 else 0.35)
         ax.text(
-            (start + end) / 2,
+            start + (end - start) * label_frac,
             label_y,
             label,
             ha="center",
@@ -57,7 +57,9 @@ def timeline_figure(path: Path) -> Path:
         "Justinian on bee property": (36, 25),
         "Rothari on hives and bee trees": (0, -18),
         "UK Destructive Insects Act": (0, 13),
-        "Plant Quarantine Act": (0, -20),
+        "Plant Quarantine Act": (-38, -22),
+        "Kirstin Lobato exoneration": (30, 18),
+        "Biological Weapons Convention": (30, 9),
     }
     for y in range(len(role_order)):
         ax.axhline(y, color="#e5e7eb", linewidth=0.7, zorder=0)

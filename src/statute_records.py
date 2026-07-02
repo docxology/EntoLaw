@@ -23,6 +23,9 @@ JURISDICTIONS: tuple[str, ...] = (
     "US-colonial",
     "UK",
     "India",
+    "Muscovy",
+    "Russian Empire",
+    "USSR",
     "EU",
     "international",
 )
@@ -68,6 +71,17 @@ STATUTES: tuple[Statute, ...] = (
     ),
     # ── Quarantine & invasive-species ──────────────────────────────────────
     Statute(
+        slug="russian_senate_locust_1749",
+        citation="Governing Senate Locust Decree (1749)",
+        short_title="Russian Senate locust-extermination decree",
+        category="quarantine",
+        jurisdiction="Russian Empire",
+        role="threat",
+        summary="Ordered Belogorod provincial authorities to stamp, burn, "
+        "plow, smoke out, and repeatedly report locust-eradication measures, "
+        "turning a swarm into an object of imperial administrative action.",
+    ),
+    Statute(
         slug="destructive_insects_act_1877",
         citation="Destructive Insects Act 1877",
         short_title="UK Destructive Insects Act",
@@ -77,6 +91,18 @@ STATUTES: tuple[Statute, ...] = (
         summary="Authorized Privy Council orders to prevent introduction and "
         "spread of Colorado beetle, including landing prohibitions, crop "
         "destruction, entry on land, recordkeeping, and penalties.",
+    ),
+    Statute(
+        slug="california_horticulture_act_1897",
+        citation="California Horticulture Act 1897",
+        short_title="California Horticulture Act",
+        category="quarantine",
+        jurisdiction="US-state",
+        role="threat",
+        summary="Made scale insects, codling moth, and other destructive orchard "
+        "pests triggers for county horticultural boards, inspection, notice, "
+        "public-nuisance abatement, local inspectors, quarantine guardians, and "
+        "county-paid liens.",
     ),
     Statute(
         slug="federal_insecticide_act_1910",
@@ -112,6 +138,30 @@ STATUTES: tuple[Statute, ...] = (
         summary="Gave central authority to prevent introduction into India and "
         "interprovincial transport of insects, fungi, or other pests destructive "
         "to crops.",
+    ),
+    Statute(
+        slug="soviet_locust_border_decree_1934",
+        citation="Council of People's Commissars Decree on Locust Control (1934)",
+        short_title="Soviet locust-control border decree",
+        category="quarantine",
+        jurisdiction="USSR",
+        role="threat",
+        summary="Made locust control in the USSR-Afghanistan borderlands a "
+        "central state and diplomatic concern, showing Soviet quarantine law "
+        "treating insect migration as a transboundary administrative problem.",
+    ),
+    Statute(
+        slug="uk_plant_health_act_1967",
+        citation="Plant Health Act 1967",
+        short_title="UK Plant Health Act",
+        category="quarantine",
+        jurisdiction="UK",
+        role="threat",
+        summary="Consolidated the Destructive Insects and Pests Acts 1877-1927, "
+        "defined pests to include insects at any stage of existence, and "
+        "preserved landing-control and destruction powers for articles likely to "
+        "introduce a pest.",
+        cross_references=("Destructive Insects Act 1877",),
     ),
     Statute(
         slug="plant_protection_act",
@@ -268,6 +318,17 @@ STATUTES: tuple[Statute, ...] = (
     ),
     # ── Property / apiculture ──────────────────────────────────────────────
     Statute(
+        slug="sobornoe_ulozhenie_bees_1649",
+        citation="Council Code of 1649",
+        short_title="Sobornoe Ulozhenie bee-property clauses",
+        category="property",
+        jurisdiction="Muscovy",
+        role="property",
+        summary="Separated damage to bee trees from removal of bee colonies "
+        "and theft of hives with bees, assigning monetary values to each form "
+        "of forest-apiculture injury.",
+    ),
+    Statute(
         slug="honeybee_act",
         citation="7 U.S.C. §§ 281–286",
         short_title="Honeybee Act of 1922",
@@ -373,8 +434,8 @@ STATUTES: tuple[Statute, ...] = (
         role="invention",
         summary="Deems food adulterated if it consists in part of any filthy "
         "substance — the provision behind FDA insect-fragment defect action "
-        "levels, between which edible insects sit without a dedicated US "
-        "approval pathway.",
+        "levels and wheat-filth guidance, between which edible insects sit "
+        "without a dedicated US approval pathway.",
     ),
     Statute(
         slug="utah_insect_meat_labeling",

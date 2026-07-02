@@ -25,6 +25,7 @@ from src import citations
         ("79 Cal.App.5th 337", "case"),
         ("Biological Weapons Convention (1972)", "named_instrument"),
         ("Animal Welfare (Sentience) Act 2022", "named_instrument"),
+        ("Council of People's Commissars Decree on Locust Control (1934)", "named_instrument"),
         ("a plain sentence with no citation", "unrecognised"),
     ],
 )
@@ -48,6 +49,7 @@ def test_reporter_citation_requires_a_reporter_word():
 
 def test_instrument_is_recognised_accepts_named_acts():
     assert citations.instrument_is_recognised("Honeybee Act of 1922")
+    assert citations.instrument_is_recognised("Council of People's Commissars Decree on Locust Control (1934)")
     assert citations.instrument_is_recognised("509 U.S. 579")
     assert not citations.instrument_is_recognised("not an instrument at all")
 

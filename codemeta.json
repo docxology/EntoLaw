@@ -1,0 +1,32 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "author": [
+    {
+      "@id": "https://orcid.org/0000-0001-6232-9096",
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Active Inference Institute"
+      },
+      "familyName": "Friedman",
+      "givenName": "Daniel Ari"
+    }
+  ],
+  "codeRepository": "https://github.com/docxology/EntoLaw",
+  "dateModified": "2026-07-02",
+  "keywords": [
+    "entomological law",
+    "legal entomology",
+    "forensic entomology",
+    "endangered species",
+    "invasive species",
+    "insect welfare",
+    "gene drive",
+    "biological weapons convention",
+    "reproducible legal scholarship"
+  ],
+  "license": "https://spdx.org/licenses/CC-BY-4.0",
+  "name": "Entomological Law",
+  "version": "1.0.0"
+}

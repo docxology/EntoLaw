@@ -74,6 +74,14 @@ MILESTONES: tuple[Milestone, ...] = (
         "apiary vessel from taking bees out of another person's marked tree.",
     ),
     Milestone(
+        year=1050,
+        title="Ruskaia Pravda on bee trees",
+        role="property",
+        description="Ruskaia Pravda protects bort signs, bee trees, and "
+        "removed bees, making East Slavic forest apiculture a legal-property "
+        "problem.",
+    ),
+    Milestone(
         year=1235,
         title="The Sickle Murder",
         role="witness",
@@ -127,12 +135,28 @@ MILESTONES: tuple[Milestone, ...] = (
         "policy.",
     ),
     Milestone(
+        year=1649,
+        title="Sobornoe Ulozhenie on bees",
+        role="property",
+        description="The Muscovite Council Code separately values bee trees "
+        "with and without bees, removed colonies, stolen hives, and deliberate "
+        "destruction.",
+    ),
+    Milestone(
         year=1658,
         title="Virginia mulberry-tree act",
         role="invention",
         description="Colonial Virginia requires landowners to plant mulberry "
         "trees for silk production, treating silkworm infrastructure as public "
         "economic policy.",
+    ),
+    Milestone(
+        year=1749,
+        title="Russian Senate locust decree",
+        role="threat",
+        description="The Governing Senate orders provincial locust-control "
+        "measures in Belogorod, including trampling, burning, plowing, smoke, "
+        "and reports to the Senate.",
     ),
     Milestone(
         year=1766,
@@ -143,11 +167,25 @@ MILESTONES: tuple[Milestone, ...] = (
         "natural and civil law.",
     ),
     Milestone(
+        year=1781,
+        title="Pallas maps Russia and Siberia insects",
+        role="threat",
+        description="Pallas's Icones Insectorum makes Russia and Siberia "
+        "insects imperial taxonomic objects before later pest administration.",
+    ),
+    Milestone(
         year=1855,
         title="The Bergeret case",
         role="witness",
         description="Bergeret d'Arbois publishes the first Western post-mortem-"
         "interval estimate by insect succession (a mummified infant).",
+    ),
+    Milestone(
+        year=1864,
+        title="Russian Entomological Society charter",
+        role="threat",
+        description="The Russian Empire charters an entomological society, "
+        "building institutional infrastructure for applied insect expertise.",
     ),
     Milestone(
         year=1877,
@@ -156,6 +194,21 @@ MILESTONES: tuple[Milestone, ...] = (
         description="Britain authorizes orders against Colorado beetle, including "
         "landing prohibitions, crop destruction, entry, records, compensation, "
         "and penalties.",
+    ),
+    Milestone(
+        year=1881,
+        title="Keppen on harmful insects",
+        role="threat",
+        description="Fedor Keppen's Department of Agriculture volumes translate "
+        "harmful insects into a Russian administrative catalogue of species, "
+        "crops, and control problems.",
+    ),
+    Milestone(
+        year=1882,
+        title="Danilevsky phylloxera commission report",
+        role="threat",
+        description="Nikolai Danilevsky frames phylloxera control through "
+        "eradication, customs control, host-plant destruction, and quarantine.",
     ),
     Milestone(
         year=1884,
@@ -180,6 +233,13 @@ MILESTONES: tuple[Milestone, ...] = (
         "plant diseases and insect pests with Bureau of Entomology participation.",
     ),
     Milestone(
+        year=1921,
+        title="Uvarov's locust phase theory",
+        role="threat",
+        description="Boris Uvarov's revision of Locusta reframes locust swarming "
+        "as a population-state and migration problem for modern pest governance.",
+    ),
+    Milestone(
         year=1922,
         title="Honeybee Act",
         role="property",
@@ -187,11 +247,25 @@ MILESTONES: tuple[Milestone, ...] = (
         "backbone of US apiculture law.",
     ),
     Milestone(
+        year=1934,
+        title="Soviet locust border decree",
+        role="threat",
+        description="The USSR treats locust control in border regions with "
+        "Afghanistan as a central administrative and diplomatic problem.",
+    ),
+    Milestone(
         year=1935,
         title="The Buck Ruxton 'Jigsaw Murders'",
         role="witness",
         description="The first UK murder conviction using entomology; larvae "
         "aged at 12–14 days.",
+    ),
+    Milestone(
+        year=1939,
+        title="Pavlovsky on natural disease foci",
+        role="threat",
+        description="Evgenii Pavlovsky's natural-focality doctrine makes vector "
+        "ecology, landscape, and public-health administration one legal problem.",
     ),
     Milestone(
         year=1940,

@@ -50,14 +50,17 @@ def role_interconnections(path: Path) -> Path:
                         zorder=1,
                     )
                 )
-        if link.slug != "definitional_problem":
-            ax.plot(
-                [],
-                [],
-                color=color,
-                label=_wrap_label(link.theme, 34).replace("\n", " "),
-                linewidth=2.4,
+        legend_label = link.theme
+        if link.slug == "definitional_problem":
+            reach = (
+                "all" if set(members) == set(role_list) else f"{len(members)} of {n}"
             )
+            legend_label = f"{link.theme} (touches {reach} roles)"
+        legend_text = _wrap_label(legend_label, 34).replace("\n", " ")
+        if link.slug == "definitional_problem":
+            ax.plot([], [], color=color, label=legend_text, linewidth=1.6, alpha=0.5)
+        else:
+            ax.plot([], [], color=color, label=legend_text, linewidth=2.4)
     degree = interconnections.role_link_degree()
     max_degree = max(degree.values())
     for slug in role_list:
@@ -82,7 +85,9 @@ def role_interconnections(path: Path) -> Path:
             zorder=4,
             color=_INK,
             wrap=True,
-            bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="#cbd5e1"),
+            bbox=dict(
+                boxstyle="round,pad=0.22", facecolor="white", edgecolor="#cbd5e1"
+            ),
         )
         ax.text(
             x,
@@ -115,10 +120,30 @@ def role_interconnections(path: Path) -> Path:
         fontsize=7.2,
         color=_MUTED,
     )
-    ax.set_title("Interconnection themes across legal roles")
-    ax.legend(loc="upper left", bbox_to_anchor=(1.0, 0.98), fontsize=7, frameon=False)
-    ax.set_xlim(-1.42, 1.72)
-    ax.set_ylim(-1.34, 1.34)
+    ax.set_title(
+        "Interconnection themes across legal roles",
+        fontsize=13,
+        fontweight="bold",
+        pad=14,
+    )
+    ax.text(
+        0,
+        1.30,
+        "Edge colour = shared theme; node size and number = how many themes touch that role.",
+        ha="center",
+        va="center",
+        fontsize=8,
+        color=_MUTED,
+    )
+    ax.legend(
+        loc="upper left",
+        bbox_to_anchor=(0.86, 0.92),
+        fontsize=7.6,
+        frameon=False,
+        labelspacing=1.15,
+    )
+    ax.set_xlim(-1.42, 1.85)
+    ax.set_ylim(-1.34, 1.4)
     ax.set_axis_off()
     return _save(fig, path)
 

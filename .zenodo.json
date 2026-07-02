@@ -1,0 +1,25 @@
+{
+  "creators": [
+    {
+      "affiliation": "Active Inference Institute",
+      "name": "Friedman, Daniel Ari",
+      "orcid": "0000-0001-6232-9096"
+    }
+  ],
+  "description": "Source code for Entomological Law (2026).",
+  "keywords": [
+    "entomological law",
+    "legal entomology",
+    "forensic entomology",
+    "endangered species",
+    "invasive species",
+    "insect welfare",
+    "gene drive",
+    "biological weapons convention",
+    "reproducible legal scholarship"
+  ],
+  "license": "CC-BY-4.0",
+  "title": "Entomological Law",
+  "upload_type": "software",
+  "version": "1.0.0"
+}

@@ -61,12 +61,36 @@ def test_citation_date_visualization_covers_every_bibliography_key():
     entries = bibliography_dates(MANUSCRIPT / "references.bib")
     dated = {entry.key for entry in entries}
     assert dated == bib
-    assert any(entry.year < 1950 for entry in entries)
+    assert any(entry.year < 1700 for entry in entries)
+    assert any(entry.year < 2000 for entry in entries)
     assert {
+        "bechbretha_bee_judgments",
+        "ruskaia_pravda_bees",
+        "sobornoe_ulozhenie1649_bees",
+        "chasseneuz1581_consilia",
+        "bailly1668_monitoires_insectes",
+        "russian_senate1749_locust_belgorod",
+        "pallas1781_icones_insectorum",
+        "russian_entomological_society1864_charter",
         "destructive_insects1877",
+        "keppen1881_harmful_insects",
+        "danilevsky1882_phylloxera",
+        "uk_plant_health1967",
+        "california_horticulture1897",
+        "howard1898_injurious_insect_laws",
         "federal_insecticide1910",
         "plant_quarantine1912",
         "india_destructive_insects1914",
+        "uvarov1921_locusta_phase",
+        "markushkin1927_beekeeper_legal_handbook",
+        "snk_locust_afghanistan1934",
+        "pavlovsky1939_natural_focality",
+        "pavlovsky1946_vector_nidality",
+        "eisemann1984_insect_pain",
+        "fda_cpg_wheat_filth1988",
+        "food_insects_newsletter1988",
+        "catts_goff1992_forensic_entomology",
+        "defoliart1999_insects_as_food",
     } <= dated
 
 
@@ -105,10 +129,31 @@ def test_added_connective_scholarship_is_cited():
         "bergeret1855_infanticide",
         "megnin1894",
         "songci_mcknight1981",
+        "bechbretha_bee_judgments",
+        "ruskaia_pravda_bees",
+        "sobornoe_ulozhenie1649_bees",
+        "chasseneuz1581_consilia",
+        "bailly1668_monitoires_insectes",
+        "russian_senate1749_locust_belgorod",
+        "pallas1781_icones_insectorum",
+        "russian_entomological_society1864_charter",
         "destructive_insects1877",
+        "keppen1881_harmful_insects",
+        "danilevsky1882_phylloxera",
         "federal_insecticide1910",
         "plant_quarantine1912",
         "india_destructive_insects1914",
+        "uvarov1921_locusta_phase",
+        "markushkin1927_beekeeper_legal_handbook",
+        "snk_locust_afghanistan1934",
+        "pavlovsky1939_natural_focality",
+        "pavlovsky1946_vector_nidality",
+        "uk_plant_health1967",
+        "eisemann1984_insect_pain",
+        "fda_cpg_wheat_filth1988",
+        "food_insects_newsletter1988",
+        "catts_goff1992_forensic_entomology",
+        "defoliart1999_insects_as_food",
     }
     assert expected <= bib
     assert expected <= cited
