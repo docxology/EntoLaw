@@ -203,14 +203,14 @@ by <code>src.manuscript_variables.generate_variables</code>. The closure
 test asserts that every token referenced in the manuscript is generated
 and that the generator emits no orphan, so a registry edit that changes
 a count (say, adding a case) updates the prose automatically, and a
-hand-typed count that drifts from its registry fails the build. The 34
-statutes span 6 jurisdictions, shown in the statutes-by-jurisdiction
+hand-typed count that drifts from its registry fails the build. The 38
+statutes span 7 jurisdictions, shown in the statutes-by-jurisdiction
 figure; that number, like the 18 cases and the 12 figures, is generated,
 never typed.</p>
 <figure id="fig:statutes_by_jurisdiction">
 <img src="../figures/statutes_by_jurisdiction.png" style="width:80.0%"
-alt="The same 34 instruments partitioned by issuing jurisdiction — US-federal, US-state, US-colonial, UK, EU, and international — showing the field’s multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field’s risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement." />
-<figcaption aria-hidden="true">The same 34 instruments partitioned by
+alt="The same 38 instruments partitioned by issuing jurisdiction — US-federal, US-state, US-colonial, UK, EU, and international — showing the field’s multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field’s risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement." />
+<figcaption aria-hidden="true">The same 38 instruments partitioned by
 issuing jurisdiction — US-federal, US-state, US-colonial, UK, EU, and
 international — showing the field’s multi-level legal architecture. Read
 as: insect law is built through stacked authority, with local movement
@@ -273,11 +273,12 @@ the source base is early legal text, where it is modern scholarship, and
 where it is official current-status material.</p>
 <figure id="fig:citation_dates">
 <img src="../figures/citation_dates.png" style="width:95.0%"
-alt="Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips. Read as: EntoLaw’s evidence base is anchored by early legal and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz_citation_dates. Caveat: the date is the bibliography year, so modern editions of older texts appear at their declared source date when that is how the project cites them." />
+alt="Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with the pre-1950 layer separated from later consolidation. Read as: EntoLaw’s evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz_citation_dates. Caveat: the date is the bibliography year, so modern editions of older texts appear at their declared source date when that is how the project cites them." />
 <figcaption aria-hidden="true">Date distribution for every bibliography
 entry with a parseable year, split into broad bands and individual
-source-date strips. Read as: EntoLaw’s evidence base is anchored by
-early legal and treatise sources but interpreted through modern
+source-date strips with the pre-1950 layer separated from later
+consolidation. Read as: EntoLaw’s evidence base is anchored by early
+legal, regulatory, and treatise sources but interpreted through modern
 scholarship, cases, statutes, and official materials. Why it matters:
 the figure makes the historical depth of the citation stack visible
 instead of leaving it implicit in the reference list. Provenance:
@@ -291,7 +292,7 @@ them.</figcaption>
 metadata and render provenance</h2>
 <p>This build was generated on <code>Darwin arm64</code> under Python
 <code>3.12.13</code> from configuration hash
-<code>a10accdf96648136</code> at <code>2026-06-30T21:27:55Z</code>. The
+<code>a10accdf96648136</code> at <code>2026-07-01T23:58:18Z</code>. The
 same version-controlled inputs regenerate the inventories, the
 validation report, the figures, the manuscript variables, and this
 document with identical registry-derived content, modulo the provenance

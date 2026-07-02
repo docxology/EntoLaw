@@ -41,8 +41,8 @@ quotable, re-checkable source. The map and the territory cannot drift apart.
   interconnections, all validated against controlled vocabularies.
 - [x] Manuscript with token closure, citation closure, and cross-reference
   closure; abstract → conclusion plus a methods section documenting the contract.
-- [x] Claim ledger with a fail-closed offline oracle and a live oracle; shipped
-  entries live-verified 2026-06-25.
+- [x] Claim ledger with a fail-closed offline oracle and a live oracle; 20
+  shipped entries live-verified, source checks last run through 2026-06-30.
 - [x] Deterministic matplotlib figures, one per caption, plus a cover.
 - [x] `src/` test coverage ≥ 90% with no mocks; combined PDF + HTML render
   through the template.

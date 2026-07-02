@@ -227,20 +227,21 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
         title="Citation dates across the bibliography",
         manuscript_caption=(
             "Date distribution for every bibliography entry with a parseable "
-            "year, split into broad bands and individual source-date strips. "
-            "Read as: EntoLaw's evidence base is anchored by early legal and "
-            "treatise sources but interpreted through modern scholarship, "
-            "cases, statutes, and official materials. Why it matters: the "
-            "figure makes the historical depth of the citation stack visible "
-            "instead of leaving it implicit in the reference list. Provenance: "
-            "`manuscript/references.bib` parsed by `src.viz_citation_dates`. "
-            "Caveat: the date is the bibliography year, so modern editions of "
-            "older texts appear at their declared source date when that is how "
-            "the project cites them."
+            "year, split into broad bands and individual source-date strips "
+            "with the pre-1950 layer separated from later consolidation. Read "
+            "as: EntoLaw's evidence base is anchored by early legal, "
+            "regulatory, and treatise sources but interpreted through modern "
+            "scholarship, cases, statutes, and official materials. Why it "
+            "matters: the figure makes the historical depth of the citation "
+            "stack visible instead of leaving it implicit in the reference "
+            "list. Provenance: `manuscript/references.bib` parsed by "
+            "`src.viz_citation_dates`. Caveat: the date is the bibliography "
+            "year, so modern editions of older texts appear at their declared "
+            "source date when that is how the project cites them."
         ),
         alt_text=(
-            "Two-panel chart showing citation counts by date band and individual "
-            "source dates by citation family."
+            "Multi-panel chart showing citation counts by date band and every "
+            "parseable source year by citation family."
         ),
         provenance="Generated from `manuscript/references.bib`.",
         caveat="Shows parseable bibliography years, not archival composition dates.",

@@ -1,4 +1,4 @@
-\begin{thebibliography}{150}
+\begin{thebibliography}{156}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -8,18 +8,6 @@
 \bibitem[cas(1592)]{caseofswans1592}
 The case of swans, 77 er 435.
 \newblock \url{https://www.bailii.org/ew/cases/EWHC/KB/1592/J93.html}, 1592.
-
-\bibitem[sim(2023)]{simplyforensic_songci}
-The washing away of wrongs: a 13th-century foundation of forensic science.
-\newblock
-  \url{https://simplyforensic.com/the-washing-away-of-wrongs-a-13th-century-foundation-of-modern-forensic-science/},
-  2023.
-
-\bibitem[wik(2024)]{wikipedia_bergeret}
-Louis fran{\c c}ois etienne bergeret.
-\newblock
-  \url{https://en.wikipedia.org/wiki/Louis_Fran\%C3\%A7ois_Etienne_Bergeret},
-  2024.
 
 \bibitem[Amendt et~al.(2007)Amendt, Campobasso, Gaudry, Reiter, LeBlanc, and
   Hall]{amendt2007bestpractice}
@@ -68,6 +56,18 @@ Piers Beirne.
 \newblock \emph{Society \& Animals}, 2\penalty0 (1):\penalty0 27--46, 1994.
 \newblock
   \url{https://www.animalsandsociety.org/wp-content/uploads/2015/10/beirnes.pdf}.
+
+\bibitem[Bergeret(1855)]{bergeret1855_infanticide}
+Louis Fran{\c c}ois~{\'E}tienne Bergeret.
+\newblock Infanticide. momification naturelle du cadavre. d{\'e}couverte du
+  cadavre d'un enfant nouveau-n{\'e} dans une chemin{\'e}e o{\`u} il
+  s'{\'e}tait momifi{\'e}. d{\'e}termination de l'{\'e}poque de la naissance
+  par la pr{\'e}sence de nymphes et de larves d'insectes dans le cadavre et par
+  l'{\'e}tude de leurs m{\'e}tamorphoses.
+\newblock \emph{Annales d'hygi{\`e}ne publique et de m{\'e}decine l{\'e}gale},
+  \penalty0 (4):\penalty0 442--452, 1855.
+\newblock Universit{\'e} Paris Cit{\'e} Numerabilis scan of the 1855 volume,
+  with page-level entry for the article at ark:/13685/90141x1855x04/0442.
 
 \bibitem[Birch et~al.(2021)]{lse_birch2021}
 Jonathan Birch et~al.
@@ -150,8 +150,16 @@ T.~M. Charles-Edwards and Fergus Kelly.
 Song Ci.
 \newblock \emph{Xi Yuan Ji Lu (The Washing Away of Wrongs)}.
 \newblock 1247.
-\newblock Records the 1235 Sickle Murder, the first application of forensic
-  entomology.
+\newblock Original 1247 forensic manual; Library of Congress record describes a
+  later Ming edition and states that the first printed edition no longer
+  exists.
+
+\bibitem[Ci(1981)]{songci_mcknight1981}
+Song Ci.
+\newblock \emph{The Washing Away of Wrongs: Forensic Medicine in
+  Thirteenth-Century China}.
+\newblock Center for Chinese Studies, University of Michigan, Ann Arbor, 1981.
+\newblock Scholarly English translation of Hsi yuan chi lu.
 
 \bibitem[{CITES Parties}(1973)]{cites1973}
 {CITES Parties}.
@@ -328,6 +336,13 @@ Christopher Elderfield.
   \url{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX\%3A32024R1991},
   2024.
 
+\bibitem[Evans(1884)]{evans1884_bugs_beasts}
+E.~P. Evans.
+\newblock Bugs and beasts before the law.
+\newblock \emph{The Atlantic Monthly}, August 1884.
+\newblock Pre-1900 article describing Chassenee's animal-trial consilium,
+  insect excommunication, and procedural treatment of animal defendants.
+
 \bibitem[Evans(1906)]{evans1906}
 E.~P. Evans.
 \newblock \emph{The Criminal Prosecution and Capital Punishment of Animals}.
@@ -392,6 +407,15 @@ Samuel Hartlib.
 \newblock
   \url{https://e-edu.nbu.bg/pluginfile.php/743607/mod_resource/content/1/Hittite%20Laws.pdf},
   -1650.
+
+\bibitem[{India Legislative Department}(1914)]{india_destructive_insects1914}
+{India Legislative Department}.
+\newblock The destructive insects and pests act, 1914.
+\newblock
+  \url{https://www.indiacode.nic.in/bitstream/123456789/2354/1/A1914-02.pdf},
+  1914.
+\newblock India Code PDF; prevents introduction and interprovincial transport
+  of crop-destructive insects, fungi, and other pests.
 
 \bibitem[{Innocence Project}(2018)]{innocence_lobato}
 {Innocence Project}.
@@ -544,9 +568,20 @@ Javier Martinez~Jimenez.
 
 \bibitem[M{\'e}gnin(1894)]{megnin1894}
 Jean-Pierre M{\'e}gnin.
-\newblock \emph{La Faune des Cadavres}.
-\newblock 1894.
-\newblock Systematizes the arthropod-succession model of decomposition.
+\newblock \emph{La Faune des Cadavres: Application de l'entomologie {\`a} la
+  m{\'e}decine l{\'e}gale}.
+\newblock Masson et Gauthier-Villars, Paris, 1894.
+\newblock National Library of Medicine scan; systematizes the
+  arthropod-succession model of decomposition.
+
+\bibitem[M{\'e}nabr{\'e}a(1846)]{menabrea1846_animal_judgments}
+L{\'e}on M{\'e}nabr{\'e}a.
+\newblock \emph{De l'origine, de la forme et de l'esprit des jugements rendus
+  au Moyen-Age contre les animaux, avec des documents in{\'e}dits}.
+\newblock Puthod, Chamb{\'e}ry, 1846.
+\newblock Published in Memoires de l'Academie royale de Savoie, tome XII; the
+  academy table of contents identifies a proceeding against insects, pleadings,
+  and an ecclesiastical sentence.
 
 \bibitem[Mikhalevich and Powell(2020)]{mikhalevich2020minds}
 Irina Mikhalevich and Russell Powell.
@@ -744,9 +779,32 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
 \newblock \url{https://www.legislation.gov.uk/ukpga/2022/22/contents/enacted},
   2022.
 
+\bibitem[{United Kingdom Parliament}(1877)]{destructive_insects1877}
+{United Kingdom Parliament}.
+\newblock Destructive insects act 1877, 40 \& 41 vict. c. 68.
+\newblock
+  \url{https://www.legislation.gov.uk/ukpga/Vict/40-41/68/pdfs/ukpga_18770068_en.pdf},
+  1877.
+\newblock Official King's Printer PDF; authorizes orders to prevent
+  introduction and spread of Colorado beetle.
+
 \bibitem[{U.S. Congress}(1900)]{lacey42}
 {U.S. Congress}.
 \newblock Lacey act injurious-species provision, 18 u.s.c. {\S} 42, 1900.
+
+\bibitem[{U.S. Congress}(1910)]{federal_insecticide1910}
+{U.S. Congress}.
+\newblock Federal insecticide act of 1910, 36 stat. 331.
+\newblock \url{https://www.govinfo.gov/link/statute/36/331}, 1910.
+\newblock GovInfo Statutes at Large scan; regulates adulterated or misbranded
+  insecticides and fungicides in commerce.
+
+\bibitem[{U.S. Congress}(1912)]{plant_quarantine1912}
+{U.S. Congress}.
+\newblock Plant quarantine act of 1912, 37 stat. 315.
+\newblock \url{https://www.govinfo.gov/link/statute/37/315}, 1912.
+\newblock GovInfo Statutes at Large scan; authorizes import and interstate
+  quarantine for plant diseases and insect pests.
 
 \bibitem[{U.S. Congress}(1922)]{honeybee1922}
 {U.S. Congress}.

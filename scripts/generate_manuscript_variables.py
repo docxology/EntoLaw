@@ -11,13 +11,16 @@ for _p in (PROJECT_ROOT, PROJECT_ROOT / "src"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
-from src.manuscript_variables import generate_variables, save_variables  # noqa: E402
+from scripts.z_generate_manuscript_variables import (  # noqa: E402
+    compute_and_save,
+)
 
 
 def main(project_root: Path = PROJECT_ROOT) -> Path:
-    variables = generate_variables(project_root)
-    path = project_root / "output" / "data" / "manuscript_variables.json"
-    save_variables(variables, path)
+    # Delegate the compute-and-save step to the injection pipeline's shared
+    # helper so the two scripts cannot drift apart. This script writes JSON only
+    # and deliberately does NOT inject tokens into the manuscript tree.
+    _variables, path = compute_and_save(project_root)
     print(path)
     return path
 

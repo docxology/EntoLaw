@@ -16,9 +16,10 @@ Initial release: a source-anchored, reproducible field map of entomological law.
   figures plus a cover.
 - Modular claim-sourced manuscript (abstract → conclusion + methods), with token,
   citation, and cross-reference closure.
-- Claim ledger seeded with three live-verified external statistics
-  (ESA invertebrate definition; Hallmann 2017 biomass decline; UK Sentience Act
-  scope), confirmed 2026-06-25.
+- Claim ledger with 20 live-verified external statistics (ESA invertebrate
+  definition; Hallmann 2017 biomass decline; 2026 PNAS protection gap; UK
+  Sentience Act scope; invasive-species, novel-food, and welfare sources; and
+  others), with source checks last run through 2026-06-30.
 - Test suite (no mocks): registry invariants, citation parsing, injectable
   validators, closure gates, no-hard-coded-statistic gate with negative control,
   figure totality, determinism, and a `-m live` claim oracle. `src/` coverage ≈ 97%.

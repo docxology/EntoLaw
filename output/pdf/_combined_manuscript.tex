@@ -179,9 +179,9 @@ machine-readable and reproducible artifact organized around the legal
 \emph{role} an insect occupies in a given dispute. It encodes 8 legal
 roles --- witness, regulated threat, protected subject, property,
 invention, defendant, moral patient, and weapon --- and binds to them 18
-landmark decisions, 34 statutes and treaties across 9 categories and 6
+landmark decisions, 38 statutes and treaties across 9 categories and 7
 jurisdictions, 24 insect taxa, 12 certifying and regulatory
-institutions, 32 historical milestones spanning 3676 years, and 5
+institutions, 34 historical milestones spanning 3676 years, and 5
 cross-domain themes that knit the roles together. Every count in this
 prose is generated from the source registries under \texttt{src/}, legal
 propositions are source-bound in the bibliography, every
@@ -310,7 +310,7 @@ anecdotes of famous cases; both rot quickly as section numbers are
 recodified and holdings are distinguished. This reference inverts that
 pattern. Every legal role, case, statute, taxon, institution, and
 milestone cited in the prose comes from a Python registry under
-\texttt{src/}, and every count --- ``18 cases'', ``34 statutes'', ``24
+\texttt{src/}, and every count --- ``18 cases'', ``38 statutes'', ``24
 taxa'' --- is a double-brace token resolved at build time by
 \breaktt{src.manuscript\_variables.generate\_variables}. The discipline
 this enforces is the same reproducibility model the wider template uses:
@@ -335,13 +335,15 @@ restatements such as \emph{Fleta} then carry the occupation problem
 forward, while the evidentiary lineage begins with the 1235 Sickle
 Murder recounted by Song Ci in \emph{The Washing Away of Wrongs} (1247),
 where flies settling on an apparently clean blade exposed invisible
-blood and forced a confession
-\citep{fleta1290_bees, songci1247, simplyforensic_songci}. Its
-product-law lineage is old as well: early colonial instruments treated
-mulberries, silk inputs, silks, and wax as objects of public economic
-policy rather than merely private agricultural choices
+blood and forced a confession; the claim is bound here both to a Library
+of Congress record for the Chinese text and to McKnight's scholarly
+English translation
+\citep{fleta1290_bees, songci1247, songci_mcknight1981}. Its product-law
+lineage is old as well: early colonial instruments treated mulberries,
+silk inputs, silks, and wax as objects of public economic policy rather
+than merely private agricultural choices
 \citep{virginia_assembly1619_mulberry, carolina_charter1663_silks_wax}.
-From there the registry traces 32 milestones across 3676 years --- bee
+From there the registry traces 34 milestones across 3676 years --- bee
 property, medieval animal trials, colonial silk policy, succession-based
 time-of-death estimation, twentieth-century conservation and
 biotechnology statutes, and twenty-first-century sentience and
@@ -452,18 +454,24 @@ principles were reliably applied to the case facts.
 mattered}\label{cases-where-insect-evidence-mattered}
 
 The registry pins the field's evidentiary arc from the 1235 Sickle
-Murder forward: Bergeret's first Western succession estimate
-\citep{wikipedia_bergeret}, the Buck Ruxton ``Jigsaw Murders'' that
-produced the first UK conviction by entomology \citep{nhm_maggots}, the
-Pennsylvania Supreme Court's affirmation of PMI testimony in
-\emph{Commonwealth v. Auker} \citep{auker1996}, the Canadian \emph{R. v.
-Truscott} reversal decades after conviction \citep{truscott2007}, and
-the Kirstin Lobato exoneration built on the telling \emph{absence} of
-blowfly colonization, which proved death after dark
-\citep{innocence_lobato}. The field's cautionary tale is \emph{People v.
-Westerfield}, the celebrated ``battle of five entomologists'' whose
-ten-day divergence led the jury to discard the entomology entirely
-\citep{westerfield2019}.
+Murder forward. Bergeret's original \emph{Annales d'hygiène publique et
+de médecine légale} report is the Western hinge: he treated pupae,
+larvae, and metamorphosis as medico-legal evidence for a mummified
+newborn's time of death, making insect development part of a judicial
+fact pattern rather than a natural-history aside
+\citep{bergeret1855_infanticide}. Mégnin then systematized the
+succession model in a dedicated forensic monograph before modern
+expert-evidence doctrine existed \citep{megnin1894}. The modern arc runs
+through the Buck Ruxton ``Jigsaw Murders'' that produced the first UK
+conviction by entomology \citep{nhm_maggots}, the Pennsylvania Supreme
+Court's affirmation of PMI testimony in \emph{Commonwealth v. Auker}
+\citep{auker1996}, the Canadian \emph{R. v. Truscott} reversal decades
+after conviction \citep{truscott2007}, and the Kirstin Lobato
+exoneration built on the telling \emph{absence} of blowfly colonization,
+which proved death after dark \citep{innocence_lobato}. The field's
+cautionary tale is \emph{People v. Westerfield}, the celebrated ``battle
+of five entomologists'' whose ten-day divergence led the jury to discard
+the entomology entirely \citep{westerfield2019}.
 
 \subsection{Standards, certifiers, and error
 controls}\label{standards-certifiers-and-error-controls}
@@ -501,13 +509,13 @@ Control}\label{sec:threat}
 Where forensic law asks insects to \emph{speak}, regulatory law tries to
 \emph{stop them from moving}. The architecture is dense and federal. In
 the registry the threat role is statute-driven rather than case-driven:
-it is anchored by 10 instruments spanning the quarantine and
+it is anchored by 14 instruments spanning the quarantine and
 public-health categories, summarized in the statutes-by-category figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 34 registered instruments grouped across 9 structural categories --- forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category.}]{../figures/statutes_by_category.png}
-\caption{The 34 registered instruments grouped across 9 structural
+\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 38 registered instruments grouped across 9 structural categories --- forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category.}]{../figures/statutes_by_category.png}
+\caption{The 38 registered instruments grouped across 9 structural
 categories --- forensic, quarantine, conservation, property, biotech/IP,
 food, welfare, public-health, and warfare. Read as: regulation follows
 the legal problem insects pose, not insect taxonomy itself. Why it
@@ -521,19 +529,36 @@ category.}\label{fig:statutes_by_category}
 \subsection{US quarantine authority and plant-pest
 movement}\label{us-quarantine-authority-and-plant-pest-movement}
 
-The master statute is the Plant Protection Act, cited here at 7 U.S.C.
-§§ 7701--7786, which empowers the U.S. Department of Agriculture's
-Animal and Plant Health Inspection Service (APHIS) to prohibit movement,
-declare quarantines, require permits, and seize or destroy infested
-articles \citep{ppa2000, usc7_7712}. Moving a live insect interstate or
-importing one requires an APHIS permit and an approved containment
-facility. The rogues' gallery of regulated pests is encoded in the
-species registry: the spotted lanternfly under active quarantine
-\citep{aphis_slf}, the Asian longhorned beetle under eradication, the
-emerald ash borer whose \emph{federal} quarantine was lifted in 2021,
-and the northern giant hornet --- the ``murder hornet'' --- declared
-eradicated from the United States in 2024, the first \emph{Vespa}
-eradication in North America \citep{guardian_hornet}.
+The modern statute sits on a pre-1950 statutory architecture rather than
+a blank slate. Britain's Destructive Insects Act made Colorado beetle an
+object of border prohibition, crop destruction, entry on land, official
+records, compensation, and penalties; India's Destructive Insects and
+Pests Act then cast insects, fungi, and other crop pests as import and
+interprovincial-movement risks
+\citep{destructive_insects1877, india_destructive_insects1914}. In the
+United States, the Federal Insecticide Act treated insect-killing
+chemistry as a misbranding and adulteration problem in commerce, while
+the Plant Quarantine Act gave USDA authority over import exclusion,
+interstate quarantine, inspection, disinfection, certification, and a
+Federal Horticultural Board that included the Bureau of Entomology
+\citep{federal_insecticide1910, plant_quarantine1912}. The point is
+analytical: before modern environmental law, insect threat was already
+split among border control, crop police powers, chemical-product
+integrity, and administrative entomology.
+
+The master contemporary statute is the Plant Protection Act, cited here
+at 7 U.S.C. §§ 7701--7786, which empowers the U.S. Department of
+Agriculture's Animal and Plant Health Inspection Service (APHIS) to
+prohibit movement, declare quarantines, require permits, and seize or
+destroy infested articles \citep{ppa2000, usc7_7712}. Moving a live
+insect interstate or importing one requires an APHIS permit and an
+approved containment facility. The rogues' gallery of regulated pests is
+encoded in the species registry: the spotted lanternfly under active
+quarantine \citep{aphis_slf}, the Asian longhorned beetle under
+eradication, the emerald ash borer whose \emph{federal} quarantine was
+lifted in 2021, and the northern giant hornet --- the ``murder hornet''
+--- declared eradicated from the United States in 2024, the first
+\emph{Vespa} eradication in North America \citep{guardian_hornet}.
 
 \subsection{International, IPPC, and EU risk
 layers}\label{international-ippc-and-eu-risk-layers}
@@ -711,8 +736,8 @@ entomofauna decline and its interacting pressures
 The legal-protection gap is now measurable as well as rhetorical: a 2026
 PNAS study reports that the conservation status of 88.5 percent of
 described North American insect and arachnid species is unknown, while
-94.7 percent of range-wide at-risk U.S. insects and arachnids are not
-protected by any state or federal law
+94.7 percent of U.S. insects and arachnids at-risk throughout their
+range are not protected by any state or federal law
 \citep{esa_position2021, pnas2026insects}.
 
 The legal difficulty is that insect value is often infrastructural
@@ -961,11 +986,14 @@ Across late medieval and early modern Europe, courts literally
 \textbf{prosecuted insects}. This is the field's most astonishing
 chapter, and its most history-driven: the registry encodes no modern
 reporter case for the defendant role, but 5 timeline milestones and the
-trial weevils themselves carry it. The canonical English-language record
-is E. P. Evans's \emph{The Criminal Prosecution and Capital Punishment
-of Animals}, with later scholarship treating Evans as the pivotal source
-for the small literature on animal prosecution
-\citep{evans1906, beirne1994_evans}.
+trial weevils themselves carry it. The pre-1900 source base is stronger
+than a single retrospective curiosity. Ménabréa's 1846 Savoy academy
+study organizes the material around proceedings against insects, civil
+and criminal animal proceedings, pleadings for and against the insects,
+prosecutorial conclusions, and an ecclesiastical sentence; Evans's 1884
+Atlantic article then makes that procedural archive available in English
+before his later book becomes the canonical synthesis
+\citep{menabrea1846_animal_judgments, evans1884_bugs_beasts, evans1906, beirne1994_evans}.
 
 \subsection{Chassenée and the prosecuted
 weevils}\label{chassenuxe9e-and-the-prosecuted-weevils}
@@ -973,21 +1001,35 @@ weevils}\label{chassenuxe9e-and-the-prosecuted-weevils}
 The jurist Bartholomew Chassenée built his career defending vermin and
 wrote the first legal treatise on insect prosecution, arguing that
 animals were ``lay persons'' entitled to counsel before ecclesiastical
-courts. Evans preserves the most famous insect proceedings: the
-vine-weevils of St-Julien, first treated as a divine scourge and later
-met with a proposed preserve for the insects. Earlier proceedings
-against the slugs of Autun round out the registry's defendant milestones
-\citep{evans1906}.
+courts. Evans's 1884 account is useful because it treats the Chassenée
+episode as law rather than folklore: summons, notice, default, counsel,
+jurisdiction, judge, and forum all matter before any malediction can
+issue \citep{evans1884_bugs_beasts}. Ménabréa supplies the complementary
+French documentary frame, including the St-Julien materials and a
+preserved ``plea for the insects'' that makes the insects procedurally
+visible even though they remain nonrational pests
+\citep{menabrea1846_animal_judgments}. The vine-weevils of St-Julien
+were first treated as a divine scourge and later met with a proposed
+preserve for the insects; earlier proceedings against the slugs of Autun
+round out the registry's defendant milestones \citep{evans1906}.
 
 \subsection{What animal trials reveal about modern
 law}\label{what-animal-trials-reveal-about-modern-law}
 
-These trials are not merely curiosities. The 1587 weevils offered a land
-preserve foreshadow modern \textbf{critical-habitat designation}
+These trials are not merely curiosities. They separate
+\textbf{procedure} from \textbf{personhood} with unusual clarity: the
+court can stage notice, representation, and sentence around an insect
+population without deciding that insects possess moral agency or
+ordinary legal capacity. That is why the defendant role matters to
+modern law. The 1587 offer of a land preserve for the weevils
+foreshadows modern \textbf{critical-habitat designation}
 (sec.~\ref{sec:protected}), and the medieval debate over whether an
 animal can be a defendant prefigures the modern debate over whether it
-can be a \emph{rights-holder} (sec.~\ref{sec:welfare}). The defendant
-role is thus the historical hinge of the field's two most
+can be a \emph{rights-holder} (sec.~\ref{sec:welfare}). Entomological
+law repeatedly uses legal form to manage biological agency: the insect
+can be summoned, protected, patented, quarantined, or excluded before
+the legal system has a stable theory of what kind of subject it is. The
+defendant role is thus the historical hinge of the field's two most
 forward-looking questions, a connection drawn out in
 sec.~\ref{sec:interconnections}.
 
@@ -1210,11 +1252,11 @@ legally actionable insect status. \\
 \item
   \textbf{The ancient and the cutting-edge rhyme}: Hittite hive theft,
   rabbinic bee nuisance, Roman bee pursuit, Irish bee trespass,
-  Quintilian's poisoned-flower bee claim, and the 1587 weevil preserve
-  all foreshadow modern fights over habitat, rights, and legally
-  actionable insect status (sec.~\ref{sec:defendant},
+  Quintilian's poisoned-flower bee claim, and the St-Julien weevil
+  proceedings all foreshadow modern fights over habitat, rights, and
+  legally actionable insect status (sec.~\ref{sec:defendant},
   sec.~\ref{sec:protected}, sec.~\ref{sec:welfare})
-  \citep{hittite_laws_bees, mishnah_bava_batra2_10_bees, justinian_digest41, bechbretha1983, quintilian_decl13_bees, evans1906}.
+  \citep{hittite_laws_bees, mishnah_bava_batra2_10_bees, justinian_digest41, bechbretha1983, quintilian_decl13_bees, menabrea1846_animal_judgments, evans1884_bugs_beasts}.
 \end{itemize}
 
 The connective tissue is not metaphorical. It is a recurring translation
@@ -1242,9 +1284,13 @@ and biotech vocabularies existed, while colonial silk and wax
 instruments show insect-derived commodities becoming public economic
 policy before modern biotechnology law had a name
 \citep{hittite_laws_bees, mishnah_bava_batra5_3_beehive, mishnah_bava_batra2_10_bees, lex_salica_bees, edictum_rothari_bees, selden1618_tithes_bees, elderfield1650_tythes_bees, virginia_assembly1619_mulberry, carolina_charter1663_silks_wax}.
-Legal scholarship on living property and standing for natural objects
-helps explain why insects are such good stress tests: they sit at the
-edge of every familiar boundary while remaining biologically central to
+The animal-trial sources add a separate lesson: legal procedure can
+organize a conflict around insects even when doctrine refuses to treat
+insects as morally accountable persons
+\citep{menabrea1846_animal_judgments, evans1884_bugs_beasts}. Legal
+scholarship on living property and standing for natural objects helps
+explain why insects are such good stress tests: they sit at the edge of
+every familiar boundary while remaining biologically central to
 ecosystems, agriculture, evidence, and public health
 \citep{favre2010living_property, stone1972trees, cardoso2020scientists_warning, fao2013edible_insects}.
 
@@ -1318,15 +1364,15 @@ Every magnitude-bearing number in this prose is a double-brace token (a
 asserts that every token referenced in the manuscript is generated and
 that the generator emits no orphan, so a registry edit that changes a
 count (say, adding a case) updates the prose automatically, and a
-hand-typed count that drifts from its registry fails the build. The 34
-statutes span 6 jurisdictions, shown in the statutes-by-jurisdiction
+hand-typed count that drifts from its registry fails the build. The 38
+statutes span 7 jurisdictions, shown in the statutes-by-jurisdiction
 figure; that number, like the 18 cases and the 12 figures, is generated,
 never typed.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={The same 34 instruments partitioned by issuing jurisdiction --- US-federal, US-state, US-colonial, UK, EU, and international --- showing the field's multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field's risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement.}]{../figures/statutes_by_jurisdiction.png}
-\caption{The same 34 instruments partitioned by issuing jurisdiction ---
+\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={The same 38 instruments partitioned by issuing jurisdiction --- US-federal, US-state, US-colonial, UK, EU, and international --- showing the field's multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field's risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement.}]{../figures/statutes_by_jurisdiction.png}
+\caption{The same 38 instruments partitioned by issuing jurisdiction ---
 US-federal, US-state, US-colonial, UK, EU, and international --- showing
 the field's multi-level legal architecture. Read as: insect law is built
 through stacked authority, with local movement rules, national statutes,
@@ -1395,11 +1441,12 @@ where it is official current-status material.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips. Read as: EntoLaw's evidence base is anchored by early legal and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz\_citation\_dates. Caveat: the date is the bibliography year, so modern editions of older texts appear at their declared source date when that is how the project cites them.}]{../figures/citation_dates.png}
+\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with the pre-1950 layer separated from later consolidation. Read as: EntoLaw's evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz\_citation\_dates. Caveat: the date is the bibliography year, so modern editions of older texts appear at their declared source date when that is how the project cites them.}]{../figures/citation_dates.png}
 \caption{Date distribution for every bibliography entry with a parseable
-year, split into broad bands and individual source-date strips. Read as:
-EntoLaw's evidence base is anchored by early legal and treatise sources
-but interpreted through modern scholarship, cases, statutes, and
+year, split into broad bands and individual source-date strips with the
+pre-1950 layer separated from later consolidation. Read as: EntoLaw's
+evidence base is anchored by early legal, regulatory, and treatise
+sources but interpreted through modern scholarship, cases, statutes, and
 official materials. Why it matters: the figure makes the historical
 depth of the citation stack visible instead of leaving it implicit in
 the reference list. Provenance:
@@ -1415,7 +1462,7 @@ provenance}\label{reproducibility-metadata-and-render-provenance}
 
 This build was generated on \texttt{Darwin\ arm64} under Python
 \texttt{3.12.13} from configuration hash \breaktt{a10accdf96648136} at
-\breaktt{2026-06-30T21:27:55Z}. The same version-controlled inputs
+\breaktt{2026-07-01T23:58:18Z}. The same version-controlled inputs
 regenerate the inventories, the validation report, the figures, the
 manuscript variables, and this document with identical registry-derived
 content, modulo the provenance stamp.

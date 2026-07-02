@@ -43,6 +43,8 @@ def timeline_figure(path: Path) -> Path:
         "Weevils of St-Julien (sequel)": "weevils\npreserve",
         "Virginia silk-input mandate": "VA silk\ninputs",
         "Blackstone on hived bees": "Blackstone\nbees",
+        "UK Destructive Insects Act": "UK pest\norders",
+        "Plant Quarantine Act": "US plant\nquarantine",
         "Biological Weapons Convention": "BWC",
         "Diamond v. Chakrabarty": "Chakrabarty",
         "Monarch proposal and screwworm detection": "monarch\n+ screwworm",
@@ -54,6 +56,8 @@ def timeline_figure(path: Path) -> Path:
         "Salic Law on stolen bees": (-30, 15),
         "Justinian on bee property": (36, 25),
         "Rothari on hives and bee trees": (0, -18),
+        "UK Destructive Insects Act": (0, 13),
+        "Plant Quarantine Act": (0, -20),
     }
     for y in range(len(role_order)):
         ax.axhline(y, color="#e5e7eb", linewidth=0.7, zorder=0)

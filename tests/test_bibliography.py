@@ -7,6 +7,7 @@ from pathlib import Path
 
 from src import claim_ledger as cl
 from src import manuscript_variables as mv
+from src.viz_citation_dates import bibliography_dates
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = PROJECT_ROOT / "manuscript"
@@ -55,6 +56,20 @@ def test_every_cited_key_exists_and_is_used():
     assert len(cited) >= 30
 
 
+def test_citation_date_visualization_covers_every_bibliography_key():
+    bib = mv.bibtex_key_inventory(MANUSCRIPT / "references.bib")
+    entries = bibliography_dates(MANUSCRIPT / "references.bib")
+    dated = {entry.key for entry in entries}
+    assert dated == bib
+    assert any(entry.year < 1950 for entry in entries)
+    assert {
+        "destructive_insects1877",
+        "federal_insecticide1910",
+        "plant_quarantine1912",
+        "india_destructive_insects1914",
+    } <= dated
+
+
 def test_added_connective_scholarship_is_cited():
     bib = mv.bibtex_key_inventory(MANUSCRIPT / "references.bib")
     cited = mv.manuscript_citation_inventory(MANUSCRIPT)
@@ -85,6 +100,15 @@ def test_added_connective_scholarship_is_cited():
         "reddy2024insect_agriculture",
         "reddy2025insect_law",
         "shirey2025invertebrate_esa",
+        "evans1884_bugs_beasts",
+        "menabrea1846_animal_judgments",
+        "bergeret1855_infanticide",
+        "megnin1894",
+        "songci_mcknight1981",
+        "destructive_insects1877",
+        "federal_insecticide1910",
+        "plant_quarantine1912",
+        "india_destructive_insects1914",
     }
     assert expected <= bib
     assert expected <= cited

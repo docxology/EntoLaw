@@ -76,12 +76,14 @@ claims:
     anchor: "sec:threat"
     verification:
       status: verified
-      verified_value: "California Health and Safety Code section 2001 states that since 1915, mosquito abatement and vector control districts have protected Californians against vectorborne disease."
-      source_url: "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=HSC&division=3.&title=&part=&chapter=1.&article=1."
-      source_quote: "Since 1915, mosquito abatement and vector control districts"
+      verified_value: "A public mirror of California Health and Safety Code section 2001 states that since 1915, mosquito abatement and vector control districts have protected Californians against vectorborne disease, and that organized public programs best protect human health against vectorborne diseases."
+      source_url: "https://www.solanomosquito.com/health-and-safety-code"
+      source_quote: "Since 1915, mosquito abatement and vector control districtshave protected Californians"
+      source_quotes:
+        - "Adequate protection of human health against vectorbornediseases is best achieved by organized public programs"
       as_of: "2026-06-27"
       confidence: high
-      checked: "2026-06-27"
+      checked: "2026-07-01"
   - id: eu-ias-union-list-2026
     claim: "The European Commission describes the Union list under Regulation (EU) 1143/2014 as imposing restrictions on listed invasive alien species, and says the fourth update of the Union list entered into force on 7 August 2025."
     source: "ec_ias2026"
@@ -208,15 +210,16 @@ claims:
     anchor: "sec:invention"
     verification:
       status: verified
-      verified_value: "The official Utah Legislature bill-data endpoint for H.B. 138 states that the bill requires labeling of food containing plant or insect based meat substitutes and identifies the bill's last action as Governor Signed."
-      source_url: "https://le.utah.gov/data/2025GS/HB0138.json"
-      source_quote: "requires labeling of food containing plant or insect based meat substitutes"
+      verified_value: "The Brooks Institute digest reports that Utah Governor Spencer Cox signed House Bill 138 into law and that the bill requires labeling of cultivated, plant-based, and insect-based meat products."
+      source_url: "https://thebrooksinstitute.org/animal-law-digest/us/issue-286/utah-requires-labeling-cultivated-plant-based-insect-based-meat-products"
+      source_quote: "Utah Governor Spencer Cox"
       source_quotes:
-        - "plant or insect based meat substitutes"
-        - '"lastAction":"Governor Signed"'
+        - "signed</a> into law"
+        - "requires the labeling of cultivated, plant-based, and insect-based meat products"
+        - "reasonably certain to notify a consumer that the food contains"
       as_of: "2026-06-30"
       confidence: high
-      checked: "2026-06-30"
+      checked: "2026-07-01"
   - id: epa-ge-mosquito-sap-2025
     claim: "EPA released genetically engineered mosquito documents for FIFRA Scientific Advisory Panel public comment and peer review that address analytical methods for determining the absence of novel proteins in the saliva of GE female mosquitoes."
     source: "epa_ge_mosquito_sap2025"

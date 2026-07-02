@@ -150,6 +150,22 @@ MILESTONES: tuple[Milestone, ...] = (
         "interval estimate by insect succession (a mummified infant).",
     ),
     Milestone(
+        year=1877,
+        title="UK Destructive Insects Act",
+        role="threat",
+        description="Britain authorizes orders against Colorado beetle, including "
+        "landing prohibitions, crop destruction, entry, records, compensation, "
+        "and penalties.",
+    ),
+    Milestone(
+        year=1884,
+        title="Evans prints Bugs and Beasts",
+        role="defendant",
+        description="E.P. Evans publishes a pre-1900 English synthesis of "
+        "animal and insect prosecutions, later expanded into his canonical "
+        "book.",
+    ),
+    Milestone(
         year=1894,
         title="Mégnin's La Faune des Cadavres",
         role="witness",
@@ -157,12 +173,11 @@ MILESTONES: tuple[Milestone, ...] = (
         "arthropod waves on remains.",
     ),
     Milestone(
-        year=1906,
-        title="Evans documents the animal trials",
-        role="defendant",
-        description="E.P. Evans publishes The Criminal Prosecution and Capital "
-        "Punishment of Animals, the canonical English-language record of "
-        "vermin trials.",
+        year=1912,
+        title="Plant Quarantine Act",
+        role="threat",
+        description="Congress creates the federal plant-quarantine apparatus for "
+        "plant diseases and insect pests with Bureau of Entomology participation.",
     ),
     Milestone(
         year=1922,

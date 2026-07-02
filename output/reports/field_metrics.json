@@ -21,7 +21,7 @@
   "category_count": 9,
   "institution_count": 12,
   "interconnection_count": 5,
-  "milestone_count": 32,
+  "milestone_count": 34,
   "role_count": 8,
   "roles_with_case_law": 5,
   "species_by_role": {
@@ -35,7 +35,7 @@
     "witness": 2
   },
   "species_count": 24,
-  "statute_count": 34,
+  "statute_count": 38,
   "statutes_by_category": {
     "biotech_ip": 6,
     "conservation": 6,
@@ -43,15 +43,16 @@
     "forensic": 1,
     "property": 2,
     "public_health": 2,
-    "quarantine": 8,
+    "quarantine": 12,
     "warfare": 2,
     "welfare": 3
   },
   "statutes_by_jurisdiction": {
     "EU": 7,
-    "UK": 1,
+    "India": 1,
+    "UK": 2,
     "US-colonial": 2,
-    "US-federal": 12,
+    "US-federal": 14,
     "US-state": 5,
     "international": 7
   },

@@ -22,6 +22,7 @@ JURISDICTIONS: tuple[str, ...] = (
     "US-state",
     "US-colonial",
     "UK",
+    "India",
     "EU",
     "international",
 )
@@ -66,6 +67,52 @@ STATUTES: tuple[Statute, ...] = (
         "is screened under after Daubert and Kumho Tire.",
     ),
     # ── Quarantine & invasive-species ──────────────────────────────────────
+    Statute(
+        slug="destructive_insects_act_1877",
+        citation="Destructive Insects Act 1877",
+        short_title="UK Destructive Insects Act",
+        category="quarantine",
+        jurisdiction="UK",
+        role="threat",
+        summary="Authorized Privy Council orders to prevent introduction and "
+        "spread of Colorado beetle, including landing prohibitions, crop "
+        "destruction, entry on land, recordkeeping, and penalties.",
+    ),
+    Statute(
+        slug="federal_insecticide_act_1910",
+        citation="Federal Insecticide Act of 1910",
+        short_title="Federal Insecticide Act",
+        category="quarantine",
+        jurisdiction="US-federal",
+        role="threat",
+        summary="Converted insect-killing chemistry into a federal commerce "
+        "problem by barring adulterated or misbranded insecticides, Paris "
+        "greens, lead arsenates, and fungicides in interstate trade.",
+    ),
+    Statute(
+        slug="plant_quarantine_act_1912",
+        citation="Plant Quarantine Act of 1912",
+        short_title="Plant Quarantine Act",
+        category="quarantine",
+        jurisdiction="US-federal",
+        role="threat",
+        summary="Created a dedicated federal plant-quarantine apparatus for "
+        "plant diseases and insect pests, including import exclusion, "
+        "interstate quarantine, inspection, disinfection, certification, and a "
+        "Federal Horticultural Board with Bureau of Entomology participation.",
+        cross_references=("37 Stat. 315",),
+    ),
+    Statute(
+        slug="india_destructive_insects_pests_act_1914",
+        citation="Destructive Insects and Pests Act 1914",
+        short_title="India Destructive Insects and Pests Act",
+        category="quarantine",
+        jurisdiction="India",
+        role="threat",
+        summary="Gave central authority to prevent introduction into India and "
+        "interprovincial transport of insects, fungi, or other pests destructive "
+        "to crops.",
+    ),
     Statute(
         slug="plant_protection_act",
         citation="7 U.S.C. §§ 7701–7786",

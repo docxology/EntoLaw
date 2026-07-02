@@ -30,15 +30,27 @@ for _p in _SEARCH_ROOTS:
         sys.path.insert(0, str(_p))
 
 
+def compute_and_save(project_root: Path) -> tuple[dict[str, str], Path]:
+    """Compute registry-derived manuscript variables and persist them as JSON.
+
+    Single source of truth for the compute-and-save step. The plain
+    ``generate_manuscript_variables`` script delegates here so the JSON-only
+    entry point and this injection pipeline cannot silently drift apart.
+    """
+    from src.manuscript_variables import generate_variables, save_variables
+
+    variables = generate_variables(project_root)
+    out_path = project_root / "output" / "data" / "manuscript_variables.json"
+    save_variables(variables, out_path)
+    return variables, out_path
+
+
 def main() -> int:
     from infrastructure.rendering.manuscript_injection import (
         write_resolved_manuscript_tree,
     )
-    from src.manuscript_variables import generate_variables, save_variables
 
-    variables = generate_variables(_PROJECT_ROOT)
-    out_path = _PROJECT_ROOT / "output" / "data" / "manuscript_variables.json"
-    save_variables(variables, out_path)
+    variables, out_path = compute_and_save(_PROJECT_ROOT)
     write_resolved_manuscript_tree(_PROJECT_ROOT, variables)
     print(str(out_path))
     return 0

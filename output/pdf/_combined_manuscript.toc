@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {3.4}Standards, certifiers, and error controls}{7}{subsection.3.4}%
 \contentsline {section}{\numberline {4}The Insect as Threat: Quarantine, Invasion, and Vector Control}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}US quarantine authority and plant-pest movement}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}International, IPPC, and EU risk layers}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}International, IPPC, and EU risk layers}{9}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Liability gaps when pest movement is indirect}{9}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Vectors as public-health infrastructure}{9}{subsection.4.4}%
 \contentsline {section}{\numberline {5}The Insect as Protected Subject: Conservation and Recovery Law}{10}{section.5}%

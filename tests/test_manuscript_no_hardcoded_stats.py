@@ -44,16 +44,54 @@ def _norm(num: str) -> str:
     return num.replace(",", "").rstrip("+").rstrip(".")
 
 
-def _ledger_number_corpus() -> set[str]:
-    nums: set[str] = set()
+_ANCHOR = re.compile(r"\{#(sec:[A-Za-z0-9_:-]+)(?:\s+[^}]*)?\}")
+
+
+def _ledger_numbers_by_anchor() -> dict[str, set[str]]:
+    """Map each section anchor to the numbers its OWN attached claims justify.
+
+    Numbers are pooled per ``claim.anchor``, never globally: a figure registered
+    for one section (e.g. a percentage tied to one claim's anchor) must not
+    silently validate the same digits in an unrelated section that carries no
+    claim justifying them.
+    """
+    by_anchor: dict[str, set[str]] = {}
     for c in load_claims(PROJECT_ROOT / "data" / "claim_ledger.yaml"):
         blob = [c.claim]
         if c.verification:
             blob += [c.verification.verified_value, c.verification.source_quote]
             blob += list(c.verification.source_quotes)
+        bucket = by_anchor.setdefault(c.anchor, set())
         for piece in blob:
-            nums.update(_norm(m) for m in _NUM.findall(piece))
-    return nums
+            bucket.update(_norm(m) for m in _NUM.findall(piece))
+    return by_anchor
+
+
+def _ledger_number_corpus() -> set[str]:
+    """Union of every anchor's numbers (used only by the negative control)."""
+    corpus: set[str] = set()
+    for nums in _ledger_numbers_by_anchor().values():
+        corpus |= nums
+    return corpus
+
+
+def _file_section_anchors(raw: str) -> set[str]:
+    """Section anchors (``{#sec:...}``) declared in one manuscript file."""
+    return set(_ANCHOR.findall(re.sub(r"`[^`]*`", "", raw)))
+
+
+def _stat_offenders(text: str, accepted: set[str]) -> list[str]:
+    """Statistic tokens in ``text`` whose number is not in ``accepted``."""
+    offenders: list[str] = []
+    for pat in _STAT_PATTERNS:
+        for m in pat.finditer(text):
+            num_match = _NUM.search(m.group(0))
+            if not num_match:
+                continue
+            num = _norm(num_match.group(0))
+            if num and num not in accepted:
+                offenders.append(m.group(0).strip())
+    return offenders
 
 
 def _strip(text: str) -> str:
@@ -77,35 +115,51 @@ def _manuscript_files() -> list[str]:
 
 @pytest.mark.parametrize("md", _manuscript_files())
 def test_manuscript_statistic_is_token_or_validated(md: str):
-    corpus = _ledger_number_corpus()
+    by_anchor = _ledger_numbers_by_anchor()
     raw = (PROJECT_ROOT / "manuscript" / md).read_text(encoding="utf-8")
-    text = _strip(raw)
-    offenders: list[str] = []
-    for pat in _STAT_PATTERNS:
-        for m in pat.finditer(text):
-            num_match = _NUM.search(m.group(0))
-            if not num_match:
-                continue
-            num = _norm(num_match.group(0))
-            if num and num not in corpus:
-                offenders.append(m.group(0).strip())
+    anchors = _file_section_anchors(raw)
+    accepted: set[str] = set()
+    for anchor in anchors:
+        accepted |= by_anchor.get(anchor, set())
+    offenders = _stat_offenders(_strip(raw), accepted)
     assert not offenders, (
         f"{md}: statistic(s) neither auto-injected as a {{{{TOKEN}}}} nor validated "
-        f"in data/claim_ledger.yaml: {offenders}"
+        f"in data/claim_ledger.yaml for this section's anchor(s) "
+        f"{sorted(anchors)}: {offenders}"
     )
 
 
 def test_gate_detects_a_planted_hardcoded_stat():
     """Negative control: the detector must flag an unregistered statistic."""
     planted = "The trade is worth $7,777, spans 9,999 species, and raises 777 trillion insects.\n"
-    text = _strip(planted)
-    corpus = _ledger_number_corpus()
-    hits = []
-    for pat in _STAT_PATTERNS:
-        for m in pat.finditer(text):
-            num = _norm(_NUM.search(m.group(0)).group(0))
-            if num not in corpus:
-                hits.append(m.group(0))
+    hits = _stat_offenders(_strip(planted), _ledger_number_corpus())
     assert any("7,777" in h or "7777" in h for h in hits)
     assert any("9,999" in h or "9999" in h for h in hits)
     assert any("777 trillion" in h for h in hits)
+
+
+def test_number_valid_in_one_section_is_rejected_in_an_unrelated_section():
+    """A figure registered for one anchor must not validate in another section.
+
+    ``94.7`` is justified only by the North-American protection-gap claim, which
+    is anchored at ``sec:protected``. Planted into a ``sec:welfare`` section it
+    must be flagged as an offender; the identical prose must still pass when the
+    accepted set is scoped to its own ``sec:protected`` anchor. This is the
+    property a global number pool would silently break.
+    """
+    by_anchor = _ledger_numbers_by_anchor()
+    assert "94.7" in by_anchor.get("sec:protected", set())
+    assert "94.7" not in by_anchor.get("sec:welfare", set())
+
+    planted = _strip("Advocates note that 94.7 percent of colonies were affected.\n")
+
+    rejected = _stat_offenders(planted, by_anchor.get("sec:welfare", set()))
+    assert any("94.7" in h for h in rejected), (
+        "per-section scoping failed: a sec:protected-only number passed in "
+        "an unrelated sec:welfare section"
+    )
+
+    accepted = _stat_offenders(planted, by_anchor.get("sec:protected", set()))
+    assert not any(
+        "94.7" in h for h in accepted
+    ), "the same number must validate in the section its claim is anchored to"
