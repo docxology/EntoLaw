@@ -75,7 +75,7 @@ def claim_count(project_root: Path | None = None) -> int:
 
 def claim_coverage_by_anchor(project_root: Path | None = None) -> dict[str, int]:
     root = (project_root or Path(__file__).resolve().parent.parent).resolve()
-    anchors = _section_anchors_in_manuscript_order(root / "manuscript")
+    anchors = _section_anchors_in_manuscript_order(root / "docs" / "manuscript")
     coverage = {anchor: 0 for anchor in anchors}
     for claim in load_claims(root / "data" / "claim_ledger.yaml"):
         coverage.setdefault(claim.anchor, 0)

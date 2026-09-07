@@ -109,7 +109,7 @@ def _verification_findings(entry: Claim, root: Path) -> Iterable[ValidationFindi
 def validate_claim_ledger(project_root: Path | None = None) -> Iterable[ValidationFinding]:
     root = (project_root or Path(__file__).resolve().parent.parent).resolve()
     ledger_path = root / "data" / "claim_ledger.yaml"
-    manuscript_dir = root / "manuscript"
+    manuscript_dir = root / "docs" / "manuscript"
     bib_path = manuscript_dir / "references.bib"
 
     claims = load_claims(ledger_path)

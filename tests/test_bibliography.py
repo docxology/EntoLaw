@@ -10,7 +10,7 @@ from src import manuscript_variables as mv
 from src.viz_citation_dates import bibliography_dates
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-MANUSCRIPT = PROJECT_ROOT / "manuscript"
+MANUSCRIPT = PROJECT_ROOT / "docs" / "manuscript"
 
 
 def test_no_duplicate_bibtex_keys():

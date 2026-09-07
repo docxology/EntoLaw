@@ -34,7 +34,7 @@ verifiable quote in a claim ledger.
 | `src/manuscript_variables.py` | `{{TOKEN}}` generation (no hard-coded prose numbers) |
 | `src/claim_ledger.py` + `data/claim_ledger.yaml` | External-statistic verification |
 | `src/viz.py`, `src/figure_bundle.py` | Deterministic matplotlib figures |
-| `manuscript/` | Modular, token-injected manuscript (abstract → conclusion) |
+| `docs/manuscript/` | Modular, token-injected manuscript (abstract → conclusion) |
 | `docs/ACCURACY_METHODOLOGY.md` | What the offline gates prove vs. the live oracle |
 | `docs/REVIEW_PROTOCOL.md` | Deep-review checklist and final gate sequence |
 

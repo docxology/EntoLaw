@@ -19,7 +19,7 @@ from .viz_citation_date_records import (
 from .viz_theme import _INK, _save, _style_axes
 
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
-_REFERENCES_BIB = _PROJECT_ROOT / "manuscript" / "references.bib"
+_REFERENCES_BIB = _PROJECT_ROOT / "docs" / "manuscript" / "references.bib"
 _ENTRY_RE = re.compile(
     r"@(?P<entry_type>[A-Za-z]+)\{(?P<key>[^,\s]+),(?P<body>.*?)(?=\n@|\Z)",
     re.S,

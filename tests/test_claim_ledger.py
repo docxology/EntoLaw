@@ -145,11 +145,13 @@ def test_coerce_source_quotes_dedupes_and_accepts_string():
 
 def test_source_and_anchor_must_resolve(tmp_path):
     (tmp_path / "data").mkdir()
-    (tmp_path / "manuscript").mkdir()
-    (tmp_path / "manuscript" / "references.bib").write_text(
+    (tmp_path / "docs" / "manuscript").mkdir(parents=True)
+    (tmp_path / "docs" / "manuscript" / "references.bib").write_text(
         "@misc{realkey, title={x}}\n", encoding="utf-8"
     )
-    (tmp_path / "manuscript" / "s.md").write_text("# S {#sec:real}\n", encoding="utf-8")
+    (tmp_path / "docs" / "manuscript" / "s.md").write_text(
+        "# S {#sec:real}\n", encoding="utf-8"
+    )
     (tmp_path / "data" / "claim_ledger.yaml").write_text(
         "claims:\n"
         "  - id: c1\n"

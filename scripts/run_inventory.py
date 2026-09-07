@@ -8,7 +8,6 @@ per registry under ``output/data/`` plus ``field_metrics.json`` and
 
 from __future__ import annotations
 
-import csv
 import json
 import sys
 from dataclasses import asdict
@@ -23,6 +22,7 @@ from src import (  # noqa: E402
     cases,
     institutions,
     interconnections,
+    io_helpers,
     metrics,
     roles,
     species,
@@ -30,26 +30,6 @@ from src import (  # noqa: E402
     timeline,
     validation,
 )
-
-
-def _write_csv(path: Path, rows: list[dict]) -> Path:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    if not rows:
-        path.write_text("", encoding="utf-8")
-        return path
-    fieldnames = list(rows[0].keys())
-    with path.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=fieldnames)
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({k: _flatten(v) for k, v in row.items()})
-    return path
-
-
-def _flatten(value):
-    if isinstance(value, (list, tuple)):
-        return "; ".join(str(v) for v in value)
-    return value
 
 
 def write_inventory(project_root: Path = PROJECT_ROOT) -> tuple[list[Path], validation.ValidationSummary]:
@@ -69,7 +49,7 @@ def write_inventory(project_root: Path = PROJECT_ROOT) -> tuple[list[Path], vali
         ],
     }
     for name, rows in registries.items():
-        written.append(_write_csv(data_dir / f"{name}_inventory.csv", rows))
+        written.append(io_helpers.write_csv(data_dir / f"{name}_inventory.csv", rows))
 
     metrics_path = reports_dir / "field_metrics.json"
     metrics_path.parent.mkdir(parents=True, exist_ok=True)

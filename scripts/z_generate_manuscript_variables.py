@@ -4,7 +4,7 @@
 Run automatically by the render pipeline *before* PDF/HTML rendering — the
 ``z_`` prefix is the name the renderer's hydration step looks for. It writes
 ``output/data/manuscript_variables.json`` and substitutes every ``{{TOKEN}}``
-marker in ``manuscript/*.md`` into ``output/manuscript/`` via the shared
+marker in ``docs/manuscript/*.md`` into ``output/manuscript/`` via the shared
 injection helper.
 
 All computation lives in :mod:`src.manuscript_variables`; all injection lives
@@ -29,20 +29,7 @@ for _p in _SEARCH_ROOTS:
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
-
-def compute_and_save(project_root: Path) -> tuple[dict[str, str], Path]:
-    """Compute registry-derived manuscript variables and persist them as JSON.
-
-    Single source of truth for the compute-and-save step. The plain
-    ``generate_manuscript_variables`` script delegates here so the JSON-only
-    entry point and this injection pipeline cannot silently drift apart.
-    """
-    from src.manuscript_variables import generate_variables, save_variables
-
-    variables = generate_variables(project_root)
-    out_path = project_root / "output" / "data" / "manuscript_variables.json"
-    save_variables(variables, out_path)
-    return variables, out_path
+from src.manuscript_variables import compute_and_save  # noqa: E402
 
 
 def main() -> int:

@@ -37,7 +37,7 @@ def _pure_loc(path: Path) -> int:
 
 
 def _bib_entries() -> dict[str, str]:
-    text = (PROJECT_ROOT / "manuscript" / "references.bib").read_text(
+    text = (PROJECT_ROOT / "docs" / "manuscript" / "references.bib").read_text(
         encoding="utf-8"
     )
     entries: dict[str, str] = {}
@@ -47,7 +47,7 @@ def _bib_entries() -> dict[str, str]:
 
 
 def test_current_cited_scholarship_has_real_bibliographic_metadata():
-    cited = mv.manuscript_citation_inventory(PROJECT_ROOT / "manuscript")
+    cited = mv.manuscript_citation_inventory(PROJECT_ROOT / "docs" / "manuscript")
     entries = _bib_entries()
     offenders: list[str] = []
     for key in sorted(cited):
@@ -75,7 +75,9 @@ def test_current_cited_scholarship_has_real_bibliographic_metadata():
 
 def test_manuscript_title_uses_subtitle_for_scope():
     config = yaml.safe_load(
-        (PROJECT_ROOT / "manuscript" / "config.yaml").read_text(encoding="utf-8")
+        (PROJECT_ROOT / "docs" / "manuscript" / "config.yaml").read_text(
+            encoding="utf-8"
+        )
     )
     title = config["paper"]["title"]
     subtitle = config["paper"]["subtitle"]

@@ -127,9 +127,23 @@ def save_variables(variables: dict[str, str], output_path: Path) -> Path:
     return output_path
 
 
+def compute_and_save(project_root: Path) -> tuple[dict[str, str], Path]:
+    """Compute registry-derived manuscript variables and persist them as JSON.
+
+    Single source of truth for the compute-and-save step: the JSON-only
+    ``generate_manuscript_variables`` entry point and the render-time
+    ``z_generate_manuscript_variables`` hydrator both delegate here so the
+    two outputs cannot silently drift apart.
+    """
+    variables = generate_variables(project_root)
+    out_path = project_root / "output" / "data" / "manuscript_variables.json"
+    save_variables(variables, out_path)
+    return variables, out_path
+
+
 def _config_hash(project_root: Path) -> str:
-    """Return the short sha256 of ``manuscript/config.yaml`` or ``"N/A"``."""
-    config = project_root / "manuscript" / "config.yaml"
+    """Return the short sha256 of ``docs/manuscript/config.yaml`` or ``"N/A"``."""
+    config = project_root / "docs" / "manuscript" / "config.yaml"
     if not config.exists():
         return "N/A"
     return hashlib.sha256(config.read_bytes()).hexdigest()[:16]
@@ -137,8 +151,8 @@ def _config_hash(project_root: Path) -> str:
 
 def _load_publication_config(project_root: Path) -> dict[str, str]:
     """Flatten the ``publication``/``paper``/``metadata`` blocks of
-    ``manuscript/config.yaml`` into the fields the colophon needs."""
-    config_path = project_root / "manuscript" / "config.yaml"
+    ``docs/manuscript/config.yaml`` into the fields the colophon needs."""
+    config_path = project_root / "docs" / "manuscript" / "config.yaml"
     if not config_path.exists():
         return {}
     raw = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}

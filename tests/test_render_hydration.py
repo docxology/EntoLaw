@@ -30,7 +30,9 @@ def test_template_hydration_writes_resolved_manuscript_tree(tmp_path):
     )
 
     project = tmp_path / "project"
-    shutil.copytree(PROJECT_ROOT / "manuscript", project / "manuscript")
+    shutil.copytree(
+        PROJECT_ROOT / "docs" / "manuscript", project / "docs" / "manuscript"
+    )
     variables = mv.generate_variables(PROJECT_ROOT)
     assert "CLAIM_LEDGER_COUNT" in variables
 

@@ -238,7 +238,7 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "scholarship, cases, statutes, and official materials. Why it "
             "matters: the figure makes the historical depth of the citation "
             "stack visible instead of leaving it implicit in the reference "
-            "list. Provenance: `manuscript/references.bib` parsed by "
+            "list. Provenance: `docs/manuscript/references.bib` parsed by "
             "`src.viz_citation_dates`. Caveat: the date is the bibliography "
             "year, so modern editions appear at edition date unless the "
             "bibliography declares a source-date anchor."
@@ -247,7 +247,7 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "Multi-panel chart showing citation counts by date band and every "
             "parseable source year by citation family."
         ),
-        provenance="Generated from `manuscript/references.bib`.",
+        provenance="Generated from `docs/manuscript/references.bib`.",
         caveat="Shows parseable bibliography years and declared source-date anchors.",
     ),
     FigureCaption(

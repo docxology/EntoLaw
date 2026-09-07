@@ -11,7 +11,7 @@ figure caption in prose — derive it.
 - Add a case/statute/species/etc. by editing the registry module, not the
   manuscript. The `{{TOKEN}}` counts and figures update automatically.
 - Every legal proposition in the manuscript carries a `[@bibkey]` citation that
-  must exist in `manuscript/references.bib`.
+  must exist in `docs/manuscript/references.bib`.
 - Every magnitude in the prose is either a `{{TOKEN}}` (registry-derived) or a
   value present in `data/claim_ledger.yaml` (external). There is no third way —
   `tests/test_manuscript_no_hardcoded_stats.py` enforces it.

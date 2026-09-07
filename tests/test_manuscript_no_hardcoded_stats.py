@@ -108,7 +108,7 @@ def _strip(text: str) -> str:
 def _manuscript_files() -> list[str]:
     return sorted(
         p.name
-        for p in (PROJECT_ROOT / "manuscript").glob("*.md")
+        for p in (PROJECT_ROOT / "docs" / "manuscript").glob("*.md")
         if p.name not in _SKIP
     )
 
@@ -116,7 +116,7 @@ def _manuscript_files() -> list[str]:
 @pytest.mark.parametrize("md", _manuscript_files())
 def test_manuscript_statistic_is_token_or_validated(md: str):
     by_anchor = _ledger_numbers_by_anchor()
-    raw = (PROJECT_ROOT / "manuscript" / md).read_text(encoding="utf-8")
+    raw = (PROJECT_ROOT / "docs" / "manuscript" / md).read_text(encoding="utf-8")
     anchors = _file_section_anchors(raw)
     accepted: set[str] = set()
     for anchor in anchors:

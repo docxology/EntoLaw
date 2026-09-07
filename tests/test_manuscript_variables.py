@@ -8,7 +8,7 @@ from pathlib import Path
 from src import manuscript_variables as mv
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-MANUSCRIPT = PROJECT_ROOT / "manuscript"
+MANUSCRIPT = PROJECT_ROOT / "docs" / "manuscript"
 
 
 def test_all_manuscript_tokens_are_generated():
@@ -56,8 +56,10 @@ def test_save_variables_roundtrip(tmp_path):
 
 def test_config_hash_changes_with_config(tmp_path):
     assert mv._config_hash(tmp_path) == "N/A"
-    (tmp_path / "manuscript").mkdir()
-    (tmp_path / "manuscript" / "config.yaml").write_text("a: 1\n", encoding="utf-8")
+    (tmp_path / "docs" / "manuscript").mkdir(parents=True)
+    (tmp_path / "docs" / "manuscript" / "config.yaml").write_text(
+        "a: 1\n", encoding="utf-8"
+    )
     assert mv._config_hash(tmp_path) != "N/A"
 
 

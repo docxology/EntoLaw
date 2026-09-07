@@ -3,7 +3,7 @@
 **EntoLaw** (`entolaw`, v0.1.0) is a source-anchored registry and claim-sourced
 manuscript project mapping registered legal roles of the insect. Registries
 under `src/` (cases, statutes, species, institutions, roles, citations,
-interconnections, timeline) drive every number in `manuscript/` via
+interconnections, timeline) drive every number in `docs/manuscript/` via
 `{{TOKEN}}` injection; see [ACCURACY_METHODOLOGY.md](ACCURACY_METHODOLOGY.md)
 and [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md).
 
@@ -11,7 +11,7 @@ and [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md).
 
 - `src/` — registry models, claim-ledger validation, figure generation
 - `scripts/` — thin orchestrators (figures, manuscript variables, inventory, web export)
-- `manuscript/` — section files `00_abstract.md` … `12_conclusion.md`, `99_references.md`
+- `docs/manuscript/` — section files `00_abstract.md` … `12_conclusion.md`, `99_references.md`
 - `data/`, `output/` — registry inputs and generated figures/variables
 - `tests/` — registry and ledger validation tests
 
