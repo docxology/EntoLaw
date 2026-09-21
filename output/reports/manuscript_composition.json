@@ -1,0 +1,109 @@
+{
+  "algorithm": "shared-combined-markdown-v1",
+  "binding_sha256": "27e5ca1f0565e3a3141c6af7bf5bfb33556035e7c3b1a335ede5307d2991f8d2",
+  "combined_path": "output/web/_combined_manuscript.md",
+  "combined_sha256": "e4bc37ad0f060acd09e1528a2a06c561c7813a24f892bcd5fd583411dd811ece",
+  "combined_size_bytes": 82810,
+  "input_root_kind": "hydrated",
+  "ordered_inputs": [
+    {
+      "ordinal": 1,
+      "path": "output/manuscript/00_00_transmission_begin.md",
+      "sha256": "d7061fd7870a2b21809cd7552948b450e6cb4fd638e14b6126a6004186b65d5b",
+      "size_bytes": 1384
+    },
+    {
+      "ordinal": 2,
+      "path": "output/manuscript/00_abstract.md",
+      "sha256": "0121e744eed422ef47b91149ff266f5a64b073572fc41b1ea57dd4cfd7401475",
+      "size_bytes": 1792
+    },
+    {
+      "ordinal": 3,
+      "path": "output/manuscript/01_introduction.md",
+      "sha256": "25614bbe1fe8b6053cdaa38a0b06dafa80279eb00d55a4061c548e6b91f7ff91",
+      "size_bytes": 11866
+    },
+    {
+      "ordinal": 4,
+      "path": "output/manuscript/02_witness.md",
+      "sha256": "fd0fa4b1b959d7bcf3cfe9d3bb504cef558a76b32142cdaaa2de59eceef75de5",
+      "size_bytes": 7011
+    },
+    {
+      "ordinal": 5,
+      "path": "output/manuscript/03_threat.md",
+      "sha256": "f6d171267b38bc8765e797c044c5bd4535a891f578f16fe43b0a76d9a253fc53",
+      "size_bytes": 9867
+    },
+    {
+      "ordinal": 6,
+      "path": "output/manuscript/04_protected.md",
+      "sha256": "76de1f9da3cb5c90a665980ac053ff51e31f72fe4565c7a7ce16aaa1d527c39a",
+      "size_bytes": 6735
+    },
+    {
+      "ordinal": 7,
+      "path": "output/manuscript/05_property.md",
+      "sha256": "517275061cb56e242ab5f55777c47f24aafad4f16076ae1e79d73f8bdf239d23",
+      "size_bytes": 7225
+    },
+    {
+      "ordinal": 8,
+      "path": "output/manuscript/06_invention.md",
+      "sha256": "78ac14ebcf836b9f6184df6c2cc3fd448b3f499ac4684795841e376b1a8632e9",
+      "size_bytes": 6942
+    },
+    {
+      "ordinal": 9,
+      "path": "output/manuscript/07_defendant.md",
+      "sha256": "d0befd447343cdcac533571a1b33f1d0d55599242b2274b627a5cc68512203d2",
+      "size_bytes": 3406
+    },
+    {
+      "ordinal": 10,
+      "path": "output/manuscript/08_welfare.md",
+      "sha256": "2bf648c2396e75645d8b8839aef6f90c35d2fb380a23a55690507b75bde1258c",
+      "size_bytes": 3918
+    },
+    {
+      "ordinal": 11,
+      "path": "output/manuscript/09_weapon.md",
+      "sha256": "934b200d6919c478e2a6342c27ad9e71fe6b935506d1cb6c77abd7597ab49edc",
+      "size_bytes": 1700
+    },
+    {
+      "ordinal": 12,
+      "path": "output/manuscript/10_interconnections.md",
+      "sha256": "5d07d96960d3c8befcc6bf85e54152a3808506d99595762b5781da274a6752c9",
+      "size_bytes": 11068
+    },
+    {
+      "ordinal": 13,
+      "path": "output/manuscript/11_methods.md",
+      "sha256": "c00b6b53012c4002387aad5ee87adb9135d663d1bc2303025a50df20da2c764f",
+      "size_bytes": 5569
+    },
+    {
+      "ordinal": 14,
+      "path": "output/manuscript/12_conclusion.md",
+      "sha256": "3625e7bd0fd9e9ff4662f4cd7f89380e94235e6a9ce7281e83f84571b3638222",
+      "size_bytes": 3370
+    },
+    {
+      "ordinal": 15,
+      "path": "output/manuscript/99_references.md",
+      "sha256": "118a6ce48ab93162ae5ff3b5b000b6c8a5dfa130151e2b4c9d79e93ef2a3f1ae",
+      "size_bytes": 80
+    },
+    {
+      "ordinal": 16,
+      "path": "output/manuscript/99_zz_transmission_end.md",
+      "sha256": "0ac679f664bd2359de5e42ad35fc3d0e964c6b0610da89b83ef56a87c0825a57",
+      "size_bytes": 509
+    }
+  ],
+  "ordered_inputs_sha256": "466a9111859edf1ea52bef8cfbddb060110936aa9605a40740a7d1277e5197b9",
+  "project": "working/EntoLaw",
+  "schema_version": "template-manuscript-composition-v1"
+}

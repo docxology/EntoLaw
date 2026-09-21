@@ -13,6 +13,8 @@ requires-python = ">=3.10"
 dependencies = [
     "pyyaml>=6.0",
     "matplotlib>=3.7",
+    "certifi>=2026.7.22",
+    "legal_informatics",
 ]
 
 [project.optional-dependencies]
@@ -54,3 +56,8 @@ exclude_lines = [
     "if __name__ == .__main__.:",
     "raise NotImplementedError",
 ]
+
+[tool.uv.sources]
+# Sibling checkout, editable: EntoLaw consumes the generic legal-informatics
+# methods engine instead of carrying byte-identical copies of its modules.
+legal_informatics = { path = "../legal_informatics", editable = true }

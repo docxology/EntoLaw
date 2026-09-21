@@ -1,0 +1,141 @@
+# Declarative registry of legal/policy update feeds for
+# legal_informatics.legal_updates, with an entomology focus: wildlife listings,
+# pesticide advisory review, invasive-species and trade announcements, and
+# animal-welfare policy.
+#
+# Opt-in by construction. Nothing in the engine reads this file on import, and
+# nothing here opens a socket: load_feed_config() only describes feeds
+# (offline, credential-free), and a feed is polled only when
+# legal_updates.discover_feed() is called explicitly for it — and even then
+# only after its robots.txt allows it. Discovery records metadata (title, URL,
+# date, feed jurisdiction and kind); the ingestion module is a separate,
+# explicit step that stores bytes and stamps retrieved_at, content_sha256,
+# and status.
+#
+# jurisdiction_tier uses the engine's fixed vocabulary (local, california,
+# federal, global, uc_wide): supranational and national feeds outside the U.S.
+# declare tier `global`, and the publisher's own jurisdiction is named in
+# provider and notes. A state department index declares `local`, the nearest
+# declared tier below federal.
+#
+# No secrets live here. Feeds without api_key_env poll anonymously.
+#
+# Feeds are a LIST of rows, each carrying its own feed_id, so a duplicate
+# feed_id fails closed at load time instead of silently merging the way a
+# duplicate YAML mapping key would. Every row must declare feed_id, provider,
+# jurisdiction_tier, kind, and landing_url.
+version: '1.0'
+feeds:
+  - feed_id: fws_endangered_species_listings
+    provider: fws
+    jurisdiction_tier: federal
+    kind: regulation
+    landing_url: https://www.fws.gov/
+    poll_url: https://www.fws.gov/news/press-releases
+    poll_format: html
+    document_pattern: "listing|threatened|endangered|proposed rule|final rule"
+    notes: U.S. Fish and Wildlife Service news index, filtered to listing
+      actions. Discovery records which pages the index named — including
+      proposed (not final) rules such as the monarch butterfly's proposed
+      threatened status, which confers no protection until a final rule's
+      effective date.
+  - feed_id: epa_fifra_sap_meetings
+    provider: epa
+    jurisdiction_tier: federal
+    kind: docket
+    landing_url: https://www.epa.gov/sap
+    poll_url: https://www.epa.gov/sap
+    poll_format: html
+    document_pattern: "Scientific Advisory Panel|SAP|FIFRA"
+    notes: EPA FIFRA Scientific Advisory Panel page read as an HTML link list.
+      SAP meetings and reviews are advisory; discovery records that the page
+      named them, never that any conclusion issued.
+  - feed_id: regulations_gov_pesticide_dockets
+    provider: regulations_gov
+    jurisdiction_tier: federal
+    kind: docket
+    landing_url: https://www.regulations.gov/
+    poll_url: "https://api.regulations.gov/v4/dockets?filter%5Bterm%5D=insecticide&sort=-lastModifiedDate"
+    poll_format: json
+    api_key_env: REGULATIONS_GOV_API_KEY
+    notes: Regulations.gov dockets API (v4) filtered to insecticide dockets.
+      Requires REGULATIONS_GOV_API_KEY in the environment; discovery fails
+      closed without it rather than polling anonymously.
+  - feed_id: ec_ias_union_list
+    provider: european_commission
+    jurisdiction_tier: global
+    kind: regulation
+    landing_url: https://environment.ec.europa.eu/topics/nature-and-biodiversity/invasive-alien-species_en
+    poll_url: https://environment.ec.europa.eu/topics/nature-and-biodiversity/invasive-alien-species_en
+    poll_format: html
+    notes: European Commission invasive-alien-species page (EU jurisdiction,
+      tier `global` in the engine's vocabulary), the page the claim ledger
+      verifies for Regulation (EU) 1143/2014 Union-list statements.
+      Announcements of Union-list updates; each result is metadata until
+      ingestion stores the underlying act.
+  - feed_id: ec_pollinators_initiative
+    provider: european_commission
+    jurisdiction_tier: global
+    kind: policy
+    landing_url: https://environment.ec.europa.eu/topics/nature-and-biodiversity/pollinators_en
+    poll_url: https://environment.ec.europa.eu/topics/nature-and-biodiversity/pollinators_en
+    poll_format: html
+    notes: European Commission pollinators page (EU jurisdiction); announces
+      initiative and biodiversity-strategy commitments, never primary law.
+  - feed_id: eu_sante_plant_health
+    provider: eu_sante
+    jurisdiction_tier: global
+    kind: regulation
+    landing_url: https://food.ec.europa.eu/plants_en
+    poll_url: https://food.ec.europa.eu/plants_en
+    poll_format: html
+    document_pattern: "plant health|pesticide|plant protection"
+    notes: European Commission DG SANTE plants page (EU jurisdiction, covering
+      plant health and pesticide regulation) read as an HTML link list;
+      index-page discovery records that the page carried links, not that each
+      link is an enacted act.
+  - feed_id: cites_news
+    provider: cites
+    jurisdiction_tier: global
+    kind: announcement
+    landing_url: https://cites.org/eng/news
+    poll_url: https://cites.org/eng/news
+    poll_format: html
+    document_pattern: "appendix|listing|trade"
+    notes: CITES Secretariat news index (treaty-body jurisdiction); announcements
+      about treaty processes, never the treaty text itself and never a member
+      state's law.
+  - feed_id: uk_defra_media_blog
+    provider: uk_defra
+    jurisdiction_tier: global
+    kind: announcement
+    landing_url: https://deframedia.blog.gov.uk/
+    poll_url: https://deframedia.blog.gov.uk/feed/
+    poll_format: rss
+    notes: UK Defra media blog RSS (UK jurisdiction); the department's
+      announcements channel for plant health, pollinators, and animal welfare.
+      Government commentary, not enacted law.
+  - feed_id: uk_animal_sentience_committee
+    provider: uk_asc
+    jurisdiction_tier: global
+    kind: policy
+    landing_url: https://www.gov.uk/government/groups/animal-sentience-committee
+    poll_url: https://www.gov.uk/government/groups/animal-sentience-committee
+    poll_format: html
+    document_pattern: "sentience|report|review"
+    notes: The UK Animal Sentience Committee's GOV.UK group page (UK
+      jurisdiction) read as an HTML link list; discovery records which reports
+      the page named, exactly as the policy crawler records which pages an
+      index carries.
+  - feed_id: state_ag_departments_ento
+    provider: state_agencies
+    jurisdiction_tier: local
+    kind: policy
+    landing_url: https://www.cdfa.ca.gov/
+    poll_url: https://www.cdfa.ca.gov/
+    poll_format: html
+    document_pattern: "invasive|quarantine|pest|vector"
+    notes: A state agriculture department index (California CDFA as the first
+      declared entry) read as an HTML link list; additional state department
+      entries are added as separate rows, each with its own feed_id, so no
+      two agencies share a discovery manifest row.

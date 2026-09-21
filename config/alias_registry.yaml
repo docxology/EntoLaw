@@ -1,0 +1,181 @@
+# Canonical candidate entity alias registry for the EntoLaw insect-law corpus.
+#
+# Loaded by legal_informatics/alias_registry.py and consumed by
+# legal_informatics/corpus_analysis.py. This file is the single source of the
+# alias surface forms that produce entity ids, so an id change here is an id
+# change in every generated artifact.
+#
+# An entry groups surface forms observed in the corpus under one candidate id.
+# It records how the text is written, never who or what the entity really is:
+# nothing here establishes ownership, control, legal effect, legal status of a
+# taxon, or person-level fact. Every entity emitted from this registry carries
+# review_status: candidate_review_required.
+#
+# Fields
+#   registry_version    Bumped whenever an id, kind, or alias set changes.
+#   entities[].id       Stable candidate entity id. Renaming one is a migration.
+#   entities[].kind     Entity kind; drives relation direction in corpus_analysis.
+#   entities[].label    Canonical display label; also matched as an alias.
+#   entities[].aliases  Additional surface forms. Matching is case- and
+#                       whitespace-insensitive and longest-alias-first.
+#   entities[].audit    Recorded merge and split decisions. Each carries an
+#                       action, a rationale, a curation status, and a review
+#                       status. Audit rows are curation decisions about this
+#                       file, not observations of the corpus.
+
+registry_version: '1.0'
+registry_id: entolaw_canonical_entities
+review_status: curated_candidate_registry
+boundary: >-
+  Aliases group surface forms for retrieval and counting. Grouping two strings
+  under one id is a reviewable curation decision, never a finding that the two
+  strings name the same real-world thing — including two spellings of a
+  species name and the legal status of the organism it names.
+
+entities:
+# ── Taxa ──────────────────────────────────────────────────────────────────
+- id: taxon:apis-mellifera
+  kind: taxon
+  label: Honey bee (Apis mellifera)
+  aliases:
+  - Apis mellifera
+  - honey bee
+  - honeybee
+  audit:
+  - action: merge
+    merged_alias_forms:
+    - honeybee
+    - honey bee
+    rationale: The received texts spell the same taxon with both one-word and two-word
+      forms; they are one surface form, not two taxa.
+    status: curation_decision
+    review_status: human_review_required
+- id: taxon:danaus-plexippus
+  kind: taxon
+  label: Monarch butterfly (Danaus plexippus)
+  aliases:
+  - Danaus plexippus
+  - monarch butterfly
+  - monarch
+  audit: []
+- id: taxon:rhaphiomidas-terminatus-abdominalis
+  kind: taxon
+  label: Delhi Sands flower-loving fly (Rhaphiomidas terminatus abdominalis)
+  aliases:
+  - Rhaphiomidas terminatus abdominalis
+  - Delhi Sands flower-loving fly
+  - Delhi Sands fly
+  audit: []
+- id: taxon:lycorma-delicatula
+  kind: taxon
+  label: Spotted lanternfly (Lycorma delicatula)
+  aliases:
+  - Lycorma delicatula
+  - spotted lanternfly
+  audit: []
+- id: taxon:lucilia-sericata
+  kind: taxon
+  label: Blow fly (Lucilia sericata)
+  aliases:
+  - Lucilia sericata
+  - blow fly
+  - blowfly
+  - greenbottle fly
+  audit: []
+# ── Agencies and institutions ─────────────────────────────────────────────
+- id: org:fws
+  kind: organization
+  label: U.S. Fish and Wildlife Service
+  aliases:
+  - Fish and Wildlife Service
+  - USFWS
+  - FWS
+  audit: []
+- id: org:epa
+  kind: organization
+  label: U.S. Environmental Protection Agency
+  aliases:
+  - Environmental Protection Agency
+  - EPA
+  audit: []
+- id: org:usda-aphis
+  kind: organization
+  label: USDA Animal and Plant Health Inspection Service
+  aliases:
+  - Animal and Plant Health Inspection Service
+  - USDA APHIS
+  - APHIS
+  audit: []
+- id: org:ec-sante
+  kind: organization
+  label: European Commission Directorate-General for Health and Food Safety
+  aliases:
+  - DG SANTE
+  - SANTE
+  - European Commission DG SANTE
+  audit: []
+- id: org:cites-secretariat
+  kind: organization
+  label: CITES Secretariat
+  aliases:
+  - CITES
+  - Convention on International Trade in Endangered Species
+  audit: []
+- id: org:uk-defra
+  kind: organization
+  label: UK Department for Environment, Food and Rural Affairs
+  aliases:
+  - Defra
+  - Department for Environment, Food and Rural Affairs
+  audit: []
+- id: org:uk-asc
+  kind: organization
+  label: UK Animal Sentience Committee
+  aliases:
+  - Animal Sentience Committee
+  - ASC
+  audit: []
+- id: org:ca-fgc
+  kind: organization
+  label: California Fish and Game Commission
+  aliases:
+  - Fish & Game Commission
+  - California Fish & Game Commission
+  audit: []
+# ── Legal authorities and systems ─────────────────────────────────────────
+- id: system:esa
+  kind: system
+  label: Endangered Species Act framework
+  aliases:
+  - Endangered Species Act
+  - ESA
+  audit: []
+- id: system:fifra
+  kind: system
+  label: Federal Insecticide, Fungicide, and Rodenticide Act framework
+  aliases:
+  - Federal Insecticide, Fungicide, and Rodenticide Act
+  - FIFRA
+  audit: []
+- id: system:eu-ias-1143-2014
+  kind: system
+  label: Regulation (EU) 1143/2014 on invasive alien species
+  aliases:
+  - Regulation (EU) 1143/2014
+  - EU invasive alien species regulation
+  - Union list
+  audit: []
+- id: system:cites-appendices
+  kind: system
+  label: CITES appendices
+  aliases:
+  - CITES Appendix II
+  - CITES appendices
+  audit: []
+- id: system:uk-sentience-act-2022
+  kind: system
+  label: Animal Welfare (Sentience) Act 2022
+  aliases:
+  - Animal Welfare (Sentience) Act 2022
+  - Sentience Act 2022
+  audit: []

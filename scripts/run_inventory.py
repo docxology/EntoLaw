@@ -18,11 +18,12 @@ for _p in (PROJECT_ROOT, PROJECT_ROOT / "src"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
+from legal_informatics import io_helpers  # noqa: E402
+
 from src import (  # noqa: E402
     cases,
     institutions,
     interconnections,
-    io_helpers,
     metrics,
     roles,
     species,

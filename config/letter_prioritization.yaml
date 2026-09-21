@@ -1,0 +1,27 @@
+# Factor weights and requester tier order for records-request letter
+# prioritization, loaded by legal_informatics/letter_prioritization.py.
+#
+# These weights are DECLARED DATA, not code: changing a priority policy is a
+# visible diff to this file, never a silent edit to scoring logic. The loader
+# refuses to guess — it fails closed on a missing or unknown factor, a
+# non-numeric weight, or weights that do not sum to 1.0.
+#
+# HONESTY BOUNDARY, and it governs the ranking it produces.
+#
+# Ranking proposes a draft order only. It files nothing, sends nothing, and
+# drops nothing, and it renders no legal conclusion about any request's
+# merits or any agency's obligations. Every ranked row is emitted with
+# review_status: review_required; a human decides what to draft.
+weights:
+  deadline_proximity: 0.40
+  agency_responsiveness: 0.20
+  thematic_priority: 0.20
+  requester_tier: 0.20
+
+# Declared requester tier order, highest priority first. A packet's tier must
+# be named here for its requester_tier factor to be scored at all; a tier the
+# order does not name is refused, never assumed to be the lowest.
+requester_tier_order:
+  - statutorily_deadlined
+  - institutional
+  - routine

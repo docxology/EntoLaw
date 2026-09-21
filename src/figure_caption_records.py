@@ -1,24 +1,8 @@
 # entolaw-size-ok: source-owned figure caption registry records; split from facade for size gate.
 from __future__ import annotations
 
-from dataclasses import dataclass
+from legal_informatics.figure_captions import FigureCaption
 
-
-@dataclass(frozen=True)
-class FigureCaption:
-    """A reader-facing caption record for one rendered figure."""
-
-    slug: str
-    anchor: str
-    title: str
-    manuscript_caption: str
-    alt_text: str
-    provenance: str
-    caveat: str
-
-    @property
-    def token_name(self) -> str:
-        return f"FIGURE_CAPTION_{self.slug.upper()}"
 
 
 FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
@@ -239,7 +223,7 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "matters: the figure makes the historical depth of the citation "
             "stack visible instead of leaving it implicit in the reference "
             "list. Provenance: `docs/manuscript/references.bib` parsed by "
-            "`src.viz_citation_dates`. Caveat: the date is the bibliography "
+            "`legal_informatics.viz_citation_dates`. Caveat: the date is the bibliography "
             "year, so modern editions appear at edition date unless the "
             "bibliography declares a source-date anchor."
         ),
@@ -263,13 +247,13 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "manuscript as a compiled artifact, not as the source of legal "
             "facts. Why it matters: readers can audit whether prose, visuals, "
             "and counts share the same inputs. Provenance: "
-            "`src/package_map.py`. Caveat: a local build-pipeline "
+            "`src/viz.py`. Caveat: a local build-pipeline "
             "description, not a deployment diagram."
         ),
         alt_text=(
             "Left-to-right pipeline diagram from registries through methods to outputs."
         ),
-        provenance="Generated from `src/package_map.py`.",
+        provenance="Generated from `src/viz.py`.",
         caveat="Local pipeline description, not deployment.",
     ),
 )

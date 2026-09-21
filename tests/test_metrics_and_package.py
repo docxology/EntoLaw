@@ -6,18 +6,19 @@ from pathlib import Path
 
 import pytest
 
+from legal_informatics import figure_captions
 from src import (
     cases,
     claim_ledger,
-    figure_captions,
     manuscript_variables as mv,
     metrics,
-    package_map,
     roles,
     species,
     statutes,
     timeline,
+    viz as package_map,
 )
+from src.figure_caption_records import FIGURE_CAPTIONS
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = PROJECT_ROOT / "docs" / "manuscript"
@@ -50,7 +51,7 @@ def test_package_map_declarations_match_modules():
 
     for name in package_map.REGISTRIES:
         importlib.import_module(f"src.{name}")
-    assert package_map.figure_count() == len(figure_captions.all_captions())
+    assert package_map.figure_count() == len(figure_captions.all_captions(FIGURE_CAPTIONS))
     assert len(package_map.INVENTORY_CSVS) == len(package_map.REGISTRIES)
     assert package_map.REPORT_JSONS == ("field_metrics.json", "validation.json")
     assert package_map.DATA_JSONS == ("manuscript_variables.json",)
@@ -94,38 +95,38 @@ def test_caption_contract_is_satisfied():
     anchors = mv.manuscript_anchor_inventory(MANUSCRIPT)
     fig_anchors = {a for a in anchors if a.startswith("fig:")}
     errors = figure_captions.caption_contract_errors(
-        figure_captions.all_captions(), fig_anchors
+        FIGURE_CAPTIONS, fig_anchors
     )
     assert not errors, errors
 
 
 def test_caption_tokens_resolve_fully():
     variables = mv.generate_variables(PROJECT_ROOT)
-    tokens = figure_captions.caption_tokens(variables)
+    tokens = figure_captions.caption_tokens(FIGURE_CAPTIONS, variables)
     assert not figure_captions.unresolved_caption_placeholders(tokens)
     assert variables["CLAIM_LEDGER_COUNT"] == str(
         len(claim_ledger.load_claims(PROJECT_ROOT / "data" / "claim_ledger.yaml"))
     )
     assert (
-        figure_captions.caption_by_slug("timeline").token_name
+        figure_captions.caption_by_slug(FIGURE_CAPTIONS, "timeline").token_name
         == "FIGURE_CAPTION_TIMELINE"
     )
-    assert figure_captions.caption_by_anchor("fig:timeline").slug == "timeline"
+    assert figure_captions.caption_by_anchor(FIGURE_CAPTIONS, "fig:timeline").slug == "timeline"
     with pytest.raises(KeyError):
-        figure_captions.caption_by_slug("nope")
+        figure_captions.caption_by_slug(FIGURE_CAPTIONS, "nope")
     with pytest.raises(KeyError):
-        figure_captions.caption_by_anchor("fig:nope")
+        figure_captions.caption_by_anchor(FIGURE_CAPTIONS, "fig:nope")
 
 
 def test_caption_contract_detects_missing_caption():
     errors = figure_captions.caption_contract_errors(
-        figure_captions.all_captions(), {"fig:does_not_exist"}
+        FIGURE_CAPTIONS, {"fig:does_not_exist"}
     )
     assert any("missing caption for fig:does_not_exist" in e for e in errors)
 
 
 def test_caption_quality_contracts_are_reader_facing():
-    for caption in figure_captions.all_captions():
+    for caption in figure_captions.all_captions(FIGURE_CAPTIONS):
         assert caption.alt_text.strip().endswith(".")
         assert len(caption.alt_text.split()) >= 7
         assert caption.provenance.startswith("Generated from ")
@@ -137,6 +138,6 @@ def test_caption_quality_contracts_are_reader_facing():
 
 
 def test_claim_ledger_coverage_figure_is_source_owned():
-    caption = figure_captions.caption_by_slug("claim_ledger_coverage")
+    caption = figure_captions.caption_by_slug(FIGURE_CAPTIONS, "claim_ledger_coverage")
     assert caption.anchor == "fig:claim_ledger_coverage"
     assert caption.token_name == "FIGURE_CAPTION_CLAIM_LEDGER_COVERAGE"

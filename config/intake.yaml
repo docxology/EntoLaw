@@ -1,0 +1,29 @@
+# EntoLaw per-project intake and contract-compatibility declarations.
+#
+# Read by legal_informatics/browser_facets.load_intake_config under the same
+# validating, fail-closed convention as config/legal_issues.yaml: a missing or
+# malformed file is a hard error, never a silent default. The loader requires
+# exactly the keys below (intake_prefix, legacy_contract_ids) and requires
+# legacy_contract_ids to name exactly the seven neutral contract ids.
+#
+# intake_prefix
+#   The directory, relative to the project root, whose documents are received
+#   records rather than acquired law. EntoLaw is connector-agnostic: whichever
+#   connector produces records writes them under this prefix, and the engine's
+#   source-tier classification keys on it. The directory is declared before it
+#   exists; nothing opens it until a connector run creates it.
+#
+# legacy_contract_ids
+#   Contract identifiers stamped into artifacts this project exported before
+#   the browser and review contracts went jurisdiction-neutral. Every load
+#   path accepts them for backwards compatibility; every write path records
+#   only the neutral id, so nothing stamps these again.
+intake_prefix: recordsrequest
+legacy_contract_ids:
+  saved_view: entolaw/browser-saved-view/1
+  decision_packet: entolaw/browser-decision-packet/1
+  facet_index: entolaw/browser-facets/1
+  ontology_version: entolaw/aliases/1
+  review_queue: entolaw/evaluation-review-queue/1
+  review_console: entolaw/evaluation-review-console/1
+  review_sample: entolaw/evaluation-review-sample/1

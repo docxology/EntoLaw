@@ -1,0 +1,146 @@
+# Declarative registry of case-law sources for legal_informatics.caselaw_acquisition,
+# mirroring the citations registered in EntoLaw/src/case_records.py.
+#
+# Opt-in by construction. Nothing in the engine reads this file on import, and
+# nothing here opens a socket: load_source_config() only describes sources
+# (offline, credential-free), and bytes move only when
+# caselaw_acquisition.fetch_artifact() is called explicitly for one source.
+#
+# No secrets live here. A provider that needs a key declares only the NAME of
+# its environment variable (api_key_env); sources without api_key_env fetch
+# anonymously. Where no stable full-text URL is known for a citation, the row
+# declares a provider search or index URL and says so in notes — a capture of
+# such a row records that the URL served navigation where a holding was
+# expected, exactly what the content-form field exists to preserve.
+version: '1.0'
+sources:
+  frye_293_f_1013:
+    citation: Frye v. United States, 293 F. 1013 (D.C. Cir. 1923)
+    court_hint: federal_circuit_pre_f3
+    provider: caselaw_access_project
+    content_url: https://cite.case.law/f/293/1013/
+    notes: Credential-free citation page served by the Caselaw Access Project.
+  daubert_509_us_579:
+    citation: Daubert v. Merrell Dow Pharmaceuticals, Inc., 509 U.S. 579 (1993)
+    court_hint: supreme_court
+    provider: caselaw_access_project
+    content_url: https://cite.case.law/us/509/579/
+    notes: Credential-free citation page served by the Caselaw Access Project.
+  kumho_tire_526_us_137:
+    citation: Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999)
+    court_hint: supreme_court
+    provider: caselaw_access_project
+    content_url: https://cite.case.law/us/526/137/
+    notes: Credential-free citation page served by the Caselaw Access Project.
+  auker_545_pa_521:
+    citation: Commonwealth v. Auker, 545 Pa. 521 (1996)
+    court_hint: state_supreme_court
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%22545+Pa.+521%22
+    landing_url: https://www.courtlistener.com/?q=%22545+Pa.+521%22
+    notes: Anonymous CourtListener search page for the state citation, not an
+      opinion URL; a capture records navigation, never a holding.
+  westerfield_6_cal5th_632:
+    citation: People v. Westerfield, 6 Cal.5th 632 (2019)
+    court_hint: state_supreme_court
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%226+Cal.5th+632%22
+    landing_url: https://www.courtlistener.com/?q=%226+Cal.5th+632%22
+    notes: Anonymous CourtListener search page for the state citation, not an
+      opinion URL; a capture records navigation, never a holding.
+  truscott_2007_onca_575:
+    citation: R. v. Truscott, 2007 ONCA 575 (Canada)
+    court_hint: canadian_appellate
+    provider: canlii
+    content_url: https://www.canlii.org/en/on/onca/doc/2007/2007onca575/2007onca575.html
+    landing_url: https://www.canlii.org/en/on/onca/doc/2007/2007onca575/2007onca575.html
+    notes: CanLII neutral-citation URL pattern; verify the document id before
+      relying on retrieval.
+  amazon_usda_no_22_1052:
+    citation: Amazon Services LLC v. U.S. Department of Agriculture, No. 22-1052 (2024)
+    court_hint: federal_circuit
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%22No.+22-1052%22
+    landing_url: https://www.courtlistener.com/?q=%22No.+22-1052%22
+    notes: Anonymous CourtListener search page; a non-precedential citation
+      number may resolve to several dockets, which the capture records as-is.
+  home_builders_babbitt_130_f3d_1041:
+    citation: National Association of Home Builders v. Babbitt, 130 F.3d 1041 (1997)
+    court_hint: federal_circuit
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%22130+F.3d+1041%22
+    landing_url: https://www.courtlistener.com/?q=%22130+F.3d+1041%22
+    notes: Anonymous CourtListener search page for the F.3d citation.
+  sweet_home_515_us_687:
+    citation: Babbitt v. Sweet Home Chapter of Communities for a Great Oregon, 515 U.S. 687 (1995)
+    court_hint: supreme_court
+    provider: caselaw_access_project
+    content_url: https://cite.case.law/us/515/687/
+    notes: Credential-free citation page served by the Caselaw Access Project.
+  almond_alliance_79_calapp5th_337:
+    citation: Almond Alliance of California v. Fish & Game Commission, 79 Cal.App.5th 337 (2022)
+    court_hint: california_court_of_appeal
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%2279+Cal.App.5th+337%22
+    landing_url: https://www.courtlistener.com/?q=%2279+Cal.App.5th+337%22
+    notes: Anonymous CourtListener search page for the state citation.
+  case_of_swans_77_er_435:
+    citation: The Case of Swans, 77 ER 435 (1592)
+    court_hint: english_common_law
+    provider: commonlaw_index
+    content_url: https://www.commonlii.org/
+    landing_url: https://www.commonlii.org/
+    notes: Pre-reporter common-law authority; no stable electronic full-text URL
+      is declared, so the row describes the citation only. A retrieval from the
+      declared URL records an index page, never a holding.
+  goff_kilts_15_wend_550:
+    citation: Goff v. Kilts, 15 Wend. 550 (1836)
+    court_hint: state_court_historic
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%2215+Wend.+550%22
+    landing_url: https://www.courtlistener.com/?q=%2215+Wend.+550%22
+    notes: Anonymous CourtListener search page for the historic state citation.
+  kearry_pattinson_1939_1kb_471:
+    citation: Kearry v. Pattinson, [1939] 1 KB 471 (England & Wales)
+    court_hint: english_common_law
+    provider: commonlaw
+    content_url: https://www.bailii.org/
+    landing_url: https://www.bailii.org/
+    notes: BAILII index declared because no stable electronic URL for the 1939
+      KB citation is registered; retrieval from the index records navigation.
+  ferreira_dasaro_152_so2d_736:
+    citation: Ferreira v. D'Asaro, 152 So. 2d 736 (1963)
+    court_hint: state_court_historic
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%22152+So.+2d+736%22
+    landing_url: https://www.courtlistener.com/?q=%22152+So.+2d+736%22
+    notes: Anonymous CourtListener search page for the historic state citation.
+  horsch_terminex_19_kanapp2d_134:
+    citation: Horsch v. Terminex International Co., 19 Kan. App. 2d 134 (1993)
+    court_hint: state_appellate
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%2219+Kan.+App.+2d+134%22
+    landing_url: https://www.courtlistener.com/?q=%2219+Kan.+App.+2d+134%22
+    notes: Anonymous CourtListener search page for the state citation.
+  chakrabarty_447_us_303:
+    citation: Diamond v. Chakrabarty, 447 U.S. 303 (1980)
+    court_hint: supreme_court
+    provider: caselaw_access_project
+    content_url: https://cite.case.law/us/447/303/
+    notes: Credential-free citation page served by the Caselaw Access Project.
+  ex_parte_allen_2_uspq2d_1425:
+    citation: Ex parte Allen, 2 USPQ2d 1425 (1987)
+    court_hint: patent_tribunal
+    provider: courtlistener
+    content_url: https://www.courtlistener.com/?q=%222+USPQ2d+1425%22
+    landing_url: https://www.courtlistener.com/?q=%222+USPQ2d+1425%22
+    notes: Anonymous CourtListener search page; USPQ citations sit outside the
+      Caselaw Access Project's reporters.
+  oncomouse_patent_4736866:
+    citation: Harvard OncoMouse, U.S. Patent 4,736,866 (1988)
+    court_hint: patent_grant
+    provider: uspto
+    content_url: https://patents.google.com/patent/US4736866A/en
+    landing_url: https://patents.google.com/patent/US4736866A/en
+    notes: Google Patents page for the granted patent; a patent grant is a
+      document of record, not a judicial holding.

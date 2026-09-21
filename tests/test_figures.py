@@ -8,7 +8,9 @@ matplotlib.use("Agg")
 
 import matplotlib.image as mpimg  # noqa: E402
 
-from src import figure_bundle, figure_captions  # noqa: E402
+from legal_informatics import figure_captions  # noqa: E402
+from src import viz as figure_bundle  # noqa: E402
+from src.figure_caption_records import FIGURE_CAPTIONS  # noqa: E402
 
 
 def test_renderers_cover_every_caption_and_vice_versa():
@@ -21,7 +23,7 @@ def test_renderers_cover_every_caption_and_vice_versa():
 def test_build_figures_writes_all_pngs(tmp_path):
     paths = figure_bundle.build_figures(tmp_path)
     # one per caption + the cover
-    assert len(paths) == len(figure_captions.all_captions()) + 1
+    assert len(paths) == len(figure_captions.all_captions(FIGURE_CAPTIONS)) + 1
     for p in paths:
         assert p.exists()
         assert p.suffix == ".png"
@@ -31,7 +33,7 @@ def test_build_figures_writes_all_pngs(tmp_path):
 
 def test_each_captioned_figure_file_is_named_for_its_slug(tmp_path):
     figure_bundle.build_figures(tmp_path)
-    for caption in figure_captions.all_captions():
+    for caption in figure_captions.all_captions(FIGURE_CAPTIONS):
         assert (tmp_path / f"{caption.slug}.png").exists()
 
 

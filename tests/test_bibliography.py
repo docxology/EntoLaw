@@ -7,7 +7,7 @@ from pathlib import Path
 
 from src import claim_ledger as cl
 from src import manuscript_variables as mv
-from src.viz_citation_dates import bibliography_dates
+from legal_informatics.viz_citation_dates import bibliography_dates
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = PROJECT_ROOT / "docs" / "manuscript"

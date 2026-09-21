@@ -1,0 +1,86 @@
+# EntoLaw scope registry.
+#
+# Resolved by legal_informatics/corpus_analysis.py:load_scope_registry, which
+# fails closed on a missing scope_registry block, no scopes, a scope whose
+# level is absent from the `levels` list, or non-string cues.
+#
+# HARD BOUNDARY. A scope says where a record came from. It never says what the
+# record governs. A U.S. Fish and Wildlife Service document tagged `federal`
+# is evidence about that service's records, never evidence of global insect
+# protection, and every emitted scope record carries governance_scope:
+# not_assessable to keep that explicit.
+#
+# Resolution is evidence-driven: a scope becomes a candidate only when one of
+# its cue phrases appears in the extracted page text, and every candidate keeps
+# the page locators of the cue mentions that produced it. A document with no
+# cue evidence resolves to the explicit `unknown` scope rather than to a guess.
+# Ties are broken by declaration order below, so generation stays deterministic.
+project_id: entolaw
+period:
+  start: '1592-01-01'
+  end: '2026-12-31'
+levels: [international, european_union, united_kingdom, federal, state, common_law, scientific_literature]
+topics: [invasive_species, pesticide_regulation, pollinator_protection, cites_wildlife_trade, endangered_species, forensic_entomology, bee_ownership, insect_patents, vector_control, animal_welfare_sentience]
+dimensions: [witness_evidence, threat_quarantine, protected_species, property, invention_ip, welfare, timeline, institutions]
+
+scope_registry:
+  version: '1.0'
+  # The scope assigned when no cue phrase is observed. It is a real value, not
+  # a missing one: `not_assessable` states that the corpus does not say.
+  unknown_scope:
+    id: scope:unknown
+    level: unknown
+    label: Scope not established by the received text
+    status: not_assessable
+  scopes:
+  - id: scope:cites
+    level: international
+    label: CITES treaty bodies
+    cues: ['CITES', 'Convention on International Trade in Endangered Species', 'Appendix II', 'CITES Secretariat']
+  - id: scope:european-commission
+    level: european_union
+    label: European Commission (SANTE and environment directorates)
+    cues: ['European Commission', 'DG SANTE', 'EU Pollinators Initiative', 'Regulation (EU) 1143/2014', 'Union list of invasive alien species']
+  - id: scope:uk-defra
+    level: united_kingdom
+    label: United Kingdom Defra and sentience bodies
+    cues: ['Defra', 'Department for Environment, Food and Rural Affairs', 'Animal Sentience Committee', 'Animal Welfare (Sentience) Act 2022']
+  - id: scope:fws
+    level: federal
+    label: U.S. Fish and Wildlife Service
+    cues: ['U.S. Fish and Wildlife Service', 'Fish and Wildlife Service', 'FWS', 'Endangered Species Act listing']
+  - id: scope:epa
+    level: federal
+    label: U.S. Environmental Protection Agency
+    cues: ['Environmental Protection Agency', 'EPA', 'FIFRA', 'Federal Insecticide, Fungicide, and Rodenticide Act', 'Scientific Advisory Panel']
+  - id: scope:usda-aphis
+    level: federal
+    label: USDA Animal and Plant Health Inspection Service
+    cues: ['USDA', 'Animal and Plant Health Inspection Service', 'APHIS', 'Plant Protection Act', 'regulated pest']
+  - id: scope:state-agencies
+    level: state
+    label: State agriculture and fish-and-game bodies
+    cues: ['Department of Agriculture', 'Fish and Game Commission', 'vector control district', 'mosquito abatement', 'Department of Pesticide Regulation']
+  - id: scope:case-law
+    level: common_law
+    label: Court decisions and common-law authorities
+    cues: ['v.', 'Cir.', 'App.', 'Sup. Ct.', 'U.S. Patent', 'K.B.', 'ER', 'Wend.']
+  - id: scope:scientific-literature
+    level: scientific_literature
+    label: Peer-reviewed entomology and conservation literature
+    cues: ['et al.', 'journal', 'biomass decline', 'post-mortem interval', 'pollinator decline']
+
+# Corpus identity — declared data the engine reads, never invents.
+corpus_identity:
+  site_label: EntoLaw insect-law registry
+  corpus_description: >-
+    The received set is a source-anchored registry mapping registered legal
+    roles of the insect: cases, statutes, taxa, institutions, a timeline, and
+    their interconnections, with a claim ledger pinning each externally sourced
+    prose statistic to a verification record. It does not, by itself, establish
+    that any protection, regulation, or ownership rule applies in any matter.
+  analysis_questions:
+  - Which legal roles (witness, threat, protected, property, invention) does the registry assign, and on which authority?
+  - Which taxa carry registered legal roles, and which institutions regulate them?
+  - What does the timeline of statutes, treaties, and cases establish, and what remains not_assessable?
+  - Which registered claims are verified against their named external sources, and with what nuance?

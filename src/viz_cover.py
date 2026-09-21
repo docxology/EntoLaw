@@ -6,8 +6,10 @@ from typing import Any, Callable
 import matplotlib.pyplot as plt
 from matplotlib import patches
 
+from legal_informatics.viz_theme import _INK, _MUTED, _save, _wrap_label
+
 from . import metrics, roles
-from .viz_theme import ROLE_COLORS, _INK, _MUTED, _save, _wrap_label
+from .viz import ROLE_COLORS
 
 #: Which pinned specimen stands for which registered role on the cover board.
 #: Chosen for narrative fit with the manuscript: the monarch is the field's

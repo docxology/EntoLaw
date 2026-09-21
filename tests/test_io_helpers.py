@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.io_helpers import flatten_cell, write_csv
+from legal_informatics.io_helpers import flatten_cell, write_csv
 
 
 def test_write_csv_writes_header_rows_and_flattens_sequences(tmp_path):

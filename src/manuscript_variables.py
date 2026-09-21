@@ -10,7 +10,6 @@ fails CI if any prose token is unbacked.
 """
 
 from __future__ import annotations
-
 import hashlib
 import json
 import platform
@@ -20,17 +19,19 @@ from pathlib import Path
 
 import yaml
 
+from legal_informatics.figure_captions import caption_tokens as _caption_tokens
+
 from . import (
     cases,
-    figure_captions,
     institutions,
     interconnections,
     metrics,
-    package_map,
     roles,
     species,
     statutes,
+    viz,
 )
+from .figure_caption_records import FIGURE_CAPTIONS
 
 
 def generate_variables(project_root: Path) -> dict[str, str]:
@@ -51,14 +52,13 @@ def generate_variables(project_root: Path) -> dict[str, str]:
     variables["MILESTONE_COUNT"] = str(m.milestone_count)
     variables["TIMELINE_SPAN_YEARS"] = str(m.timeline_span_years)
     variables["INTERCONNECTION_COUNT"] = str(m.interconnection_count)
-    variables["REGISTRY_COUNT"] = str(len(package_map.REGISTRIES))
+    variables["REGISTRY_COUNT"] = str(len(viz.REGISTRIES))
     variables["CLAIM_LEDGER_COUNT"] = str(claim_ledger.claim_count(project_root))
     variables["JURISDICTION_COUNT"] = str(
         sum(1 for v in m.statutes_by_jurisdiction.values() if v > 0)
     )
-    variables["FIGURE_COUNT"] = str(package_map.figure_count())
+    variables["FIGURE_COUNT"] = str(viz.figure_count())
 
-    # ── Per-role evidence counts (e.g. WITNESS_CASE_COUNT) ─────────────────
     coverage = metrics.role_coverage_matrix()
     for role in roles.all_roles():
         prefix = role.slug.upper()
@@ -97,7 +97,7 @@ def generate_variables(project_root: Path) -> dict[str, str]:
     variables["FORENSIC_INSTITUTION_COUNT"] = str(len(institutions.by_role("witness")))
 
     # ── Figure captions (resolve {TOKEN} against the above) ────────────────
-    variables.update(figure_captions.caption_tokens(variables))
+    variables.update(_caption_tokens(FIGURE_CAPTIONS, variables))
 
     # ── Provenance ─────────────────────────────────────────────────────────
     variables["CONFIG_HASH"] = _config_hash(project_root)

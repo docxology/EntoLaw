@@ -8,7 +8,7 @@
 - Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`; parent project docs: `EntoLaw/AGENTS.md`.
 
 ## Layout
-Files: `AGENTS.md`, `README.md`, `__init__.py`, `case_records.py`, `cases.py`, `citations.py`, `claim_ledger.py`, `claim_ledger_loading.py`, `claim_ledger_models.py`, `claim_ledger_validation.py`, `figure_bundle.py`, `figure_caption_records.py`, `figure_captions.py`, `institutions.py`, `interconnections.py`, `io_helpers.py`, `manuscript_variables.py`, `metrics.py`, `package_map.py`, `roles.py`, `species.py`, `statute_records.py`, `statutes.py`, `taxon_records.py`, `timeline.py`, `validation.py` — 34 files total
+Files: `AGENTS.md`, `README.md`, `__init__.py`, `case_records.py`, `cases.py`, `citations.py`, `claim_ledger.py`, `claim_ledger_loading.py`, `claim_ledger_models.py`, `claim_ledger_validation.py`, `figure_caption_records.py`, `institutions.py`, `interconnections.py`, `manuscript_variables.py`, `metrics.py`, `roles.py`, `species.py`, `statute_records.py`, `statutes.py`, `taxon_records.py`, `timeline.py`, `validation.py`, `viz.py`, `viz_citation_date_records.py`, `viz_cover.py` — 25 files total
 
 ## Kind
 - Category: **src**. `src/` of the parent project.

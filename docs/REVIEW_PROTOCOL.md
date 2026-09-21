@@ -19,7 +19,7 @@ external claims in `data/claim_ledger.yaml`.
 ## Figure And Output Pass
 
 Every figure referenced in the manuscript must have a caption record in
-`src/figure_captions.py`, a renderer in `src/figure_bundle.py`, and a non-empty
+`src/figure_caption_records.py`, a renderer bound in `src/viz.py`, and a non-empty
 PNG in `output/figures/`.
 
 Captions must include reader-facing provenance and caveats. The claim-ledger

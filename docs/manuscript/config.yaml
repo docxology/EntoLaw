@@ -6,6 +6,7 @@ paper:
   date: "2026-07-02"
   cover:
     image: "figures/cover.png"
+    alt: "Cover for Entomological Law: insects as evidence, threat, property, product, patient, and weapon, mapped across forensic and regulatory domains."
 
 authors:
   - name: "Daniel Ari Friedman"
@@ -48,7 +49,7 @@ render:
     html: true
     slides: false
     docx: false
-    epub: false
+    epub: true
 
 testing:
   max_test_failures: 0

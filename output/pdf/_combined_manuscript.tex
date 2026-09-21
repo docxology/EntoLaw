@@ -2,6 +2,7 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
+  english,
 ]{article}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -37,6 +38,8 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
 \newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -62,6 +65,14 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -109,10 +120,14 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
+  pdftitle={Entomological Law},
+  pdfauthor={Daniel Ari Friedman},
+  pdflang={en},
   colorlinks=true,linkcolor=red,urlcolor=red,citecolor=red,anchorcolor=red,filecolor=red,
   pdfcreator={LaTeX via pandoc}}
 
-\author{}
+\title{Entomological Law}
+\author{Daniel Ari Friedman}
 \date{}
 
 \IfFileExists{seqsplit.sty}{\usepackage{seqsplit}}{\newcommand{\seqsplit}[1]{#1}}
@@ -137,8 +152,14 @@
 \hypersetup{colorlinks=true, linkcolor=linkred, citecolor=linkred, urlcolor=linkred, filecolor=linkred, anchorcolor=linkred, allcolors=linkred}
 \usepackage[capitalise,noabbrev]{cleveref}
 \usepackage{natbib}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
 
 \begin{document}
+\maketitle
 
 \thispagestyle{empty}
 \setlength{\parskip}{0pt}
@@ -176,8 +197,8 @@ Version DOI & 10.5281/zenodo.21137277 \\
 GitHub &
 \url{https://github.com/docxology/EntoLaw/releases/tag/v1.0.0} \\
 Zenodo & \url{https://zenodo.org/records/21137276} \\
-SHA-256 & \breaktt{5a1891704c285491…} \\
-SHA-512 & \breaktt{a3e8e04267dbefa7…} \\
+SHA-256 & \texttt{5a1891704c285491…} \\
+SHA-512 & \texttt{a3e8e04267dbefa7…} \\
 \end{longtable}
 }
 
@@ -198,7 +219,7 @@ SHA-512 & \breaktt{a3e8e04267dbefa7…} \\
 
 \begin{figure}
 \centering
-\includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio,alt={Integrity QR strip}]{../figures/transmission_integrity_strip.png}
+\includegraphics[width=0.98\linewidth,height=0.5\textheight,keepaspectratio,alt={Integrity QR strip}]{../figures/transmission_integrity_strip.png}
 \caption{Integrity QR strip}
 \end{figure}
 
@@ -206,37 +227,12 @@ Structured manifest: \breaktt{../data/transmission\_manifest.json}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.35\linewidth,height=0.50\textheight,keepaspectratio,alt={Publication pairing flow}]{../figures/transmission_pairing.png}
+\includegraphics[width=0.35\linewidth,height=0.5\textheight,keepaspectratio,alt={Publication pairing flow}]{../figures/transmission_pairing.png}
 \caption{Publication pairing flow}
 \end{figure}
 
 \end{samepage}
 \newpage
-
-\begin{titlepage}
-\centering
-\vspace*{0.55cm}
-{\Huge\sffamily\bfseries Entomological Law\par}
-\vspace{0.4em}
-{\Large\sffamily A Field Map of Insects as Evidence, Threat, Property, Product, Patient, and Weapon\par}
-\vspace{0.75em}
-{\large\sffamily\bfseries Daniel Ari Friedman\par}
-{\small\sffamily Active Inference Institute\par}
-{\small\sffamily\texttt{daniel@activeinference.institute}\par}
-{\small\sffamily\href{https://orcid.org/0000-0001-6232-9096}{ORCID: 0000-0001-6232-9096}\par}
-\vspace{0.08em}
-{\small\sffamily DOI: \href{https://doi.org/10.5281/zenodo.21137276}{10.5281/zenodo.21137276}\par}
-\vspace{0.35em}
-\makeatletter
-{\@date\par}
-\makeatother
-\vfill
-\includegraphics[width=0.98\textwidth,height=0.60\textheight,keepaspectratio]{\detokenize{../figures/cover.png}}
-\vfill
-\end{titlepage}
-\thispagestyle{empty}
-\newpage
-
 \tableofcontents
 \newpage
 
@@ -368,7 +364,7 @@ used in war? \\
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={The 8 registered legal roles an insect can occupy in this release, with the case, statute, species, and milestone evidence encoded for each. Read as: the field is not one doctrine but a set of recurring legal positions that biology can trigger. Why it matters: the figure sets the manuscript's organizing grammar before the doctrinal sections specialize it. Provenance: src/roles.py and src.metrics.role\_coverage\_matrix(). Caveat: counts describe the encoded registries, not the entirety of each legal sub-field.}]{../figures/roles_overview.png}
+\includegraphics[width=0.95\linewidth,height=0.5\textheight,keepaspectratio,alt={The 8 registered legal roles an insect can occupy in this release, with the case, statute, species, and milestone evidence encoded for each. Read as: the field is not one doctrine but a set of recurring legal positions that biology can trigger. Why it matters: the figure sets the manuscript's organizing grammar before the doctrinal sections specialize it. Provenance: src/roles.py and src.metrics.role\_coverage\_matrix(). Caveat: counts describe the encoded registries, not the entirety of each legal sub-field.}]{../figures/roles_overview.png}
 \caption{The 8 registered legal roles an insect can occupy in this
 release, with the case, statute, species, and milestone evidence encoded
 for each. Read as: the field is not one doctrine but a set of recurring
@@ -393,7 +389,7 @@ only at the end.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={Network of the 5 recurring themes that link the legal roles --- the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association.}]{../figures/role_interconnections.png}
+\includegraphics[width=0.85\linewidth,height=0.5\textheight,keepaspectratio,alt={Network of the 5 recurring themes that link the legal roles --- the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association.}]{../figures/role_interconnections.png}
 \caption{Network of the 5 recurring themes that link the legal roles ---
 the definitional problem, the expert-testimony bridge, the biotechnology
 pivot, the property/conservation mirror, and the ancient/modern rhyme.
@@ -469,7 +465,7 @@ shown in the timeline figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio,alt={Selected milestones of entomological law across the 3676-year span the registry encodes, from early bee-theft and bee-property rules to the 2026 monarch-listing suit, coloured by legal role. Read as: old evidentiary and property problems keep reappearing inside new biotechnology, welfare, and conservation disputes. Why it matters: the chronology shows recurrence rather than novelty as the field's basic pattern. Provenance: src/timeline.py. Caveat: a selected chronology, not a comprehensive history.}]{../figures/timeline.png}
+\includegraphics[width=0.98\linewidth,height=0.5\textheight,keepaspectratio,alt={Selected milestones of entomological law across the 3676-year span the registry encodes, from early bee-theft and bee-property rules to the 2026 monarch-listing suit, coloured by legal role. Read as: old evidentiary and property problems keep reappearing inside new biotechnology, welfare, and conservation disputes. Why it matters: the chronology shows recurrence rather than novelty as the field's basic pattern. Provenance: src/timeline.py. Caveat: a selected chronology, not a comprehensive history.}]{../figures/timeline.png}
 \caption{Selected milestones of entomological law across the 3676-year
 span the registry encodes, from early bee-theft and bee-property rules
 to the 2026 monarch-listing suit, coloured by legal role. Read as: old
@@ -492,7 +488,7 @@ validated.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with pre-1700 and 1700-1999 layers separated from the 2000+ consolidation, including labelled pre-1800 Rus', Muscovite, and Russian-Imperial legal/scientific sources plus pre-1950 Russian and Soviet entomology/legal sources. Read as: EntoLaw's evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz\_citation\_dates. Caveat: the date is the bibliography year, so modern editions appear at edition date unless the bibliography declares a source-date anchor.}]{../figures/citation_dates.png}
+\includegraphics[width=0.95\linewidth,height=0.5\textheight,keepaspectratio,alt={Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with pre-1700 and 1700-1999 layers separated from the 2000+ consolidation, including labelled pre-1800 Rus', Muscovite, and Russian-Imperial legal/scientific sources plus pre-1950 Russian and Soviet entomology/legal sources. Read as: EntoLaw's evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz\_citation\_dates. Caveat: the date is the bibliography year, so modern editions appear at edition date unless the bibliography declares a source-date anchor.}]{../figures/citation_dates.png}
 \caption{Date distribution for every bibliography entry with a parseable
 year, split into broad bands and individual source-date strips with
 pre-1700 and 1700-1999 layers separated from the 2000+ consolidation,
@@ -540,7 +536,7 @@ jurisdiction figures.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 18 registered decisions grouped by the legal role of the insect; 5 of 8 roles carry modern reporter case law, while the defendant, welfare, and weapon roles are history- and statute-driven. Read as: litigation is concentrated where insects enter court as evidence, property, or regulated biological facts. Why it matters: it separates litigated doctrine from roles that are legally important but less case-law dense. Provenance: src/cases.py via src.metrics. Caveat: only citation-parseable decisions are encoded here.}]{../figures/cases_by_role.png}
+\includegraphics[width=0.85\linewidth,height=0.5\textheight,keepaspectratio,alt={The 18 registered decisions grouped by the legal role of the insect; 5 of 8 roles carry modern reporter case law, while the defendant, welfare, and weapon roles are history- and statute-driven. Read as: litigation is concentrated where insects enter court as evidence, property, or regulated biological facts. Why it matters: it separates litigated doctrine from roles that are legally important but less case-law dense. Provenance: src/cases.py via src.metrics. Caveat: only citation-parseable decisions are encoded here.}]{../figures/cases_by_role.png}
 \caption{The 18 registered decisions grouped by the legal role of the
 insect; 5 of 8 roles carry modern reporter case law, while the
 defendant, welfare, and weapon roles are history- and statute-driven.
@@ -554,7 +550,7 @@ are encoded here.}\label{fig:cases_by_role}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={The registered case law by issuing court system, spanning the U.S. Supreme Court, federal appellate and state courts, England \& Wales, Canada, and the U.S. patent system. Read as: the field is jurisdictionally scattered, so doctrine develops through examples rather than a single appellate line. Why it matters: the field has to be assembled comparatively, not read from one reporter series. Provenance: src/cases.py. Caveat: a curated leading-case set, not a census of all decisions.}]{../figures/cases_by_jurisdiction.png}
+\includegraphics[width=0.8\linewidth,height=0.5\textheight,keepaspectratio,alt={The registered case law by issuing court system, spanning the U.S. Supreme Court, federal appellate and state courts, England \& Wales, Canada, and the U.S. patent system. Read as: the field is jurisdictionally scattered, so doctrine develops through examples rather than a single appellate line. Why it matters: the field has to be assembled comparatively, not read from one reporter series. Provenance: src/cases.py. Caveat: a curated leading-case set, not a census of all decisions.}]{../figures/cases_by_jurisdiction.png}
 \caption{The registered case law by issuing court system, spanning the
 U.S. Supreme Court, federal appellate and state courts, England \&
 Wales, Canada, and the U.S. patent system. Read as: the field is
@@ -672,7 +668,7 @@ public-health categories, summarized in the statutes-by-category figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 43 registered instruments grouped across 9 structural categories --- forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category.}]{../figures/statutes_by_category.png}
+\includegraphics[width=0.85\linewidth,height=0.5\textheight,keepaspectratio,alt={The 43 registered instruments grouped across 9 structural categories --- forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category.}]{../figures/statutes_by_category.png}
 \caption{The 43 registered instruments grouped across 9 structural
 categories --- forensic, quarantine, conservation, property, biotech/IP,
 food, welfare, public-health, and warfare. Read as: regulation follows
@@ -849,7 +845,7 @@ the American burying beetle, summarized in the species-by-role figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\linewidth,height=0.50\textheight,keepaspectratio,alt={The 24 registered taxa grouped by the legal role they illustrate, from forensic blow flies to quarantined pests, listed species, owned honey bees, engineered and edible insects, the trial weevils, and a weaponized flea. Read as: the same biological class can become evidence, asset, enemy, product, or rights candidate depending on legal context. Why it matters: legal role, not species identity alone, determines which institution acts. Provenance: src/species.py. Caveat: an illustrative set chosen to anchor each role, not a taxonomic survey.}]{../figures/species_by_role.png}
+\includegraphics[width=0.85\linewidth,height=0.5\textheight,keepaspectratio,alt={The 24 registered taxa grouped by the legal role they illustrate, from forensic blow flies to quarantined pests, listed species, owned honey bees, engineered and edible insects, the trial weevils, and a weaponized flea. Read as: the same biological class can become evidence, asset, enemy, product, or rights candidate depending on legal context. Why it matters: legal role, not species identity alone, determines which institution acts. Provenance: src/species.py. Caveat: an illustrative set chosen to anchor each role, not a taxonomic survey.}]{../figures/species_by_role.png}
 \caption{The 24 registered taxa grouped by the legal role they
 illustrate, from forensic blow flies to quarantined pests, listed
 species, owned honey bees, engineered and edible insects, the trial
@@ -1401,7 +1397,7 @@ defendant and the weapon --- almost entirely history-driven.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={Heatmap of how much evidence each role carries across the four registry kinds (cases, statutes, species, milestones), making the field's case-driven, statute-driven, and history-driven corners visible at a glance. Read as: a role can be legally central even when its evidence is historical or statutory rather than case-law dense. Why it matters: the figure prevents case-counts from standing in for the whole legal architecture. Provenance: src.metrics.role\_coverage\_matrix(). Caveat: cell values are registry counts, not weights of legal importance.}]{../figures/role_coverage.png}
+\includegraphics[width=0.8\linewidth,height=0.5\textheight,keepaspectratio,alt={Heatmap of how much evidence each role carries across the four registry kinds (cases, statutes, species, milestones), making the field's case-driven, statute-driven, and history-driven corners visible at a glance. Read as: a role can be legally central even when its evidence is historical or statutory rather than case-law dense. Why it matters: the figure prevents case-counts from standing in for the whole legal architecture. Provenance: src.metrics.role\_coverage\_matrix(). Caveat: cell values are registry counts, not weights of legal importance.}]{../figures/role_coverage.png}
 \caption{Heatmap of how much evidence each role carries across the four
 registry kinds (cases, statutes, species, milestones), making the
 field's case-driven, statute-driven, and history-driven corners visible
@@ -1600,7 +1596,7 @@ regenerated from them, as shown in the architecture figure.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\linewidth,height=0.50\textheight,keepaspectratio,alt={How 7 source-owned registries become reproducible outputs. Pure generator methods --- metrics, validation, manuscript-variable generation, and figure rendering --- turn registry data into inventories, reports, figures, and the rendered manuscript itself. Read as: the package treats the manuscript as a compiled artifact, not as the source of legal facts. Why it matters: readers can audit whether prose, visuals, and counts share the same inputs. Provenance: src/package\_map.py. Caveat: a local build-pipeline description, not a deployment diagram.}]{../figures/architecture.png}
+\includegraphics[width=0.95\linewidth,height=0.5\textheight,keepaspectratio,alt={How 7 source-owned registries become reproducible outputs. Pure generator methods --- metrics, validation, manuscript-variable generation, and figure rendering --- turn registry data into inventories, reports, figures, and the rendered manuscript itself. Read as: the package treats the manuscript as a compiled artifact, not as the source of legal facts. Why it matters: readers can audit whether prose, visuals, and counts share the same inputs. Provenance: src/package\_map.py. Caveat: a local build-pipeline description, not a deployment diagram.}]{../figures/architecture.png}
 \caption{How 7 source-owned registries become reproducible outputs. Pure
 generator methods --- metrics, validation, manuscript-variable
 generation, and figure rendering --- turn registry data into
@@ -1628,7 +1624,7 @@ never typed.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={The same 43 instruments partitioned by issuing jurisdiction --- US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire, USSR, EU, and international --- showing the field's multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field's risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement.}]{../figures/statutes_by_jurisdiction.png}
+\includegraphics[width=0.8\linewidth,height=0.5\textheight,keepaspectratio,alt={The same 43 instruments partitioned by issuing jurisdiction --- US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire, USSR, EU, and international --- showing the field's multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field's risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement.}]{../figures/statutes_by_jurisdiction.png}
 \caption{The same 43 instruments partitioned by issuing jurisdiction ---
 US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire,
 USSR, EU, and international --- showing the field's multi-level legal
@@ -1666,7 +1662,7 @@ guarantees \emph{correspondence to the source}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth,height=0.50\textheight,keepaspectratio,alt={Coverage of the 20 live-checkable claim-ledger entries by declared manuscript section. Provenance: src.claim\_ledger.claim\_coverage\_by\_anchor(). Read as: volatile current-status and external magnitude claims are isolated where live evidence, not registry counts, carries the truth burden. Why it matters: it makes the manuscript's fact-checking boundary auditable by section. Caveat: a section with zero entries may still contain registry-derived facts or qualitative cited claims; this figure shows external/current claims that require a quote-backed verification block.}]{../figures/claim_ledger_coverage.png}
+\includegraphics[width=0.8\linewidth,height=0.5\textheight,keepaspectratio,alt={Coverage of the 20 live-checkable claim-ledger entries by declared manuscript section. Provenance: src.claim\_ledger.claim\_coverage\_by\_anchor(). Read as: volatile current-status and external magnitude claims are isolated where live evidence, not registry counts, carries the truth burden. Why it matters: it makes the manuscript's fact-checking boundary auditable by section. Caveat: a section with zero entries may still contain registry-derived facts or qualitative cited claims; this figure shows external/current claims that require a quote-backed verification block.}]{../figures/claim_ledger_coverage.png}
 \caption{Coverage of the 20 live-checkable claim-ledger entries by
 declared manuscript section. Provenance:
 \protect\breaktt{src.claim\_ledger.claim\_coverage\_by\_anchor()}. Read
@@ -1771,7 +1767,8 @@ Map}\label{sec:references}
 
 
 
-\clearpage
+\providecommand{\bibsection}{}
+\renewcommand{\bibsection}{}
 
 \bibliography{references}
 % transmission-end-bookend
@@ -1790,7 +1787,7 @@ SHA-256 \texttt{5a1891704c28…} \texorpdfstring{\ensuremath{\cdot}}{.} pairing 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.88\linewidth,height=0.50\textheight,keepaspectratio,alt={Integrity QR strip}]{../figures/transmission_integrity_strip.png}
+\includegraphics[width=0.88\linewidth,height=0.5\textheight,keepaspectratio,alt={Integrity QR strip}]{../figures/transmission_integrity_strip.png}
 \caption{Integrity QR strip}
 \end{figure}
 

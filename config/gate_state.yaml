@@ -1,0 +1,46 @@
+# The gates whose results make up the project's gate-state block.
+#
+# Data, not code. The renderer in legal_informatics/src/gate_state.py is generic
+# and shared with the sibling checkouts; this list is the part that is this
+# project's own. Same arrangement as config/legal_issues.yaml and for the same
+# reason: a per-project fact inside a shared module is a fork with no record.
+#
+# Read by gate_state.load_gate_declarations, which refuses a malformed file
+# rather than falling back to a default. There is no default gate list: a
+# default would let this project publish a block about gates it does not run.
+#
+# Each entry declares:
+#
+#   command  the exact command, run without a shell in the project root. It is
+#            printed beside its result, because a number with no command is a
+#            claim and a number with its command is a receipt.
+#   expect   regular expressions matched against the command's combined output.
+#            The matched text itself is what the block prints, verbatim. Write
+#            a pattern to cover the stable part of a message and to exclude
+#            the part that moves — a duration, a timestamp — or `--check` will
+#            report drift on every run and stop meaning anything. A gate whose
+#            output matches none of its patterns is rendered FAILING.
+#
+# The module-map and docs-inventory gates run scripts that EntoLaw's own
+# scripts/ directory owns; a gate is declared here only after its script
+# exists, never in anticipation of one.
+
+gates:
+  - command: uv run pytest tests/ -m "not live" --cov=src --cov-fail-under=90
+    expect:
+      - '\d+ passed'
+      - '\d+ skipped'
+      - 'Required test coverage of [\d.]+% reached\. Total coverage: [\d.]+%'
+
+  - command: uv run ruff check src scripts tests
+    expect:
+      - 'All checks passed!'
+
+  - command: uv run python scripts/check_module_map.py
+    expect:
+      - 'module map: \d+ violations'
+
+  - command: uv run python scripts/check_docs_inventory.py
+    expect:
+      - 'inventory passed: [^\n]+'
+      - 'markdown files checked: \d+'

@@ -1,0 +1,217 @@
+# Declared legal issue entries for EntoLaw.
+# Data, not code: the issue-spotting ENGINE in legal_informatics/legal_issue_spotting.py is
+# generic; the jurisdiction-specific issue entries live here as declared data,
+# focused on registered legal roles of the insect.
+# Schema per entry: issue_id, status, priority, authority_id, authority,
+# source_url, corpus_findings (finding ids that must exist in the
+# investigation artifact), why_triggered, missing_facts, next_records.
+[
+  {
+    "issue_id": "invasive_species_quarantine",
+    "status": "potentially_implicated",
+    "priority": "high",
+    "authority_id": "federal_ppa_7usc7701",
+    "authority": "Plant Protection Act, 7 U.S.C. § 7701 et seq. (USDA APHIS quarantine authority)",
+    "source_url": "https://www.usda.gov/topics/plants",
+    "corpus_findings": [
+      "threat_role_registry",
+      "interconnections"
+    ],
+    "why_triggered": "The registry registers regulated-pest and quarantine authorities (Amazon Services v. USDA) and invasive-alien-species claims (Regulation (EU) 1143/2014 Union list). Whether a movement of insects or plant products triggers quarantine liability depends on facts the registries do not carry.",
+    "missing_facts": [
+      "which taxa are listed as regulated pests",
+      "the movement pathway and who moved it",
+      "secondary-liability posture of any service provider",
+      "penalty basis and its calculation",
+      "whether the taxa are on a union or federal list"
+    ],
+    "next_records": [
+      "APHIS regulated-pest list entry per taxon",
+      "EU Union list entry per taxon",
+      "enforcement and penalty records",
+      "import permit and inspection records"
+    ]
+  },
+  {
+    "issue_id": "pesticide_registration_and_fifra",
+    "status": "potentially_implicated",
+    "priority": "high",
+    "authority_id": "federal_fifra_7usc136",
+    "authority": "Federal Insecticide, Fungicide, and Rodenticide Act, 7 U.S.C. § 136 et seq. (EPA registration and Scientific Advisory Panel)",
+    "source_url": "https://www.epa.gov/laws-regulations/summary-federal-insecticide-fungicide-and-rodenticide-act",
+    "corpus_findings": [
+      "institution_registry",
+      "timeline"
+    ],
+    "why_triggered": "The institutions registry names pesticide regulators and the timeline carries pesticide-law entries. Registration, advisory-panel review, and label-compliance questions turn on the specific active ingredient and use pattern, which the registry does not record.",
+    "missing_facts": [
+      "the active ingredient and its registration status",
+      "applicator certification and label compliance",
+      "Scientific Advisory Panel review status",
+      "residue and tolerance records",
+      "state supplemental regulation"
+    ],
+    "next_records": [
+      "EPA registration and label documents",
+      "FIFRA Scientific Advisory Panel docket",
+      "state pesticide-regulation filings",
+      "enforcement and incident records"
+    ]
+  },
+  {
+    "issue_id": "pollinator_protection_esa",
+    "status": "potentially_implicated",
+    "priority": "high",
+    "authority_id": "federal_esa_16usc1532",
+    "authority": "Endangered Species Act, 16 U.S.C. § 1532(8) (arthropod and other invertebrate coverage)",
+    "source_url": "https://www.law.cornell.edu/uscode/text/16/1532",
+    "corpus_findings": [
+      "protected_role_registry",
+      "taxa_registry",
+      "claim_esa_invertebrate_definition"
+    ],
+    "why_triggered": "The claim ledger verifies that the ESA defines 'fish or wildlife' to include any arthropod, and that the monarch butterfly had proposed threatened status without a final rule as of June 2026. Listing, take, and critical-habitat applicability for any registered taxon remains a review question, not a finding.",
+    "missing_facts": [
+      "final listing status per registered taxon",
+      "critical-habitat designations",
+      "take and habitat-modification applicability",
+      "state listing status (including CESA via the invertebrate definition)",
+      "protection-gap figures per jurisdiction"
+    ],
+    "next_records": [
+      "FWS listing decisions and proposed rules",
+      "critical-habitat designations",
+      "state endangered-species listings for insects",
+      "petition and listing-timeline records"
+    ]
+  },
+  {
+    "issue_id": "cites_wildlife_trade_obligations",
+    "status": "potentially_implicated",
+    "priority": "medium",
+    "authority_id": "cites_appendices",
+    "authority": "CITES Appendices (international trade controls on listed insect taxa)",
+    "source_url": "https://cites.org/eng/app/index.php",
+    "corpus_findings": [
+      "institution_registry",
+      "interconnections"
+    ],
+    "why_triggered": "The registry names CITES treaty obligations among the institutions governing insect trade. Whether a registered taxon is appendix-listed, and what permit conditions attach to its trade, are facts the registry does not establish.",
+    "missing_facts": [
+      "appendix listing per registered taxon",
+      "import and export permit conditions",
+      "party implementation rules",
+      "trade volume records",
+      "enforcement outcomes"
+    ],
+    "next_records": [
+      "CITES appendix entries per taxon",
+      "national implementing regulations",
+      "permit and trade records",
+      "enforcement and seizure records"
+    ]
+  },
+  {
+    "issue_id": "uk_animal_welfare_sentience",
+    "status": "not_assessable_from_corpus",
+    "priority": "medium",
+    "authority_id": "uk_sentience_2022_s5",
+    "authority": "Animal Welfare (Sentience) Act 2022, s. 5 (decapod crustaceans and cephalopod molluscs)",
+    "source_url": "https://www.legislation.gov.uk/ukpga/2022/22/section/5/enacted",
+    "corpus_findings": [
+      "claim_uk_sentience_decapods",
+      "welfare_topic_registry"
+    ],
+    "why_triggered": "The claim ledger verifies that the Act's definition of 'animal' includes decapod crustaceans and cephalopod molluscs. How sentience obligations reach insects specifically is not established: insects are not named in the section, and the Act's reach is a legislative-definition fact, not an entomological one.",
+    "missing_facts": [
+      "whether insects fall within any sentience definition",
+      "Animal Sentience Committee review reports",
+      "policy consequences of any adverse opinion",
+      "comparable welfare rules in other jurisdictions"
+    ],
+    "next_records": [
+      "Animal Sentience Committee reports",
+      "Defra policy statements",
+      "comparative sentience-legislation register",
+      "scientific sentience assessments"
+    ]
+  },
+  {
+    "issue_id": "forensic_entomology_admissibility",
+    "status": "potentially_implicated",
+    "priority": "high",
+    "authority_id": "daubert_509us579",
+    "authority": "Daubert v. Merrell Dow Pharmaceuticals, Inc., 509 U.S. 579 (1993), as applied to entomological testimony",
+    "source_url": "https://www.courtlistener.com/?q=509+U.S.+579",
+    "corpus_findings": [
+      "witness_role_registry",
+      "case_registry"
+    ],
+    "why_triggered": "The cases registry registers the Frye-to-Kumho gatekeeping line and the state-court PMI-testimony affirmances (Auker) and divergences (Westerfield). Admissibility in any new matter depends on the jurisdiction's test, the expert's method, and the record of error-rate and acceptance — all review questions.",
+    "missing_facts": [
+      "governing admissibility test per jurisdiction",
+      "expert qualifications and method validation",
+      "PMI-estimate error rates and ranges",
+      "basis for expert divergence",
+      "trial-court gatekeeping rulings"
+    ],
+    "next_records": [
+      "expert reports and CVs",
+      "method-validation and rearing-data records",
+      "Daubert/Frye motions and rulings",
+      "state adoption status of each test"
+    ]
+  },
+  {
+    "issue_id": "bee_ownership_and_negligence",
+    "status": "potentially_implicated",
+    "priority": "medium",
+    "authority_id": "goff_kilts_15wend550",
+    "authority": "Goff v. Kilts, 15 Wend. 550 (1836), with Kearry v. Pattinson [1939] 1 KB 471",
+    "source_url": "https://www.courtlistener.com/?q=Goff+v.+Kilts",
+    "corpus_findings": [
+      "property_role_registry",
+      "case_registry"
+    ],
+    "why_triggered": "The property registry records the ferae naturae qualified-property line for swarms kept in sight and actively pursued, and the negligence standard for hives near property lines. Application to any living dispute depends on pursuit facts and local ordinances the registry does not carry.",
+    "missing_facts": [
+      "whether the swarm was pursued and kept in sight",
+      "hive placement and proximity records",
+      "local beekeeping ordinances",
+      "prior notice of sting risk",
+      "inspection and maintenance records"
+    ],
+    "next_records": [
+      "local apiary ordinance register",
+      "hive-placement and property-line records",
+      "negligence complaint and finding history",
+      "inspection logs"
+    ]
+  },
+  {
+    "issue_id": "insect_patentability",
+    "status": "potentially_implicated",
+    "priority": "low",
+    "authority_id": "chakrabarty_447us303",
+    "authority": "Diamond v. Chakrabarty, 447 U.S. 303 (1980), extended to multicellular animals by Ex parte Allen, 2 USPQ2d 1425 (1987)",
+    "source_url": "https://www.courtlistener.com/?q=447+U.S.+303",
+    "corpus_findings": [
+      "invention_role_registry",
+      "case_registry"
+    ],
+    "why_triggered": "The invention registry anchors engineered-insect patentability in Chakrabarty and Ex parte Allen. Patentability of any specific insect line depends on claim construction, product-of-nature analysis, and the applied-for claims — none carried by the registry.",
+    "missing_facts": [
+      "the specific claims at issue",
+      "claim construction and § 101 analysis",
+      "natural-occurrence comparisons",
+      "utility and enablement support",
+      "prosecution history"
+    ],
+    "next_records": [
+      "patent files and prosecution history",
+      "PTAB and court § 101 rulings",
+      "sterile-insect-technique patent families",
+      "license and deposit records"
+    ]
+  }
+]
