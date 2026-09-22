@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, TYPE_CHECKING
 
-import matplotlib.pyplot as plt
-from matplotlib import patches
+if TYPE_CHECKING:
+    import matplotlib.pyplot as plt
 
 from legal_informatics.viz_theme import _INK, _MUTED, _save, _wrap_label
 
@@ -20,6 +20,8 @@ _SPECIMEN_ROLES = {"butterfly": "protected", "mosquito": "threat", "bee": "prope
 
 
 def _draw_butterfly(ax: plt.Axes, x: float, y: float, scale: float, color: str) -> None:
+    from matplotlib import patches
+
     wing = dict(facecolor=color, edgecolor="white", linewidth=1.0, alpha=0.9)
     ax.add_patch(patches.Ellipse((x - 0.035 * scale, y + 0.018 * scale), 0.09 * scale, 0.14 * scale, angle=28, **wing))
     ax.add_patch(patches.Ellipse((x + 0.035 * scale, y + 0.018 * scale), 0.09 * scale, 0.14 * scale, angle=-28, **wing))
@@ -34,6 +36,8 @@ def _draw_butterfly(ax: plt.Axes, x: float, y: float, scale: float, color: str) 
 
 
 def _draw_bee(ax: plt.Axes, x: float, y: float, scale: float) -> None:
+    from matplotlib import patches
+
     ax.add_patch(patches.Ellipse((x, y), 0.15 * scale, 0.07 * scale, facecolor="#f59e0b", edgecolor=_INK, linewidth=1.0))
     for dx in (-0.035, 0.0, 0.035):
         ax.plot([x + dx * scale, x + dx * scale], [y - 0.032 * scale, y + 0.032 * scale], color=_INK, linewidth=1.2)
@@ -47,6 +51,8 @@ def _draw_bee(ax: plt.Axes, x: float, y: float, scale: float) -> None:
 
 
 def _draw_mosquito(ax: plt.Axes, x: float, y: float, scale: float) -> None:
+    from matplotlib import patches
+
     ax.add_patch(patches.Ellipse((x, y), 0.16 * scale, 0.025 * scale, angle=-12, facecolor="#64748b", edgecolor=_INK, linewidth=0.8))
     ax.add_patch(patches.Circle((x + 0.085 * scale, y - 0.02 * scale), 0.018 * scale, facecolor=_INK, edgecolor=_INK))
     ax.plot([x + 0.10 * scale, x + 0.18 * scale], [y - 0.02 * scale, y - 0.055 * scale], color=_INK, linewidth=0.8)
@@ -58,6 +64,8 @@ def _draw_mosquito(ax: plt.Axes, x: float, y: float, scale: float) -> None:
 
 
 def _draw_beetle(ax: plt.Axes, x: float, y: float, scale: float, color: str) -> None:
+    from matplotlib import patches
+
     ax.add_patch(patches.Ellipse((x, y), 0.12 * scale, 0.17 * scale, facecolor=color, edgecolor=_INK, linewidth=1.0))
     ax.add_patch(patches.Circle((x, y + 0.1 * scale), 0.038 * scale, facecolor=_INK, edgecolor=_INK))
     ax.plot([x, x], [y - 0.08 * scale, y + 0.075 * scale], color="white", linewidth=1.0, alpha=0.7)
@@ -69,6 +77,8 @@ def _draw_beetle(ax: plt.Axes, x: float, y: float, scale: float, color: str) -> 
 
 
 def _draw_pin(ax: plt.Axes, x: float, y: float, scale: float = 1.0) -> None:
+    from matplotlib import patches
+
     ax.add_patch(patches.Circle((x, y), 0.008 * scale, facecolor="#f8fafc", edgecolor=_INK, linewidth=0.7, zorder=5))
     ax.plot([x, x], [y - 0.012 * scale, y - 0.07 * scale], color="#64748b", linewidth=0.6, zorder=4)
 
@@ -83,6 +93,9 @@ def _draw_specimen_card(ax: plt.Axes, *, draw_fn: Callable[..., None], draw_kwar
 
 
 def cover(path: Path) -> Path:
+    import matplotlib.pyplot as plt
+    from matplotlib import patches
+
     m = metrics.compute()
     role_by_slug = {r.slug: r for r in roles.all_roles()}
     fig, ax = plt.subplots(figsize=(13.6, 7.4))
