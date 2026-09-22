@@ -59,5 +59,5 @@ via `TEMPLATE_REPO_ROOT` because `Path(__file__).resolve()` escapes the
 symlink — do not replace that with a bare `parents[N]` walk.
 
 For deep review and release-readiness work, follow
-`docs/REVIEW_PROTOCOL.md` and render from `/Users/4d/Documents/GitHub/template`
+`docs/REVIEW_PROTOCOL.md` and render from the sibling `template` checkout
 with `uv run python scripts/03_render_pdf.py --project working/EntoLaw`.

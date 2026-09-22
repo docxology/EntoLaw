@@ -5,7 +5,7 @@
 ## Scope
 - Local-only path under `projects/ongoing/` — matched by the root `.gitignore`
   rule `projects/*`; never commit, add, or push anything here.
-- Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`; parent project docs: `EntoLaw/AGENTS.md`.
+- Parent standard: the `AGENTS.md` of the lifecycle directory this project sits in; parent project docs: `EntoLaw/AGENTS.md`.
 
 ## Layout
 Files: `AGENTS.md`, `README.md`, `claim_ledger.yaml`

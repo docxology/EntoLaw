@@ -42,7 +42,6 @@ from legal_informatics.viz_theme import FALLBACK_COLOR
 from . import (
     cases,
     claim_ledger,
-    figure_caption_records,
     interconnections,
     metrics,
     roles,

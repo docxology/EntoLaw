@@ -1,0 +1,54 @@
+# Division-of-labor roster for src/. Every module ships in exactly one group;
+# `uv run python scripts/check_module_map.py` fails closed when a module is in
+# none or in more than one. The letters are a division of responsibility, not a
+# dependency order: a group name answers "what would I break by editing this?"
+groups:
+  A:
+    description: Declared datasets. Modules whose body is the corpus itself --
+      the cases, statutes, taxa, captions, and citation dates EntoLaw asserts.
+      Editing one of these changes what the manuscript claims, so each is
+      covered by a records test that reads the declaration rather than a
+      fixture copy of it.
+    modules:
+      - case_records
+      - statute_records
+      - taxon_records
+      - figure_caption_records
+      - viz_citation_date_records
+  B:
+    description: Domain accessors. Pure read surfaces over the Group A
+      declarations -- lookup, filtering, cross-linking, and ordering. They hold
+      no data of their own, so a change here is a change in how the corpus is
+      queried, never in what it says.
+    modules:
+      - cases
+      - statutes
+      - species
+      - institutions
+      - roles
+      - citations
+      - timeline
+      - interconnections
+  C:
+    description: Claim ledger and validation. The evidence spine -- claim
+      models, their loading, and the validity rules that decide whether a claim
+      is admissible. A failure here is a correctness failure, not a
+      presentation one.
+    modules:
+      - claim_ledger
+      - claim_ledger_models
+      - claim_ledger_loading
+      - claim_ledger_validation
+      - validation
+  D:
+    description: Derived outputs. Everything the manuscript consumes -- the
+      numbers it quotes back as tokens and the figures it prints -- computed
+      here from Groups A-C and never typed into prose, so the manuscript
+      cannot drift from the corpus. The figure modules build on the engine's
+      `legal_informatics.viz_*` theme and import matplotlib inside the
+      function that draws, never at module scope.
+    modules:
+      - metrics
+      - manuscript_variables
+      - viz
+      - viz_cover
