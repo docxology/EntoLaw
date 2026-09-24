@@ -57,3 +57,16 @@ done. See `PROOFREADING.md` for the full checklist.
   re-run, and the `[Unreleased]` entry's accuracy — see `PROOFREADING.md`.
 - [ ] Publish: tag, GitHub release, Zenodo upload. Not started; out of scope
   for this packaging pass.
+- [x] Git-history secret exposure: an earlier `git commit --amend`
+  (`3d6bd8b` → `8587eb4`) scrubbed a real CourtListener token out of
+  `tests/test_release_boundary.py`, but an amend only moves the branch ref —
+  the pre-amend commit stayed on disk as an unreachable-but-present object,
+  recoverable via `git reflog` / `git fsck --unreachable --no-reflogs`, with
+  the token still readable at `git show 3d6bd8b:tests/test_release_boundary.py`.
+  `git log --all -p` (the check this pass's release-boundary scan relies on)
+  only walks ref-reachable history and cannot see a dangling object, so this
+  was invisible to the gate above. Remediated in this worktree by
+  `git reflog expire --expire=now --all && git gc --prune=now`; confirmed
+  after by `git fsck --unreachable --no-reflogs` returning no such object and
+  `git cat-file -e 3d6bd8b` failing with "Not a valid object name". No
+  tracked file changed and no new secret was introduced by this fix.
