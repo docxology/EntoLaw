@@ -27,6 +27,10 @@ audit remediation).
 | `generate_figures.py` | `src.viz.build_figures` (binding + domain renderers over `legal_informatics.figure_bundle`) | `output/figures/*.png` |
 | `finalize_web_export.py` | — | `output/web/figures` (symlink or copy) |
 | `scrape_updates.py` | `legal_informatics.legal_updates`, `legal_informatics.legal_updates_ingestion` | `output/data/legal_updates_discovery.json` (+ ingestion state ledger under `output/data/legal_updates_store/`) |
+| `check_module_map.py` | `legal_informatics.module_map` | Checks/rewrites `src/AGENTS.md` against `src/` and `config/module_groups.yaml` |
+| `check_docs_inventory.py` | `legal_informatics.inventory`, `legal_informatics.privacy_labels` | `output/data/project_inventory.json` |
+| `check_metadata_consistency.py` | — | Compares version/title/license/keywords/authors/DOI across `pyproject.toml`, `CITATION.cff`, `codemeta.json`, `.zenodo.json`, `docs/manuscript/config.yaml` against `CITATION.cff` as the declared source; no output file, exit code only |
+| `check_release_boundary.py` | — | Scans every git-tracked file for credentials, non-public emails, absolute local paths, internal hostnames, private-repo references, and oversized binaries; no output file, exit code only |
 
 ## Testing
 

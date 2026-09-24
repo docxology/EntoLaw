@@ -5,7 +5,7 @@
 ## Scope
 - Local-only path under `projects/ongoing/` — matched by the root `.gitignore`
   rule `projects/*`; never commit, add, or push anything here.
-- Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`; parent project docs: `EntoLaw/AGENTS.md`.
+- Parent standard: the private development monorepo's `projects/ongoing/AGENTS.md` (not part of this public checkout); parent project docs: `EntoLaw/AGENTS.md`.
 
 ## Layout
 Subfolders: `data/`, `figures/`, `manuscript/`, `pdf/`, `qa/`, `reports/`, `web/`

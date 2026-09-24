@@ -41,9 +41,9 @@ uv run pytest -m live
 Then render from the sibling template checkout:
 
 ```bash
-cd /Users/4d/Documents/GitHub/template
+cd <path-to-template-checkout>
 uv run python scripts/03_render_pdf.py --project working/EntoLaw
-cd /Users/4d/Documents/GitHub/projects/working/EntoLaw
+cd <path-to-template-checkout>/projects/working/EntoLaw
 uv run python scripts/finalize_web_export.py
 ```
 

@@ -53,7 +53,7 @@ Render the manuscript from the sibling template checkout (the project is a
 symlinked `projects/working/` project):
 
 ```bash
-cd /Users/4d/Documents/GitHub/template
+cd <path-to-template-checkout>
 uv run python scripts/03_render_pdf.py --project working/EntoLaw
 ```
 

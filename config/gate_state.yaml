@@ -44,3 +44,11 @@ gates:
     expect:
       - 'inventory passed: [^\n]+'
       - 'markdown files checked: \d+'
+
+  - command: uv run python scripts/check_metadata_consistency.py
+    expect:
+      - 'metadata consistency: \d+ violations'
+
+  - command: uv run python scripts/check_release_boundary.py
+    expect:
+      - 'release boundary: \d+ findings'

@@ -26,6 +26,34 @@ uv run python scripts/check_docs_inventory.py                     # inventory pa
 
 <!-- END GENERATED gate-state -->
 
+**Stale as of this commit:** `config/gate_state.yaml` gained two declared
+gates (`check_metadata_consistency.py`, `check_release_boundary.py`) after
+the block above was last generated, so it still reads "4 declared gates" and
+omits both. Re-run `uv run python scripts/render_gate_state.py` before
+trusting this section; see `PROOFREADING.md` item 4.
+
 ## Active publication-readiness work
 
-- [ ] Prepare publication packaging across target platforms after proofreading: repository metadata, DOI field, release notes, and public/private boundary check.
+Publication packaging is prepared; proofreading and the publish step are not
+done. See `PROOFREADING.md` for the full checklist.
+
+- [x] Repository metadata consistency: version/title/license/keywords/authors/DOI
+  now agree across `pyproject.toml`, `CITATION.cff`, `codemeta.json`,
+  `.zenodo.json`, `docs/manuscript/config.yaml`; a fixed `pyproject.toml`
+  version drift (`0.1.0` → `1.0.0`) and enforced going forward by the new
+  `scripts/check_metadata_consistency.py` gate.
+- [x] DOI field: `10.5281/zenodo.21137276` (concept) confirmed consistent
+  across every metadata file by the gate above.
+- [x] Release notes: drafted in `CHANGELOG.md`'s `[Unreleased]` entry, marked
+  DRAFT pending proofreading.
+- [x] Public/private boundary check: `scripts/check_release_boundary.py`
+  added (credentials, non-public emails, absolute local paths, internal
+  hostnames, private-repo references, oversized binaries); fixed 12
+  absolute-path leaks in tracked docs. One finding remains open — a tracked
+  `.codegraph` symlink to a local machine path — left for the owner per
+  `PROOFREADING.md` item 3.
+- [ ] Proofreading: manuscript prose, the version-bump decision, the
+  `.codegraph` untrack, gate-state regeneration, the live claim-ledger
+  re-run, and the `[Unreleased]` entry's accuracy — see `PROOFREADING.md`.
+- [ ] Publish: tag, GitHub release, Zenodo upload. Not started; out of scope
+  for this packaging pass.
