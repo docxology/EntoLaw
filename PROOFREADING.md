@@ -30,19 +30,11 @@ re-run `scripts/check_metadata_consistency.py` after editing one — it will
 name every file that still disagrees) and set a new `date-released` /
 `paper.date`.
 
-## 3. Untrack the `.codegraph` symlink
+## 3. ~~Untrack the `.codegraph` symlink~~ (done 2026-09-24)
 
-`.codegraph` is a git-tracked symlink pointing outside the repository at a
-local code-index tool's own cache path on this development machine (run
-`git ls-files -s .codegraph` then `readlink .codegraph` to see the exact
-target — not reproduced here, since quoting it verbatim in a document meant
-to ship publicly would be the very leak this checklist exists to catch).
-It is not project content. `scripts/check_release_boundary.py` flags it and
-is not clean until it is untracked. This packaging pass does not delete
-tracked paths (see `AGENTS.md`'s constraints for this kind of work); untrack
-it with `git rm --cached .codegraph` (mirroring the precedent already set
-for `output/.DS_Store` — see `git log`), commit, and confirm
-`uv run python scripts/check_release_boundary.py` then reports `0 findings`.
+The machine-local `.codegraph` symlink was untracked and added to `.gitignore`;
+`uv run python scripts/check_release_boundary.py` reports `0 findings`, and the
+boundary tests now allow no exemptions.
 
 ## 4. Regenerate the gate-state block
 

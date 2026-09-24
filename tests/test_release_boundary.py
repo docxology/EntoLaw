@@ -22,26 +22,16 @@ def _join(*parts: str) -> str:
     return "".join(parts)
 
 
-#: A known, already-flagged finding this gate is not free to fix itself: a
-#: tracked ``.codegraph`` symlink (a local code-index tool's own bookkeeping,
-#: not project content) points at this machine's home directory. Untracking
-#: it is a deletion of a tracked path, which this unit's own hard constraints
-#: reserve for the owner to decide and perform -- see PROOFREADING.md. Any
-#: *other* finding still fails this test.
-_KNOWN_CODEGRAPH_SYMLINK_PREFIX = ".codegraph: tracked_symlink -> absolute_local_path:"
 
 
 def test_live_tracked_tree_has_no_boundary_findings():
     """The real checkout's tracked tree carries no credential/path/email/hostname leak.
 
-    ...other than the one pre-existing, already-flagged ``.codegraph``
-    symlink this gate cannot fix on its own (see
-    :data:`_KNOWN_CODEGRAPH_SYMLINK_PREFIX`).
+    No exemptions: the one finding that used to be tolerated here (a tracked
+    ``.codegraph`` symlink into a machine-local cache) was untracked on
+    2026-09-24, so any finding now is a new leak and fails.
     """
-    findings = crb.check_release_boundary(PROJECT_ROOT)
-    unexpected = [f for f in findings if not f.startswith(_KNOWN_CODEGRAPH_SYMLINK_PREFIX)]
-    assert unexpected == []
-    assert len(findings) <= 1
+    assert crb.check_release_boundary(PROJECT_ROOT) == []
 
 
 def test_tracked_files_lists_only_git_tracked_paths():
@@ -200,19 +190,10 @@ def test_public_email_disabled_when_declared_source_missing(tmp_path):
     assert findings == []
 
 
-def test_main_reports_the_known_finding_on_the_live_tree(capsys, monkeypatch):
-    """The thin CLI entrypoint (argv parsing, printing, exit code) fails closed on the one known finding.
-
-    A real, already-flagged finding (the tracked ``.codegraph`` symlink; see
-    :data:`_KNOWN_CODEGRAPH_SYMLINK_PREFIX`) means this gate currently exits
-    non-zero on the live tree -- fail-closed is correct here, not a bug in
-    this test. Once the symlink is untracked (an owner decision; this unit's
-    hard constraints forbid deleting a tracked path itself), this becomes
-    ``0``.
-    """
+def test_main_exits_clean_on_the_live_tree(capsys, monkeypatch):
+    """The thin CLI entrypoint (argv parsing, printing, exit code) reports a clean tree."""
     monkeypatch.setattr("sys.argv", ["check_release_boundary.py"])
     code = crb.main()
     captured = capsys.readouterr()
-    assert code == 1
-    assert _KNOWN_CODEGRAPH_SYMLINK_PREFIX in captured.err
-    assert "release boundary: 1 findings" in captured.out
+    assert code == 0, captured.err
+    assert "release boundary: 0 findings" in captured.out

@@ -28,3 +28,6 @@ htmlcov/
 # Regenerated on every `scripts/check_docs_inventory.py` run; the gate is the
 # check, not a committed copy of its output.
 output/data/project_inventory.json
+
+# Local code-index cache symlink (machine-specific); never tracked.
+.codegraph
