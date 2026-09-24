@@ -1,0 +1,238 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:51:24.623557+00:00",
+  "hit_count": 506,
+  "query_id": "fifra_epa_registration",
+  "results": [
+    {
+      "absolute_url": "/opinion/7335488/bourbia-v-sc-johnson-son-inc/",
+      "case_name": "Bourbia v. S.C. Johnson & Son, Inc.",
+      "citations": [
+        "375 F. Supp. 3d 454"
+      ],
+      "cluster_id": "7335488",
+      "court": "District Court, S.D. Illinois",
+      "date_filed": "2019-03-21",
+      "docket_number": "18 Civ. 3944 (PAC)"
+    },
+    {
+      "absolute_url": "/opinion/6452160/national-family-farm-coalition-v-usepa/",
+      "case_name": "National Family Farm Coalition v. Usepa",
+      "citations": [
+        "29 F.4th 509"
+      ],
+      "cluster_id": "6452160",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2022-03-17",
+      "docket_number": "19-70115"
+    },
+    {
+      "absolute_url": "/opinion/9415016/american-soybean-association-v-michael-regan/",
+      "case_name": "American Soybean Association v. Michael Regan",
+      "citations": [
+        "77 F.4th 873"
+      ],
+      "cluster_id": "9415016",
+      "court": "Court of Appeals for the D.C. Circuit",
+      "date_filed": "2023-07-21",
+      "docket_number": "20-1441"
+    },
+    {
+      "absolute_url": "/opinion/2977347/waterkeeper-alliance-v-epa/",
+      "case_name": "Waterkeeper Alliance v. EPA",
+      "citations": [],
+      "cluster_id": "2977347",
+      "court": "Court of Appeals for the Sixth Circuit",
+      "date_filed": "2009-01-07",
+      "docket_number": "07-3182"
+    },
+    {
+      "absolute_url": "/opinion/9354635/center-for-biological-diversity-v-epa/",
+      "case_name": "Center for Biological Diversity v. EPA",
+      "citations": [
+        "56 F.4th 55"
+      ],
+      "cluster_id": "9354635",
+      "court": "Court of Appeals for the D.C. Circuit",
+      "date_filed": "2022-12-23",
+      "docket_number": "15-1054"
+    },
+    {
+      "absolute_url": "/opinion/1687736/allstate-insurance-v-pooltime-products-inc/",
+      "case_name": "Allstate Insurance v. Pooltime Products, Inc.",
+      "citations": [
+        "846 F. Supp. 499",
+        "1994 U.S. Dist. LEXIS 249",
+        "1994 WL 92223"
+      ],
+      "cluster_id": "1687736",
+      "court": "District Court, E.D. Louisiana",
+      "date_filed": "1994-01-10",
+      "docket_number": "Civ. A. 93-1106"
+    },
+    {
+      "absolute_url": "/opinion/7320856/center-for-environmental-health-v-mccarthy/",
+      "case_name": "Center for Environmental Health v. McCarthy",
+      "citations": [
+        "192 F. Supp. 3d 1036",
+        "2016 WL 3541021",
+        "82 ERC (BNA) 2056",
+        "2016 U.S. Dist. LEXIS 84857"
+      ],
+      "cluster_id": "7320856",
+      "court": "District Court, N.D. California",
+      "date_filed": "2016-06-29",
+      "docket_number": "Case No. 15-cv-02939-WHO"
+    },
+    {
+      "absolute_url": "/opinion/6461190/nrdc-v-usepa/",
+      "case_name": "Nrdc v. Usepa",
+      "citations": [],
+      "cluster_id": "6461190",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2022-04-20",
+      "docket_number": "20-72794"
+    },
+    {
+      "absolute_url": "/opinion/186914/natural-resources-defense-council-v-johnson/",
+      "case_name": "Natural Resources Defense Council v. Johnson",
+      "citations": [
+        "488 F.3d 1002",
+        "376 U.S. App. D.C. 306",
+        "37 Envtl. L. Rep. (Envtl. Law Inst.) 20115",
+        "2007 U.S. App. LEXIS 12193",
+        "2007 WL 1515124"
+      ],
+      "cluster_id": "186914",
+      "court": "Court of Appeals for the D.C. Circuit",
+      "date_filed": "2007-05-25",
+      "docket_number": "06-5132"
+    },
+    {
+      "absolute_url": "/opinion/9412443/john-d-carson-v-monsanto-company/",
+      "case_name": "John D. Carson v. Monsanto Company",
+      "citations": [
+        "72 F.4th 1261"
+      ],
+      "cluster_id": "9412443",
+      "court": "Court of Appeals for the Eleventh Circuit",
+      "date_filed": "2023-07-10",
+      "docket_number": "21-10994"
+    },
+    {
+      "absolute_url": "/opinion/4789459/elizabeth-gresser-individually-john-gresser-and-janice-gresser/",
+      "case_name": "Elizabeth Gresser, Individually, John Gresser and Janice Gresser Individually and as Parents and Natural Guardians of Rebekah Gresser v. Reliable Exterminators, Inc. (mem. dec.)",
+      "citations": [],
+      "cluster_id": "4789459",
+      "court": "Indiana Court of Appeals",
+      "date_filed": "2020-09-25",
+      "docket_number": "79A05-1711-CT-2621"
+    },
+    {
+      "absolute_url": "/opinion/178349/hardin-v-jackson/",
+      "case_name": "Hardin v. Jackson",
+      "citations": [
+        "625 F.3d 739",
+        "393 U.S. App. D.C. 167",
+        "71 ERC (BNA) 1737",
+        "2010 U.S. App. LEXIS 22452",
+        "2010 WL 4260340"
+      ],
+      "cluster_id": "178349",
+      "court": "Court of Appeals for the D.C. Circuit",
+      "date_filed": "2010-10-29",
+      "docket_number": "09-5365"
+    },
+    {
+      "absolute_url": "/opinion/185986/croplife-amer-v-epa/",
+      "case_name": "CropLife Amer v. EPA",
+      "citations": [
+        "329 F.3d 876"
+      ],
+      "cluster_id": "185986",
+      "court": "Court of Appeals for the D.C. Circuit",
+      "date_filed": "2003-06-03",
+      "docket_number": "02-1057"
+    },
+    {
+      "absolute_url": "/opinion/2800893/center-for-biological-diversity-v-united-states-environmental-protection/",
+      "case_name": "Center for Biological Diversity v. United States Environmental Protection Agency",
+      "citations": [
+        "106 F. Supp. 3d 95",
+        "81 ERC (BNA) 1111",
+        "2015 U.S. Dist. LEXIS 63465",
+        "2015 WL 2342394"
+      ],
+      "cluster_id": "2800893",
+      "court": "District Court, District of Columbia",
+      "date_filed": "2015-05-14",
+      "docket_number": "Civil Action No. 2014-0942"
+    },
+    {
+      "absolute_url": "/opinion/7334623/in-re-roundup-prods-liab-litig/",
+      "case_name": "In re Roundup Prods. Liab. Litig.",
+      "citations": [
+        "364 F. Supp. 3d 1085"
+      ],
+      "cluster_id": "7334623",
+      "court": "District Court, N.D. California",
+      "date_filed": "2019-03-07",
+      "docket_number": "MDL No. 2741; Case No. 16-md-02741-VC"
+    },
+    {
+      "absolute_url": "/opinion/4747494/nrdc-v-usepa/",
+      "case_name": "Nrdc v. Usepa",
+      "citations": [],
+      "cluster_id": "4747494",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2020-04-22",
+      "docket_number": "19-71324"
+    },
+    {
+      "absolute_url": "/opinion/10630493/john-l-durnell-v-monsanto-company/",
+      "case_name": "John L. Durnell v. Monsanto Company",
+      "citations": [],
+      "cluster_id": "10630493",
+      "court": "Missouri Court of Appeals",
+      "date_filed": "2025-02-11",
+      "docket_number": "ED112410"
+    },
+    {
+      "absolute_url": "/opinion/10880244/monsanto-v-durnell/",
+      "case_name": "Monsanto v. Durnell",
+      "citations": [],
+      "cluster_id": "10880244",
+      "court": "Supreme Court of the United States",
+      "date_filed": "2026-06-25",
+      "docket_number": "24-1068"
+    },
+    {
+      "absolute_url": "/opinion/8676757/in-re-attorney-general-subpoena-re-terminix-international-usvi-llc/",
+      "case_name": "In re Attorney General Subpoena re: Terminix International USVI, LLC",
+      "citations": [
+        "67 V.I. 60"
+      ],
+      "cluster_id": "8676757",
+      "court": "Superior Court of The Virgin Islands",
+      "date_filed": "2016-07-16",
+      "docket_number": "Case No. SX-16-MC-059"
+    },
+    {
+      "absolute_url": "/opinion/1356166/united-farm-workers-of-america-v-administrator-environmental-protection/",
+      "case_name": "United Farm Workers of America v. Administrator, Environmental Protection Agency",
+      "citations": [
+        "592 F.3d 1080",
+        "40 Envtl. L. Rep. (Envtl. Law Inst.) 20022",
+        "69 ERC (BNA) 2121",
+        "2010 U.S. App. LEXIS 1712",
+        "2010 WL 276195"
+      ],
+      "cluster_id": "1356166",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2010-01-26",
+      "docket_number": "08-35528"
+    }
+  ],
+  "search_type": "o",
+  "text": "\"Federal Insecticide, Fungicide, and Rodenticide Act\" EPA registration"
+}

@@ -1,0 +1,263 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:52:36.055959+00:00",
+  "hit_count": 51,
+  "query_id": "chakrabarty_patent_extension",
+  "results": [
+    {
+      "absolute_url": "/opinion/7332263/in-re-biogen-755-patent-litig/",
+      "case_name": "In re Biogen 755 Patent Litig.",
+      "citations": [
+        "335 F. Supp. 3d 688"
+      ],
+      "cluster_id": "7332263",
+      "court": "District Court, D. New Jersey",
+      "date_filed": "2018-09-07",
+      "docket_number": "Civil Action No.: 10-2734 (CCC)(MF) (consolidated)"
+    },
+    {
+      "absolute_url": "/opinion/110301/diamond-v-chakrabarty/",
+      "case_name": "Diamond v. Chakrabarty",
+      "citations": [
+        "65 L. Ed. 2d 144",
+        "100 S. Ct. 2204",
+        "447 U.S. 303",
+        "1980 U.S. LEXIS 112",
+        "206 U.S.P.Q. (BNA) 193"
+      ],
+      "cluster_id": "110301",
+      "court": "Supreme Court of the United States",
+      "date_filed": "1980-06-16",
+      "docket_number": "79-136"
+    },
+    {
+      "absolute_url": "/opinion/806779/association-for-molecular-pathology-v-united-states-patent-trademark/",
+      "case_name": "Association for Molecular Pathology v. United States Patent & Trademark Office",
+      "citations": [
+        "689 F.3d 1303",
+        "103 U.S.P.Q. 2d (BNA) 1681",
+        "2012 U.S. App. LEXIS 17679",
+        "2012 WL 3518509"
+      ],
+      "cluster_id": "806779",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2012-08-16",
+      "docket_number": "2010-1406"
+    },
+    {
+      "absolute_url": "/opinion/222139/association-for-molecular-pathology-v-united-states-patent-trademark/",
+      "case_name": "Association for Molecular Pathology v. United States Patent & Trademark Office",
+      "citations": [
+        "653 F.3d 1329",
+        "99 U.S.P.Q. 2d (BNA) 1398",
+        "2011 U.S. App. LEXIS 15649",
+        "2011 WL 3211513"
+      ],
+      "cluster_id": "222139",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2011-07-29",
+      "docket_number": "2010-1406"
+    },
+    {
+      "absolute_url": "/opinion/2252138/association-for-molecular-pathology-v-united-states-patent-trademark/",
+      "case_name": "Association for Molecular Pathology v. United States Patent & Trademark Office",
+      "citations": [
+        "702 F. Supp. 2d 181",
+        "2010 WL 1233416"
+      ],
+      "cluster_id": "2252138",
+      "court": "District Court, S.D. New York",
+      "date_filed": "2010-04-05",
+      "docket_number": "09 Civ. 4515"
+    },
+    {
+      "absolute_url": "/opinion/2672960/inre-roslin-institute-edinburgh/",
+      "case_name": "Inre: Roslin Institute (Edinburgh)",
+      "citations": [
+        "750 F.3d 1333",
+        "110 U.S.P.Q. 2d (BNA) 1668",
+        "2014 WL 1814014",
+        "2014 U.S. App. LEXIS 8647"
+      ],
+      "cluster_id": "2672960",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2014-05-08",
+      "docket_number": "2013-1407"
+    },
+    {
+      "absolute_url": "/opinion/152228/intervet-inc-v-merial-limited/",
+      "case_name": "Intervet Inc. v. Merial Limited",
+      "citations": [
+        "617 F.3d 1282",
+        "95 U.S.P.Q. 2d (BNA) 1956",
+        "2010 U.S. App. LEXIS 16104",
+        "2010 WL 3064311"
+      ],
+      "cluster_id": "152228",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2010-08-04",
+      "docket_number": "2009-1568"
+    },
+    {
+      "absolute_url": "/opinion/2761846/university-of-utah-research-foundation-v-ambry-genetics-corp/",
+      "case_name": "University of Utah Research Foundation v. Ambry Genetics Corp.",
+      "citations": [
+        "774 F.3d 755"
+      ],
+      "cluster_id": "2761846",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2014-12-17",
+      "docket_number": "2014-1361, 2014-1366"
+    },
+    {
+      "absolute_url": "/opinion/7323203/polaris-innovations-ltd-v-kingston-technology-co/",
+      "case_name": "Polaris Innovations Ltd. v. Kingston Technology Co.",
+      "citations": [
+        "223 F. Supp. 3d 1026",
+        "2016 U.S. Dist. LEXIS 187706"
+      ],
+      "cluster_id": "7323203",
+      "court": "District Court, C.D. California",
+      "date_filed": "2016-07-21",
+      "docket_number": "Case No.: SACV 16-00300-CJC(RAOx)"
+    },
+    {
+      "absolute_url": "/opinion/902772/association-for-molecular-pathology-v-myriad-genetics-inc/",
+      "case_name": "Association for Molecular Pathology v. Myriad Genetics, Inc.",
+      "citations": [
+        "186 L. Ed. 2d 124",
+        "133 S. Ct. 2107",
+        "2013 U.S. LEXIS 4540",
+        "569 U.S. 576",
+        "106 U.S.P.Q. 2d (BNA) 1972",
+        "24 Fla. L. Weekly Fed. S 276",
+        "2013 WL 2631062"
+      ],
+      "cluster_id": "902772",
+      "court": "Supreme Court of the United States",
+      "date_filed": "2013-06-13",
+      "docket_number": "12-398"
+    },
+    {
+      "absolute_url": "/opinion/902266/association-for-molecular-pathology-v-myriad-genetics-inc/",
+      "case_name": "Association for Molecular Pathology v. Myriad Genetics, Inc.",
+      "citations": [],
+      "cluster_id": "902266",
+      "court": "Supreme Court of the United States",
+      "date_filed": "2013-06-13",
+      "docket_number": "12-398"
+    },
+    {
+      "absolute_url": "/opinion/4600244/natural-alternatives-intl-inc-v-creative-compounds-llc/",
+      "case_name": "Natural Alternatives Int'l, Inc. v. Creative Compounds, LLC",
+      "citations": [
+        "918 F.3d 1338"
+      ],
+      "cluster_id": "4600244",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2019-03-15",
+      "docket_number": "2018-1295"
+    },
+    {
+      "absolute_url": "/opinion/209543/in-re-bilski/",
+      "case_name": "In Re Bilski",
+      "citations": [
+        "545 F.3d 943",
+        "88 U.S.P.Q. 2d (BNA) 1385",
+        "2008 U.S. App. LEXIS 22479",
+        "2008 WL 4757110"
+      ],
+      "cluster_id": "209543",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2008-10-30",
+      "docket_number": "2007-1130"
+    },
+    {
+      "absolute_url": "/opinion/149649/bilski-v-kappos/",
+      "case_name": "Bilski v. Kappos",
+      "citations": [
+        "177 L. Ed. 2d 792",
+        "130 S. Ct. 3218",
+        "561 U.S. 593",
+        "2010 U.S. LEXIS 5521"
+      ],
+      "cluster_id": "149649",
+      "court": "Supreme Court of the United States",
+      "date_filed": "2010-06-28",
+      "docket_number": "08-964"
+    },
+    {
+      "absolute_url": "/opinion/7306906/genetic-technologies-ltd-v-agilent-technologies-inc/",
+      "case_name": "Genetic Technologies Ltd. v. Agilent Technologies, Inc.",
+      "citations": [
+        "24 F. Supp. 3d 922",
+        "2014 U.S. Dist. LEXIS 31474",
+        "2014 WL 941354"
+      ],
+      "cluster_id": "7306906",
+      "court": "District Court, N.D. California",
+      "date_filed": "2014-03-07",
+      "docket_number": "No. CV 12-01616 RS"
+    },
+    {
+      "absolute_url": "/opinion/7079808/pioneer-hi-bred-international-inc-v-jem-ag-supply-inc/",
+      "case_name": "Pioneer Hi-Bred International, Inc. v. J.E.M. AG Supply Inc.",
+      "citations": [
+        "200 F.3d 1374",
+        "2000 WL 37063"
+      ],
+      "cluster_id": "7079808",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2000-01-19",
+      "docket_number": "No. 99-1035"
+    },
+    {
+      "absolute_url": "/opinion/767328/pioneer-hi-bred-international-inc-v-ag-supply-inc/",
+      "case_name": "Pioneer Hi-Bred International, Inc. v. Ag Supply, Inc.",
+      "citations": [
+        "200 F.3d 1374"
+      ],
+      "cluster_id": "767328",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2000-03-13",
+      "docket_number": "99-1035"
+    },
+    {
+      "absolute_url": "/opinion/4636556/athena-diagnostics-inc-v-mayo-collaborative-servs-llc/",
+      "case_name": "Athena Diagnostics, Inc. v. Mayo Collaborative Servs., LLC",
+      "citations": [
+        "927 F.3d 1333"
+      ],
+      "cluster_id": "4636556",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2019-07-03",
+      "docket_number": "2017-2508"
+    },
+    {
+      "absolute_url": "/opinion/1462603/animal-legal-defense-fund-v-quigg/",
+      "case_name": "Animal Legal Defense Fund v. Quigg",
+      "citations": [
+        "710 F. Supp. 728",
+        "1989 U.S. Dist. LEXIS 3397",
+        "1989 WL 32701"
+      ],
+      "cluster_id": "1462603",
+      "court": "District Court, N.D. California",
+      "date_filed": "1989-03-29",
+      "docket_number": "88-2938-FMS"
+    },
+    {
+      "absolute_url": "/opinion/4519008/interval-licensing-llc-v-aol-inc/",
+      "case_name": "Interval Licensing LLC v. Aol, Inc.",
+      "citations": [
+        "896 F.3d 1335"
+      ],
+      "cluster_id": "4519008",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2018-07-20",
+      "docket_number": "2016-2502; 2016-2505; 2016-2506; 2016-2507"
+    }
+  ],
+  "search_type": "o",
+  "text": "\"Diamond v. Chakrabarty\" patent living organism"
+}

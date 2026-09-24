@@ -1,0 +1,260 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:52:37.965665+00:00",
+  "hit_count": 112,
+  "query_id": "insect_patent_utility",
+  "results": [
+    {
+      "absolute_url": "/opinion/292916/application-of-gerald-houghton/",
+      "case_name": "Application of Gerald Houghton",
+      "citations": [
+        "433 F.2d 820",
+        "58 C.C.P.A. 732"
+      ],
+      "cluster_id": "292916",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1970-11-25",
+      "docket_number": "Patent Appeal 8377"
+    },
+    {
+      "absolute_url": "/opinion/8910842/in-re-malachowski/",
+      "case_name": "In re Malachowski",
+      "citations": [
+        "530 F.2d 1402",
+        "189 U.S.P.Q. (BNA) 432",
+        "1976 CCPA LEXIS 177"
+      ],
+      "cluster_id": "8910842",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1976-04-01",
+      "docket_number": "Patent Appeal No. 75-610"
+    },
+    {
+      "absolute_url": "/opinion/774574/mycogen-plant-science-inc-and-agrigenetics-inc-v-monsanto-company/",
+      "case_name": "Mycogen Plant Science, Inc. And Agrigenetics, Inc. v. Monsanto Company, Defendant",
+      "citations": [
+        "261 F.3d 1345",
+        "59 U.S.P.Q. 2d (BNA) 1852",
+        "2001 U.S. App. LEXIS 18331",
+        "2001 WL 910389"
+      ],
+      "cluster_id": "774574",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2001-08-14",
+      "docket_number": "00-1127"
+    },
+    {
+      "absolute_url": "/opinion/7291055/in-re-conte/",
+      "case_name": "In re Conte",
+      "citations": [
+        "36 F. App'x 446"
+      ],
+      "cluster_id": "7291055",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2002-06-05",
+      "docket_number": "No. 02-1150"
+    },
+    {
+      "absolute_url": "/opinion/1409153/andersen-corp-v-pella-corp/",
+      "case_name": "Andersen Corp. v. Pella Corp.",
+      "citations": [
+        "500 F. Supp. 2d 1192",
+        "2007 U.S. Dist. LEXIS 64910",
+        "2007 WL 2372396"
+      ],
+      "cluster_id": "1409153",
+      "court": "District Court, D. Minnesota",
+      "date_filed": "2007-07-31",
+      "docket_number": "0:05-cv-00824"
+    },
+    {
+      "absolute_url": "/opinion/8921513/in-re-payne/",
+      "case_name": "In re Payne",
+      "citations": [
+        "606 F.2d 303",
+        "203 U.S.P.Q. (BNA) 245",
+        "1979 CCPA LEXIS 212"
+      ],
+      "cluster_id": "8921513",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1979-09-13",
+      "docket_number": "Patent Appeal No. 77-522"
+    },
+    {
+      "absolute_url": "/opinion/260381/application-of-winifred-june-adams-david-neville-kirk-and-vladimir-petrow/",
+      "case_name": "Application of Winifred June Adams, David Neville Kirk and Vladimir Petrow",
+      "citations": [
+        "316 F.2d 476",
+        "50 C.C.P.A. 1185",
+        "137 U.S.P.Q. (BNA) 333",
+        "1963 CCPA LEXIS 371"
+      ],
+      "cluster_id": "260381",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1963-04-25",
+      "docket_number": "Patent Appeal 6889"
+    },
+    {
+      "absolute_url": "/opinion/8915462/in-re-bergy/",
+      "case_name": "In re Bergy",
+      "citations": [
+        "563 F.2d 1031",
+        "195 U.S.P.Q. (BNA) 344",
+        "1977 CCPA LEXIS 113"
+      ],
+      "cluster_id": "8915462",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1977-10-06",
+      "docket_number": "Patent Appeal No. 76-712"
+    },
+    {
+      "absolute_url": "/opinion/264868/application-of-walter-lorenz-and-gerhard-schrader/",
+      "case_name": "Application of Walter Lorenz and Gerhard Schrader",
+      "citations": [
+        "333 F.2d 908",
+        "51 C.C.P.A. 1522"
+      ],
+      "cluster_id": "264868",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1964-07-02",
+      "docket_number": "Patent Appeal 7211"
+    },
+    {
+      "absolute_url": "/opinion/279179/application-of-paul-d-harwood/",
+      "case_name": "Application of Paul D. Harwood",
+      "citations": [
+        "390 F.2d 985",
+        "55 C.C.P.A. 922"
+      ],
+      "cluster_id": "279179",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1968-03-07",
+      "docket_number": "Patent Appeal 7830"
+    },
+    {
+      "absolute_url": "/opinion/251873/application-of-arnold-n-johnson/",
+      "case_name": "Application of Arnold N. Johnson",
+      "citations": [
+        "282 F.2d 370",
+        "48 C.C.P.A. 733"
+      ],
+      "cluster_id": "251873",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1960-10-10",
+      "docket_number": "Patent Appeal 6579"
+    },
+    {
+      "absolute_url": "/opinion/261028/application-of-ernst-albrecht-pieroh-and-horst-werres/",
+      "case_name": "Application of Ernst-Albrecht Pieroh and Horst Werres",
+      "citations": [
+        "319 F.2d 248",
+        "50 C.C.P.A. 1471"
+      ],
+      "cluster_id": "261028",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1963-06-28",
+      "docket_number": "Patent Appeal 6972"
+    },
+    {
+      "absolute_url": "/opinion/292146/application-of-albert-w-musgrave/",
+      "case_name": "Application of Albert W. Musgrave",
+      "citations": [
+        "431 F.2d 882",
+        "57 C.C.P.A. 1352"
+      ],
+      "cluster_id": "292146",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1970-10-08",
+      "docket_number": "Patent Appeal 8292"
+    },
+    {
+      "absolute_url": "/opinion/262952/application-of-robert-m-cole/",
+      "case_name": "Application of Robert M. Cole",
+      "citations": [
+        "326 F.2d 769",
+        "51 C.C.P.A. 919"
+      ],
+      "cluster_id": "262952",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1964-01-23",
+      "docket_number": "Patent Appeal 7033"
+    },
+    {
+      "absolute_url": "/opinion/247862/henry-bluestone-v-louis-schmerling/",
+      "case_name": "Henry Bluestone v. Louis Schmerling",
+      "citations": [
+        "265 F.2d 948",
+        "46 C.C.P.A. 842"
+      ],
+      "cluster_id": "247862",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1959-05-15",
+      "docket_number": "Patent Appeal 6402"
+    },
+    {
+      "absolute_url": "/opinion/2477293/air-vent-inc-v-vent-right-corp/",
+      "case_name": "Air Vent, Inc. v. Vent Right Corp.",
+      "citations": [
+        "730 F. Supp. 2d 423",
+        "2010 U.S. Dist. LEXIS 72576",
+        "2010 WL 2853531"
+      ],
+      "cluster_id": "2477293",
+      "court": "District Court, W.D. Pennsylvania",
+      "date_filed": "2010-07-20",
+      "docket_number": "2:08-cr-00146"
+    },
+    {
+      "absolute_url": "/opinion/1613424/larson-manufacturing-co-of-south-dakota-inc-v-aluminart-products-ltd/",
+      "case_name": "Larson Manufacturing Co. of South Dakota, Inc. v. Aluminart Products Ltd.",
+      "citations": [
+        "513 F. Supp. 2d 1102",
+        "2007 U.S. Dist. LEXIS 71810",
+        "2007 WL 2822341"
+      ],
+      "cluster_id": "1613424",
+      "court": "District Court, D. South Dakota",
+      "date_filed": "2007-09-26",
+      "docket_number": "CIV 03-4244"
+    },
+    {
+      "absolute_url": "/opinion/210112/monsanto-co-v-bayer-bioscience-nv/",
+      "case_name": "Monsanto Co. v. Bayer Bioscience N.V.",
+      "citations": [
+        "514 F.3d 1229",
+        "2008 WL 200027"
+      ],
+      "cluster_id": "210112",
+      "court": "Court of Appeals for the Federal Circuit",
+      "date_filed": "2008-01-25",
+      "docket_number": "2007-1109"
+    },
+    {
+      "absolute_url": "/opinion/275759/application-of-david-neville-kirk-and-vladimir-petrow/",
+      "case_name": "Application of David Neville Kirk and Vladimir Petrow",
+      "citations": [
+        "376 F.2d 936",
+        "54 C.C.P.A. 1119"
+      ],
+      "cluster_id": "275759",
+      "court": "Court of Customs and Patent Appeals",
+      "date_filed": "1967-04-10",
+      "docket_number": "Patent Appeal 7522"
+    },
+    {
+      "absolute_url": "/opinion/2579460/use-techno-corp-v-kenko-usa-inc/",
+      "case_name": "Use Techno Corp. v. Kenko USA, Inc.",
+      "citations": [
+        "515 F. Supp. 2d 1086",
+        "2007 U.S. Dist. LEXIS 65084",
+        "2007 WL 2572351"
+      ],
+      "cluster_id": "2579460",
+      "court": "District Court, N.D. California",
+      "date_filed": "2007-09-04",
+      "docket_number": "C-06-02754 EDL"
+    }
+  ],
+  "search_type": "o",
+  "text": "patentability insect invention utility"
+}

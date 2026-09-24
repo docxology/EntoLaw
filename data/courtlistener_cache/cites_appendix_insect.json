@@ -1,0 +1,243 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:51:39.916942+00:00",
+  "hit_count": 263,
+  "query_id": "cites_appendix_insect",
+  "results": [
+    {
+      "absolute_url": "/opinion/4491264/entergy-nuclearvermont-yankee-thermal-discharge-permit-amendment/",
+      "case_name": "Entergy Nuclear/Vermont Yankee Thermal Discharge Permit Amendment",
+      "citations": [],
+      "cluster_id": "4491264",
+      "court": "Vermont Superior Court",
+      "date_filed": "2008-05-22",
+      "docket_number": "89-04-06 Vtec"
+    },
+    {
+      "absolute_url": "/opinion/10631569/city-of-skidmore-missouri-v-rickie-l-stanton/",
+      "case_name": "City of Skidmore, Missouri v. Rickie L. Stanton",
+      "citations": [],
+      "cluster_id": "10631569",
+      "court": "Missouri Court of Appeals",
+      "date_filed": "2023-05-16",
+      "docket_number": "WD85487"
+    },
+    {
+      "absolute_url": "/opinion/10591906/duke-energy-carolinas-llc-v-ag-ins-sanv/",
+      "case_name": "Duke Energy Carolinas, LLC v. Ag Ins. sa/nv.",
+      "citations": [
+        "2020 NCBC 44"
+      ],
+      "cluster_id": "10591906",
+      "court": "North Carolina Business Court",
+      "date_filed": "2020-06-05",
+      "docket_number": "17-CVS-5594"
+    },
+    {
+      "absolute_url": "/opinion/9389131/louis-pagoudis-v-marcus-keidl/",
+      "case_name": "Louis Pagoudis v. Marcus Keidl",
+      "citations": [
+        "406 Wis. 2d 542",
+        "988 N.W.2d 606",
+        "2023 WI 27"
+      ],
+      "cluster_id": "9389131",
+      "court": "Wisconsin Supreme Court",
+      "date_filed": "2023-04-04",
+      "docket_number": "2020AP000225"
+    },
+    {
+      "absolute_url": "/opinion/4547345/alliance-for-the-wild-rockies-v-usfs/",
+      "case_name": "Alliance for the Wild Rockies v. Usfs",
+      "citations": [
+        "907 F.3d 1105"
+      ],
+      "cluster_id": "4547345",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2018-10-25",
+      "docket_number": "16-35829"
+    },
+    {
+      "absolute_url": "/opinion/7914412/avalonbay-communities-inc-v-inland-wetlands-watercourses-agency/",
+      "case_name": "AvalonBay Communities, Inc. v. Inland Wetlands & Watercourses Agency",
+      "citations": [
+        "130 Conn. App. 69",
+        "23 A.3d 37",
+        "2011 Conn. App. LEXIS 387"
+      ],
+      "cluster_id": "7914412",
+      "court": "Connecticut Appellate Court",
+      "date_filed": "2011-07-12",
+      "docket_number": "AC 31937"
+    },
+    {
+      "absolute_url": "/opinion/10591903/duke-energy-carolinas-llc-v-ag-ins-sanv/",
+      "case_name": "Duke Energy Carolinas, LLC v. Ag Ins. sa/nv.",
+      "citations": [
+        "2020 NCBC 47"
+      ],
+      "cluster_id": "10591903",
+      "court": "North Carolina Business Court",
+      "date_filed": "2020-06-05",
+      "docket_number": "17-CVS-5594"
+    },
+    {
+      "absolute_url": "/opinion/4525970/alliance-for-the-wild-rockies-v-usfs/",
+      "case_name": "Alliance for the Wild Rockies v. Usfs",
+      "citations": [
+        "899 F.3d 970"
+      ],
+      "cluster_id": "4525970",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2018-08-13",
+      "docket_number": "16-35829"
+    },
+    {
+      "absolute_url": "/opinion/10658647/wildlife-preserves-v-romero/",
+      "case_name": "Wildlife Preserves v. Romero",
+      "citations": [],
+      "cluster_id": "10658647",
+      "court": "Court of Appeals for the Second Circuit",
+      "date_filed": "2025-08-22",
+      "docket_number": "24-776"
+    },
+    {
+      "absolute_url": "/opinion/9454755/matter-of-md-off-of-peoples-counsel/",
+      "case_name": "Matter of Md. Off. of People's Counsel",
+      "citations": [],
+      "cluster_id": "9454755",
+      "court": "Court of Special Appeals of Maryland",
+      "date_filed": "2023-12-22",
+      "docket_number": "2033/22"
+    },
+    {
+      "absolute_url": "/opinion/9454026/matter-of-md-off-of-peoples-counsel/",
+      "case_name": "Matter of Md. Off. of People's Counsel",
+      "citations": [],
+      "cluster_id": "9454026",
+      "court": "Court of Special Appeals of Maryland",
+      "date_filed": "2023-12-20",
+      "docket_number": "2033/22"
+    },
+    {
+      "absolute_url": "/opinion/7308986/cascadia-wildlands-v-thrailkill/",
+      "case_name": "Cascadia Wildlands v. Thrailkill",
+      "citations": [
+        "49 F. Supp. 3d 774",
+        "2014 U.S. Dist. LEXIS 133384",
+        "2014 WL 4724855"
+      ],
+      "cluster_id": "7308986",
+      "court": "District Court, D. Oregon",
+      "date_filed": "2014-09-23",
+      "docket_number": "Civil No. 6:14-1236-TC"
+    },
+    {
+      "absolute_url": "/opinion/4755916/helena-agri-enterprises-llc-fka-helena-chemical-company-v-robert-m/",
+      "case_name": "Helena Agri-Enterprises, LLC, f/k/a Helena Chemical Company v. Robert M. Jones, Mark A. Jones, and Jones Farms",
+      "citations": [],
+      "cluster_id": "4755916",
+      "court": "Indiana Court of Appeals",
+      "date_filed": "2020-05-22",
+      "docket_number": "19A-PL-2119"
+    },
+    {
+      "absolute_url": "/opinion/12718/sharp-v-state-farm-fire-casualty-insurance/",
+      "case_name": "Sharp v. State Farm Fire & Casualty Insurance",
+      "citations": [
+        "115 F.3d 1258",
+        "1997 WL 321920"
+      ],
+      "cluster_id": "12718",
+      "court": "Court of Appeals for the Fifth Circuit",
+      "date_filed": "1997-08-04",
+      "docket_number": "96-50725"
+    },
+    {
+      "absolute_url": "/opinion/8440758/league-of-wilderness-defenders-blue-mountains-biodiversity-project-v-allen/",
+      "case_name": "League of Wilderness Defenders Blue Mountains Biodiversity Project v. Allen",
+      "citations": [
+        "615 F.3d 1122",
+        "40 Envtl. L. Rep. (Envtl. Law Inst.) 20224",
+        "71 ERC (BNA) 1624",
+        "2010 U.S. App. LEXIS 16770",
+        "2010 WL 3194619"
+      ],
+      "cluster_id": "8440758",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2010-08-13",
+      "docket_number": "No. 09-35094"
+    },
+    {
+      "absolute_url": "/opinion/2477293/air-vent-inc-v-vent-right-corp/",
+      "case_name": "Air Vent, Inc. v. Vent Right Corp.",
+      "citations": [
+        "730 F. Supp. 2d 423",
+        "2010 U.S. Dist. LEXIS 72576",
+        "2010 WL 2853531"
+      ],
+      "cluster_id": "2477293",
+      "court": "District Court, W.D. Pennsylvania",
+      "date_filed": "2010-07-20",
+      "docket_number": "2:08-cr-00146"
+    },
+    {
+      "absolute_url": "/opinion/8219254/finch-v-inspectech-llc/",
+      "case_name": "Finch v. Inspectech, LLC",
+      "citations": [
+        "229 W. Va. 147",
+        "727 S.E.2d 823",
+        "2012 WL 1912634",
+        "2012 W. Va. LEXIS 279"
+      ],
+      "cluster_id": "8219254",
+      "court": "West Virginia Supreme Court",
+      "date_filed": "2012-05-24",
+      "docket_number": "No. 11-0276"
+    },
+    {
+      "absolute_url": "/opinion/1495507/harris-v-board-of-education/",
+      "case_name": "Harris v. Board of Education",
+      "citations": [
+        "825 A.2d 365",
+        "375 Md. 21",
+        "2003 Md. LEXIS 309"
+      ],
+      "cluster_id": "1495507",
+      "court": "Court of Appeals of Maryland",
+      "date_filed": "2003-06-06",
+      "docket_number": "43, Sept. Term, 2002"
+    },
+    {
+      "absolute_url": "/opinion/1454816/lands-council-v-martin/",
+      "case_name": "Lands Council v. Martin",
+      "citations": [
+        "529 F.3d 1219",
+        "38 Envtl. L. Rep. (Envtl. Law Inst.) 20151",
+        "66 ERC (BNA) 2025",
+        "2008 U.S. App. LEXIS 13366",
+        "2008 WL 2513054"
+      ],
+      "cluster_id": "1454816",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2008-06-25",
+      "docket_number": "07-35804"
+    },
+    {
+      "absolute_url": "/opinion/8711028/wildearth-guardians-v-united-states-forest-service/",
+      "case_name": "Wildearth Guardians v. United States Forest Service",
+      "citations": [
+        "828 F. Supp. 2d 1223",
+        "42 Envtl. L. Rep. (Envtl. Law Inst.) 20338",
+        "2011 U.S. Dist. LEXIS 126358",
+        "2011 WL 5172277"
+      ],
+      "cluster_id": "8711028",
+      "court": "District Court, D. Colorado",
+      "date_filed": "2011-10-31",
+      "docket_number": "Civil Action No. 08-cv-02167-MSK"
+    }
+  ],
+  "search_type": "o",
+  "text": "CITES Appendix insect import permit"
+}

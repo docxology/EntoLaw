@@ -34,6 +34,31 @@ the block above was last generated, so it still reads "4 declared gates" and
 omits both. Re-run `uv run python scripts/render_gate_state.py` before
 trusting this section; see `PROOFREADING.md` item 4.
 
+## Case-candidate register
+
+`data/case_candidates.yaml` surfaces CourtListener opinion-search hits against
+`config/legal_issues.yaml`'s eight issues — see `docs/CASE_CANDIDATES.md` for
+the full contract and `data/case_candidates.yaml`'s own `queries` section for
+current row/hit-count figures (generated; not restated here). It is a lead
+list, not a claim source: nothing here is wired into the manuscript,
+`references.bib`, or `data/claim_ledger.yaml`, and
+`tests/test_case_candidates.py` enforces that boundary.
+
+- [ ] Promotion pass: a human reads the candidates from the lowest-`hit_count`,
+  most on-point queries first and decides which, if any, belong in
+  `src/case_records.py` or `data/claim_ledger.yaml`. Not started; requires the
+  project owner, per `docs/CASE_CANDIDATES.md`'s promotion path.
+- [ ] Pagination: `scripts/fetch_case_candidate_queries.py` fetches one Search
+  API page per query. A query whose `hit_count` (see the generated register)
+  exceeds its page's result count has more candidates than are recorded.
+  Widening a query beyond page 1 is a deliberate rate-budget decision, not a
+  default.
+- [ ] A few declared queries returned zero hits, and one targets a UK statute
+  CourtListener's U.S.-centric corpus is unlikely to carry — see
+  `data/case_candidates.yaml`'s `queries` section for which. Each is a
+  recorded null result, not a failure; a broader phrasing may surface hits a
+  narrower one did not.
+
 ## Active publication-readiness work
 
 Publication packaging is prepared; proofreading and the publish step are not

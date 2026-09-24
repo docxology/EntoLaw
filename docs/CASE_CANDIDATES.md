@@ -1,0 +1,107 @@
+# Case-candidate register
+
+`data/case_candidates.yaml` is a **candidate register**, not a claim source.
+It exists to make CourtListener opinion-search results — cases that plausibly
+touch one of the legal issues `config/legal_issues.yaml` declares — visible
+and reviewable, without ever letting a search hit become a manuscript fact on
+its own.
+
+## What it is
+
+Every row carries `status: candidate` and nothing else. A candidate row
+records:
+
+- `candidate_id`, `cluster_id`, `case_name`, `court`, `date_filed`, `url` —
+  what CourtListener's Search API returned for the opinion.
+- `query_ids` — every declared query that surfaced it.
+- `issue_ids` — the `config/legal_issues.yaml` issue(s) that query targeted.
+
+The register also carries a `queries` section: every declared query, its
+search type, the issue it targets, its hit count (and whether that count is
+the provider's exact or `~`-approximate figure), when it was fetched, and
+which cache file backs it. A query with zero hits is recorded exactly like
+one with five hundred — a null result is a finding, not an omission.
+
+**No row here is, or can become, a claim by running this pipeline.** A
+candidate is a lead: a case worth a human reading, nothing more. The word
+"verified" appears nowhere in `data/case_candidates.yaml`, and no function in
+`src/case_candidates.py` writes it.
+
+## How it is built (and rebuilt)
+
+Two steps, one of which touches the network and one of which never does:
+
+1. **`scripts/fetch_case_candidate_queries.py --network`** — the only
+   network-touching step. It reads `config/case_candidate_queries.yaml`,
+   performs one CourtListener Search API request per query not already
+   cached, and writes the normalized response to
+   `data/courtlistener_cache/<query_id>.json`. Without `--network` it only
+   lists what it would fetch and how many requests that costs, so a caller
+   can check the count against a rate budget first. It uses the engine's own
+   `legal_informatics.courtlistener_client` / `legal_informatics.courtlistener_search`
+   modules directly; it builds no HTTP request itself, honors a `429`'s
+   backoff by stopping rather than retrying, and never reads, prints, or
+   writes the API credential.
+2. **`scripts/generate_case_candidates.py`** — fully offline. It rebuilds
+   `data/case_candidates.yaml` from `config/case_candidate_queries.yaml` and
+   the recorded responses under `data/courtlistener_cache/`, deterministically:
+   the same declared queries plus the same cached responses always render to
+   the same bytes. `--check` verifies the committed file matches what those
+   inputs would produce right now, without rewriting it — the same contract
+   as `scripts/check_module_map.py` and `scripts/check_docs_inventory.py`.
+
+Because step 2 never opens a socket, `data/case_candidates.yaml` is fully
+reproducible by anyone who has the repository, with no CourtListener account
+required — the recorded responses in `data/courtlistener_cache/` *are* the
+input, checked in for exactly that reason.
+
+Re-running step 1 for one query (a `409`/stale-registry fix, a reworded
+query) is `--only <query_id> --force`; re-running step 2 always regenerates
+the whole file from whatever is currently cached and declared.
+
+## What it explicitly is not
+
+- **Not a source in `references.bib`.** A `references.bib` key is a citation
+  a human chose to cite; nothing here mints one.
+- **Not an entry in `data/claim_ledger.yaml`.** The claim ledger's
+  `verification` block requires a fetched, read, quoted source
+  (`AGENTS.md`'s "Adding an external statistic" section); a search hit has
+  not been read.
+- **Not an entry in `src/case_records.py`.** That registry is the
+  manuscript's actual case spine — landmark decisions with a stated holding
+  and significance. A candidate has neither.
+- **Not consumed by any `{{TOKEN}}`, figure, or manuscript section.** No
+  `src/manuscript_variables.py` token reads `data/case_candidates.yaml`, and
+  no manuscript file references it. `tests/test_case_candidates.py` asserts
+  this directly.
+
+## How to promote a candidate
+
+Promotion is a human decision, not a script. To turn a candidate into a real
+claim:
+
+1. **Read the opinion.** Open `url` (a CourtListener `absolute_url`, appended
+   to `https://www.courtlistener.com`) and read it — not the search
+   snippet, the opinion.
+2. Decide what it actually holds and whether it belongs in this project at
+   all (many search hits will not: a case that merely cites a statute in
+   passing is not a decision "principally concerning" the role, per
+   `src/case_records.py`'s `Case.role` contract).
+3. If it belongs as a landmark decision, add it to `src/case_records.py`
+   with its own citation, jurisdiction, role, holding, and significance —
+   following `AGENTS.md`'s existing convention, the same as any other case.
+4. If it belongs as a source for an external statistic or current-status
+   claim, follow `AGENTS.md`'s "Adding an external statistic" section: a
+   `[@key]` in `references.bib`, a full verification block in
+   `data/claim_ledger.yaml`, confirmed live.
+5. Optionally, once promoted, note the promotion in this file's own registry
+   is not required — the candidate row itself is left as-is (it is not
+   deleted or reclassified; a promoted case is simply also, separately, a
+   claim). The candidate register and the claim ledger are independent by
+   design, and reconciling them is out of scope for this pipeline.
+
+## Boundary this register respects
+
+A case surfaced by search is an **authority to read**, never a finding. This
+register produces observations with locators (`cluster_id`, `url`, the query
+that found it) — never a legal conclusion, and never advice.

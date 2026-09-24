@@ -7,6 +7,9 @@ Guidance for agents working in this documentation directory.
 - `README.md` — human entry point; repo purpose, layout, run/test commands copied from `pyproject.toml`
 - `ACCURACY_METHODOLOGY.md` — registry-to-manuscript accuracy contract
 - `REVIEW_PROTOCOL.md` — claim and citation review protocol
+- `CASE_CANDIDATES.md` — what `data/case_candidates.yaml` is, how it is
+  fetched/regenerated, and the human-only path to promote a candidate into a
+  real claim
 
 ## Conventions observed in this repo
 - Manuscript prose contains `{{TOKEN}}` placeholders by design; they are

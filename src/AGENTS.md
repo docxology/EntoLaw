@@ -8,7 +8,13 @@
 - Parent standard: the `AGENTS.md` of the lifecycle directory this project sits in; parent project docs: `EntoLaw/AGENTS.md`.
 
 ## Layout
-Files: `AGENTS.md`, `README.md`, `__init__.py`, `case_records.py`, `cases.py`, `citations.py`, `claim_ledger.py`, `claim_ledger_loading.py`, `claim_ledger_models.py`, `claim_ledger_validation.py`, `figure_caption_records.py`, `institutions.py`, `interconnections.py`, `manuscript_variables.py`, `metrics.py`, `roles.py`, `species.py`, `statute_records.py`, `statutes.py`, `taxon_records.py`, `timeline.py`, `validation.py`, `viz.py`, `viz_citation_date_records.py`, `viz_cover.py` — 25 files total
+Files: `AGENTS.md`, `README.md`, `__init__.py`, `case_candidates.py`, `case_records.py`, `cases.py`, `citations.py`, `claim_ledger.py`, `claim_ledger_loading.py`, `claim_ledger_models.py`, `claim_ledger_validation.py`, `figure_caption_records.py`, `institutions.py`, `interconnections.py`, `manuscript_variables.py`, `metrics.py`, `roles.py`, `species.py`, `statute_records.py`, `statutes.py`, `taxon_records.py`, `timeline.py`, `validation.py`, `viz.py`, `viz_citation_date_records.py`, `viz_cover.py` — 26 files total
+
+- `case_candidates.py` — CourtListener case-CANDIDATE register: loads
+  `config/case_candidate_queries.yaml` and `data/courtlistener_cache/`,
+  builds/renders/checks `data/case_candidates.yaml`. Every row is
+  `status: candidate`; nothing here can write `verified`. See
+  `docs/CASE_CANDIDATES.md`.
 
 ## Kind
 - Category: **src**. `src/` of the parent project.

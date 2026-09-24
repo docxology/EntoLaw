@@ -33,10 +33,12 @@ verifiable quote in a claim ledger.
 | `src/interconnections.py` | The recurring themes that link the roles |
 | `src/manuscript_variables.py` | `{{TOKEN}}` generation (no hard-coded prose numbers) |
 | `src/claim_ledger.py` + `data/claim_ledger.yaml` | External-statistic verification |
+| `src/case_candidates.py` + `data/case_candidates.yaml` | CourtListener case-**candidate** register — never a claim source; see `docs/CASE_CANDIDATES.md` |
 | `src/viz.py` (+ `legal_informatics` figure harnesses) | Deterministic matplotlib figures |
 | `docs/manuscript/` | Modular, token-injected manuscript (abstract → conclusion) |
 | `docs/ACCURACY_METHODOLOGY.md` | What the offline gates prove vs. the live oracle |
 | `docs/REVIEW_PROTOCOL.md` | Deep-review checklist and final gate sequence |
+| `docs/CASE_CANDIDATES.md` | The case-candidate register: what it is, how to rebuild it, how to promote a candidate |
 
 ## Quick start
 
@@ -47,6 +49,7 @@ uv run pytest -m "not live"               # full offline suite (90%+ coverage on
 uv run pytest -m live                     # live claim-ledger oracle (network)
 uv run python scripts/run_inventory.py    # inventories, metrics, validation report
 uv run python scripts/generate_figures.py # render all figures
+uv run python scripts/generate_case_candidates.py --check  # case-candidate register is current (docs/CASE_CANDIDATES.md)
 ```
 
 Render the manuscript from the sibling template checkout (the project is a

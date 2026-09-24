@@ -1,0 +1,167 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:52:32.421543+00:00",
+  "hit_count": 13,
+  "query_id": "bee_swarm_ownership",
+  "results": [
+    {
+      "absolute_url": "/opinion/2792513/janet-olier-v-donna-bailey/",
+      "case_name": "Janet Olier v. Donna Bailey",
+      "citations": [
+        "164 So. 3d 982",
+        "2015 Miss. LEXIS 164",
+        "2015 WL 1611772"
+      ],
+      "cluster_id": "2792513",
+      "court": "Mississippi Supreme Court",
+      "date_filed": "2015-04-09",
+      "docket_number": "2013-CA-01411-SCT"
+    },
+    {
+      "absolute_url": "/opinion/2759937/janet-olier-v-donna-bailey/",
+      "case_name": "Janet Olier v. Donna Bailey",
+      "citations": [],
+      "cluster_id": "2759937",
+      "court": "Mississippi Supreme Court",
+      "date_filed": "2014-12-11",
+      "docket_number": "2013-CA-01411-SCT"
+    },
+    {
+      "absolute_url": "/opinion/7974530/mohammad-v-toyota-motor-sales-usa-inc/",
+      "case_name": "Mohammad v. Toyota Motor Sales, U.S.A., Inc.",
+      "citations": [
+        "179 Md. App. 693",
+        "947 A.2d 598",
+        "2008 Md. App. LEXIS 55"
+      ],
+      "cluster_id": "7974530",
+      "court": "Court of Special Appeals of Maryland",
+      "date_filed": "2008-05-08",
+      "docket_number": "No. 0183"
+    },
+    {
+      "absolute_url": "/opinion/1617286/stonecipher-v-kornhaus/",
+      "case_name": "Stonecipher v. Kornhaus",
+      "citations": [
+        "623 So. 2d 955",
+        "1993 WL 209186"
+      ],
+      "cluster_id": "1617286",
+      "court": "Mississippi Supreme Court",
+      "date_filed": "1993-10-07",
+      "docket_number": "90-CA-0719"
+    },
+    {
+      "absolute_url": "/opinion/5802717/people-v-kasold/",
+      "case_name": "People v. Kasold",
+      "citations": [
+        "153 Cal. App. 2d 891",
+        "314 P.2d 241",
+        "153 Cal. App. Supp. 2d 891",
+        "1957 Cal. App. LEXIS 1575"
+      ],
+      "cluster_id": "5802717",
+      "court": "Appellate Division of the Superior Court of California",
+      "date_filed": "1957-07-22",
+      "docket_number": "Crim. A. No. 3647"
+    },
+    {
+      "absolute_url": "/opinion/6506098/allman-v-rexer/",
+      "case_name": "Allman v. Rexer",
+      "citations": [
+        "21 Pa. D. & C. 431",
+        "1934 Pa. Dist. & Cnty. Dec. LEXIS 132"
+      ],
+      "cluster_id": "6506098",
+      "court": "Pennsylvania Court of Common Pleas, Philadelphia County",
+      "date_filed": "1934-07-11",
+      "docket_number": ""
+    },
+    {
+      "absolute_url": "/opinion/3255776/lundberg-v-bolon/",
+      "case_name": "Lundberg v. Bolon",
+      "citations": [
+        "194 P.2d 454",
+        "67 Ariz. 259",
+        "1948 Ariz. LEXIS 121"
+      ],
+      "cluster_id": "3255776",
+      "court": "Arizona Supreme Court",
+      "date_filed": "1948-01-12",
+      "docket_number": "No. 4922."
+    },
+    {
+      "absolute_url": "/opinion/452985/joseph-perkins-v-fie-corporation-judie-richman-individually-and-as/",
+      "case_name": "Joseph Perkins v. F.I.E. Corporation, Judie Richman, Individually and as Personal Representative of the Estate of Kathy Newman, Deceased v. Charter Arms Corporation",
+      "citations": [
+        "762 F.2d 1250"
+      ],
+      "cluster_id": "452985",
+      "court": "Court of Appeals for the Fifth Circuit",
+      "date_filed": "1985-07-15",
+      "docket_number": "83-3451"
+    },
+    {
+      "absolute_url": "/opinion/8940881/perkins-v-fie-corp/",
+      "case_name": "Perkins v. F.I.E. Corp.",
+      "citations": [
+        "762 F.2d 1250",
+        "54 U.S.L.W. 2020",
+        "1985 U.S. App. LEXIS 30610"
+      ],
+      "cluster_id": "8940881",
+      "court": "Court of Appeals for the Fifth Circuit",
+      "date_filed": "1985-06-17",
+      "docket_number": "Nos. 83-3451, 83-3591"
+    },
+    {
+      "absolute_url": "/opinion/4297867/travis-county-sheriffs-office-senior-certified-peace-officer-dennis/",
+      "case_name": "Travis County Sheriff's Office Senior Certified Peace Officer Dennis Tumlinson v. Carolyn Barnes",
+      "citations": [],
+      "cluster_id": "4297867",
+      "court": "Texas Court of Appeals, 3rd District (Austin)",
+      "date_filed": "2015-11-09",
+      "docket_number": "03-15-00642-CV"
+    },
+    {
+      "absolute_url": "/opinion/1429209/holmes-v-southern-california-edison-co/",
+      "case_name": "Holmes v. Southern California Edison Co.",
+      "citations": [
+        "78 Cal. App. 2d 43",
+        "177 P.2d 32",
+        "1947 Cal. App. LEXIS 1436"
+      ],
+      "cluster_id": "1429209",
+      "court": "California Court of Appeal",
+      "date_filed": "1947-02-10",
+      "docket_number": "Civ. 3440"
+    },
+    {
+      "absolute_url": "/opinion/3319593/e-a-stephens-co-v-albers/",
+      "case_name": "E. A. Stephens & Co. v. Albers",
+      "citations": [
+        "256 P. 15",
+        "81 Colo. 488"
+      ],
+      "cluster_id": "3319593",
+      "court": "Supreme Court of Colorado",
+      "date_filed": "1927-05-02",
+      "docket_number": "No. 11,726."
+    },
+    {
+      "absolute_url": "/opinion/8060798/johnson-v-united-railways-co/",
+      "case_name": "Johnson v. United Railways Co.",
+      "citations": [
+        "247 Mo. 326",
+        "152 S.W. 362",
+        "1912 Mo. LEXIS 67"
+      ],
+      "cluster_id": "8060798",
+      "court": "Supreme Court of Missouri",
+      "date_filed": "1912-12-31",
+      "docket_number": ""
+    }
+  ],
+  "search_type": "o",
+  "text": "bee swarm ownership negligence"
+}

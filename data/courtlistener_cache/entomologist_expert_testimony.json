@@ -1,0 +1,249 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:51:42.362066+00:00",
+  "hit_count": 97,
+  "query_id": "entomologist_expert_testimony",
+  "results": [
+    {
+      "absolute_url": "/opinion/7927330/an-v-active-pest-control-south-inc/",
+      "case_name": "An v. Active Pest Control South, Inc.",
+      "citations": [
+        "313 Ga. App. 110",
+        "720 S.E.2d 222",
+        "2011 Fulton County D. Rep. 3701",
+        "2011 Ga. App. LEXIS 1014"
+      ],
+      "cluster_id": "7927330",
+      "court": "Court of Appeals of Georgia",
+      "date_filed": "2011-11-15",
+      "docket_number": "A11A1185, A11A1186"
+    },
+    {
+      "absolute_url": "/opinion/4685445/tracie-l-ostermeier-v-prime-properties-investments-inc/",
+      "case_name": "Tracie L. Ostermeier v. Prime Properties Investments Inc.",
+      "citations": [],
+      "cluster_id": "4685445",
+      "court": "Missouri Court of Appeals",
+      "date_filed": "2019-12-10",
+      "docket_number": "WD82432"
+    },
+    {
+      "absolute_url": "/opinion/9381428/helena-chemical-company-v-robert-cox/",
+      "case_name": "Helena Chemical Company v. Robert Cox",
+      "citations": [],
+      "cluster_id": "9381428",
+      "court": "Texas Supreme Court",
+      "date_filed": "2023-03-03",
+      "docket_number": "20-0881"
+    },
+    {
+      "absolute_url": "/opinion/2847492/united-states-v-cosby/",
+      "case_name": "United States v. Cosby",
+      "citations": [],
+      "cluster_id": "2847492",
+      "court": "Navy-Marine Corps Court of Criminal Appeals",
+      "date_filed": "2015-08-31",
+      "docket_number": "201400318"
+    },
+    {
+      "absolute_url": "/opinion/1405747/meacham-v-franklin-heard-county-water-authority/",
+      "case_name": "Meacham v. Franklin-Heard County Water Authority",
+      "citations": [
+        "690 S.E.2d 186",
+        "302 Ga. App. 69",
+        "2010 Fulton County D. Rep. 52",
+        "2009 Ga. App. LEXIS 1458"
+      ],
+      "cluster_id": "1405747",
+      "court": "Court of Appeals of Georgia",
+      "date_filed": "2009-12-28",
+      "docket_number": "A09A2055"
+    },
+    {
+      "absolute_url": "/opinion/8279653/rummer-v-state/",
+      "case_name": "Rummer v. State",
+      "citations": [
+        "722 N.W.2d 528",
+        "2006 ND 216",
+        "2006 N.D. LEXIS 210",
+        "2006 WL 2948308"
+      ],
+      "cluster_id": "8279653",
+      "court": "North Dakota Supreme Court",
+      "date_filed": "2006-10-17",
+      "docket_number": "No. 20050341"
+    },
+    {
+      "absolute_url": "/opinion/1857378/westminster-associates-ltd-v-orkin-exterminating-co-in-re-westminster/",
+      "case_name": "Westminster Associates, Ltd. v. Orkin Exterminating Co. (In Re Westminster Associates, Ltd.)",
+      "citations": [
+        "265 B.R. 329",
+        "2001 Bankr. LEXIS 892",
+        "2001 WL 849194"
+      ],
+      "cluster_id": "1857378",
+      "court": "United States Bankruptcy Court, M.D. Florida",
+      "date_filed": "2001-07-03",
+      "docket_number": "Bankruptcy No. 98-5116-3P1. Adversary No. 00-134"
+    },
+    {
+      "absolute_url": "/opinion/1332468/dayoub-v-yates-astro-termite-pest-control-company/",
+      "case_name": "Dayoub v. Yates-Astro Termite Pest Control Company",
+      "citations": [
+        "521 S.E.2d 600",
+        "239 Ga. App. 578",
+        "99 Fulton County D. Rep. 3085",
+        "1999 Ga. App. LEXIS 1071"
+      ],
+      "cluster_id": "1332468",
+      "court": "Court of Appeals of Georgia",
+      "date_filed": "1999-08-10",
+      "docket_number": "A99A1472"
+    },
+    {
+      "absolute_url": "/opinion/10644624/in-re-foster-farm/",
+      "case_name": "In re: Foster Farm",
+      "citations": [],
+      "cluster_id": "10644624",
+      "court": "Court of Appeals of Maryland",
+      "date_filed": "2025-07-30",
+      "docket_number": "25/24"
+    },
+    {
+      "absolute_url": "/opinion/897970/city-of-bismarck-v-perusquia/",
+      "case_name": "City of Bismarck v. Perusquia",
+      "citations": [
+        "2006 ND 207"
+      ],
+      "cluster_id": "897970",
+      "court": "North Dakota Supreme Court",
+      "date_filed": "2006-10-17",
+      "docket_number": "20060048"
+    },
+    {
+      "absolute_url": "/opinion/897960/rummer-v-state/",
+      "case_name": "Rümmer v. State",
+      "citations": [
+        "2006 ND 216"
+      ],
+      "cluster_id": "897960",
+      "court": "North Dakota Supreme Court",
+      "date_filed": "2006-10-17",
+      "docket_number": "20050341"
+    },
+    {
+      "absolute_url": "/opinion/885791/state-v-weaver/",
+      "case_name": "State v. Weaver",
+      "citations": [
+        "2001 MT 115",
+        "28 P.3d 451",
+        "305 Mont. 315",
+        "2001 Mont. LEXIS 195"
+      ],
+      "cluster_id": "885791",
+      "court": "Montana Supreme Court",
+      "date_filed": "2001-07-02",
+      "docket_number": "98-348"
+    },
+    {
+      "absolute_url": "/opinion/10746705/william-d-beeman-v-state-of-iowa/",
+      "case_name": "William D. Beeman v. State of Iowa",
+      "citations": [],
+      "cluster_id": "10746705",
+      "court": "Court of Appeals of Iowa",
+      "date_filed": "2025-12-03",
+      "docket_number": "24-1756"
+    },
+    {
+      "absolute_url": "/opinion/798055/christopher-m-stevens-v-daniel-mcbride/",
+      "case_name": "Christopher M. Stevens v. Daniel McBride",
+      "citations": [
+        "489 F.3d 883",
+        "2007 U.S. App. LEXIS 14312",
+        "2007 WL 1732539"
+      ],
+      "cluster_id": "798055",
+      "court": "Court of Appeals for the Seventh Circuit",
+      "date_filed": "2007-06-18",
+      "docket_number": "05-1442"
+    },
+    {
+      "absolute_url": "/opinion/8091588/odonnell-v-moose-hill-orchards-inc/",
+      "case_name": "O'Donnell v. Moose Hill Orchards, Inc.",
+      "citations": [
+        "140 N.H. 601",
+        "670 A.2d 1030",
+        "1996 N.H. LEXIS 2"
+      ],
+      "cluster_id": "8091588",
+      "court": "Supreme Court of New Hampshire",
+      "date_filed": "1996-01-31",
+      "docket_number": "No. 94-107"
+    },
+    {
+      "absolute_url": "/opinion/2684479/state-v-gojcaj/",
+      "case_name": "State v. Gojcaj",
+      "citations": [],
+      "cluster_id": "2684479",
+      "court": "Connecticut Appellate Court",
+      "date_filed": "2014-06-24",
+      "docket_number": "AC35088"
+    },
+    {
+      "absolute_url": "/opinion/887255/weaver-v-state/",
+      "case_name": "Weaver v. State",
+      "citations": [
+        "2005 MT 158",
+        "114 P.3d 1039",
+        "327 Mont. 441",
+        "2005 Mont. LEXIS 240"
+      ],
+      "cluster_id": "887255",
+      "court": "Montana Supreme Court",
+      "date_filed": "2005-06-21",
+      "docket_number": "04-272"
+    },
+    {
+      "absolute_url": "/opinion/2598244/west-v-state/",
+      "case_name": "West v. State",
+      "citations": [
+        "75 P.3d 808",
+        "119 Nev. 410",
+        "119 Nev. Adv. Rep. 49",
+        "2003 Nev. LEXIS 63"
+      ],
+      "cluster_id": "2598244",
+      "court": "Nevada Supreme Court",
+      "date_filed": "2003-09-08",
+      "docket_number": "38696"
+    },
+    {
+      "absolute_url": "/opinion/2426827/zirlin-v-village-of-scarsdale/",
+      "case_name": "Zirlin v. Village of Scarsdale",
+      "citations": [
+        "365 F. Supp. 2d 477",
+        "2005 U.S. Dist. LEXIS 6551",
+        "2005 WL 885170"
+      ],
+      "cluster_id": "2426827",
+      "court": "District Court, S.D. New York",
+      "date_filed": "2005-03-31",
+      "docket_number": "03CIV.9903(CLB)"
+    },
+    {
+      "absolute_url": "/opinion/2679019/randy-l-knapp-v-state-of-indiana/",
+      "case_name": "Randy L. Knapp v. State of Indiana",
+      "citations": [
+        "9 N.E.3d 1274",
+        "2014 WL 2617279",
+        "2014 Ind. LEXIS 485"
+      ],
+      "cluster_id": "2679019",
+      "court": "Indiana Supreme Court",
+      "date_filed": "2014-06-12",
+      "docket_number": "28S00-1305-LW-327"
+    }
+  ],
+  "search_type": "o",
+  "text": "entomologist expert witness testimony admissibility"
+}

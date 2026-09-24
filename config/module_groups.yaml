@@ -30,16 +30,22 @@ groups:
       - timeline
       - interconnections
   C:
-    description: Claim ledger and validation. The evidence spine -- claim
-      models, their loading, and the validity rules that decide whether a claim
-      is admissible. A failure here is a correctness failure, not a
-      presentation one.
+    description: Ledgers and validation. The evidence spine -- claim models,
+      their loading, and the validity rules that decide whether a claim is
+      admissible -- plus the case-candidate register, which is loaded and
+      validated the same structural way but is never itself admissible. A
+      candidate's status is always "candidate"; promotion into a real claim
+      is a separate human decision made elsewhere (see
+      docs/CASE_CANDIDATES.md), and no function in this group can write
+      "verified" into a candidate row. A failure here is a correctness
+      failure, not a presentation one.
     modules:
       - claim_ledger
       - claim_ledger_models
       - claim_ledger_loading
       - claim_ledger_validation
       - validation
+      - case_candidates
   D:
     description: Derived outputs. Everything the manuscript consumes -- the
       numbers it quotes back as tokens and the figures it prints -- computed

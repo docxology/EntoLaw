@@ -1,0 +1,114 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:51:27.003658+00:00",
+  "hit_count": 9,
+  "query_id": "esa_arthropod_invertebrate",
+  "results": [
+    {
+      "absolute_url": "/opinion/4351074/untitled-california-attorney-general-opinion/",
+      "case_name": "Untitled California Attorney General Opinion",
+      "citations": [],
+      "cluster_id": "4351074",
+      "court": "California Attorney General Reports",
+      "date_filed": "1998-06-23",
+      "docket_number": "98-105"
+    },
+    {
+      "absolute_url": "/opinion/8243025/almond-alliance-of-california-v-fish-and-game-commission/",
+      "case_name": "Almond Alliance of California v. Fish and Game Commission",
+      "citations": [],
+      "cluster_id": "8243025",
+      "court": "California Court of Appeal",
+      "date_filed": "2022-09-21",
+      "docket_number": "C093542S"
+    },
+    {
+      "absolute_url": "/opinion/6473385/almond-alliance-of-cal-v-fish-and-game-com/",
+      "case_name": "Almond Alliance of Cal. v. Fish and Game Com.",
+      "citations": [],
+      "cluster_id": "6473385",
+      "court": "California Court of Appeal",
+      "date_filed": "2022-05-31",
+      "docket_number": "C093542"
+    },
+    {
+      "absolute_url": "/opinion/3278975/opinion-no-1998/",
+      "case_name": "Opinion No. (1998)",
+      "citations": [],
+      "cluster_id": "3278975",
+      "court": "California Attorney General Reports",
+      "date_filed": "1998-06-23",
+      "docket_number": null
+    },
+    {
+      "absolute_url": "/opinion/2460816/cetacean-community-v-bush/",
+      "case_name": "Cetacean Community v. Bush",
+      "citations": [
+        "249 F. Supp. 2d 1206",
+        "2003 U.S. Dist. LEXIS 3952",
+        "2003 WL 1101196"
+      ],
+      "cluster_id": "2460816",
+      "court": "District Court, D. Hawaii",
+      "date_filed": "2003-03-07",
+      "docket_number": "CV 02-00599 DAE BMK"
+    },
+    {
+      "absolute_url": "/opinion/788121/the-cetacean-community-v-george-w-bush-president-of-the-united-states-of/",
+      "case_name": "The Cetacean Community v. George W. Bush, President of the United States of America Donald H. Rumsfeld, United States of America Secretary of Defense",
+      "citations": [
+        "386 F.3d 1169",
+        "34 Envtl. L. Rep. (Envtl. Law Inst.) 20120",
+        "59 ERC (BNA) 1257",
+        "2004 U.S. App. LEXIS 21754",
+        "2004 WL 2348373"
+      ],
+      "cluster_id": "788121",
+      "court": "Court of Appeals for the Ninth Circuit",
+      "date_filed": "2004-10-20",
+      "docket_number": "03-15866"
+    },
+    {
+      "absolute_url": "/opinion/2484063/conservation-northwest-v-rey/",
+      "case_name": "Conservation Northwest v. Rey",
+      "citations": [
+        "674 F. Supp. 2d 1232",
+        "2009 U.S. Dist. LEXIS 117981",
+        "2009 WL 4897727"
+      ],
+      "cluster_id": "2484063",
+      "court": "District Court, W.D. Washington",
+      "date_filed": "2009-12-17",
+      "docket_number": "Case C08-1067-JCC"
+    },
+    {
+      "absolute_url": "/opinion/1453377/united-states-v-bronx-reptiles-inc/",
+      "case_name": "United States v. Bronx Reptiles, Inc.",
+      "citations": [
+        "949 F. Supp. 1004",
+        "1996 U.S. Dist. LEXIS 20518",
+        "1996 WL 751128"
+      ],
+      "cluster_id": "1453377",
+      "court": "District Court, E.D. New York",
+      "date_filed": "1996-12-17",
+      "docket_number": "96 M 569 (CLP)"
+    },
+    {
+      "absolute_url": "/opinion/30552/gdf-realty-investments-ltd-v-norton/",
+      "case_name": "GDF Realty Investments, Ltd. v. Norton",
+      "citations": [
+        "326 F.3d 622",
+        "56 ERC (BNA) 1033",
+        "2003 U.S. App. LEXIS 5818",
+        "2003 WL 1552198"
+      ],
+      "cluster_id": "30552",
+      "court": "Court of Appeals for the Fifth Circuit",
+      "date_filed": "2003-03-26",
+      "docket_number": "01-51099"
+    }
+  ],
+  "search_type": "o",
+  "text": "\"Endangered Species Act\" arthropod invertebrate"
+}

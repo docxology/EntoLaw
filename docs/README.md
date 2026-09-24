@@ -26,6 +26,9 @@ uv run pytest              # testpaths = ["tests"]
 
 - [ACCURACY_METHODOLOGY.md](ACCURACY_METHODOLOGY.md) — how registry-derived facts stay true by construction
 - [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md) — review discipline for claims and citations
+- [CASE_CANDIDATES.md](CASE_CANDIDATES.md) — the CourtListener case-candidate
+  register (`data/case_candidates.yaml`): never a claim source, and how to
+  promote a candidate into one
 
 ## Status
 

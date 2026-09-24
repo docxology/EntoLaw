@@ -1,0 +1,101 @@
+# Declared CourtListener opinion-search queries for the EntoLaw case-candidate
+# register.
+#
+# Data, not code: the fetch/build ENGINE is generic (legal_informatics'
+# CourtListener client and Search API modules, used directly by
+# scripts/fetch_case_candidate_queries.py and scripts/generate_case_candidates.py);
+# the query text and issue mapping below are this project's own declared data,
+# same arrangement as config/legal_issues.yaml and config/caselaw_sources.yaml.
+#
+# Every `issue_id` below must exist in config/legal_issues.yaml. A query
+# surfaces CANDIDATES only -- opinion-search hits, never reviewed authorities.
+# See docs/CASE_CANDIDATES.md for the full boundary and the promotion path.
+#
+# Fields per entry:
+#   query_id      Stable identifier; also the cache filename stem under
+#                 data/courtlistener_cache/<query_id>.json.
+#   text          Query text in CourtListener Search API operator syntax.
+#   search_type   Search API `type` param; 'o' (opinions) for every entry here.
+#   issue_id      The config/legal_issues.yaml issue_id this query targets.
+#   note          Why this query, in one sentence.
+version: '1.0'
+queries:
+  - query_id: ppa_aphis_quarantine
+    text: '"Plant Protection Act" APHIS quarantine'
+    search_type: o
+    issue_id: invasive_species_quarantine
+    note: Plant Protection Act quarantine authority, 7 U.S.C. § 7701 et seq.
+  - query_id: lanternfly_quarantine
+    text: '"spotted lanternfly" quarantine'
+    search_type: o
+    issue_id: invasive_species_quarantine
+    note: A registered regulated-pest taxon (src/taxon_records.py); quarantine
+      enforcement specifically.
+  - query_id: fifra_7usc136
+    text: '"7 U.S.C. § 136" FIFRA'
+    search_type: o
+    issue_id: pesticide_registration_and_fifra
+    note: Direct statute-citation query for the FIFRA codification.
+  - query_id: fifra_epa_registration
+    text: '"Federal Insecticide, Fungicide, and Rodenticide Act" EPA registration'
+    search_type: o
+    issue_id: pesticide_registration_and_fifra
+    note: Full-name FIFRA phrase plus EPA registration, to catch opinions that
+      spell out the Act rather than cite it.
+  - query_id: esa_arthropod_invertebrate
+    text: '"Endangered Species Act" arthropod invertebrate'
+    search_type: o
+    issue_id: pollinator_protection_esa
+    note: The ESA's arthropod/invertebrate coverage the claim ledger already
+      verifies (claim_esa_invertebrate_definition); opinions applying it.
+  - query_id: esa_16usc1532_listing
+    text: '"16 U.S.C. § 1532" insect listing'
+    search_type: o
+    issue_id: pollinator_protection_esa
+    note: Direct statute-citation query for the ESA definitions section.
+  - query_id: cites_appendix_insect
+    text: CITES Appendix insect import permit
+    search_type: o
+    issue_id: cites_wildlife_trade_obligations
+    note: CITES Appendix-listing and import-permit language for an insect taxon.
+  - query_id: uk_sentience_act_insect
+    text: '"Animal Welfare (Sentience) Act" insect'
+    search_type: o
+    issue_id: uk_animal_welfare_sentience
+    note: The 2022 UK Act; CourtListener's corpus is U.S.-centric, so a null
+      result here is itself the finding, not a failure of the query.
+  - query_id: forensic_entomology_daubert
+    text: '"forensic entomology" Daubert admissibility'
+    search_type: o
+    issue_id: forensic_entomology_admissibility
+    note: Daubert gatekeeping applied specifically to entomological testimony.
+  - query_id: entomologist_expert_testimony
+    text: entomologist expert witness testimony admissibility
+    search_type: o
+    issue_id: forensic_entomology_admissibility
+    note: Broader phrasing to catch opinions that discuss an entomologist
+      witness without the term "forensic entomology" itself.
+  - query_id: bee_swarm_ownership
+    text: bee swarm ownership negligence
+    search_type: o
+    issue_id: bee_ownership_and_negligence
+    note: Swarm-ownership and negligence fact pattern echoing Goff v. Kilts /
+      Kearry v. Pattinson (src/case_records.py).
+  - query_id: apiary_act_beekeeper
+    text: '"apiary act" beekeeper liability'
+    search_type: o
+    issue_id: bee_ownership_and_negligence
+    note: State apiary-act citations plus beekeeper liability, per the unit's
+      brief.
+  - query_id: chakrabarty_patent_extension
+    text: '"Diamond v. Chakrabarty" patent living organism'
+    search_type: o
+    issue_id: insect_patentability
+    note: Opinions applying or distinguishing Chakrabarty to a living-organism
+      patent claim.
+  - query_id: insect_patent_utility
+    text: patentability insect invention utility
+    search_type: o
+    issue_id: insect_patentability
+    note: Broader patentability-of-insect-invention phrasing beyond the named
+      Chakrabarty line.

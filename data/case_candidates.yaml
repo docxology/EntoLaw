@@ -1,0 +1,2086 @@
+schema_version: '1.0'
+generator: scripts.generate_case_candidates
+review_status: candidate_register
+boundary: 'Every row here is status: candidate -- a CourtListener opinion-search hit
+  surfaced by a query, not a reviewed legal authority. This register is generated
+  (see `generator`) from `config/case_candidate_queries.yaml` and the recorded responses
+  in `data/courtlistener_cache/`; it never feeds the manuscript, `references.bib`,
+  or `data/claim_ledger.yaml`. Promoting a candidate into a claim is a human decision
+  -- it requires reading the opinion, then adding it to `src/case_records.py` (or
+  the claim ledger) with its own citation and verification. See `docs/CASE_CANDIDATES.md`.'
+queries:
+- query_id: ppa_aphis_quarantine
+  text: '"Plant Protection Act" APHIS quarantine'
+  search_type: o
+  issue_id: invasive_species_quarantine
+  hit_count: 18
+  approximate: false
+  fetched_at: '2026-09-24T19:51:22.299784+00:00'
+  cache_file: data/courtlistener_cache/ppa_aphis_quarantine.json
+- query_id: lanternfly_quarantine
+  text: '"spotted lanternfly" quarantine'
+  search_type: o
+  issue_id: invasive_species_quarantine
+  hit_count: 0
+  approximate: false
+  fetched_at: '2026-09-24T19:51:22.709645+00:00'
+  cache_file: data/courtlistener_cache/lanternfly_quarantine.json
+- query_id: fifra_7usc136
+  text: '"7 U.S.C. § 136" FIFRA'
+  search_type: o
+  issue_id: pesticide_registration_and_fifra
+  hit_count: 355
+  approximate: false
+  fetched_at: '2026-09-24T19:51:23.985437+00:00'
+  cache_file: data/courtlistener_cache/fifra_7usc136.json
+- query_id: fifra_epa_registration
+  text: '"Federal Insecticide, Fungicide, and Rodenticide Act" EPA registration'
+  search_type: o
+  issue_id: pesticide_registration_and_fifra
+  hit_count: 506
+  approximate: false
+  fetched_at: '2026-09-24T19:51:24.623557+00:00'
+  cache_file: data/courtlistener_cache/fifra_epa_registration.json
+- query_id: esa_arthropod_invertebrate
+  text: '"Endangered Species Act" arthropod invertebrate'
+  search_type: o
+  issue_id: pollinator_protection_esa
+  hit_count: 9
+  approximate: false
+  fetched_at: '2026-09-24T19:51:27.003658+00:00'
+  cache_file: data/courtlistener_cache/esa_arthropod_invertebrate.json
+- query_id: esa_16usc1532_listing
+  text: '"16 U.S.C. § 1532" insect listing'
+  search_type: o
+  issue_id: pollinator_protection_esa
+  hit_count: 68
+  approximate: false
+  fetched_at: '2026-09-24T19:51:39.243376+00:00'
+  cache_file: data/courtlistener_cache/esa_16usc1532_listing.json
+- query_id: cites_appendix_insect
+  text: CITES Appendix insect import permit
+  search_type: o
+  issue_id: cites_wildlife_trade_obligations
+  hit_count: 263
+  approximate: false
+  fetched_at: '2026-09-24T19:51:39.916942+00:00'
+  cache_file: data/courtlistener_cache/cites_appendix_insect.json
+- query_id: uk_sentience_act_insect
+  text: '"Animal Welfare (Sentience) Act" insect'
+  search_type: o
+  issue_id: uk_animal_welfare_sentience
+  hit_count: 0
+  approximate: false
+  fetched_at: '2026-09-24T19:51:40.617468+00:00'
+  cache_file: data/courtlistener_cache/uk_sentience_act_insect.json
+- query_id: forensic_entomology_daubert
+  text: '"forensic entomology" Daubert admissibility'
+  search_type: o
+  issue_id: forensic_entomology_admissibility
+  hit_count: 2
+  approximate: false
+  fetched_at: '2026-09-24T19:51:41.843720+00:00'
+  cache_file: data/courtlistener_cache/forensic_entomology_daubert.json
+- query_id: entomologist_expert_testimony
+  text: entomologist expert witness testimony admissibility
+  search_type: o
+  issue_id: forensic_entomology_admissibility
+  hit_count: 97
+  approximate: false
+  fetched_at: '2026-09-24T19:51:42.362066+00:00'
+  cache_file: data/courtlistener_cache/entomologist_expert_testimony.json
+- query_id: bee_swarm_ownership
+  text: bee swarm ownership negligence
+  search_type: o
+  issue_id: bee_ownership_and_negligence
+  hit_count: 13
+  approximate: false
+  fetched_at: '2026-09-24T19:52:32.421543+00:00'
+  cache_file: data/courtlistener_cache/bee_swarm_ownership.json
+- query_id: apiary_act_beekeeper
+  text: '"apiary act" beekeeper liability'
+  search_type: o
+  issue_id: bee_ownership_and_negligence
+  hit_count: 0
+  approximate: false
+  fetched_at: '2026-09-24T19:52:34.338642+00:00'
+  cache_file: data/courtlistener_cache/apiary_act_beekeeper.json
+- query_id: chakrabarty_patent_extension
+  text: '"Diamond v. Chakrabarty" patent living organism'
+  search_type: o
+  issue_id: insect_patentability
+  hit_count: 51
+  approximate: false
+  fetched_at: '2026-09-24T19:52:36.055959+00:00'
+  cache_file: data/courtlistener_cache/chakrabarty_patent_extension.json
+- query_id: insect_patent_utility
+  text: patentability insect invention utility
+  search_type: o
+  issue_id: insect_patentability
+  hit_count: 112
+  approximate: false
+  fetched_at: '2026-09-24T19:52:37.965665+00:00'
+  cache_file: data/courtlistener_cache/insect_patent_utility.json
+candidates:
+- candidate_id: cl-10041458
+  cluster_id: '10041458'
+  case_name: David Schaffner, Jr. v. Monsanto Corp
+  court: Court of Appeals for the Third Circuit
+  date_filed: '2024-08-15'
+  url: /opinion/10041458/david-schaffner-jr-v-monsanto-corp/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-10112125
+  cluster_id: '10112125'
+  case_name: Melinda Turner v. Commonwealth of Kentucky
+  court: Kentucky Supreme Court
+  date_filed: '2018-04-26'
+  url: /opinion/10112125/melinda-turner-v-commonwealth-of-kentucky/
+  query_ids:
+  - forensic_entomology_daubert
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-10591903
+  cluster_id: '10591903'
+  case_name: Duke Energy Carolinas, LLC v. Ag Ins. sa/nv.
+  court: North Carolina Business Court
+  date_filed: '2020-06-05'
+  url: /opinion/10591903/duke-energy-carolinas-llc-v-ag-ins-sanv/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-10591906
+  cluster_id: '10591906'
+  case_name: Duke Energy Carolinas, LLC v. Ag Ins. sa/nv.
+  court: North Carolina Business Court
+  date_filed: '2020-06-05'
+  url: /opinion/10591906/duke-energy-carolinas-llc-v-ag-ins-sanv/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-10630493
+  cluster_id: '10630493'
+  case_name: John L. Durnell v. Monsanto Company
+  court: Missouri Court of Appeals
+  date_filed: '2025-02-11'
+  url: /opinion/10630493/john-l-durnell-v-monsanto-company/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-10631569
+  cluster_id: '10631569'
+  case_name: City of Skidmore, Missouri v. Rickie L. Stanton
+  court: Missouri Court of Appeals
+  date_filed: '2023-05-16'
+  url: /opinion/10631569/city-of-skidmore-missouri-v-rickie-l-stanton/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-10644624
+  cluster_id: '10644624'
+  case_name: 'In re: Foster Farm'
+  court: Court of Appeals of Maryland
+  date_filed: '2025-07-30'
+  url: /opinion/10644624/in-re-foster-farm/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-10646246
+  cluster_id: '10646246'
+  case_name: Center for Biological Diversity v. FWS
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2025-08-01'
+  url: /opinion/10646246/center-for-biological-diversity-v-fws/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-10658647
+  cluster_id: '10658647'
+  case_name: Wildlife Preserves v. Romero
+  court: Court of Appeals for the Second Circuit
+  date_filed: '2025-08-22'
+  url: /opinion/10658647/wildlife-preserves-v-romero/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-10746705
+  cluster_id: '10746705'
+  case_name: William D. Beeman v. State of Iowa
+  court: Court of Appeals of Iowa
+  date_filed: '2025-12-03'
+  url: /opinion/10746705/william-d-beeman-v-state-of-iowa/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-10880244
+  cluster_id: '10880244'
+  case_name: Monsanto v. Durnell
+  court: Supreme Court of the United States
+  date_filed: '2026-06-25'
+  url: /opinion/10880244/monsanto-v-durnell/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-10946077
+  cluster_id: '10946077'
+  case_name: Friends of Animals v. FWS
+  court: Court of Appeals for the Tenth Circuit
+  date_filed: '2026-08-12'
+  url: /opinion/10946077/friends-of-animals-v-fws/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-10976940
+  cluster_id: '10976940'
+  case_name: Berkey International, LLC v. U.S. Environmental Protection Agency
+  court: Court of Appeals for the First Circuit
+  date_filed: '2026-09-18'
+  url: /opinion/10976940/berkey-international-llc-v-us-environmental-protection-agency/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-110301
+  cluster_id: '110301'
+  case_name: Diamond v. Chakrabarty
+  court: Supreme Court of the United States
+  date_filed: '1980-06-16'
+  url: /opinion/110301/diamond-v-chakrabarty/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-12718
+  cluster_id: '12718'
+  case_name: Sharp v. State Farm Fire & Casualty Insurance
+  court: Court of Appeals for the Fifth Circuit
+  date_filed: '1997-08-04'
+  url: /opinion/12718/sharp-v-state-farm-fire-casualty-insurance/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-1332468
+  cluster_id: '1332468'
+  case_name: Dayoub v. Yates-Astro Termite Pest Control Company
+  court: Court of Appeals of Georgia
+  date_filed: '1999-08-10'
+  url: /opinion/1332468/dayoub-v-yates-astro-termite-pest-control-company/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-1356166
+  cluster_id: '1356166'
+  case_name: United Farm Workers of America v. Administrator, Environmental Protection
+    Agency
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2010-01-26'
+  url: /opinion/1356166/united-farm-workers-of-america-v-administrator-environmental-protection/
+  query_ids:
+  - fifra_7usc136
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-1405747
+  cluster_id: '1405747'
+  case_name: Meacham v. Franklin-Heard County Water Authority
+  court: Court of Appeals of Georgia
+  date_filed: '2009-12-28'
+  url: /opinion/1405747/meacham-v-franklin-heard-county-water-authority/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-1409153
+  cluster_id: '1409153'
+  case_name: Andersen Corp. v. Pella Corp.
+  court: District Court, D. Minnesota
+  date_filed: '2007-07-31'
+  url: /opinion/1409153/andersen-corp-v-pella-corp/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-142892
+  cluster_id: '142892'
+  case_name: Bates v. Dow Agrosciences LLC
+  court: Supreme Court of the United States
+  date_filed: '2005-04-27'
+  url: /opinion/142892/bates-v-dow-agrosciences-llc/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-1429209
+  cluster_id: '1429209'
+  case_name: Holmes v. Southern California Edison Co.
+  court: California Court of Appeal
+  date_filed: '1947-02-10'
+  url: /opinion/1429209/holmes-v-southern-california-edison-co/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-1444075
+  cluster_id: '1444075'
+  case_name: Arizona Cattle Growers' Ass'n v. Kempthorne
+  court: District Court, D. Arizona
+  date_filed: '2008-02-04'
+  url: /opinion/1444075/arizona-cattle-growers-assn-v-kempthorne/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-1453377
+  cluster_id: '1453377'
+  case_name: United States v. Bronx Reptiles, Inc.
+  court: District Court, E.D. New York
+  date_filed: '1996-12-17'
+  url: /opinion/1453377/united-states-v-bronx-reptiles-inc/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-1454816
+  cluster_id: '1454816'
+  case_name: Lands Council v. Martin
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2008-06-25'
+  url: /opinion/1454816/lands-council-v-martin/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-1462603
+  cluster_id: '1462603'
+  case_name: Animal Legal Defense Fund v. Quigg
+  court: District Court, N.D. California
+  date_filed: '1989-03-29'
+  url: /opinion/1462603/animal-legal-defense-fund-v-quigg/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-1495507
+  cluster_id: '1495507'
+  case_name: Harris v. Board of Education
+  court: Court of Appeals of Maryland
+  date_filed: '2003-06-06'
+  url: /opinion/1495507/harris-v-board-of-education/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-149649
+  cluster_id: '149649'
+  case_name: Bilski v. Kappos
+  court: Supreme Court of the United States
+  date_filed: '2010-06-28'
+  url: /opinion/149649/bilski-v-kappos/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-150232
+  cluster_id: '150232'
+  case_name: Natural Resources Defense Council, Inc. v. United States Department of
+    Agriculture
+  court: Court of Appeals for the Second Circuit
+  date_filed: '2010-07-08'
+  url: /opinion/150232/natural-resources-defense-council-inc-v-united-states-department-of/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-152228
+  cluster_id: '152228'
+  case_name: Intervet Inc. v. Merial Limited
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2010-08-04'
+  url: /opinion/152228/intervet-inc-v-merial-limited/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-152573
+  cluster_id: '152573'
+  case_name: Home Blds Assoc Nc v. Usfws
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2010-08-09'
+  url: /opinion/152573/home-blds-assoc-nc-v-usfws/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-1575851
+  cluster_id: '1575851'
+  case_name: M & H Enterprises v. Tri-State Delta Chemicals, Inc.
+  court: Missouri Court of Appeals
+  date_filed: '2001-01-25'
+  url: /opinion/1575851/m-h-enterprises-v-tri-state-delta-chemicals-inc/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-1613424
+  cluster_id: '1613424'
+  case_name: Larson Manufacturing Co. of South Dakota, Inc. v. Aluminart Products
+    Ltd.
+  court: District Court, D. South Dakota
+  date_filed: '2007-09-26'
+  url: /opinion/1613424/larson-manufacturing-co-of-south-dakota-inc-v-aluminart-products-ltd/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-161421
+  cluster_id: '161421'
+  case_name: Coalition for Sustainable Resources, Inc. v. United States Forest Service
+  court: Court of Appeals for the Tenth Circuit
+  date_filed: '2001-08-07'
+  url: /opinion/161421/coalition-for-sustainable-resources-inc-v-united-states-forest-service/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-1617286
+  cluster_id: '1617286'
+  case_name: Stonecipher v. Kornhaus
+  court: Mississippi Supreme Court
+  date_filed: '1993-10-07'
+  url: /opinion/1617286/stonecipher-v-kornhaus/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-1687736
+  cluster_id: '1687736'
+  case_name: Allstate Insurance v. Pooltime Products, Inc.
+  court: District Court, E.D. Louisiana
+  date_filed: '1994-01-10'
+  url: /opinion/1687736/allstate-insurance-v-pooltime-products-inc/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-173776
+  cluster_id: '173776'
+  case_name: Modesto Irrigation District v. Gutierrez
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2010-08-20'
+  url: /opinion/173776/modesto-irrigation-district-v-gutierrez/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-1751824
+  cluster_id: '1751824'
+  case_name: County of San Miguel v. Kempthorne
+  court: District Court, District of Columbia
+  date_filed: '2008-11-10'
+  url: /opinion/1751824/county-of-san-miguel-v-kempthorne/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-178349
+  cluster_id: '178349'
+  case_name: Hardin v. Jackson
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2010-10-29'
+  url: /opinion/178349/hardin-v-jackson/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-1819179
+  cluster_id: '1819179'
+  case_name: Humane Society of the United States v. Kempthorne
+  court: District Court, District of Columbia
+  date_filed: '2008-09-29'
+  url: /opinion/1819179/humane-society-of-the-united-states-v-kempthorne/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-1857378
+  cluster_id: '1857378'
+  case_name: Westminster Associates, Ltd. v. Orkin Exterminating Co. (In Re Westminster
+    Associates, Ltd.)
+  court: United States Bankruptcy Court, M.D. Florida
+  date_filed: '2001-07-03'
+  url: /opinion/1857378/westminster-associates-ltd-v-orkin-exterminating-co-in-re-westminster/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-185986
+  cluster_id: '185986'
+  case_name: CropLife Amer v. EPA
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2003-06-03'
+  url: /opinion/185986/croplife-amer-v-epa/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-186914
+  cluster_id: '186914'
+  case_name: Natural Resources Defense Council v. Johnson
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2007-05-25'
+  url: /opinion/186914/natural-resources-defense-council-v-johnson/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-209543
+  cluster_id: '209543'
+  case_name: In Re Bilski
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2008-10-30'
+  url: /opinion/209543/in-re-bilski/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-210112
+  cluster_id: '210112'
+  case_name: Monsanto Co. v. Bayer Bioscience N.V.
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2008-01-25'
+  url: /opinion/210112/monsanto-co-v-bayer-bioscience-nv/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2151118
+  cluster_id: '2151118'
+  case_name: Center for Native Ecosystems v. United States Fish & Wildlife Service
+  court: District Court, D. Colorado
+  date_filed: '2011-06-09'
+  url: /opinion/2151118/center-for-native-ecosystems-v-united-states-fish-wildlife-service/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-2197102
+  cluster_id: '2197102'
+  case_name: Dow Chemical Co. v. Ebling
+  court: Indiana Court of Appeals
+  date_filed: '2000-02-03'
+  url: /opinion/2197102/dow-chemical-co-v-ebling/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-222139
+  cluster_id: '222139'
+  case_name: Association for Molecular Pathology v. United States Patent & Trademark
+    Office
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2011-07-29'
+  url: /opinion/222139/association-for-molecular-pathology-v-united-states-patent-trademark/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2252138
+  cluster_id: '2252138'
+  case_name: Association for Molecular Pathology v. United States Patent & Trademark
+    Office
+  court: District Court, S.D. New York
+  date_filed: '2010-04-05'
+  url: /opinion/2252138/association-for-molecular-pathology-v-united-states-patent-trademark/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2292450
+  cluster_id: '2292450'
+  case_name: Record Buck Farms, Inc. v. Johanns
+  court: District Court, M.D. Florida
+  date_filed: '2007-04-26'
+  url: /opinion/2292450/record-buck-farms-inc-v-johanns/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-2328419
+  cluster_id: '2328419'
+  case_name: International Center for Technology Assessment v. Johanns
+  court: District Court, District of Columbia
+  date_filed: '2007-02-05'
+  url: /opinion/2328419/international-center-for-technology-assessment-v-johanns/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-2395844
+  cluster_id: '2395844'
+  case_name: Colorado River Cutthroat Trout v. Dirk Kempthorne
+  court: District Court, District of Columbia
+  date_filed: '2006-09-07'
+  url: /opinion/2395844/colorado-river-cutthroat-trout-v-dirk-kempthorne/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-2411332
+  cluster_id: '2411332'
+  case_name: Harlan Land Co. v. U.S. Department of Agriculture
+  court: District Court, E.D. California
+  date_filed: '2001-09-27'
+  url: /opinion/2411332/harlan-land-co-v-us-department-of-agriculture/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-2426827
+  cluster_id: '2426827'
+  case_name: Zirlin v. Village of Scarsdale
+  court: District Court, S.D. New York
+  date_filed: '2005-03-31'
+  url: /opinion/2426827/zirlin-v-village-of-scarsdale/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-2442080
+  cluster_id: '2442080'
+  case_name: Hawai'i Orchid Growers Ass'n v. United States Department of Agriculture
+  court: District Court, District of Columbia
+  date_filed: '2006-06-29'
+  url: /opinion/2442080/hawaii-orchid-growers-assn-v-united-states-department-of-agriculture/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-2460816
+  cluster_id: '2460816'
+  case_name: Cetacean Community v. Bush
+  court: District Court, D. Hawaii
+  date_filed: '2003-03-07'
+  url: /opinion/2460816/cetacean-community-v-bush/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-2475761
+  cluster_id: '2475761'
+  case_name: Reckitt Benckiser, Inc. v. Jackson
+  court: District Court, District of Columbia
+  date_filed: '2011-01-28'
+  url: /opinion/2475761/reckitt-benckiser-inc-v-jackson/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-2477293
+  cluster_id: '2477293'
+  case_name: Air Vent, Inc. v. Vent Right Corp.
+  court: District Court, W.D. Pennsylvania
+  date_filed: '2010-07-20'
+  url: /opinion/2477293/air-vent-inc-v-vent-right-corp/
+  query_ids:
+  - cites_appendix_insect
+  - insect_patent_utility
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-247862
+  cluster_id: '247862'
+  case_name: Henry Bluestone v. Louis Schmerling
+  court: Court of Customs and Patent Appeals
+  date_filed: '1959-05-15'
+  url: /opinion/247862/henry-bluestone-v-louis-schmerling/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2484063
+  cluster_id: '2484063'
+  case_name: Conservation Northwest v. Rey
+  court: District Court, W.D. Washington
+  date_filed: '2009-12-17'
+  url: /opinion/2484063/conservation-northwest-v-rey/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-251873
+  cluster_id: '251873'
+  case_name: Application of Arnold N. Johnson
+  court: Court of Customs and Patent Appeals
+  date_filed: '1960-10-10'
+  url: /opinion/251873/application-of-arnold-n-johnson/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2533469
+  cluster_id: '2533469'
+  case_name: Home Builders Ass'n v. United States Fish & Wildlife Service
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2010-08-09'
+  url: /opinion/2533469/home-builders-assn-v-united-states-fish-wildlife-service/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-2568743
+  cluster_id: '2568743'
+  case_name: Cactus Corner, LLC v. U.S. Dept. of Agriculture
+  court: District Court, E.D. California
+  date_filed: '2004-03-11'
+  url: /opinion/2568743/cactus-corner-llc-v-us-dept-of-agriculture/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-2579460
+  cluster_id: '2579460'
+  case_name: Use Techno Corp. v. Kenko USA, Inc.
+  court: District Court, N.D. California
+  date_filed: '2007-09-04'
+  url: /opinion/2579460/use-techno-corp-v-kenko-usa-inc/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2598244
+  cluster_id: '2598244'
+  case_name: West v. State
+  court: Nevada Supreme Court
+  date_filed: '2003-09-08'
+  url: /opinion/2598244/west-v-state/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-260381
+  cluster_id: '260381'
+  case_name: Application of Winifred June Adams, David Neville Kirk and Vladimir Petrow
+  court: Court of Customs and Patent Appeals
+  date_filed: '1963-04-25'
+  url: /opinion/260381/application-of-winifred-june-adams-david-neville-kirk-and-vladimir-petrow/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-261028
+  cluster_id: '261028'
+  case_name: Application of Ernst-Albrecht Pieroh and Horst Werres
+  court: Court of Customs and Patent Appeals
+  date_filed: '1963-06-28'
+  url: /opinion/261028/application-of-ernst-albrecht-pieroh-and-horst-werres/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-262952
+  cluster_id: '262952'
+  case_name: Application of Robert M. Cole
+  court: Court of Customs and Patent Appeals
+  date_filed: '1964-01-23'
+  url: /opinion/262952/application-of-robert-m-cole/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-264868
+  cluster_id: '264868'
+  case_name: Application of Walter Lorenz and Gerhard Schrader
+  court: Court of Customs and Patent Appeals
+  date_filed: '1964-07-02'
+  url: /opinion/264868/application-of-walter-lorenz-and-gerhard-schrader/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2663332
+  cluster_id: '2663332'
+  case_name: Fmc Corporation v. United States Environmental Protection Agency
+  court: District Court, District of Columbia
+  date_filed: '2011-11-21'
+  url: /opinion/2663332/fmc-corporation-v-united-states-environmental-protection-agency/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-2664819
+  cluster_id: '2664819'
+  case_name: Reckitt Benckiser Inc. v. Jackson
+  court: District Court, District of Columbia
+  date_filed: '2011-01-28'
+  url: /opinion/2664819/reckitt-benckiser-inc-v-jackson/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-2672960
+  cluster_id: '2672960'
+  case_name: 'Inre: Roslin Institute (Edinburgh)'
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2014-05-08'
+  url: /opinion/2672960/inre-roslin-institute-edinburgh/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2679019
+  cluster_id: '2679019'
+  case_name: Randy L. Knapp v. State of Indiana
+  court: Indiana Supreme Court
+  date_filed: '2014-06-12'
+  url: /opinion/2679019/randy-l-knapp-v-state-of-indiana/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-2684479
+  cluster_id: '2684479'
+  case_name: State v. Gojcaj
+  court: Connecticut Appellate Court
+  date_filed: '2014-06-24'
+  url: /opinion/2684479/state-v-gojcaj/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-275759
+  cluster_id: '275759'
+  case_name: Application of David Neville Kirk and Vladimir Petrow
+  court: Court of Customs and Patent Appeals
+  date_filed: '1967-04-10'
+  url: /opinion/275759/application-of-david-neville-kirk-and-vladimir-petrow/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2759937
+  cluster_id: '2759937'
+  case_name: Janet Olier v. Donna Bailey
+  court: Mississippi Supreme Court
+  date_filed: '2014-12-11'
+  url: /opinion/2759937/janet-olier-v-donna-bailey/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-2761846
+  cluster_id: '2761846'
+  case_name: University of Utah Research Foundation v. Ambry Genetics Corp.
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2014-12-17'
+  url: /opinion/2761846/university-of-utah-research-foundation-v-ambry-genetics-corp/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-279179
+  cluster_id: '279179'
+  case_name: Application of Paul D. Harwood
+  court: Court of Customs and Patent Appeals
+  date_filed: '1968-03-07'
+  url: /opinion/279179/application-of-paul-d-harwood/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2792513
+  cluster_id: '2792513'
+  case_name: Janet Olier v. Donna Bailey
+  court: Mississippi Supreme Court
+  date_filed: '2015-04-09'
+  url: /opinion/2792513/janet-olier-v-donna-bailey/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-2800893
+  cluster_id: '2800893'
+  case_name: Center for Biological Diversity v. United States Environmental Protection
+    Agency
+  court: District Court, District of Columbia
+  date_filed: '2015-05-14'
+  url: /opinion/2800893/center-for-biological-diversity-v-united-states-environmental-protection/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-2810153
+  cluster_id: '2810153'
+  case_name: Non-Dietary Exposure Task Force v. Tagros Chemicals India, Ltd.
+  court: District Court, District of Columbia
+  date_filed: '2015-06-19'
+  url: /opinion/2810153/non-dietary-exposure-task-force-v-tagros-chemicals-india-ltd/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-2847492
+  cluster_id: '2847492'
+  case_name: United States v. Cosby
+  court: Navy-Marine Corps Court of Criminal Appeals
+  date_filed: '2015-08-31'
+  url: /opinion/2847492/united-states-v-cosby/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-292146
+  cluster_id: '292146'
+  case_name: Application of Albert W. Musgrave
+  court: Court of Customs and Patent Appeals
+  date_filed: '1970-10-08'
+  url: /opinion/292146/application-of-albert-w-musgrave/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-292916
+  cluster_id: '292916'
+  case_name: Application of Gerald Houghton
+  court: Court of Customs and Patent Appeals
+  date_filed: '1970-11-25'
+  url: /opinion/292916/application-of-gerald-houghton/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-2977347
+  cluster_id: '2977347'
+  case_name: Waterkeeper Alliance v. EPA
+  court: Court of Appeals for the Sixth Circuit
+  date_filed: '2009-01-07'
+  url: /opinion/2977347/waterkeeper-alliance-v-epa/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-3037600
+  cluster_id: '3037600'
+  case_name: Cactus Corner, LLC v. U.S. Department of Agriculture
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2006-06-07'
+  url: /opinion/3037600/cactus-corner-llc-v-us-department-of-agriculture/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-30552
+  cluster_id: '30552'
+  case_name: GDF Realty Investments, Ltd. v. Norton
+  court: Court of Appeals for the Fifth Circuit
+  date_filed: '2003-03-26'
+  url: /opinion/30552/gdf-realty-investments-ltd-v-norton/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-3219141
+  cluster_id: '3219141'
+  case_name: Markle Interests, L.L.C. v. United States Fish & Wildlife Service
+  court: Court of Appeals for the Fifth Circuit
+  date_filed: '2016-06-30'
+  url: /opinion/3219141/markle-interests-llc-v-united-states-fish-wildlife-service/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-3255776
+  cluster_id: '3255776'
+  case_name: Lundberg v. Bolon
+  court: Arizona Supreme Court
+  date_filed: '1948-01-12'
+  url: /opinion/3255776/lundberg-v-bolon/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-3278975
+  cluster_id: '3278975'
+  case_name: Opinion No. (1998)
+  court: California Attorney General Reports
+  date_filed: '1998-06-23'
+  url: /opinion/3278975/opinion-no-1998/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-3319593
+  cluster_id: '3319593'
+  case_name: E. A. Stephens & Co. v. Albers
+  court: Supreme Court of Colorado
+  date_filed: '1927-05-02'
+  url: /opinion/3319593/e-a-stephens-co-v-albers/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-4297867
+  cluster_id: '4297867'
+  case_name: Travis County Sheriff's Office Senior Certified Peace Officer Dennis
+    Tumlinson v. Carolyn Barnes
+  court: Texas Court of Appeals, 3rd District (Austin)
+  date_filed: '2015-11-09'
+  url: /opinion/4297867/travis-county-sheriffs-office-senior-certified-peace-officer-dennis/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-4314821
+  cluster_id: '4314821'
+  case_name: Alaska Oil and Gas Ass'n v. Penny Pritzker
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2016-10-24'
+  url: /opinion/4314821/alaska-oil-and-gas-assn-v-penny-pritzker/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-4322740
+  cluster_id: '4322740'
+  case_name: Alika Atay v. County of Maui
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2016-11-18'
+  url: /opinion/4322740/alika-atay-v-county-of-maui/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-4351074
+  cluster_id: '4351074'
+  case_name: Untitled California Attorney General Opinion
+  court: California Attorney General Reports
+  date_filed: '1998-06-23'
+  url: /opinion/4351074/untitled-california-attorney-general-opinion/
+  query_ids:
+  - esa_16usc1532_listing
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-4391786
+  cluster_id: '4391786'
+  case_name: Alliance for the Wild Rockies v. Paul Bradford
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2017-05-17'
+  url: /opinion/4391786/alliance-for-the-wild-rockies-v-paul-bradford/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-4405403
+  cluster_id: '4405403'
+  case_name: Center for Biological Diversity v. Environmental Protection Agency
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2017-06-30'
+  url: /opinion/4405403/center-for-biological-diversity-v-environmental-protection-agency/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-4405821
+  cluster_id: '4405821'
+  case_name: Schoenhofer v. McClaskey
+  court: Court of Appeals for the Tenth Circuit
+  date_filed: '2017-07-03'
+  url: /opinion/4405821/schoenhofer-v-mcclaskey/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-4448561
+  cluster_id: '4448561'
+  case_name: Evans v. United States
+  court: Court of Appeals for the First Circuit
+  date_filed: '2017-12-04'
+  url: /opinion/4448561/evans-v-united-states/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-4481700
+  cluster_id: '4481700'
+  case_name: Air Transport Association of America, Inc. v. U.S. Department of Agriculture
+  court: District Court, District of Columbia
+  date_filed: '2018-03-28'
+  url: /opinion/4481700/air-transport-association-of-america-inc-v-us-department-of/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-4491264
+  cluster_id: '4491264'
+  case_name: Entergy Nuclear/Vermont Yankee Thermal Discharge Permit Amendment
+  court: Vermont Superior Court
+  date_filed: '2008-05-22'
+  url: /opinion/4491264/entergy-nuclearvermont-yankee-thermal-discharge-permit-amendment/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-4509579
+  cluster_id: '4509579'
+  case_name: Andrtiz Sundwig GMBH v. United States
+  court: United States Court of International Trade
+  date_filed: '2018-06-20'
+  url: /opinion/4509579/andrtiz-sundwig-gmbh-v-united-states/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-4517751
+  cluster_id: '4517751'
+  case_name: Air Transport Association of America, Inc. v. U.S. Department of Agriculture
+  court: District Court, District of Columbia
+  date_filed: '2018-07-17'
+  url: /opinion/4517751/air-transport-association-of-america-inc-v-us-department-of/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-4519008
+  cluster_id: '4519008'
+  case_name: Interval Licensing LLC v. Aol, Inc.
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2018-07-20'
+  url: /opinion/4519008/interval-licensing-llc-v-aol-inc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-4525970
+  cluster_id: '4525970'
+  case_name: Alliance for the Wild Rockies v. Usfs
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2018-08-13'
+  url: /opinion/4525970/alliance-for-the-wild-rockies-v-usfs/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-452985
+  cluster_id: '452985'
+  case_name: Joseph Perkins v. F.I.E. Corporation, Judie Richman, Individually and
+    as Personal Representative of the Estate of Kathy Newman, Deceased v. Charter
+    Arms Corporation
+  court: Court of Appeals for the Fifth Circuit
+  date_filed: '1985-07-15'
+  url: /opinion/452985/joseph-perkins-v-fie-corporation-judie-richman-individually-and-as/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-4547345
+  cluster_id: '4547345'
+  case_name: Alliance for the Wild Rockies v. Usfs
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2018-10-25'
+  url: /opinion/4547345/alliance-for-the-wild-rockies-v-usfs/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-4567459
+  cluster_id: '4567459'
+  case_name: Weyerhaeuser Co. v. United States Fish and Wildlife Serv.
+  court: Supreme Court of the United States
+  date_filed: '2018-11-27'
+  url: /opinion/4567459/weyerhaeuser-co-v-united-states-fish-and-wildlife-serv/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-4600244
+  cluster_id: '4600244'
+  case_name: Natural Alternatives Int'l, Inc. v. Creative Compounds, LLC
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2019-03-15'
+  url: /opinion/4600244/natural-alternatives-intl-inc-v-creative-compounds-llc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-4636556
+  cluster_id: '4636556'
+  case_name: Athena Diagnostics, Inc. v. Mayo Collaborative Servs., LLC
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2019-07-03'
+  url: /opinion/4636556/athena-diagnostics-inc-v-mayo-collaborative-servs-llc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-4685445
+  cluster_id: '4685445'
+  case_name: Tracie L. Ostermeier v. Prime Properties Investments Inc.
+  court: Missouri Court of Appeals
+  date_filed: '2019-12-10'
+  url: /opinion/4685445/tracie-l-ostermeier-v-prime-properties-investments-inc/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-4747494
+  cluster_id: '4747494'
+  case_name: Nrdc v. Usepa
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2020-04-22'
+  url: /opinion/4747494/nrdc-v-usepa/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-4755916
+  cluster_id: '4755916'
+  case_name: Helena Agri-Enterprises, LLC, f/k/a Helena Chemical Company v. Robert
+    M. Jones, Mark A. Jones, and Jones Farms
+  court: Indiana Court of Appeals
+  date_filed: '2020-05-22'
+  url: /opinion/4755916/helena-agri-enterprises-llc-fka-helena-chemical-company-v-robert-m/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-4789459
+  cluster_id: '4789459'
+  case_name: Elizabeth Gresser, Individually, John Gresser and Janice Gresser Individually
+    and as Parents and Natural Guardians of Rebekah Gresser v. Reliable Exterminators,
+    Inc. (mem. dec.)
+  court: Indiana Court of Appeals
+  date_filed: '2020-09-25'
+  url: /opinion/4789459/elizabeth-gresser-individually-john-gresser-and-janice-gresser/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-5802717
+  cluster_id: '5802717'
+  case_name: People v. Kasold
+  court: Appellate Division of the Superior Court of California
+  date_filed: '1957-07-22'
+  url: /opinion/5802717/people-v-kasold/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-6452160
+  cluster_id: '6452160'
+  case_name: National Family Farm Coalition v. Usepa
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2022-03-17'
+  url: /opinion/6452160/national-family-farm-coalition-v-usepa/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-6461190
+  cluster_id: '6461190'
+  case_name: Nrdc v. Usepa
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2022-04-20'
+  url: /opinion/6461190/nrdc-v-usepa/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-6473385
+  cluster_id: '6473385'
+  case_name: Almond Alliance of Cal. v. Fish and Game Com.
+  court: California Court of Appeal
+  date_filed: '2022-05-31'
+  url: /opinion/6473385/almond-alliance-of-cal-v-fish-and-game-com/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-6506098
+  cluster_id: '6506098'
+  case_name: Allman v. Rexer
+  court: Pennsylvania Court of Common Pleas, Philadelphia County
+  date_filed: '1934-07-11'
+  url: /opinion/6506098/allman-v-rexer/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-7079808
+  cluster_id: '7079808'
+  case_name: Pioneer Hi-Bred International, Inc. v. J.E.M. AG Supply Inc.
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2000-01-19'
+  url: /opinion/7079808/pioneer-hi-bred-international-inc-v-jem-ag-supply-inc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-7291055
+  cluster_id: '7291055'
+  case_name: In re Conte
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2002-06-05'
+  url: /opinion/7291055/in-re-conte/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-7306906
+  cluster_id: '7306906'
+  case_name: Genetic Technologies Ltd. v. Agilent Technologies, Inc.
+  court: District Court, N.D. California
+  date_filed: '2014-03-07'
+  url: /opinion/7306906/genetic-technologies-ltd-v-agilent-technologies-inc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-7308986
+  cluster_id: '7308986'
+  case_name: Cascadia Wildlands v. Thrailkill
+  court: District Court, D. Oregon
+  date_filed: '2014-09-23'
+  url: /opinion/7308986/cascadia-wildlands-v-thrailkill/
+  query_ids:
+  - cites_appendix_insect
+  - esa_16usc1532_listing
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-7314115
+  cluster_id: '7314115'
+  case_name: Robert Ito Farm, Inc. v. County of Maui
+  court: District Court, D. Hawaii
+  date_filed: '2015-06-30'
+  url: /opinion/7314115/robert-ito-farm-inc-v-county-of-maui/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-7320856
+  cluster_id: '7320856'
+  case_name: Center for Environmental Health v. McCarthy
+  court: District Court, N.D. California
+  date_filed: '2016-06-29'
+  url: /opinion/7320856/center-for-environmental-health-v-mccarthy/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-7322557
+  cluster_id: '7322557'
+  case_name: Hardeman v. Monsanto Co.
+  court: District Court, N.D. California
+  date_filed: '2016-04-08'
+  url: /opinion/7322557/hardeman-v-monsanto-co/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-7323203
+  cluster_id: '7323203'
+  case_name: Polaris Innovations Ltd. v. Kingston Technology Co.
+  court: District Court, C.D. California
+  date_filed: '2016-07-21'
+  url: /opinion/7323203/polaris-innovations-ltd-v-kingston-technology-co/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-7329541
+  cluster_id: '7329541'
+  case_name: Air Transp. Ass'n of Am., Inc. v. U.S. Dep't of Agric.
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2018-03-28'
+  url: /opinion/7329541/air-transp-assn-of-am-inc-v-us-dept-of-agric/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-7330220
+  cluster_id: '7330220'
+  case_name: Beyond Pesticides v. Monsanto Co.
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2018-04-30'
+  url: /opinion/7330220/beyond-pesticides-v-monsanto-co/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-7330370
+  cluster_id: '7330370'
+  case_name: US Citrus Sci. Council v. U.S. Dep't of Agric.
+  court: District Court, E.D. California
+  date_filed: '2018-02-27'
+  url: /opinion/7330370/us-citrus-sci-council-v-us-dept-of-agric/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-7330766
+  cluster_id: '7330766'
+  case_name: Air Transp. Ass'n of Am., Inc. v. U.S. Dep't of Agric.
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2018-07-17'
+  url: /opinion/7330766/air-transp-assn-of-am-inc-v-us-dept-of-agric/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-7330816
+  cluster_id: '7330816'
+  case_name: Blitz v. Monsanto Co.
+  court: District Court, W.D. Wisconsin
+  date_filed: '2018-04-13'
+  url: /opinion/7330816/blitz-v-monsanto-co/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-7332263
+  cluster_id: '7332263'
+  case_name: In re Biogen 755 Patent Litig.
+  court: District Court, D. New Jersey
+  date_filed: '2018-09-07'
+  url: /opinion/7332263/in-re-biogen-755-patent-litig/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-7334623
+  cluster_id: '7334623'
+  case_name: In re Roundup Prods. Liab. Litig.
+  court: District Court, N.D. California
+  date_filed: '2019-03-07'
+  url: /opinion/7334623/in-re-roundup-prods-liab-litig/
+  query_ids:
+  - fifra_7usc136
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-7335488
+  cluster_id: '7335488'
+  case_name: Bourbia v. S.C. Johnson & Son, Inc.
+  court: District Court, S.D. Illinois
+  date_filed: '2019-03-21'
+  url: /opinion/7335488/bourbia-v-sc-johnson-son-inc/
+  query_ids:
+  - fifra_7usc136
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-767328
+  cluster_id: '767328'
+  case_name: Pioneer Hi-Bred International, Inc. v. Ag Supply, Inc.
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2000-03-13'
+  url: /opinion/767328/pioneer-hi-bred-international-inc-v-ag-supply-inc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-774574
+  cluster_id: '774574'
+  case_name: Mycogen Plant Science, Inc. And Agrigenetics, Inc. v. Monsanto Company,
+    Defendant
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2001-08-14'
+  url: /opinion/774574/mycogen-plant-science-inc-and-agrigenetics-inc-v-monsanto-company/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-787286
+  cluster_id: '787286'
+  case_name: Gifford Pinchot Task Force v. United States Fish & Wildlife Service
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2004-08-06'
+  url: /opinion/787286/gifford-pinchot-task-force-v-united-states-fish-wildlife-service/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-788121
+  cluster_id: '788121'
+  case_name: The Cetacean Community v. George W. Bush, President of the United States
+    of America Donald H. Rumsfeld, United States of America Secretary of Defense
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2004-10-20'
+  url: /opinion/788121/the-cetacean-community-v-george-w-bush-president-of-the-united-states-of/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-7914412
+  cluster_id: '7914412'
+  case_name: AvalonBay Communities, Inc. v. Inland Wetlands & Watercourses Agency
+  court: Connecticut Appellate Court
+  date_filed: '2011-07-12'
+  url: /opinion/7914412/avalonbay-communities-inc-v-inland-wetlands-watercourses-agency/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-7927330
+  cluster_id: '7927330'
+  case_name: An v. Active Pest Control South, Inc.
+  court: Court of Appeals of Georgia
+  date_filed: '2011-11-15'
+  url: /opinion/7927330/an-v-active-pest-control-south-inc/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-794583
+  cluster_id: '794583'
+  case_name: Cactus Corner, LLC v. U.S. Dept. of Agriculture
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2006-06-08'
+  url: /opinion/794583/cactus-corner-llc-v-us-dept-of-agriculture/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-7974530
+  cluster_id: '7974530'
+  case_name: Mohammad v. Toyota Motor Sales, U.S.A., Inc.
+  court: Court of Special Appeals of Maryland
+  date_filed: '2008-05-08'
+  url: /opinion/7974530/mohammad-v-toyota-motor-sales-usa-inc/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-798055
+  cluster_id: '798055'
+  case_name: Christopher M. Stevens v. Daniel McBride
+  court: Court of Appeals for the Seventh Circuit
+  date_filed: '2007-06-18'
+  url: /opinion/798055/christopher-m-stevens-v-daniel-mcbride/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-8060798
+  cluster_id: '8060798'
+  case_name: Johnson v. United Railways Co.
+  court: Supreme Court of Missouri
+  date_filed: '1912-12-31'
+  url: /opinion/8060798/johnson-v-united-railways-co/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-806779
+  cluster_id: '806779'
+  case_name: Association for Molecular Pathology v. United States Patent & Trademark
+    Office
+  court: Court of Appeals for the Federal Circuit
+  date_filed: '2012-08-16'
+  url: /opinion/806779/association-for-molecular-pathology-v-united-states-patent-trademark/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-8091588
+  cluster_id: '8091588'
+  case_name: O'Donnell v. Moose Hill Orchards, Inc.
+  court: Supreme Court of New Hampshire
+  date_filed: '1996-01-31'
+  url: /opinion/8091588/odonnell-v-moose-hill-orchards-inc/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-8219254
+  cluster_id: '8219254'
+  case_name: Finch v. Inspectech, LLC
+  court: West Virginia Supreme Court
+  date_filed: '2012-05-24'
+  url: /opinion/8219254/finch-v-inspectech-llc/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-8243025
+  cluster_id: '8243025'
+  case_name: Almond Alliance of California v. Fish and Game Commission
+  court: California Court of Appeal
+  date_filed: '2022-09-21'
+  url: /opinion/8243025/almond-alliance-of-california-v-fish-and-game-commission/
+  query_ids:
+  - esa_arthropod_invertebrate
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-8255841
+  cluster_id: '8255841'
+  case_name: Turner v. Com. of Ky.
+  court: Missouri Court of Appeals
+  date_filed: '2018-04-26'
+  url: /opinion/8255841/turner-v-com-of-ky/
+  query_ids:
+  - forensic_entomology_daubert
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-8279653
+  cluster_id: '8279653'
+  case_name: Rummer v. State
+  court: North Dakota Supreme Court
+  date_filed: '2006-10-17'
+  url: /opinion/8279653/rummer-v-state/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-8436208
+  cluster_id: '8436208'
+  case_name: John D. Carson v. Monsanto Company
+  court: Court of Appeals for the Eleventh Circuit
+  date_filed: '2022-10-28'
+  url: /opinion/8436208/john-d-carson-v-monsanto-company/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-8437935
+  cluster_id: '8437935'
+  case_name: No Spray Coalition, Inc. v. City of New York
+  court: Court of Appeals for the Second Circuit
+  date_filed: '2003-12-09'
+  url: /opinion/8437935/no-spray-coalition-inc-v-city-of-new-york/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-8438440
+  cluster_id: '8438440'
+  case_name: Gifford Pinchot Task Force v. United States Fish & Wildlife Service
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2004-08-06'
+  url: /opinion/8438440/gifford-pinchot-task-force-v-united-states-fish-wildlife-service/
+  query_ids:
+  - esa_16usc1532_listing
+  issue_ids:
+  - pollinator_protection_esa
+  status: candidate
+- candidate_id: cl-8440758
+  cluster_id: '8440758'
+  case_name: League of Wilderness Defenders Blue Mountains Biodiversity Project v.
+    Allen
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2010-08-13'
+  url: /opinion/8440758/league-of-wilderness-defenders-blue-mountains-biodiversity-project-v-allen/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-8441524
+  cluster_id: '8441524'
+  case_name: Natural Resources Defense Council v. United States Environmental Protection
+    Agency
+  court: Court of Appeals for the Ninth Circuit
+  date_filed: '2013-11-07'
+  url: /opinion/8441524/natural-resources-defense-council-v-united-states-environmental-protection/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-8676757
+  cluster_id: '8676757'
+  case_name: 'In re Attorney General Subpoena re: Terminix International USVI, LLC'
+  court: Superior Court of The Virgin Islands
+  date_filed: '2016-07-16'
+  url: /opinion/8676757/in-re-attorney-general-subpoena-re-terminix-international-usvi-llc/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-8711028
+  cluster_id: '8711028'
+  case_name: Wildearth Guardians v. United States Forest Service
+  court: District Court, D. Colorado
+  date_filed: '2011-10-31'
+  url: /opinion/8711028/wildearth-guardians-v-united-states-forest-service/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-8713299
+  cluster_id: '8713299'
+  case_name: Center for Food Safety v. Vilsack
+  court: District Court, N.D. California
+  date_filed: '2012-01-05'
+  url: /opinion/8713299/center-for-food-safety-v-vilsack/
+  query_ids:
+  - ppa_aphis_quarantine
+  issue_ids:
+  - invasive_species_quarantine
+  status: candidate
+- candidate_id: cl-885791
+  cluster_id: '885791'
+  case_name: State v. Weaver
+  court: Montana Supreme Court
+  date_filed: '2001-07-02'
+  url: /opinion/885791/state-v-weaver/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-887255
+  cluster_id: '887255'
+  case_name: Weaver v. State
+  court: Montana Supreme Court
+  date_filed: '2005-06-21'
+  url: /opinion/887255/weaver-v-state/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-8910842
+  cluster_id: '8910842'
+  case_name: In re Malachowski
+  court: Court of Customs and Patent Appeals
+  date_filed: '1976-04-01'
+  url: /opinion/8910842/in-re-malachowski/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-8915462
+  cluster_id: '8915462'
+  case_name: In re Bergy
+  court: Court of Customs and Patent Appeals
+  date_filed: '1977-10-06'
+  url: /opinion/8915462/in-re-bergy/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-8921513
+  cluster_id: '8921513'
+  case_name: In re Payne
+  court: Court of Customs and Patent Appeals
+  date_filed: '1979-09-13'
+  url: /opinion/8921513/in-re-payne/
+  query_ids:
+  - insect_patent_utility
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-8940881
+  cluster_id: '8940881'
+  case_name: Perkins v. F.I.E. Corp.
+  court: Court of Appeals for the Fifth Circuit
+  date_filed: '1985-06-17'
+  url: /opinion/8940881/perkins-v-fie-corp/
+  query_ids:
+  - bee_swarm_ownership
+  issue_ids:
+  - bee_ownership_and_negligence
+  status: candidate
+- candidate_id: cl-897960
+  cluster_id: '897960'
+  case_name: Rümmer v. State
+  court: North Dakota Supreme Court
+  date_filed: '2006-10-17'
+  url: /opinion/897960/rummer-v-state/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-897970
+  cluster_id: '897970'
+  case_name: City of Bismarck v. Perusquia
+  court: North Dakota Supreme Court
+  date_filed: '2006-10-17'
+  url: /opinion/897970/city-of-bismarck-v-perusquia/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-902266
+  cluster_id: '902266'
+  case_name: Association for Molecular Pathology v. Myriad Genetics, Inc.
+  court: Supreme Court of the United States
+  date_filed: '2013-06-13'
+  url: /opinion/902266/association-for-molecular-pathology-v-myriad-genetics-inc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-902772
+  cluster_id: '902772'
+  case_name: Association for Molecular Pathology v. Myriad Genetics, Inc.
+  court: Supreme Court of the United States
+  date_filed: '2013-06-13'
+  url: /opinion/902772/association-for-molecular-pathology-v-myriad-genetics-inc/
+  query_ids:
+  - chakrabarty_patent_extension
+  issue_ids:
+  - insect_patentability
+  status: candidate
+- candidate_id: cl-9354635
+  cluster_id: '9354635'
+  case_name: Center for Biological Diversity v. EPA
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2022-12-23'
+  url: /opinion/9354635/center-for-biological-diversity-v-epa/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-9381428
+  cluster_id: '9381428'
+  case_name: Helena Chemical Company v. Robert Cox
+  court: Texas Supreme Court
+  date_filed: '2023-03-03'
+  url: /opinion/9381428/helena-chemical-company-v-robert-cox/
+  query_ids:
+  - entomologist_expert_testimony
+  issue_ids:
+  - forensic_entomology_admissibility
+  status: candidate
+- candidate_id: cl-9389131
+  cluster_id: '9389131'
+  case_name: Louis Pagoudis v. Marcus Keidl
+  court: Wisconsin Supreme Court
+  date_filed: '2023-04-04'
+  url: /opinion/9389131/louis-pagoudis-v-marcus-keidl/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-9412443
+  cluster_id: '9412443'
+  case_name: John D. Carson v. Monsanto Company
+  court: Court of Appeals for the Eleventh Circuit
+  date_filed: '2023-07-10'
+  url: /opinion/9412443/john-d-carson-v-monsanto-company/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-9415016
+  cluster_id: '9415016'
+  case_name: American Soybean Association v. Michael Regan
+  court: Court of Appeals for the D.C. Circuit
+  date_filed: '2023-07-21'
+  url: /opinion/9415016/american-soybean-association-v-michael-regan/
+  query_ids:
+  - fifra_epa_registration
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate
+- candidate_id: cl-9454026
+  cluster_id: '9454026'
+  case_name: Matter of Md. Off. of People's Counsel
+  court: Court of Special Appeals of Maryland
+  date_filed: '2023-12-20'
+  url: /opinion/9454026/matter-of-md-off-of-peoples-counsel/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-9454755
+  cluster_id: '9454755'
+  case_name: Matter of Md. Off. of People's Counsel
+  court: Court of Special Appeals of Maryland
+  date_filed: '2023-12-22'
+  url: /opinion/9454755/matter-of-md-off-of-peoples-counsel/
+  query_ids:
+  - cites_appendix_insect
+  issue_ids:
+  - cites_wildlife_trade_obligations
+  status: candidate
+- candidate_id: cl-9472107
+  cluster_id: '9472107'
+  case_name: John Carson v. Monsanto Company
+  court: Court of Appeals for the Eleventh Circuit
+  date_filed: '2024-02-05'
+  url: /opinion/9472107/john-carson-v-monsanto-company/
+  query_ids:
+  - fifra_7usc136
+  issue_ids:
+  - pesticide_registration_and_fifra
+  status: candidate

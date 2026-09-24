@@ -1,0 +1,30 @@
+{
+  "approximate": false,
+  "fetched_at": "2026-09-24T19:51:41.843720+00:00",
+  "hit_count": 2,
+  "query_id": "forensic_entomology_daubert",
+  "results": [
+    {
+      "absolute_url": "/opinion/8255841/turner-v-com-of-ky/",
+      "case_name": "Turner v. Com. of Ky.",
+      "citations": [
+        "544 S.W.3d 610"
+      ],
+      "cluster_id": "8255841",
+      "court": "Missouri Court of Appeals",
+      "date_filed": "2018-04-26",
+      "docket_number": "2016-SC-000367-MR"
+    },
+    {
+      "absolute_url": "/opinion/10112125/melinda-turner-v-commonwealth-of-kentucky/",
+      "case_name": "Melinda Turner v. Commonwealth of Kentucky",
+      "citations": [],
+      "cluster_id": "10112125",
+      "court": "Kentucky Supreme Court",
+      "date_filed": "2018-04-26",
+      "docket_number": "2016-SC-0367"
+    }
+  ],
+  "search_type": "o",
+  "text": "\"forensic entomology\" Daubert admissibility"
+}

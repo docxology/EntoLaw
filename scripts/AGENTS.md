@@ -31,6 +31,8 @@ audit remediation).
 | `check_docs_inventory.py` | `legal_informatics.inventory`, `legal_informatics.privacy_labels` | `output/data/project_inventory.json` |
 | `check_metadata_consistency.py` | — | Compares version/title/license/keywords/authors/DOI across `pyproject.toml`, `CITATION.cff`, `codemeta.json`, `.zenodo.json`, `docs/manuscript/config.yaml` against `CITATION.cff` as the declared source; no output file, exit code only |
 | `check_release_boundary.py` | — | Scans every git-tracked file for credentials, non-public emails, absolute local paths, internal hostnames, private-repo references, and oversized binaries; no output file, exit code only |
+| `fetch_case_candidate_queries.py` | `legal_informatics.courtlistener_client`, `legal_informatics.courtlistener_search`, `src.case_candidates.build_cache_payload` | `data/courtlistener_cache/<query_id>.json` (network-touching; the only script in this pair that opens a socket) |
+| `generate_case_candidates.py` | `src.case_candidates` | `data/case_candidates.yaml` (offline; `--check` verifies without rewriting) |
 
 ## Testing
 
