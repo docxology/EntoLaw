@@ -45,6 +45,7 @@ groups:
       - claim_ledger_loading
       - claim_ledger_validation
       - validation
+      - case_candidate_cache
       - case_candidates
   D:
     description: Derived outputs. Everything the manuscript consumes -- the
