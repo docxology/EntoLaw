@@ -1,0 +1,50 @@
+# CourtListener alert registry — EntoLaw
+#
+# Declarative registry for the legal_informatics engine's
+# `courtlistener_alert_sync` module (`legal_informatics.courtlistener_alert_sync`
+# / `scripts/sync_courtlistener_alerts.py` in the sibling `legal_informatics`
+# checkout). Declares the search alerts this project WANTS to exist at the
+# provider; sync never invents one on its own and never deletes one the
+# provider already has that this file does not mention (an "undeclared live"
+# alert is reported, never removed — it may be someone's alert set up by
+# hand).
+#
+# `search_alerts[].query` is the Search API GET-params string
+# (`q=...&type=...`), exactly as `courtlistener_alerts.build_alert_payload`
+# expects it. `rate` is one of rt (real-time) | dly | wly | mly.
+#
+# No `docket_alerts` here: no specific RECAP docket id is recorded anywhere
+# in this project's data or docs, and the task rule this file follows is
+# "none unless a specific docket id is already recorded in the repo data."
+#
+# Creating anything here against the live account is an explicit,
+# authenticated opt-in (`--apply`); loading and planning this file is offline
+# and credential-free. See docs/COURTLISTENER_WATCH.md for the rate budget
+# and the no-delete guarantee.
+
+version: '1.0'
+
+search_alerts:
+  - name: fifra-pesticide-registration
+    query: 'q="Federal Insecticide, Fungicide, and Rodenticide Act" OR "7 U.S.C. § 136"&type=o'
+    rate: wly
+    purpose: >-
+      Weekly digest of new FIFRA opinions, paired with the
+      fifra-pesticide-opinions watch in config/courtlistener_watch.yaml
+      (pesticide_registration_and_fifra issue).
+
+  - name: pollinator-esa-listing
+    query: 'q="Endangered Species Act" AND (pollinator OR bee OR insect)&type=o'
+    rate: mly
+    purpose: >-
+      Monthly digest of new ESA opinions touching a pollinator or insect
+      taxon, paired with the pollinator-esa-opinions watch
+      (pollinator_protection_esa issue).
+
+  - name: forensic-entomology-admissibility
+    query: 'q="forensic entomology" Daubert admissibility&type=o'
+    rate: mly
+    purpose: >-
+      Monthly digest of new opinions on Daubert admissibility of forensic-
+      entomology testimony, paired with the forensic-entomology-oral-arguments
+      watch (forensic_entomology_admissibility issue).

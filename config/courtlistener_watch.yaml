@@ -1,0 +1,63 @@
+# CourtListener watchlist — EntoLaw
+#
+# Declarative registry for the legal_informatics engine's `courtlistener_watch`
+# module (`legal_informatics.courtlistener_watch` /
+# `scripts/run_courtlistener_watch.py` in the sibling `legal_informatics`
+# checkout; this project carries no copy of that code, only this data). Each
+# row under `watches` names one saved Search API query this project wants to
+# monitor over time for result ids new since the last run. Loading and
+# planning this file is offline and credential-free; running a watch
+# (`--network`) reuses the engine's own `courtlistener_search` HTTP client,
+# query builder, and result normalization — never a second implementation of
+# any of it. No PACER/recap-fetch path exists anywhere behind this file:
+# watches only ever read free Search API results.
+#
+# Every watch below targets an issue already declared in
+# config/legal_issues.yaml and a query already declared in
+# config/case_candidate_queries.yaml (the offline case-candidate register's
+# one-shot fetch); a watch is the recurring counterpart of that one-shot
+# query, not a duplicate of it.
+#
+# `type` is one of the Search API result types the engine knows how to
+# normalize for a diff: o=opinions, oa=oral arguments (r=RECAP, rd=RECAP
+# documents, and d=dockets are also supported by the engine; unused here).
+#
+# `max_pages` bounds how many pages ONE watch walks on a --network run; the
+# CLI's separate `--max-requests` bounds the WHOLE run across every watch and
+# is enforced before any watch after the budget is exhausted opens a socket.
+# See docs/COURTLISTENER_WATCH.md for how to run this and the rate budget.
+
+version: '1.0'
+
+watches:
+  - id: fifra-pesticide-opinions
+    q: '"Federal Insecticide, Fungicide, and Rodenticide Act" OR "7 U.S.C. § 136"'
+    type: o
+    order_by: 'dateFiled desc'
+    max_pages: 1
+    purpose: >-
+      New opinions applying FIFRA registration, labeling, or applicator
+      compliance to a pesticide targeting insects -- the
+      pesticide_registration_and_fifra issue in config/legal_issues.yaml, the
+      recurring counterpart of the fifra_7usc136 / fifra_epa_registration
+      queries in config/case_candidate_queries.yaml.
+
+  - id: pollinator-esa-opinions
+    q: '"Endangered Species Act" AND (pollinator OR bee OR insect)'
+    type: o
+    order_by: 'dateFiled desc'
+    max_pages: 1
+    purpose: >-
+      New opinions applying the ESA to a pollinator or insect taxon -- the
+      pollinator_protection_esa issue, the recurring counterpart of the
+      esa_16usc1532_listing / esa_arthropod_invertebrate queries.
+
+  - id: forensic-entomology-oral-arguments
+    q: '"forensic entomology" OR "entomological evidence"'
+    type: oa
+    max_pages: 1
+    purpose: >-
+      Oral-argument audio on forensic-entomology admissibility -- the
+      forensic_entomology_admissibility issue, the recurring counterpart of
+      the forensic_entomology_daubert / entomologist_expert_testimony
+      queries.

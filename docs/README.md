@@ -29,6 +29,9 @@ uv run pytest              # testpaths = ["tests"]
 - [CASE_CANDIDATES.md](CASE_CANDIDATES.md) — the CourtListener case-candidate
   register (`data/case_candidates.yaml`): never a claim source, and how to
   promote a candidate into one
+- [COURTLISTENER_WATCH.md](COURTLISTENER_WATCH.md) — the declared saved-search
+  watches and search alerts this project monitors over time, dry-run default,
+  no-delete guarantee, and the rate budget
 
 ## Status
 
