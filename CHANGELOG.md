@@ -34,6 +34,16 @@ this entry is hand-typed where a generator can be re-run instead
   tracked documentation (`README.md`, `docs/REVIEW_PROTOCOL.md`, and nine
   fleet-generated `AGENTS.md` files), found and enforced going forward by
   `scripts/check_release_boundary.py`.
+- `{{PYTHON_VERSION}}` now resolves through the engine's
+  `legal_informatics.manuscript_variables.receipt_python_version`, which
+  prefers the interpreter recorded in `output/data/quality_receipt.json`
+  (the environment the quality gate actually ran under) and falls back to
+  the running interpreter only when no receipt exists, instead of a bare
+  `platform.python_version()` call that named whichever interpreter happened
+  to hydrate the variables. Adopting the helper required declaring this
+  project's (empty) extensions to the engine in the new
+  `config/manuscript_variables.yaml` — the engine refuses to import without
+  one.
 
 ### Added
 

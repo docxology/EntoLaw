@@ -20,6 +20,7 @@ from pathlib import Path
 import yaml
 
 from legal_informatics.figure_captions import caption_tokens as _caption_tokens
+from legal_informatics.manuscript_variables import receipt_python_version
 
 from . import (
     case_candidate_metrics,
@@ -123,7 +124,7 @@ def generate_variables(project_root: Path) -> dict[str, str]:
     variables["GENERATION_TIMESTAMP"] = datetime.now(timezone.utc).strftime(
         "%Y-%m-%dT%H:%M:%SZ"
     )
-    variables["PYTHON_VERSION"] = platform.python_version()
+    variables["PYTHON_VERSION"] = receipt_python_version(project_root)
     variables["PLATFORM"] = f"{platform.system()} {platform.machine()}"
 
     # ── Publication metadata (for colophon / back-matter tokens) ───────────

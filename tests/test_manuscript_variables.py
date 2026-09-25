@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import platform
 from pathlib import Path
 
 from src import manuscript_variables as mv
@@ -45,6 +46,32 @@ def test_variables_are_strings_and_nonempty():
     assert variables["ROLE_COUNT"] == "8"
     for key, value in variables.items():
         assert isinstance(key, str) and isinstance(value, str)
+
+
+def test_python_version_uses_quality_receipt_when_present():
+    """PYTHON_VERSION must come from output/data/quality_receipt.json when it
+    records the interpreter the quality gate actually ran under, rather than
+    the bare interpreter that happens to run the hydrator (the
+    project-vs-template environment mismatch ``receipt_python_version``
+    exists to close)."""
+    receipt_path = PROJECT_ROOT / "output" / "data" / "quality_receipt.json"
+    assert not receipt_path.exists(), "quality_receipt.json should not be committed"
+    recorded_version = "9.9.9-test-receipt"
+    receipt_path.write_text(
+        json.dumps({"python_version": recorded_version}), encoding="utf-8"
+    )
+    try:
+        variables = mv.generate_variables(PROJECT_ROOT)
+        assert variables["PYTHON_VERSION"] == recorded_version
+    finally:
+        receipt_path.unlink()
+
+
+def test_python_version_falls_back_to_running_interpreter_without_receipt():
+    receipt_path = PROJECT_ROOT / "output" / "data" / "quality_receipt.json"
+    assert not receipt_path.exists(), "quality_receipt.json should not be committed"
+    variables = mv.generate_variables(PROJECT_ROOT)
+    assert variables["PYTHON_VERSION"] == platform.python_version()
 
 
 def test_save_variables_roundtrip(tmp_path):
