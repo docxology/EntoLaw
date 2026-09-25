@@ -31,3 +31,6 @@ output/data/project_inventory.json
 
 # Local code-index cache symlink (machine-specific); never tracked.
 .codegraph
+
+# CourtListener alert receipts and watch snapshots: local run evidence, regenerable
+output/data/courtlistener/
