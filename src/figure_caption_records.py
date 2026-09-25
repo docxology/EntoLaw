@@ -256,4 +256,34 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
         provenance="Generated from `src/viz.py`.",
         caveat="Local pipeline description, not deployment.",
     ),
+    FigureCaption(
+        slug="case_candidates_by_issue",
+        anchor="fig:case_candidates_by_issue",
+        title="Case-candidate leads by legal issue (unreviewed)",
+        manuscript_caption=(
+            "The {CANDIDATE_TOTAL_COUNT} CourtListener case CANDIDATES the "
+            "candidate-query pipeline has surfaced so far, grouped by "
+            "declared legal issue and a conservatively-derived court level "
+            "(supreme, appellate, trial, other/unknown), with filings by "
+            "decade in the side panel. Read as: this is a lead list, not a "
+            "finding -- every bar counts an unreviewed CourtListener "
+            "opinion-search hit that `status: candidate` in "
+            "`data/case_candidates.yaml` records and nothing more. Why it "
+            "matters: it shows where the case law the manuscript has not yet "
+            "reviewed is concentrated, without letting a search hit stand in "
+            "for a verified authority. Provenance: "
+            "`src.case_candidate_metrics` over `data/case_candidates.yaml` "
+            "and `config/legal_issues.yaml`. Caveat: court level is derived "
+            "from the court name string alone and is conservative -- a name "
+            "this rule cannot place stays other/unknown rather than guessed; "
+            "see `docs/CASE_CANDIDATES.md`."
+        ),
+        alt_text=(
+            "Grouped bar chart of unreviewed CourtListener case-candidate "
+            "counts by legal issue and court level, with a small side panel "
+            "of candidates by filing decade."
+        ),
+        provenance="Generated from `src.case_candidate_metrics`.",
+        caveat="Unreviewed search hits, not verified legal authorities.",
+    ),
 )

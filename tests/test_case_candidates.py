@@ -10,6 +10,7 @@ in this file, matching ``AGENTS.md``'s "No mocks" convention.
 
 from __future__ import annotations
 
+import ast
 import json
 import subprocess
 import sys
@@ -278,23 +279,82 @@ def test_committed_register_every_query_id_and_issue_id_is_consistent():
         assert set(candidate["issue_ids"]) <= known_issues
 
 
-# ── boundary: never feeds the manuscript or the claim ledger ───────────
+# ── boundary: surfaced (via case_candidate_metrics only), never promoted ──
+#
+# The candidate register is now surfaced in the manuscript -- a plainly
+# labelled CANDIDATES figure and a Methods subsection that states outright
+# these are unreviewed search hits (see docs/CASE_CANDIDATES.md's "Surfaced,
+# never promoted" section). What never happens, and what these tests still
+# enforce byte-for-byte, is promotion: no candidate reaches references.bib,
+# data/claim_ledger.yaml, or src/case_records.py by being counted or charted,
+# and no module other than src/case_candidate_metrics.py ever reads the
+# register directly.
 
 
-def test_case_candidates_is_not_referenced_by_the_manuscript_or_claim_ledger():
-    manuscript_dir = PROJECT_ROOT / "docs" / "manuscript"
-    for path in manuscript_dir.glob("*.md"):
-        assert "case_candidates" not in path.read_text(encoding="utf-8")
+def test_case_candidates_never_reaches_the_claim_ledger_or_case_records():
     claim_ledger_text = (PROJECT_ROOT / "data" / "claim_ledger.yaml").read_text(encoding="utf-8")
     assert "case_candidates" not in claim_ledger_text
     case_records_text = (PROJECT_ROOT / "src" / "case_records.py").read_text(encoding="utf-8")
     assert "case_candidates" not in case_records_text
+    references_text = (PROJECT_ROOT / "docs" / "manuscript" / "references.bib").read_text(encoding="utf-8")
+    assert "case_candidates" not in references_text
 
 
-def test_case_candidates_module_is_not_imported_by_validation_or_manuscript_variables():
-    for module_name in ("validation.py", "manuscript_variables.py"):
-        text = (PROJECT_ROOT / "src" / module_name).read_text(encoding="utf-8")
-        assert "case_candidates" not in text
+def test_manuscript_reference_to_case_candidates_states_it_is_unreviewed():
+    """The one place the manuscript names the register, it says outright that
+    a candidate is a search hit, not a finding -- so the surfacing this test
+    permits can never read as a quiet promotion."""
+    manuscript_dir = PROJECT_ROOT / "docs" / "manuscript"
+    referencing = [
+        path for path in sorted(manuscript_dir.glob("*.md")) if "case_candidates" in path.read_text(encoding="utf-8")
+    ]
+    assert referencing, "expected the candidate register to be referenced exactly where it is surfaced"
+    for path in referencing:
+        text = path.read_text(encoding="utf-8")
+        assert "unreviewed" in text.lower(), f"{path} references case_candidates without saying 'unreviewed'"
+        assert "CANDIDATE" in text, f"{path} references case_candidates without the plain CANDIDATES label"
+
+
+def _imports_case_candidates(path: Path) -> bool:
+    """Whether ``path`` actually imports ``src.case_candidates`` (AST-level,
+    not a substring scan -- a docstring or comment naming the module or its
+    data file is not an import)."""
+    tree = ast.parse(path.read_text(encoding="utf-8"))
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            if any(alias.name.split(".")[-1] == "case_candidates" for alias in node.names):
+                return True
+        elif isinstance(node, ast.ImportFrom):
+            module = node.module or ""
+            if module.split(".")[-1] == "case_candidates":
+                return True
+            if node.level and any(alias.name == "case_candidates" for alias in node.names):
+                return True
+    return False
+
+
+def test_case_candidates_module_is_only_imported_through_case_candidate_metrics():
+    """Every module that could put candidate data in front of a reader --
+    validation, manuscript_variables, and the figure layer -- reaches it only
+    through src/case_candidate_metrics.py, never src/case_candidates.py
+    directly. That keeps a single, tested, read-only seam between the
+    register and anything a human reads."""
+    for module_name in ("validation.py", "manuscript_variables.py", "viz.py"):
+        path = PROJECT_ROOT / "src" / module_name
+        assert not _imports_case_candidates(path), (
+            f"{module_name} imports case_candidates directly; go through "
+            "case_candidate_metrics instead"
+        )
+
+    metrics_path = PROJECT_ROOT / "src" / "case_candidate_metrics.py"
+    assert _imports_case_candidates(metrics_path)
+    metrics_text = metrics_path.read_text(encoding="utf-8")
+    # Never writes the register and never promotes a row to "verified" --
+    # checked here at the source level (the real claim_ledger.yaml and
+    # case_records.py files are checked directly in the test above; a
+    # docstring in this module may still *name* those files in prose).
+    for forbidden in ("write_candidate_register", '"verified"'):
+        assert forbidden not in metrics_text
 
 
 # ── cache-payload shaping (real SearchPage, no mocks) ───────────────────

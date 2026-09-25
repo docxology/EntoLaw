@@ -37,9 +37,10 @@ from legal_informatics.viz_network import (
     pipeline_diagram,
 )
 from legal_informatics.viz_timeline import EraBand, Milestone, milestone_timeline
-from legal_informatics.viz_theme import FALLBACK_COLOR
+from legal_informatics.viz_theme import FALLBACK_COLOR, _INK, _MUTED, _save, _style_axes, _wrap_label
 
 from . import (
+    case_candidate_metrics,
     cases,
     claim_ledger,
     interconnections,
@@ -106,6 +107,15 @@ CATEGORY_COLORS: dict[str, str] = {
     "welfare": "#db2777",
     "public_health": "#0891b2",
     "warfare": "#475569",
+}
+
+#: Court-level colour for the candidate-leads figure (unreviewed hits, not
+#: an evidence-kind or jurisdiction palette).
+COURT_LEVEL_COLORS: dict[str, str] = {
+    "supreme": "#0f172a",
+    "appellate": "#2563eb",
+    "trial": "#059669",
+    "other_unknown": "#94a3b8",
 }
 
 ANCHOR_COLORS: dict[str, str] = {
@@ -253,6 +263,88 @@ def claim_ledger_coverage(path: Path) -> Path:
         title="Live-checkable claim coverage by manuscript section",
         xlabel="Quote-backed claim-ledger entries",
     )
+
+
+# ── Case-candidate leads figure (CANDIDATES: unreviewed search hits) ───────
+def case_candidates_by_issue(path: Path) -> Path:
+    """CANDIDATES: CourtListener case-candidate hits per legal issue and court
+    level, with a small filing-decade panel.
+
+    Every count here comes from `src.case_candidate_metrics`, which reads
+    `data/case_candidates.yaml` -- a register of unreviewed CourtListener
+    opinion-search hits, not verified legal authorities. See
+    `docs/CASE_CANDIDATES.md`.
+    """
+    import matplotlib.pyplot as plt
+
+    grid = case_candidate_metrics.candidates_by_issue_and_court_level(_PROJECT_ROOT)
+    issue_ids = list(grid)
+    levels = case_candidate_metrics.COURT_LEVELS
+    level_labels = case_candidate_metrics.COURT_LEVEL_LABELS
+
+    fig, (ax_main, ax_decade) = plt.subplots(
+        1, 2, figsize=(14.6, 6.3), gridspec_kw={"width_ratios": (3.1, 1.0)}
+    )
+    _style_axes(ax_main, grid_axis="y")
+    x = range(len(issue_ids))
+    width = 0.2
+    max_value = max(
+        (grid[issue][level] for issue in issue_ids for level in levels), default=0
+    )
+    for i, level in enumerate(levels):
+        values = [grid[issue][level] for issue in issue_ids]
+        bars = ax_main.bar(
+            [xi + i * width for xi in x],
+            values,
+            width=width,
+            label=level_labels[level],
+            color=COURT_LEVEL_COLORS.get(level, FALLBACK_COLOR),
+            edgecolor="white",
+            linewidth=0.6,
+            alpha=0.94,
+        )
+        for bar, value in zip(bars, values, strict=True):
+            if value:
+                ax_main.text(
+                    bar.get_x() + bar.get_width() / 2,
+                    value + 0.35,
+                    str(value),
+                    ha="center",
+                    va="bottom",
+                    fontsize=7,
+                    color=_INK,
+                )
+    ax_main.set_xticks([xi + 1.5 * width for xi in x])
+    ax_main.set_xticklabels([_wrap_label(issue, 15) for issue in issue_ids], fontsize=7.5)
+    ax_main.set_ylabel("Candidate rows (unreviewed)")
+    ax_main.set_title("CANDIDATES — CourtListener hits by legal issue")
+    ax_main.set_ylim(0, max_value + 3)
+    ax_main.legend(fontsize=8, ncols=4, loc="upper center", bbox_to_anchor=(0.5, 1.16))
+
+    decades = case_candidate_metrics.candidates_by_decade(_PROJECT_ROOT)
+    _style_axes(ax_decade, grid_axis="y")
+    dx = range(len(decades))
+    dvalues = list(decades.values())
+    ax_decade.bar(
+        dx,
+        dvalues,
+        color=COURT_LEVEL_COLORS["other_unknown"],
+        edgecolor="white",
+        linewidth=0.6,
+        alpha=0.94,
+    )
+    ax_decade.set_xticks(list(dx))
+    ax_decade.set_xticklabels(list(decades.keys()), rotation=60, ha="right", fontsize=7)
+    ax_decade.set_ylabel("Candidate rows")
+    ax_decade.set_title("by decade filed", fontsize=10)
+
+    fig.suptitle(
+        "Unreviewed CourtListener search hits — not verified legal authorities",
+        fontsize=8.5,
+        color=_MUTED,
+        y=1.03,
+    )
+    return _save(fig, path)
 
 
 # ── Timeline figure ────────────────────────────────────────────────────────
@@ -513,6 +605,7 @@ FIGURE_RENDERERS: dict[str, Callable[[Path], Path]] = {
     "claim_ledger_coverage": claim_ledger_coverage,
     "citation_dates": citation_dates,
     "architecture": architecture,
+    "case_candidates_by_issue": case_candidates_by_issue,
 }
 
 
@@ -537,6 +630,7 @@ def build_figures(figures_dir: Path) -> tuple[Path, ...]:
 __all__ = [
     "ANCHOR_COLORS",
     "CATEGORY_COLORS",
+    "COURT_LEVEL_COLORS",
     "COVER_ART_ASSETS",
     "DATA_JSONS",
     "EVIDENCE_KIND_COLORS",
@@ -551,6 +645,7 @@ __all__ = [
     "architecture",
     "build_figures",
     "captioned_slugs",
+    "case_candidates_by_issue",
     "cases_by_jurisdiction",
     "cases_by_role",
     "citation_dates",

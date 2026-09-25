@@ -22,6 +22,7 @@ import yaml
 from legal_informatics.figure_captions import caption_tokens as _caption_tokens
 
 from . import (
+    case_candidate_metrics,
     cases,
     institutions,
     interconnections,
@@ -58,6 +59,24 @@ def generate_variables(project_root: Path) -> dict[str, str]:
         sum(1 for v in m.statutes_by_jurisdiction.values() if v > 0)
     )
     variables["FIGURE_COUNT"] = str(viz.figure_count())
+
+    # ── Case-candidate leads: unreviewed CourtListener search hits ─────────
+    # Every token here comes from `src.case_candidate_metrics`, never from
+    # `src.case_candidates` directly (see `docs/CASE_CANDIDATES.md`'s
+    # "Surfaced, never promoted" section): the manuscript may report how many
+    # unreviewed leads exist and where, but never treats one as a finding.
+    variables["CANDIDATE_TOTAL_COUNT"] = str(
+        case_candidate_metrics.total_candidate_count(project_root)
+    )
+    variables["CANDIDATE_ISSUE_COUNT"] = str(
+        case_candidate_metrics.issue_count_with_candidates(project_root)
+    )
+    variables["LEGAL_ISSUE_COUNT"] = str(
+        case_candidate_metrics.declared_legal_issue_count(project_root)
+    )
+    variables["CANDIDATE_QUERY_COUNT"] = str(
+        case_candidate_metrics.declared_query_count(project_root)
+    )
 
     coverage = metrics.role_coverage_matrix()
     for role in roles.all_roles():

@@ -59,3 +59,4 @@ groups:
       - manuscript_variables
       - viz
       - viz_cover
+      - case_candidate_metrics

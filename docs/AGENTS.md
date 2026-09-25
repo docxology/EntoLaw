@@ -10,6 +10,9 @@ Guidance for agents working in this documentation directory.
 - `CASE_CANDIDATES.md` — what `data/case_candidates.yaml` is, how it is
   fetched/regenerated, and the human-only path to promote a candidate into a
   real claim
+- `COURTLISTENER_WATCH.md` — what `config/courtlistener_watch.yaml` and
+  `config/courtlistener_alerts.yaml` are for, the dry-run default, the
+  no-delete guarantee, and the request-rate budget
 
 ## Conventions observed in this repo
 - Manuscript prose contains `{{TOKEN}}` placeholders by design; they are
