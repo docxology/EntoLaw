@@ -37,6 +37,7 @@ for _p in (_PROJECT_ROOT, _PROJECT_ROOT / "src", _ENGINE_SRC):
 from legal_informatics.courtlistener_client import (  # noqa: E402
     CourtListenerError,
     CourtListenerRequestError,
+    default_registry_path,
     load_courtlistener_config,
 )
 from legal_informatics.courtlistener_search import (  # noqa: E402
@@ -58,10 +59,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project-root", type=Path, default=_PROJECT_ROOT, help="EntoLaw project root")
     parser.add_argument(
-        "--engine-root",
+        "--registry",
         type=Path,
-        default=_ENGINE_ROOT,
-        help="legal_informatics engine root (holds config/courtlistener.yaml)",
+        default=None,
+        help="CourtListener registry to load (default: the engine's own shipped registry)",
     )
     parser.add_argument(
         "--only",
@@ -90,7 +91,6 @@ def main() -> int:
     """List or perform the pending fetches; return non-zero on error."""
     args = build_parser().parse_args()
     root = args.project_root.resolve()
-    engine_root = args.engine_root.resolve()
     cache_dir = root / CACHE_DIR_RELPATH
 
     try:
@@ -111,7 +111,7 @@ def main() -> int:
         return 0
 
     try:
-        config = load_courtlistener_config(engine_root / "config" / "courtlistener.yaml")
+        config = load_courtlistener_config(args.registry or default_registry_path())
     except CourtListenerError as exc:
         print(f"cannot load the engine's CourtListener registry: {exc}", file=sys.stderr)
         return 2

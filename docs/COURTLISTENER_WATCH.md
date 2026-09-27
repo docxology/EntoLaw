@@ -74,10 +74,12 @@ under the provider's ~30-estimated-hits/day alert ceiling.
 Neither `config/courtlistener.yaml` (the CourtListener client registry — base
 URL, credential env-var name, throttle documentation) nor the executable
 `scripts/run_courtlistener_watch.py` / `scripts/sync_courtlistener_alerts.py`
-live in this project; both live in the sibling `legal_informatics` engine
-checkout, the same `--engine-root`-shaped reach `scripts/fetch_case_candidate_queries.py`
-already uses for the client and search modules. Run from this project's own
-environment, pointed at the engine's scripts and client registry:
+live in this project; both live in the `legal_informatics` engine. The engine ships
+its registry as package data, resolved by
+`legal_informatics.courtlistener_client.default_registry_path()` under any install
+topology; `scripts/fetch_case_candidate_queries.py` loads it that way unless
+`--registry` names another. Run from this project's own environment, pointed at the
+engine's scripts and client registry:
 
 ```bash
 # offline: build and write the credential-free query plan, no socket opens
