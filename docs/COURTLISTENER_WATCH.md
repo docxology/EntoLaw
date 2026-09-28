@@ -69,6 +69,23 @@ comfortably under the provider's published anonymous throttle (5/min,
 50/hr, 125/day). The three search alerts above are weekly or monthly, well
 under the provider's ~30-estimated-hits/day alert ceiling.
 
+## Live state
+
+The declared alerts exist on the account, created 2026-09-25 by
+`sync_courtlistener_alerts.py --apply`. The first attempt hit the provider's per-minute limit
+(HTTP 429); the idempotent re-run after the stated backoff created all three:
+
+| Alert | CourtListener id |
+|---|---|
+| search `fifra-pesticide-registration` | 23334 |
+| search `pollinator-esa-listing` | 23335 |
+| search `forensic-entomology-admissibility` | 23336 |
+
+The first `--network` watch run (2026-09-25) returned twenty hits each for
+`fifra-pesticide-opinions` and `pollinator-esa-opinions`, and none for
+`forensic-entomology-oral-arguments`. The empty result is a real answer, not an error.
+Receipts and snapshots are under the gitignored `output/data/courtlistener/`.
+
 ## Running it
 
 Neither `config/courtlistener.yaml` (the CourtListener client registry — base
