@@ -9,8 +9,8 @@ release, no Zenodo upload has been made for this entry. See
 [`PROOFREADING.md`](PROOFREADING.md) for what the owner reads before that
 happens, and `TODO.md`'s generated gate-state block (re-run
 `uv run python scripts/render_gate_state.py` for the current pass/fail — this
-entry does not repeat it, and gained two new declared gates below, so the
-committed block predates them).
+entry does not repeat it; `--check` re-runs every gate and fails when the
+committed block disagrees).
 
 Derived from `git log --oneline v1.0.0..HEAD` and the registries; no count in
 this entry is hand-typed where a generator can be re-run instead
@@ -44,6 +44,13 @@ this entry is hand-typed where a generator can be re-run instead
   project's (empty) extensions to the engine in the new
   `config/manuscript_variables.yaml` — the engine refuses to import without
   one.
+- Maintenance pass: refreshed the CI action pins to `actions/checkout` v7.0.1,
+  `astral-sh/setup-uv` v10.3.2, and `actions/setup-python` v7.1.0 (same
+  inputs, same runner), and corrected stale references — `docs/README.md`
+  still said `v0.1.0`, `docs/manuscript/MANUSCRIPT_STATUS.md` named a
+  nonexistent `resolve_manuscript_dir` resolver and a "legacy" location
+  identical to the current one, and `TODO.md`/`PROOFREADING.md` both still
+  claimed the committed gate-state block predated the last two declared gates.
 
 ### Added
 
@@ -58,13 +65,13 @@ this entry is hand-typed where a generator can be re-run instead
   and oversized binaries.
 - `PROOFREADING.md` — the checklist the owner reads before release.
 
-### Known, unresolved
+### Fixed
 
-- A tracked `.codegraph` symlink points at this development machine's local
-  code-index cache. `scripts/check_release_boundary.py` flags it and is not
-  clean until it is untracked — a deletion of a tracked path, left for the
-  owner rather than performed by this packaging pass. See
-  `PROOFREADING.md`.
+- Untracked the machine-local `.codegraph` symlink and added it to
+  `.gitignore` (`65f9a55`), then dropped the boundary check's exemption for it
+  now that the live tree scans clean (`1e8c4f3`). This clears the one finding
+  `scripts/check_release_boundary.py` used to report; the boundary is covered
+  by `tests/test_release_boundary.py`.
 
 ## [0.1.0] — 2026-06-25
 

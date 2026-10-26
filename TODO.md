@@ -28,12 +28,6 @@ uv run python scripts/check_release_boundary.py                   # release boun
 
 <!-- END GENERATED gate-state -->
 
-**Stale as of this commit:** `config/gate_state.yaml` gained two declared
-gates (`check_metadata_consistency.py`, `check_release_boundary.py`) after
-the block above was last generated, so it still reads "4 declared gates" and
-omits both. Re-run `uv run python scripts/render_gate_state.py` before
-trusting this section; see `PROOFREADING.md` item 4.
-
 ## Case-candidate register
 
 `data/case_candidates.yaml` surfaces CourtListener opinion-search hits against

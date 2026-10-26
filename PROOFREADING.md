@@ -38,12 +38,12 @@ boundary tests now allow no exemptions.
 
 ## 4. Regenerate the gate-state block
 
-`TODO.md`'s gate-state block was generated before this session added
-`scripts/check_metadata_consistency.py` and `scripts/check_release_boundary.py`
-to `config/gate_state.yaml`, so it still shows the old 4-gate state. Run
+`TODO.md`'s gate-state block is written by
 `uv run python scripts/render_gate_state.py` (full suite; budget tens of
-minutes) and confirm all 6 declared gates pass — the boundary gate will not
-until step 3 above is done.
+minutes). It was last regenerated with all 6 declared gates declared and
+passing — including `check_release_boundary.py`, which step 3 above cleared.
+Re-run it, or `--check` (which re-runs every gate and exits non-zero when the
+committed block disagrees), and confirm all 6 still pass before release.
 
 ## 5. Re-run the live claim-ledger oracle
 

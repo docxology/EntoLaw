@@ -1,6 +1,6 @@
 # EntoLaw — Documentation
 
-**EntoLaw** (`entolaw`, v0.1.0) is a source-anchored registry and claim-sourced
+**EntoLaw** (`entolaw`, v1.0.0) is a source-anchored registry and claim-sourced
 manuscript project mapping registered legal roles of the insect. Registries
 under `src/` (cases, statutes, species, institutions, roles, citations,
 interconnections, timeline) drive every number in `docs/manuscript/` via
@@ -19,7 +19,7 @@ and [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md).
 
 ```bash
 uv sync
-uv run pytest              # testpaths = ["tests"]
+uv run pytest -m "not live"   # testpaths = ["tests"]; `-m live` hits the network
 ```
 
 ## Documentation in this directory
