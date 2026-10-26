@@ -18,7 +18,7 @@ and [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md).
 ## Run / test (from pyproject.toml)
 
 ```bash
-uv sync
+uv sync --extra dev           # pytest lives in the dev extra
 uv run pytest -m "not live"   # testpaths = ["tests"]; `-m live` hits the network
 ```
 

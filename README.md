@@ -43,7 +43,7 @@ verifiable quote in a claim ledger.
 ## Quick start
 
 ```bash
-uv sync                                   # or: uv run ...
+uv sync --extra dev                       # dev tooling: pytest, pytest-cov, hypothesis, ruff
 uv run ruff check .                       # lint gate
 uv run pytest -m "not live"               # full offline suite (90%+ coverage on src/)
 uv run pytest -m live                     # live claim-ledger oracle (network)
