@@ -3,9 +3,7 @@
 > Generated figure assets. Verified by direct listing (fleet doc pass, 2026-08-29).
 
 ## Scope
-- Local-only path under `projects/ongoing/` — matched by the root `.gitignore`
-  rule `projects/*`; never commit, add, or push anything here.
-- Parent standard: the private development monorepo's `projects/ongoing/AGENTS.md` (not part of this public checkout); parent project docs: `EntoLaw/output/web/AGENTS.md`.
+- Repository-wide policy for template projects is maintained in the template repository, not restated here; parent project docs: `EntoLaw/output/web/AGENTS.md`.
 
 ## Layout
 Files: `AGENTS.md`, `README.md`, `architecture.png`, `cases_by_jurisdiction.png`, `cases_by_role.png`, `citation_dates.png`, `claim_ledger_coverage.png`, `cover.png`, `role_coverage.png`, `role_interconnections.png`, `roles_overview.png`, `species_by_role.png`, `statutes_by_category.png`, `statutes_by_jurisdiction.png`, `timeline.png`, `transmission_integrity_strip.png`, `transmission_pairing.png`
@@ -17,4 +15,4 @@ Files: `AGENTS.md`, `README.md`, `architecture.png`, `cases_by_jurisdiction.png`
 - Regenerable output; regenerate via the parent project's scripts rather than editing.
 
 ## Gotchas
-- None beyond the local-only rule above.
+- None.

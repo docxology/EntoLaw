@@ -2,7 +2,7 @@
 
 `data/` of the parent project.
 
-Part of `EntoLaw` (EntoTech lane, local-only under `projects/ongoing/`).
+Part of `EntoLaw`.
 
 ## Contents
 Files: `AGENTS.md`, `README.md`, `claim_ledger.yaml`, `case_candidates.yaml`,

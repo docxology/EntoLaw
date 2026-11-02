@@ -2,7 +2,7 @@
 
 Directory `web` inside the `EntoLaw/output` tree of EntoTech.
 
-Part of `EntoLaw/output` (EntoTech lane, local-only under `projects/ongoing/`).
+Part of `EntoLaw/output`.
 
 ## Contents
 Subfolders: `figures/`

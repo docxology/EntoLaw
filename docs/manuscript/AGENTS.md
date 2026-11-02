@@ -3,8 +3,6 @@
 > Manuscript/documentation sources of the parent project. Verified by direct listing (fleet doc pass, 2026-08-29).
 
 ## Scope
-- Local-only path under `projects/ongoing/` — matched by the root `.gitignore`
-  rule `projects/*`; never commit, add, or push anything here.
 - Parent standard: the `AGENTS.md` of the lifecycle directory this project sits in; parent project docs: `EntoLaw/AGENTS.md`.
 
 ## Layout
@@ -17,4 +15,4 @@ Files: `00_abstract.md`, `01_introduction.md`, `02_witness.md`, `03_threat.md`, 
 - Author-facing sources. Edit these, not the rendered copies under `output/`.
 
 ## Gotchas
-- None beyond the local-only rule above.
+- None.

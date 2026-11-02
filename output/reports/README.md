@@ -2,7 +2,7 @@
 
 Directory `reports` inside the `EntoLaw/output` tree of EntoTech.
 
-Part of `EntoLaw/output` (EntoTech lane, local-only under `projects/ongoing/`).
+Part of `EntoLaw/output`.
 
 ## Contents
 Files: `AGENTS.md`, `README.md`, `field_metrics.json`, `validation.json`

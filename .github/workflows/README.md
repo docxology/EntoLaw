@@ -2,7 +2,7 @@
 
 `workflows/` of the parent project.
 
-Part of `EntoLaw/.github` (EntoTech lane, local-only under `projects/ongoing/`).
+Part of `EntoLaw/.github`.
 
 ## Contents
 Files: `AGENTS.md`, `README.md`, `ci.yml`

@@ -2,7 +2,7 @@
 
 Directory `qa` inside the `EntoLaw/output` tree of EntoTech.
 
-Part of `EntoLaw/output` (EntoTech lane, local-only under `projects/ongoing/`).
+Part of `EntoLaw/output`.
 
 ## Contents
 Files: `AGENTS.md`, `EntoLaw_cover_page.png`, `README.md`, `entolaw-web-qa.png`
