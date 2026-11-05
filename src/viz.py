@@ -50,6 +50,7 @@ from . import (
     timeline,
 )
 from .figure_caption_records import FIGURE_CAPTIONS
+from .registry_analysis import registry_frame_figure
 from .viz_citation_date_records import (
     DATE_BANDS,
     FAMILY_COLORS,
@@ -593,6 +594,7 @@ def pipeline_stages() -> tuple[tuple[str, tuple[str, ...]], ...]:
 # ── Caption→renderer binding ───────────────────────────────────────────────
 # slug → renderer(out_path) -> Path
 FIGURE_RENDERERS: dict[str, Callable[[Path], Path]] = {
+    "registry_frame": registry_frame_figure,
     "roles_overview": roles_overview,
     "timeline": timeline_figure,
     "cases_by_role": cases_by_role,

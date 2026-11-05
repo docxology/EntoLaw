@@ -52,13 +52,19 @@ uv run python scripts/generate_figures.py # render all figures
 uv run python scripts/generate_case_candidates.py --check  # case-candidate register is current (docs/CASE_CANDIDATES.md)
 ```
 
-Render the manuscript from the sibling template checkout (the project is a
-symlinked `projects/working/` project):
+Render from this project root with the declared template available:
 
 ```bash
-cd <path-to-template-checkout>
-uv run python scripts/03_render_pdf.py --project working/EntoLaw
+.venv/bin/python scripts/z_generate_manuscript_variables.py
+.venv/bin/python scripts/render_manuscript.py
+.venv/bin/python scripts/finalize_web_export.py
 ```
+
+The shared local renderer writes an actual PDF/HTML receipt. Formal release,
+upload and DOI operations remain forbidden by the distribution declaration.
+See [local validation](docs/local_validation.md) for current-runtime provisioning
+and source-bound checks, and [research methods](docs/research/README.md) for the
+registry-frame analysis and prospective records-access plan.
 
 ## Guarantees and their limits
 

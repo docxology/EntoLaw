@@ -41,3 +41,11 @@ audit remediation).
   `tests/test_manuscript_variables.py`).
 - Live-checkable claims are gated separately with `uv run pytest -m live`
   (see the parent `AGENTS.md` for the full gate list).
+
+## Local manuscript rendering
+
+`render_manuscript.py` delegates to the shared local renderer after hydration;
+it requires an actual rendered result. `z_generate_manuscript_variables.py`
+uses the declared template discovery contract. The source configuration lists
+the rendered sections, and the distribution declaration forbids a formal
+release, upload or DOI operation. Generated PDF/HTML stays in local output.

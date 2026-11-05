@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "status": "prospective_research_plan_not_sent",
+  "unit": "registered_legal_role",
+  "limits": "Project-designed questions; no claimed record existence, custodian determination, source-opinion reading or legal conclusion",
+  "plans": [
+    {
+      "role": "witness",
+      "question": "How was an entomological technique validated and bounded in the relevant proceeding?",
+      "candidate_record_categories": [
+        "validation studies and method versions",
+        "quality-control procedures",
+        "chain-of-custody documentation"
+      ],
+      "alternative_or_boundary": "A reported admissibility ruling need not validate every application or identify the operational method used.",
+      "routing_review": "Distinguish court-file access from agency laboratory records; avoid person-identifying case details.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "threat",
+      "question": "Which evidence and alternatives informed a bounded quarantine or invasive-species measure?",
+      "candidate_record_categories": [
+        "risk assessments",
+        "inspection protocols",
+        "permit decisions and alternatives analyses"
+      ],
+      "alternative_or_boundary": "The regulatory label does not establish the magnitude of ecological or economic harm.",
+      "routing_review": "Identify the actual federal or state regulator and applicable period; no automatic FOIA/CPRA fallback.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "protected",
+      "question": "What administrative record supports the particular conservation decision under review?",
+      "candidate_record_categories": [
+        "decision memoranda",
+        "survey methods and uncertainty assessments",
+        "public consultation records"
+      ],
+      "alternative_or_boundary": "A listing decision and evidence of a local population or habitat effect answer different questions.",
+      "routing_review": "Verify current status independently; review sensitivity of species locations before requesting or sharing.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "property",
+      "question": "Which contemporaneous records distinguish title, possession and regulatory permission?",
+      "candidate_record_categories": [
+        "dated permits or registrations",
+        "publicly accessible pleadings and orders",
+        "de-identified administrative policies"
+      ],
+      "alternative_or_boundary": "A permit or registration need not resolve a private ownership dispute.",
+      "routing_review": "Separate court and private-party sources from records actually held by a public agency.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "invention",
+      "question": "What existing decision record distinguishes a patent claim from product authorization?",
+      "candidate_record_categories": [
+        "public patent prosecution records",
+        "nonconfidential regulatory decision records",
+        "public consultation materials"
+      ],
+      "alternative_or_boundary": "Patentability, commercialization and regulatory approval have different predicates.",
+      "routing_review": "Confirm patent-file access separately; do not assume an agency can disclose proprietary submissions.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "defendant",
+      "question": "Which edition and archival instrument support a historical animal-trial account?",
+      "candidate_record_categories": [
+        "catalogue and collection descriptions",
+        "edition and translation metadata",
+        "accessible contemporaneous process records"
+      ],
+      "alternative_or_boundary": "A retrospective retelling may not preserve the original legal genre, attribution or procedural context.",
+      "routing_review": "Use the archive or library access route; a historical subject does not itself make a modern agency record.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "moral_patient",
+      "question": "What institutional deliberation distinguishes research ethics from binding legal status?",
+      "candidate_record_categories": [
+        "published ethics policies",
+        "public deliberation minutes",
+        "nonidentifying policy review records"
+      ],
+      "alternative_or_boundary": "An ethical recommendation need not establish a statutory obligation or a scientific consensus.",
+      "routing_review": "Identify the body and its public/private status before choosing an access law.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    },
+    {
+      "role": "weapon",
+      "question": "Which policy and oversight records support the narrowly stated historical or legal claim?",
+      "candidate_record_categories": [
+        "public policy directives",
+        "nontechnical oversight reports",
+        "public contracting governance records"
+      ],
+      "alternative_or_boundary": "A doctrinal or historical reference is not proof of a current program or operational capability.",
+      "routing_review": "Keep the inquiry at policy and oversight level; assess classification, privacy and custodial limits individually.",
+      "review_state": "human_scope_and_jurisdiction_review_required"
+    }
+  ]
+}

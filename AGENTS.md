@@ -53,11 +53,10 @@ are tested by passing crafted-but-real bad data to the injectable validators
 
 ## Rendering
 
-The project is a symlinked `projects/working/` project. The render-time
-hydrator `scripts/z_generate_manuscript_variables.py` resolves `infrastructure`
-via `TEMPLATE_REPO_ROOT` because `Path(__file__).resolve()` escapes the
-symlink — do not replace that with a bare `parents[N]` walk.
-
-For deep review and release-readiness work, follow
-`docs/REVIEW_PROTOCOL.md` and render from the sibling `template` checkout
-with `uv run python scripts/03_render_pdf.py --project working/EntoLaw`.
+From this project root, follow `docs/REVIEW_PROTOCOL.md` and run the declared
+hydration and local render scripts. The hydrator uses the shared template
+discovery contract and respects the declared template environment; never
+replace it with an ancestor-count assumption. The shared local renderer
+requires an actual PDF/HTML result and performs no external publication.
+`config/manuscript_metadata.yaml` declares public source visibility with formal
+publication forbidden for this workflow. Historical DOI metadata is retained.

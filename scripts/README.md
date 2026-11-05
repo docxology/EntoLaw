@@ -21,3 +21,11 @@ bootstrap, logging, and a single delegated call.
 
 Outputs land under `output/data/`, `output/reports/`, `output/figures/`, and
 `output/web/`; the entrypoints print each written path.
+
+## Local manuscript rendering
+
+`render_manuscript.py` delegates to the shared local renderer after hydration;
+it requires an actual rendered result. `z_generate_manuscript_variables.py`
+uses the declared template discovery contract. The source configuration lists
+the rendered sections, and the distribution declaration forbids a formal
+release, upload or DOI operation. Generated PDF/HTML stays in local output.

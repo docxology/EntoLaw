@@ -37,3 +37,17 @@ uv run pytest -m "not live"   # testpaths = ["tests"]; `-m live` hits the networ
 
 Docs hub created by the docs-audit pass (2026-08-29); the two existing docs
 files were audited and left unchanged.
+
+## Research design and records-access planning
+
+The [research map](research/README.md) links the statistical and rhetorical
+protocols, targeted source ledger and role-specific prospective record plan.
+The registry frame figure pairs a selected-frame cross-tab with exact member
+IDs and source hashes. Neither the figure nor the plan asserts an agency-held
+record or authorizes correspondence.
+
+## Current-runtime validation
+
+[Local validation](local_validation.md) describes the independent source-bound
+gate and the correct relative engine source location. The declaration in
+`config/local_validation.yaml` replaces hosted Actions execution.
