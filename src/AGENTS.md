@@ -31,3 +31,10 @@ Files: `AGENTS.md`, `README.md`, `__init__.py`, `case_candidate_cache.py`, `case
 
 ## Gotchas
 - None.
+
+## Registry frame adapter
+
+`registry_analysis.py` — derived-output adapter over the actual public case and
+patent registry; exact membership and source-hashed joint coverage table plus
+figure. It reuses the shared descriptive engine and supplies no request data or
+legal-compliance interpretation.

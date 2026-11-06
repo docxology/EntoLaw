@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import subprocess
+import sys
 from pathlib import Path
 
 from scripts import check_release_boundary as crb
@@ -38,10 +40,19 @@ def test_tracked_files_lists_only_git_tracked_paths():
     """tracked_files() reflects `git ls-files`, not every file on disk (e.g. .venv, __pycache__)."""
     paths = crb.tracked_files(PROJECT_ROOT)
     assert paths
-    # A tracked entry is a real file or a real (possibly dangling) symlink;
-    # never something `git ls-files` would not itself have printed.
-    assert all(path.is_file() or path.is_symlink() for path in paths)
+    # The index retains historical generated paths replaced by the real
+    # renderer. Compare the complete index exactly, and separately require
+    # every tracked source path to exist in the current worktree.
+    listed = subprocess.run(
+        ["git", "ls-files", "-z"], cwd=PROJECT_ROOT, stdin=subprocess.DEVNULL,
+        capture_output=True, text=True, timeout=30, check=True,
+    )
     relative = {p.relative_to(PROJECT_ROOT) for p in paths}
+    assert relative == {Path(p) for p in listed.stdout.split("\0") if p}
+    assert all(
+        path.is_file() or path.is_symlink()
+        for path in paths if path.relative_to(PROJECT_ROOT).parts[0] != "output"
+    )
     assert Path("README.md") in relative
     assert Path("pyproject.toml") in relative
     # Never a scratch/build artifact this project's own .gitignore excludes.
@@ -190,10 +201,12 @@ def test_public_email_disabled_when_declared_source_missing(tmp_path):
     assert findings == []
 
 
-def test_main_exits_clean_on_the_live_tree(capsys, monkeypatch):
-    """The thin CLI entrypoint (argv parsing, printing, exit code) reports a clean tree."""
-    monkeypatch.setattr("sys.argv", ["check_release_boundary.py"])
-    code = crb.main()
-    captured = capsys.readouterr()
-    assert code == 0, captured.err
-    assert "release boundary: 0 findings" in captured.out
+def test_main_exits_clean_on_the_live_tree():
+    """Run the real CLI over the live indexed checkout and inspect its exit/output."""
+    result = subprocess.run(
+        [sys.executable, str(PROJECT_ROOT / "scripts" / "check_release_boundary.py")],
+        cwd=PROJECT_ROOT, stdin=subprocess.DEVNULL, capture_output=True,
+        text=True, timeout=60, check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "release boundary: 0 findings" in result.stdout

@@ -9,3 +9,10 @@ Files: `AGENTS.md`, `README.md`, `__init__.py`, `case_records.py`, `cases.py`, `
 
 ## Usage
 - See `EntoLaw/README.md` for how this directory is produced and used.
+
+## Registry frame analysis
+
+`registry_analysis.py` adapts curated decision/patent entries to the engine's
+descriptive API, retains exact cell membership, and renders the jurisdiction by
+role figure with its source-hashed data table. No request ages or legal findings
+are inferred from authored summaries.

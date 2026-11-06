@@ -9,3 +9,9 @@ Files: `AGENTS.md`, `README.md`, `__init__.py`, `conftest.py`, `test_bibliograph
 
 ## Usage
 - See `EntoLaw/README.md` for how this directory is produced and used.
+
+## Selected-frame checks
+
+`test_registry_analysis.py` checks that joint cells partition the real curated
+frame, duplicates and unknown roles refuse, empty frames stay empty, and the
+rendered figure is bound to its exact data and source digests.

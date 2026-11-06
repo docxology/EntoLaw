@@ -26,3 +26,10 @@ Guidance for agents working in this documentation directory.
 ## Maintenance
 Keep this index current when files are added or removed. Only factual claims
 traceable to repo files belong here.
+
+## Research resources
+
+`research/README.md` maps the source ledger and review protocols. Preserve
+reading extent and failed current-law retrievals. `config/records_research.yaml`
+contains prospective questions rather than evidence of custody or record
+existence. Keep public sources separate from private received records.

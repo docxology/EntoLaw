@@ -6,23 +6,22 @@ from pathlib import Path
 
 import pytest
 
+from legal_informatics.pipeline_plan import find_template_root
 from src import manuscript_variables as mv
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-# This project is developed nested inside a sibling "research-template" repo
-# checkout (see README "Render the manuscript from the sibling template
-# checkout"); this test exercises that template's rendering pipeline. A
-# standalone clone of this repo (e.g. GitHub Actions CI, an external
-# contributor) has no such sibling checkout, so the test skips rather than
-# failing closed on an environment precondition it cannot control.
-TEMPLATE_ROOT = PROJECT_ROOT.parents[2] / "template"
+# Discover the actual declared template instead of an obsolete ancestor layout.
+
+TEMPLATE_ROOT = find_template_root([PROJECT_ROOT])
 
 
 @pytest.mark.skipif(
-    not TEMPLATE_ROOT.exists(),
-    reason=f"sibling template checkout not present at {TEMPLATE_ROOT} (expected in a standalone clone)",
+    TEMPLATE_ROOT is None,
+    reason="declared template checkout is unavailable in this standalone environment",
 )
+
 def test_template_hydration_writes_resolved_manuscript_tree(tmp_path):
+    assert TEMPLATE_ROOT is not None
     if str(TEMPLATE_ROOT) not in sys.path:
         sys.path.insert(0, str(TEMPLATE_ROOT))
     from infrastructure.rendering.manuscript_injection import (

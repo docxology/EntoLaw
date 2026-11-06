@@ -29,6 +29,12 @@ for _p in _SEARCH_ROOTS:
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
+from legal_informatics.pipeline_plan import find_template_root  # noqa: E402
+
+_declared_template = find_template_root([_PROJECT_ROOT])
+if _declared_template is not None and str(_declared_template) not in sys.path:
+    sys.path.insert(0, str(_declared_template))
+
 from src.manuscript_variables import compute_and_save  # noqa: E402
 
 

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 from scripts import check_metadata_consistency as cmc
@@ -179,10 +181,12 @@ def test_missing_declared_source_raises(tmp_path):
         assert "CITATION.cff" in str(exc)
 
 
-def test_main_returns_zero_on_the_live_tree(capsys, monkeypatch):
-    """The thin CLI entrypoint (argv parsing, printing, exit code) over the live tree."""
-    monkeypatch.setattr("sys.argv", ["check_metadata_consistency.py"])
-    code = cmc.main()
-    captured = capsys.readouterr()
-    assert code == 0
-    assert "metadata consistency: 0 violations" in captured.out
+def test_main_returns_zero_on_the_live_tree():
+    """Run the real CLI over the live indexed checkout and inspect its exit/output."""
+    result = subprocess.run(
+        [sys.executable, str(PROJECT_ROOT / "scripts" / "check_metadata_consistency.py")],
+        cwd=PROJECT_ROOT, stdin=subprocess.DEVNULL, capture_output=True,
+        text=True, timeout=60, check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "metadata consistency: 0 violations" in result.stdout

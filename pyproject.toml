@@ -9,24 +9,29 @@ description = "Source-anchored registries and a claim-sourced manuscript mapping
 authors = [
     {name = "Daniel Ari Friedman", email = "daniel@activeinference.institute"},
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.15"
 dependencies = [
+    "qrcode[pil]>=8.2,<9",
+    "python-barcode>=0.16.1",
     "pyyaml>=6.0",
     "matplotlib>=3.7",
-    "certifi>=2026.7.22",
+    "certifi>=2026.10.23",
     "legal_informatics",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.4.0",
+    "pytest>=9.0.3",
     "pytest-cov>=4.1.0",
     "hypothesis>=6.0",
-    "ruff>=0.13.0",
+    "ruff>=0.17.3,<0.18",
 ]
 
 [tool.setuptools]
 packages = ["src"]
+
+[tool.ruff]
+target-version = "py315"
 
 [tool.ruff.lint]
 # Preserve the pre-0.16 default profile explicitly across Ruff releases, and
@@ -72,4 +77,4 @@ exclude_lines = [
 [tool.uv.sources]
 # Sibling checkout, editable: EntoLaw consumes the generic legal-informatics
 # methods engine instead of carrying byte-identical copies of its modules.
-legal_informatics = { path = "../legal_informatics", editable = true }
+legal_informatics = { path = "../../Private/legal_informatics", editable = true }

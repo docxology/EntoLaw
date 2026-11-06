@@ -27,3 +27,49 @@ A separate, clearly-bounded pass runs alongside the registries above: `scripts/f
 Promoting a candidate into an actual citation, claim, or case-record entry is a human decision made after reading the opinion, never a pipeline step — see `docs/CASE_CANDIDATES.md` for the promotion path and the boundary `tests/test_case_candidates.py` enforces around it.
 
 Finally, this build carries its own provenance: generated on `{{PLATFORM}}` under Python `{{PYTHON_VERSION}}` from configuration hash `{{CONFIG_HASH}}` at `{{GENERATION_TIMESTAMP}}`. The same version-controlled inputs regenerate the inventories, the validation report, the figures, the manuscript variables, and this document with identical registry-derived content, modulo the provenance stamp.
+
+## Selected-frame statistics and visible limits
+
+The registry frame is a curated collection of decisions and patents, rather
+than a probability sample of disputes or a complete doctrinal census.
+`src.registry_analysis.analyze_registry` adapts its stable entry identifiers to
+the shared engine's descriptive analysis. The adjacent figure table records
+exact member IDs, numerator and denominator, the mapping from generic grouping
+fields to jurisdiction and registered role, and source digests. A year in the
+registry retains year precision; it is not a request, event or production date.
+No disclosure rate, response duration or agency comparison is inferred.
+
+![{{FIGURE_CAPTION_REGISTRY_FRAME}}](../output/figures/registry_frame.png){#fig:registry_frame width=95%}
+
+The cross-tab exposes the joint composition hidden by separate role and
+jurisdiction totals. A zero cell describes the encoded frame, not absence of
+case law, an insect role, or agency records. The analysis protocol makes this
+finite-frame estimand explicit. AAPOR's discussion of inferential assumptions
+motivates that caution; using it for a curated legal registry is this project's
+adaptation [@methods_aapor_nonprobability].
+
+## Located argument review and a discriminating acquisition plan
+
+The rhetorical codebook separates the source's proposition, grounds, scope,
+qualification and an alternative explanation. Entman's selection/salience
+framework offers a vocabulary for human framing memos; Grimmer and Stewart
+motivate source-specific validation of computational text analysis
+[@methods_entman_framing; @methods_grimmer_stewart]. These methods do not convert
+a registry's authored holding summary into a freshly read opinion, or a legal
+role into a claim about an agency's intent.
+
+`config/records_research.yaml` asks role-specific questions and names candidate
+record categories, alternative explanations and routing review. Forensic
+validation, quarantine decisions, conservation records, property disputes,
+patent files, historical process, ethics deliberation and public oversight
+require different documentary tests. The declaration asserts no record's
+existence and sends no request. Each proposed inference needs a located source
+and a record that could also challenge it.
+
+Custody determines the access route. Federal FOIA does not provide access to
+records held by federal courts; California's judicial administrative access
+rule separately distinguishes administrative and adjudicative records
+[@methods_doj_foia_scope; @methods_ca_judicial_access]. An agency record about a
+proceeding and the court file itself are different acquisition questions. The
+public-source ledger retains current-law retrieval limits, and every request
+plan requires human jurisdiction and scope review before any correspondence.

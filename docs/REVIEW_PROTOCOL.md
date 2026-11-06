@@ -38,19 +38,23 @@ uv run pytest -m "not live" --cov=src --cov-fail-under=90
 uv run pytest -m live
 ```
 
-Then render from the sibling template checkout:
+Then render locally using the declared template:
 
 ```bash
-cd <path-to-template-checkout>
-uv run python scripts/03_render_pdf.py --project working/EntoLaw
-cd <path-to-template-checkout>/projects/working/EntoLaw
-uv run python scripts/finalize_web_export.py
+.venv/bin/python scripts/z_generate_manuscript_variables.py
+.venv/bin/python scripts/render_manuscript.py
+.venv/bin/python scripts/finalize_web_export.py
 ```
+
+The renderer uses the template's actual RenderManager and writes a source-bound
+local receipt; it does not run a publishing stage. A missing template fails the
+declared render step. The source distribution declaration is public/forbidden:
+public source metadata and historical DOIs do not authorize a new formal release.
 
 Confirm the rendered surfaces exist and contain no unresolved manuscript
 tokens, raw citation markers, or broken figure references:
 
-- `output/pdf/EntoLaw_combined.pdf`
+- `output/rendered/manuscript/EntoLaw_manuscript_combined.pdf`
 - `output/web/index.html`
 - `output/data/manuscript_variables.json`
 - `output/reports/validation.json`

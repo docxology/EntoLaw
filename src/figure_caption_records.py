@@ -7,6 +7,25 @@ from legal_informatics.figure_captions import FigureCaption
 
 FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
     FigureCaption(
+        slug="registry_frame", anchor="fig:registry_frame",
+        title="Joint composition of the curated decision and patent frame",
+        manuscript_caption=(
+            "Read as: jurisdiction by principal registered role for the selected curated "
+            "decision/patent frame. Cells show exact entry counts; the adjacent "
+            "JSON table retains member identifiers, denominators and source hashes. "
+            "A zero means no encoded entry, not absence of doctrine or records. "
+            "Why it matters: the joint table exposes the registry composition "
+            "hidden by separate role and jurisdiction totals. "
+            "Provenance: src/registry_analysis.py over src/case_records.py and "
+            "src/roles.py through the shared descriptive engine. Caveat: authored "
+            "summaries and year-only dates are not new opinion readings, request "
+            "durations or a representative sample of legal disputes."
+        ),
+        alt_text="Labelled heat map of the curated decisions and patents by jurisdiction and registered legal role.",
+        provenance="Generated from src/case_records.py and src/roles.py through shared descriptive analysis; exact hashes and member IDs in registry_frame.json.",
+        caveat="Selected curated frame; no population, disclosure or compliance inference.",
+    ),
+    FigureCaption(
         slug="roles_overview",
         anchor="fig:roles_overview",
         title="Registered legal roles of the insect",

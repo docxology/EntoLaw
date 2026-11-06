@@ -60,3 +60,4 @@ groups:
       - viz
       - viz_cover
       - case_candidate_metrics
+      - registry_analysis

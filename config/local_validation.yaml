@@ -1,0 +1,41 @@
+schema_version: 1
+steps:
+  - name: lock-check
+    argv: ['{uv}', lock, --check, --offline]
+    timeout: 180
+  - name: dependency-tree
+    argv: ['{uv}', tree, --locked, --offline]
+    timeout: 180
+  - name: lint
+    argv: ['{python}', -m, ruff, check, .]
+    timeout: 180
+  - name: inventory
+    argv: ['{python}', scripts/run_inventory.py]
+    timeout: 180
+  - name: figures
+    argv: ['{python}', scripts/generate_figures.py]
+    timeout: 300
+  - name: module-map
+    argv: ['{python}', scripts/check_module_map.py]
+    timeout: 180
+  - name: documentation
+    argv: ['{python}', scripts/check_docs_inventory.py]
+    timeout: 180
+  - name: metadata
+    argv: ['{python}', scripts/check_metadata_consistency.py]
+    timeout: 180
+  - name: public-boundary
+    argv: ['{python}', scripts/check_release_boundary.py]
+    timeout: 180
+  - name: hydrate
+    argv: ['{python}', scripts/z_generate_manuscript_variables.py]
+    timeout: 180
+  - name: render
+    argv: ['{python}', scripts/render_manuscript.py]
+    timeout: 600
+  - name: web-assets
+    argv: ['{python}', scripts/finalize_web_export.py]
+    timeout: 180
+  - name: tests
+    argv: ['{python}', -m, pytest, -m, 'not live', --cov=src, --cov-fail-under=90, -p, 'no:cacheprovider']
+    timeout: 1200
