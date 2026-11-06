@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "project": "EntoLaw",
+  "resource_ledgers": [
+    {
+      "path": "docs/research/methods_sources.yaml",
+      "kind": "methods"
+    }
+  ],
+  "pin_manifests": [
+    "docs/research/PROVENANCE.json"
+  ],
+  "question_matrices": [],
+  "passage_copies": []
+}

@@ -11,3 +11,17 @@ The registry frame figure and adjacent JSON describe curated decisions and
 patents. They estimate no disclosure rate or prevalence of doctrine. A source
 summary is not a new opinion reading. Court records, agency records and archival
 holdings require different access routes; confirm the actual custodian first.
+
+## Local integrity validation
+
+`config/research_integrity.yaml` declares the local ledgers and file pins checked
+by the ordinary source gate. From the project root, through the qualified offline
+runner:
+
+```bash
+.venv/bin/python scripts/check_research_integrity.py --project-root . --json
+```
+
+This checks local metadata, reading-extent declarations and file digests. It does
+not reverify external websites, refresh source dates or certify current law.
+The integrity check writes no source files.

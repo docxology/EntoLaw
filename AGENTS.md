@@ -22,7 +22,7 @@ figure caption in prose — derive it.
 2. Add a claim entry to `data/claim_ledger.yaml` with a full verification block
    (status, verified_value, source_url, source_quote(s), as_of, confidence,
    checked) anchored to a declared `sec:*`.
-3. Confirm it live: `uv run pytest -m live -k <claim_id>`. Do **not** mark a
+3. Confirm it live only under a separately authorized network workflow: `.venv/bin/python -m pytest -m live -k <claim_id>`. Do **not** mark a
    claim `verified` with a quote you have not fetched — that is the exact
    failure mode the ledger exists to prevent.
 
@@ -33,8 +33,7 @@ legal or biological status, bind it to a short live-checkable quote.
 ## Gates (all must pass)
 
 ```bash
-uv run ruff check .
-uv run pytest -m "not live" --cov=src --cov-fail-under=90
+.venv/bin/python -m legal_informatics.local_validation --project-root .
 ```
 
 - token closure (`test_manuscript_variables.py`)
@@ -44,6 +43,13 @@ uv run pytest -m "not live" --cov=src --cov-fail-under=90
 - no hard-coded statistic (`test_manuscript_no_hardcoded_stats.py`)
 - figure ↔ caption totality (`test_figures.py`)
 - render-time hydration (`test_render_hydration.py`)
+
+The supported runtime is the declared Python 3.15.2 environment. Execute the
+bounded local gate through the vault's qualified offline runner; dependency setup
+is a separate governed operation. The declaration in `config/local_validation.yaml`
+retains the non-live coverage suite and actual local render, and now checks the
+local research resource contract before accepting the source. Existing source
+verification dates and curated registry facts are not refreshed by this gate.
 
 ## No mocks
 
