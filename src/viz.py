@@ -179,7 +179,7 @@ def _counted_by_role(counts: dict[str, int], title: str, xlabel: str, path: Path
 
 def cases_by_role(path: Path) -> Path:
     """Bar of case counts per role."""
-    return _counted_by_role(cases.counts_by_role(), "Registered cases by legal role", "Cases", path)
+    return _counted_by_role(cases.counts_by_role(), "Registered entries by legal role", "Entries", path)
 
 
 def species_by_role(path: Path) -> Path:
@@ -211,8 +211,8 @@ def cases_by_jurisdiction(path: Path) -> Path:
         path,
         [k for k, _ in items],
         [v for _, v in items],
-        title="Registered cases by jurisdiction",
-        xlabel="Cases",
+        title="Registered entries by jurisdiction",
+        xlabel="Entries",
         colors=[JURISDICTION_COLORS.get(k, FALLBACK_COLOR) for k, _ in items],
         sort_by_value=True,
     )

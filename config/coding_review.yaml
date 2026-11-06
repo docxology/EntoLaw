@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "title": "EntoLaw — prospective located argument review",
+  "unit_definition": "One declared source span with exact byte digest, parsed-text selector and character offsets; the unit is not a complete request or instrument.",
+  "selection_basis": "Purposive contrasts among scope, attribution and evidentiary-linkage problems already identified in this project; not random or exhaustive and not a prevalence denominator.",
+  "codebook_version": "2026-11-06-v1",
+  "review_plan": "Future reviewers would first record source kind and apply each code independently using the include/exclude rules, retaining uncertain decisions and rationales. Discuss disagreements only after preserving original independent judgments; do not backfill them from lexical cues or later consensus. No actual reviewers, independent pairs or judgments are supplied in this edition.",
+  "codes": [
+    {
+      "id": "SCOPE",
+      "label": "Explicit scope boundary",
+      "definition": "The selected span states a time, component, record, instrument or subject boundary relevant to its proposition.",
+      "include_when": "A boundary is actually stated and can be transcribed with its source kind.",
+      "exclude_when": "The reviewer supplies a plausible boundary or treats a requester's proposed scope as an agency's accepted search.",
+      "counterexample": "A bare closed label states no searched locations or period."
+    },
+    {
+      "id": "ACT",
+      "label": "Attributed documentary act",
+      "definition": "The span identifies an attributed request, acknowledgment, routing, search statement, determination, grant or judicial act.",
+      "include_when": "The act and its speaker or instrument can be identified from the unit's located context; keep summary attribution explicit.",
+      "exclude_when": "A platform stage or reader interpretation is promoted into the underlying instrument or legal effect.",
+      "counterexample": "A task named appeal is not proof that an appeal was filed or decided."
+    },
+    {
+      "id": "BRIDGE",
+      "label": "Explicit evidentiary bridge",
+      "definition": "The span actually supplies the linkage needed for the stronger proposition under review.",
+      "include_when": "The instrument's type, proposition and statutory or procedural scope are explicitly linked; issuance, adjudication and listing eligibility remain distinct.",
+      "exclude_when": "A co-mention, a cultural association, a matching surname or a plausible custodian is the only connection.",
+      "counterexample": "A patent title and grant date do not establish a judicial decision on patent validity."
+    },
+    {
+      "id": "QUALIFIER",
+      "label": "Qualification of inference",
+      "definition": "The unit explicitly limits what its statement, source type or evidence supports.",
+      "include_when": "A stated qualification limits the proposition; distinguish uncertainty from a definitive negative.",
+      "exclude_when": "The reviewer adds a caveat that is absent from the unit or treats missing text as an explicit disclaimer.",
+      "counterexample": "The absence of a search description is not a statement that no search occurred."
+    }
+  ],
+  "units": [
+    {
+      "id": "depth_westerfield-copy",
+      "context": "Printed page 1; the reviewed opening's disposition only. Local copy only; original bytes are not present.",
+      "anchor": {
+        "source": "docs/research/instrument_readings.json",
+        "sha256": "8a2706f0556d8f55c124b52076f4fd559a3ac79d42210e6cff403c99d4a45209",
+        "pointer": "/readings/0/excerpt",
+        "start": 0,
+        "end": 39,
+        "role": "context",
+        "kind": "primary_passage_copy"
+      }
+    },
+    {
+      "id": "depth_almond-copy",
+      "context": "Printed page 35; line wrapping normalized, no words added. Local copy only; original bytes are not present.",
+      "anchor": {
+        "source": "docs/research/instrument_readings.json",
+        "sha256": "8a2706f0556d8f55c124b52076f4fd559a3ac79d42210e6cff403c99d4a45209",
+        "pointer": "/readings/1/excerpt",
+        "start": 0,
+        "end": 161,
+        "role": "context",
+        "kind": "primary_passage_copy"
+      }
+    },
+    {
+      "id": "depth_oncomouse-copy",
+      "context": "Front-page title only; not a judicial holding or a complete claim. Local copy only; original bytes are not present.",
+      "anchor": {
+        "source": "docs/research/instrument_readings.json",
+        "sha256": "8a2706f0556d8f55c124b52076f4fd559a3ac79d42210e6cff403c99d4a45209",
+        "pointer": "/readings/2/excerpt",
+        "start": 0,
+        "end": 28,
+        "role": "context",
+        "kind": "primary_passage_copy"
+      }
+    },
+    {
+      "id": "registry-depth_westerfield",
+      "context": "Authored registry holding summary; this source kind cannot authenticate an underlying instrument.",
+      "anchor": {
+        "source": "src/case_records.py",
+        "sha256": "63fd7026bdabb56ddd0d554e7cbe383252133cdb34d55ce8ceccc6ebf3fc3929",
+        "pointer": "",
+        "start": 3509,
+        "end": 3581,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "registry-depth_almond",
+      "context": "Authored registry holding summary; this source kind cannot authenticate an underlying instrument.",
+      "anchor": {
+        "source": "src/case_records.py",
+        "sha256": "63fd7026bdabb56ddd0d554e7cbe383252133cdb34d55ce8ceccc6ebf3fc3929",
+        "pointer": "",
+        "start": 6366,
+        "end": 6454,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "registry-depth_oncomouse",
+      "context": "Authored registry holding summary; this source kind cannot authenticate an underlying instrument.",
+      "anchor": {
+        "source": "src/case_records.py",
+        "sha256": "63fd7026bdabb56ddd0d554e7cbe383252133cdb34d55ce8ceccc6ebf3fc3929",
+        "pointer": "",
+        "start": 10155,
+        "end": 10228,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    }
+  ],
+  "reviewers": [],
+  "independent_pairs": [],
+  "judgments": []
+}

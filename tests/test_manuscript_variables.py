@@ -125,3 +125,25 @@ def test_core_acronyms_are_defined_in_manuscript():
 def test_pdf_preamble_uses_narrower_side_margins():
     preamble = (MANUSCRIPT / "preamble.md").read_text(encoding="utf-8")
     assert "\\geometry{left=0.55in,right=0.55in,top=0.65in,bottom=0.65in}" in preamble
+
+
+def test_located_coding_units_reject_actual_registry_source_drift(tmp_path):
+    # Given the actual closed declaration, source summaries and local passage copies.
+    import shutil
+    import pytest
+    from legal_informatics.coding_review import analyze_coding_review
+    for relative in ("config/coding_review.yaml", "src/case_records.py",
+                     "docs/research/instrument_readings.json"):
+        path = tmp_path / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(PROJECT_ROOT / relative, path)
+    actual = analyze_coding_review(tmp_path)
+    assert not actual.declaration.reviewers
+    assert not actual.declaration.judgments
+    assert not actual.agreement
+    assert {row.anchor.kind for row in actual.units} == {"declared_summary", "primary_passage_copy"}
+    path = tmp_path / "src/case_records.py"
+    path.write_text(path.read_text() + "\n")
+    # When copied source bytes drift, then the real configured selectors refuse.
+    with pytest.raises(ValueError):
+        analyze_coding_review(tmp_path)

@@ -25,3 +25,7 @@ runner:
 This checks local metadata, reading-extent declarations and file digests. It does
 not reverify external websites, refresh source dates or certify current law.
 The integrity check writes no source files.
+
+## Located coding review
+
+The new `config/coding_review.yaml` selects exact, hash-bound spans and operational decision rules. No reviewers, independent sessions or judgments are declared; agreement is unassessed. Targeted new public readings, retrieval failures and reading extents are recorded in [depth_readings.json](depth_readings.json). Original verification dates remain unchanged. Local file pins do not authenticate unretained website bytes.

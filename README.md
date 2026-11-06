@@ -98,3 +98,5 @@ Cite via [`CITATION.cff`](CITATION.cff), or:
 **v1.0.0 record:** [10.5281/zenodo.21137277](https://doi.org/10.5281/zenodo.21137277) · [GitHub release](https://github.com/docxology/EntoLaw/releases/tag/v1.0.0)
 
 Licensed under [CC-BY-4.0](LICENSE).
+
+Located coding plans use `config/coding_review.yaml` and the shared builder before hydration in the bounded local gate. New reports in `output/coding_review_v1/` distinguish authored registry summaries from short public-instrument passage copies. This edition declares no performed coding or agreement estimate.

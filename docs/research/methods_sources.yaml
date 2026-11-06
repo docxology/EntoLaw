@@ -210,6 +210,71 @@
       "limits": "Full rule retrieval returned403. No court-specific filing procedure or adjudicative access ruling verified.",
       "verified_on": "2026-11-05",
       "retained_source_bytes": false
+    },
+    {
+      "title": "Inter-Coder Agreement for Computational Linguistics",
+      "creator": "Ron Artstein and Massimo Poesio",
+      "publication": "Computational Linguistics 34(4), 555–596 (2008)",
+      "url": "https://aclanthology.org/J08-4004/",
+      "reviewed_locator": "Publisher metadata; PDF introduction and sections 2.1–2.4.3, printed pages 556–562, targeted reading only",
+      "supports": "Agreement and validity differ; coefficient assumptions require explicit reporting.",
+      "limits": "No full-paper review, universal threshold, or performed coding is asserted.",
+      "id": "artstein2008",
+      "review_status": "targeted_primary_source_reading",
+      "verified_on": "2026-11-06",
+      "retained_source_bytes": false
+    },
+    {
+      "title": "Transgenic Non-Human Mammals, U.S. Patent 4,736,866",
+      "creator": "Philip Leder and Timothy A. Stewart",
+      "publication": "United States patent issued April 12, 1988; primary document on Google patent-image host",
+      "url": "https://patentimages.storage.googleapis.com/76/f3/a5/16327b79a973e5/US4736866.pdf",
+      "reviewed_locator": "Front page and claim 1 (physical PDF pages 1 and 8); correction page observed but not analyzed",
+      "supports": "Issued instrument identity and a bounded claimed transgenic non-human mammal.",
+      "limits": "Official USPTO endpoint returned 403. No prosecution-history, validity adjudication, present enforceability or current license reading.",
+      "id": "depth_oncomouse",
+      "review_status": "targeted_primary_source_reading",
+      "verified_on": "2026-11-06",
+      "retained_source_bytes": false
+    },
+    {
+      "title": "Memorandum of Understanding concerning OncoMouse",
+      "creator": "U.S. Public Health Service and E. I. du Pont de Nemours and Company",
+      "publication": "Historical agreement effective July 1, 1999; PHS signature dated January 18, 2000; publication date not stated",
+      "url": "https://www.techtransfer.nih.gov/sites/default/files/documents/pdfs/oncomouse.pdf",
+      "reviewed_locator": "Physical pages 1–2, recitals, section 1 and transfer restrictions; physical page 4 PHS signature date only",
+      "supports": "A historical agreement concerns identified patents and PHS research use and transfer.",
+      "limits": "No current license, patent validity, particular institution's use, or present agency holding is established.",
+      "id": "depth_phsmou",
+      "review_status": "targeted_primary_source_reading",
+      "verified_on": "2026-11-06",
+      "retained_source_bytes": false
+    },
+    {
+      "title": "People v. Westerfield, S112691",
+      "creator": "Supreme Court of California",
+      "publication": "Opinion filed February 4, 2019",
+      "url": "https://www.courts.ca.gov/opinions/archive/S112691.PDF",
+      "reviewed_locator": "Opinion opening, printed pages 1–3; initial official retrieval succeeded; subsequent requests returned 403",
+      "supports": "Opening disposition affirms the judgment and overview identifies defense reliance on entomological evidence.",
+      "limits": "Targeted opening only. No full issue analysis, trial transcript or inference about actual jury reasoning was reviewed.",
+      "id": "depth_westerfield",
+      "review_status": "targeted_primary_source_reading",
+      "verified_on": "2026-11-06",
+      "retained_source_bytes": false
+    },
+    {
+      "title": "Almond Alliance of California v. Fish and Game Commission, C093542",
+      "creator": "California Court of Appeal, Third Appellate District",
+      "publication": "Original opinion filed May 31, 2022; Stanford law clinic's primary document copy",
+      "url": "https://law.stanford.edu/wp-content/uploads/2022/06/2022-05-31-Almond-Alliance-Opinion.pdf",
+      "reviewed_locator": "Printed pages 1–5 and 35: issue, statutory context and disposition",
+      "supports": "CESA eligibility and candidate-designation authority depend on statutory definitions and requirements.",
+      "limits": "Official court endpoints returned 403. The counsel-hosted original opinion does not verify later treatment, current listing or a universal biological classification.",
+      "id": "depth_almond",
+      "review_status": "targeted_primary_source_reading",
+      "verified_on": "2026-11-06",
+      "retained_source_bytes": false
     }
   ]
 }

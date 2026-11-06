@@ -43,7 +43,7 @@ def counts_by_role() -> dict[str, int]:
 
 
 def case_table_markdown() -> str:
-    header = "| Case | Citation | Role | Holding |"
+    header = "| Registered instrument | Citation | Role | Registered proposition |"
     sep = "|---|---|---|---|"
     rows = [header, sep]
     for case in CASES:

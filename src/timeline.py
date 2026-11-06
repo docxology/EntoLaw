@@ -338,10 +338,11 @@ MILESTONES: tuple[Milestone, ...] = (
     ),
     Milestone(
         year=2022,
-        title="'Bees are fish' and the Sentience Act",
+        title="CESA eligibility and the Sentience Act",
         role="protected",
-        description="Almond Alliance holds bumblebees are 'fish' under CESA the "
-        "same year the UK Sentience Act covers decapods and cephalopods.",
+        description="Almond Alliance interprets CESA's statutory fish category "
+        "to allow terrestrial-invertebrate eligibility; the same year the UK "
+        "Sentience Act covers decapods and cephalopods.",
     ),
     Milestone(
         year=2024,
