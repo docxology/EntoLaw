@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "purpose": "Local file-pin custody manifest for the declared research resources.",
+  "scope": "Digests bind the local resource declarations, not unretained external website bytes or new source readings.",
+  "files": {
+    "README.md": "bd242f4ffbc0897d38a17b9101bab08237540bedddad6aa12bc090aa6dafc752",
+    "methods_sources.yaml": "30f2c6676b800eaea0ba06a8c55b7e44644b1f8775981ffd75fd91002fb86cd0",
+    "records_access_playbook.md": "18a345f2cb2b30235da6b8fb86dd436332e713a7a8c41dbca6d9ee7f6d4c9c96",
+    "rhetorical_codebook.md": "8cee754c1cf7ff7ea389bffbd09f252db17bf5b811890010da7d55b6e2684cfc",
+    "statistical_protocol.md": "cf62263fd71ac87f819ebcb482e8bbd93de056dcd49ff095893dfcd91ab34109"
+  },
+  "public_source_bytes_retained": false,
+  "external_source_verification": "not_performed"
+}

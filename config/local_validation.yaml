@@ -36,6 +36,9 @@ steps:
   - name: web-assets
     argv: ['{python}', scripts/finalize_web_export.py]
     timeout: 180
+  - name: research-integrity
+    argv: ['{python}', scripts/check_research_integrity.py, --project-root, ., --json]
+    timeout: 180
   - name: tests
     argv: ['{python}', -m, pytest, -m, 'not live', --cov=src, --cov-fail-under=90, -p, 'no:cacheprovider']
     timeout: 1200

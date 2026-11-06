@@ -49,3 +49,7 @@ it requires an actual rendered result. `z_generate_manuscript_variables.py`
 uses the declared template discovery contract. The source configuration lists
 the rendered sections, and the distribution declaration forbids a formal
 release, upload or DOI operation. Generated PDF/HTML stays in local output.
+
+`check_research_integrity.py` is the shared read-only checker. It returns 0 on
+verified local declarations or 1 on integrity failure; `--include-retained` is a
+separate owner-held profile. It does not rewrite domain inputs or call a network.
