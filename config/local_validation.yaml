@@ -33,6 +33,12 @@ steps:
   - name: coding-review-check
     argv: ['{python}', ../../Private/legal_informatics/scripts/build_coding_review.py, --project-root, ., --check]
     timeout: 180
+  - name: graphical-abstract
+    argv: ['{python}', ../../Private/legal_informatics/scripts/build_graphical_abstract.py, --project-root, .]
+    timeout: 180
+  - name: graphical-abstract-check
+    argv: ['{python}', ../../Private/legal_informatics/scripts/build_graphical_abstract.py, --project-root, ., --check]
+    timeout: 180
   - name: hydrate
     argv: ['{python}', scripts/z_generate_manuscript_variables.py]
     timeout: 180

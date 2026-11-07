@@ -12,3 +12,7 @@ not a request archive or a source for claims of record existence.
 passage copies for the shared read-only checker. The default gate checks local
 source declarations without requiring ignored original correspondence. It does
 not change public-source review dates or domain clock/reference fields.
+
+## Graphical abstract
+
+`graphical_abstract.yaml` pins the dates and actor labels of selected public instruments and roles. It distinguishes court opinions, a patent, and an agreement.

@@ -37,6 +37,9 @@ def test_template_hydration_writes_resolved_manuscript_tree(tmp_path):
 
     write_resolved_manuscript_tree(project, variables)
 
+    opening = project / "output" / "manuscript" / "00_abstract.md"
+    assert opening.read_text().count("graphical_abstract_v1.png") == 1
+
     rendered = project / "output" / "manuscript" / "11_methods.md"
     text = rendered.read_text(encoding="utf-8")
     assert "{{" not in text
