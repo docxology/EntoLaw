@@ -56,11 +56,16 @@ def test_every_cited_key_exists_and_is_used():
     assert len(cited) >= 30
 
 
-def test_citation_date_visualization_covers_every_bibliography_key():
+def test_citation_date_visualization_accounts_for_dated_and_undated_sources():
     bib = mv.bibtex_key_inventory(MANUSCRIPT / "references.bib")
     entries = bibliography_dates(MANUSCRIPT / "references.bib")
     dated = {entry.key for entry in entries}
-    assert dated == bib
+    # An effective or signature date must not become a publication year.
+    undated = bib - dated
+    assert undated == {"depth_phsmou"}
+    bodies = _bib_entry_types_and_bodies()
+    assert all("year={n.d.}" in bodies[key][1] for key in undated)
+    assert dated.isdisjoint(undated) and dated | undated == bib
     assert any(entry.year < 1700 for entry in entries)
     assert any(entry.year < 2000 for entry in entries)
     assert {

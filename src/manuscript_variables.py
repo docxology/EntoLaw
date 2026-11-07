@@ -39,6 +39,16 @@ from . import (
 from .figure_caption_records import FIGURE_CAPTIONS
 
 
+def _coding_review_requested(project_root: Path) -> bool:
+    """Require the project declaration; let generic roots opt in explicitly."""
+    declaration = project_root / "config" / "coding_review.yaml"
+    return (
+        project_root.resolve() == Path(__file__).resolve().parents[1]
+        or declaration.exists()
+        or declaration.is_symlink()
+    )
+
+
 def generate_variables(project_root: Path) -> dict[str, str]:
     """Generate the full manuscript variable set."""
     from . import claim_ledger
@@ -137,7 +147,8 @@ def generate_variables(project_root: Path) -> dict[str, str]:
     variables["PUBLICATION_VERSION"] = pub.get("version", "")
     variables["PUBLICATION_LICENSE"] = pub.get("license", "")
 
-    variables.update(coding_review_variables(analyze_coding_review(project_root)))
+    if _coding_review_requested(project_root):
+        variables.update(coding_review_variables(analyze_coding_review(project_root)))
     return variables
 
 
@@ -160,7 +171,8 @@ def compute_and_save(project_root: Path) -> tuple[dict[str, str], Path]:
     two outputs cannot silently drift apart.
     """
     variables = generate_variables(project_root)
-    variables["CODING_REVIEW_FIGURES"] = coding_review_figures_block(project_root)
+    if _coding_review_requested(project_root):
+        variables["CODING_REVIEW_FIGURES"] = coding_review_figures_block(project_root)
     out_path = project_root / "output" / "data" / "manuscript_variables.json"
     save_variables(variables, out_path)
     return variables, out_path

@@ -75,9 +75,9 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "registered legal role. This mixed frame includes judicial decisions, "
             "an administrative patent appeal and an issued patent. Read as: "
             "composition of the selected registry, not litigation rates or "
-            "doctrinal prevalence. Different instrument types require separate "
-            "legal-effect analysis. Provenance: `src/cases.py` via `src.metrics`. "
-            "An empty role is no evidence that relevant law or records do not exist."
+            "doctrinal prevalence. Why it matters: different instrument types require "
+            "separate legal-effect analysis. Provenance: `src/cases.py` via `src.metrics`. "
+            "Caveat: an empty role is no evidence that relevant law or records do not exist."
         ),
         alt_text="Bar chart of curated case and patent entry counts by legal role.",
         provenance="Generated from `src/cases.py` through `src.metrics`.",
@@ -89,9 +89,9 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
         title="Registered entries by jurisdiction",
         manuscript_caption=(
             "The selected case and patent entries by their declared jurisdiction, "
-            "including court systems and the U.S. patent system. Read as registry "
-            "composition: an issued patent and a court judgment are not equivalent "
-            "legal acts. No frequency of litigation or common rule is inferred "
+            "including court systems and the U.S. patent system. Read as: registry "
+            "composition; an issued patent and a court judgment are not equivalent "
+            "legal acts. Why it matters: no frequency of litigation or common rule is inferred "
             "from this grouping. Provenance: `src/cases.py`. Caveat: the selected "
             "frame supplies neither an exhaustive doctrinal census nor a uniform "
             "judicial-holding denominator."
@@ -240,7 +240,9 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "list. Provenance: `docs/manuscript/references.bib` parsed by "
             "`legal_informatics.viz_citation_dates`. Caveat: the date is the bibliography "
             "year, so modern editions appear at edition date unless the "
-            "bibliography declares a source-date anchor."
+            "bibliography declares a source-date anchor. The PHS-DuPont memorandum "
+            "has no stated publication year; it stays n.d. in the bibliography "
+            "and is not placed on the date axis."
         ),
         alt_text=(
             "Multi-panel chart showing citation counts by date band and every "
