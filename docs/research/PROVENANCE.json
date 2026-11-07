@@ -3,12 +3,14 @@
   "purpose": "Local file-pin custody manifest for the declared research resources.",
   "scope": "Digests bind the local resource declarations, not unretained external website bytes or new source readings.",
   "files": {
-    "README.md": "bd242f4ffbc0897d38a17b9101bab08237540bedddad6aa12bc090aa6dafc752",
-    "methods_sources.yaml": "30f2c6676b800eaea0ba06a8c55b7e44644b1f8775981ffd75fd91002fb86cd0",
+    "README.md": "c23c8f3d861a782ebcc265f6ea9edcd7bc3ce6c8ed8dee3c107e32d78c0c39c4",
+    "methods_sources.yaml": "83d59564d0b052c97f85350d3dd391519ea1faa2091d006ef18d9825e0da78fd",
     "records_access_playbook.md": "18a345f2cb2b30235da6b8fb86dd436332e713a7a8c41dbca6d9ee7f6d4c9c96",
     "rhetorical_codebook.md": "8cee754c1cf7ff7ea389bffbd09f252db17bf5b811890010da7d55b6e2684cfc",
-    "statistical_protocol.md": "cf62263fd71ac87f819ebcb482e8bbd93de056dcd49ff095893dfcd91ab34109"
+    "statistical_protocol.md": "cf62263fd71ac87f819ebcb482e8bbd93de056dcd49ff095893dfcd91ab34109",
+    "depth_readings.json": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+    "instrument_readings.json": "8a2706f0556d8f55c124b52076f4fd559a3ac79d42210e6cff403c99d4a45209"
   },
   "public_source_bytes_retained": false,
-  "external_source_verification": "not_performed"
+  "external_source_verification": "New targeted public readings are individually declared in depth_readings.json; original source dates and reading limits remain unchanged. No full public-source bytes retained."
 }

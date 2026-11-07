@@ -116,8 +116,8 @@ INSTITUTIONS: tuple[Institution, ...] = (
         name="California Department of Fish and Wildlife",
         acronym="CDFW",
         role="protected",
-        function="Administers the California Endangered Species Act, whose "
-        "'fish' definition reaches invertebrates after Almond Alliance.",
+        function="Administers CESA; Almond Alliance interprets its statutory "
+        "fish category to permit terrestrial-invertebrate eligibility.",
     ),
     Institution(
         slug="epa_opp",

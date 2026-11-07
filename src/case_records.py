@@ -97,10 +97,9 @@ CASES: tuple[Case, ...] = (
         year=2019,
         jurisdiction="U.S. state court",
         role="witness",
-        holding="A conviction stands despite a celebrated 2002 'battle of five "
-        "entomologists' over the post-mortem interval.",
-        significance="The field's cautionary tale: when qualified experts "
-        "diverge by ten or more days, a jury may discard the entomology entirely.",
+        holding="The judgment was affirmed; the defense relied on entomological evidence.",
+        significance="The targeted opinion opening establishes the disposition, "
+        "not how jurors weighed expert disagreements or the validity of a field.",
     ),
     Case(
         slug="truscott",
@@ -162,10 +161,10 @@ CASES: tuple[Case, ...] = (
         year=2022,
         jurisdiction="U.S. state court",
         role="protected",
-        holding='Bumblebees are "fish" under Fish & Game Code § 45 because that '
-        'definition includes "invertebrate," allowing CESA listing.',
-        significance="The single most-cited 'insect is a fish' holding; links "
-        "conservation law to the definitional question that recurs field-wide.",
+        holding="Terrestrial invertebrates can qualify for CESA listing under statutory fish definitions.",
+        significance="Statutory eligibility and candidate-designation authority "
+        "depend on CESA requirements; this is not biological classification or "
+        "a finding of current listing.",
     ),
     # ── Property / common law of bees and specimens ────────────────────────
     Case(
@@ -258,8 +257,8 @@ CASES: tuple[Case, ...] = (
         year=1988,
         jurisdiction="U.S. Patent",
         role="invention",
-        holding="A transgenic non-human mammal is a valid patented invention.",
-        significance="Confirmed the patentability of engineered animals, the "
-        "regime within which GM and sterile-insect lines sit.",
+        holding="The patent issued with claims to a specified transgenic non-human mammal.",
+        significance="An issued patent is distinct from a judicial validity "
+        "holding; claim scope must not be generalized to every engineered animal.",
     ),
 )

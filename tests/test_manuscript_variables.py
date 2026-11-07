@@ -125,3 +125,75 @@ def test_core_acronyms_are_defined_in_manuscript():
 def test_pdf_preamble_uses_narrower_side_margins():
     preamble = (MANUSCRIPT / "preamble.md").read_text(encoding="utf-8")
     assert "\\geometry{left=0.55in,right=0.55in,top=0.65in,bottom=0.65in}" in preamble
+
+
+def test_located_coding_units_reject_actual_registry_source_drift(tmp_path):
+    # Given the actual closed declaration, source summaries and local passage copies.
+    import shutil
+    import pytest
+    from legal_informatics.coding_review import analyze_coding_review
+    for relative in ("config/coding_review.yaml", "src/case_records.py",
+                     "docs/research/instrument_readings.json"):
+        path = tmp_path / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(PROJECT_ROOT / relative, path)
+    actual = analyze_coding_review(tmp_path)
+    assert not actual.declaration.reviewers
+    assert not actual.declaration.judgments
+    assert not actual.agreement
+    assert {row.anchor.kind for row in actual.units} == {"declared_summary", "primary_passage_copy"}
+    path = tmp_path / "src/case_records.py"
+    path.write_text(path.read_text() + "\n")
+    # When copied source bytes drift, then the real configured selectors refuse.
+    with pytest.raises(ValueError):
+        analyze_coding_review(tmp_path)
+
+
+def test_explicit_coding_opt_in_rejects_changed_real_source_before_save(tmp_path):
+    import shutil
+    import pytest
+    from legal_informatics.coding_review import build_coding_review
+
+    for relative in ("config/coding_review.yaml", "src/case_records.py",
+                     "docs/research/instrument_readings.json"):
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(PROJECT_ROOT / relative, target)
+    build_coding_review(tmp_path)
+    variables, output = mv.compute_and_save(tmp_path)
+    assert "CODING_REVIEW_METHODS" in variables
+    previous = output.read_bytes()
+    source = tmp_path / "src/case_records.py"
+    source.write_bytes(source.read_bytes() + b"\n")
+    with pytest.raises(ValueError):
+        mv.compute_and_save(tmp_path)
+    assert output.read_bytes() == previous
+
+
+def test_actual_copied_project_requires_its_coding_declaration(tmp_path):
+    import os
+    import shutil
+    import subprocess
+    import sys
+
+    source_root = tmp_path / "src"
+    source_root.mkdir()
+    for source in (PROJECT_ROOT / "src").glob("*.py"):
+        shutil.copy2(source, source_root / source.name)
+    config_root = tmp_path / "config"
+    config_root.mkdir()
+    # These real declarations are required while importing the copied modules.
+    for name in ("alias_registry.yaml", "manuscript_variables.yaml"):
+        shutil.copy2(PROJECT_ROOT / "config" / name, config_root / name)
+    env = dict(os.environ)
+    env["PYTHONPATH"] = str(tmp_path) + os.pathsep + env.get("PYTHONPATH", "")
+    completed = subprocess.run(
+        [sys.executable, "-B", "-c",
+         "from pathlib import Path; from src.manuscript_variables import compute_and_save; "
+         "compute_and_save(Path.cwd())"],
+        cwd=tmp_path, env=env, stdin=subprocess.DEVNULL,
+        capture_output=True, text=True, timeout=30, check=False,
+    )
+    assert completed.returncode != 0
+    assert "AnalysisError" in completed.stderr
+    assert not (tmp_path / "output/data/manuscript_variables.json").exists()

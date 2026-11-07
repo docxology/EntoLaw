@@ -27,6 +27,12 @@ steps:
   - name: public-boundary
     argv: ['{python}', scripts/check_release_boundary.py]
     timeout: 180
+  - name: coding-review
+    argv: ['{python}', ../../Private/legal_informatics/scripts/build_coding_review.py, --project-root, .]
+    timeout: 180
+  - name: coding-review-check
+    argv: ['{python}', ../../Private/legal_informatics/scripts/build_coding_review.py, --project-root, ., --check]
+    timeout: 180
   - name: hydrate
     argv: ['{python}', scripts/z_generate_manuscript_variables.py]
     timeout: 180

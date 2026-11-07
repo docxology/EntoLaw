@@ -69,40 +69,36 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
     FigureCaption(
         slug="cases_by_role",
         anchor="fig:cases_by_role",
-        title="Registered cases by legal role",
+        title="Registered entries by legal role",
         manuscript_caption=(
-            "The {CASE_COUNT} registered decisions grouped by the legal role of "
-            "the insect; {ROLES_WITH_CASE_LAW} of {ROLE_COUNT} roles carry "
-            "modern reporter case law, while the defendant, welfare, and weapon "
-            "roles are history- and statute-driven. Read as: litigation is "
-            "concentrated where insects enter court as evidence, property, or "
-            "regulated biological facts. Why it matters: it separates "
-            "litigated doctrine from roles that are legally important but less "
-            "case-law dense. Provenance: `src/cases.py` via `src.metrics`. "
-            "Caveat: only citation-parseable decisions are "
-            "encoded here."
+            "The {CASE_COUNT} curated case and patent entries grouped by their "
+            "registered legal role. This mixed frame includes judicial decisions, "
+            "an administrative patent appeal and an issued patent. Read as: "
+            "composition of the selected registry, not litigation rates or "
+            "doctrinal prevalence. Why it matters: different instrument types require "
+            "separate legal-effect analysis. Provenance: `src/cases.py` via `src.metrics`. "
+            "Caveat: an empty role is no evidence that relevant law or records do not exist."
         ),
-        alt_text="Bar chart of case counts per legal role.",
+        alt_text="Bar chart of curated case and patent entry counts by legal role.",
         provenance="Generated from `src/cases.py` through `src.metrics`.",
-        caveat="History-driven roles intentionally show zero modern cases.",
+        caveat="Mixed selected instrument frame, not a census of judicial holdings.",
     ),
     FigureCaption(
         slug="cases_by_jurisdiction",
         anchor="fig:cases_by_jurisdiction",
-        title="Registered cases by jurisdiction",
+        title="Registered entries by jurisdiction",
         manuscript_caption=(
-            "The registered case law by issuing court system, spanning the U.S. "
-            "Supreme Court, federal appellate and state courts, England & Wales, "
-            "Canada, and the U.S. patent system. Read as: the field is "
-            "jurisdictionally scattered, so doctrine develops through examples "
-            "rather than a single appellate line. Why it matters: the field "
-            "has to be assembled comparatively, not read from one reporter "
-            "series. Provenance: `src/cases.py`. Caveat: a curated leading-case "
-            "set, not a census of all decisions."
+            "The selected case and patent entries by their declared jurisdiction, "
+            "including court systems and the U.S. patent system. Read as: registry "
+            "composition; an issued patent and a court judgment are not equivalent "
+            "legal acts. Why it matters: no frequency of litigation or common rule is inferred "
+            "from this grouping. Provenance: `src/cases.py`. Caveat: the selected "
+            "frame supplies neither an exhaustive doctrinal census nor a uniform "
+            "judicial-holding denominator."
         ),
-        alt_text="Bar chart of case counts per jurisdiction.",
+        alt_text="Bar chart of curated case and patent entry counts by declared jurisdiction.",
         provenance="Generated from `src/cases.py`.",
-        caveat="Curated leading cases; not exhaustive.",
+        caveat="Declared jurisdiction groups contain different instrument types.",
     ),
     FigureCaption(
         slug="statutes_by_category",
@@ -244,7 +240,9 @@ FIGURE_CAPTIONS: tuple[FigureCaption, ...] = (
             "list. Provenance: `docs/manuscript/references.bib` parsed by "
             "`legal_informatics.viz_citation_dates`. Caveat: the date is the bibliography "
             "year, so modern editions appear at edition date unless the "
-            "bibliography declares a source-date anchor."
+            "bibliography declares a source-date anchor. The PHS-DuPont memorandum "
+            "has no stated publication year; it stays n.d. in the bibliography "
+            "and is not placed on the date axis."
         ),
         alt_text=(
             "Multi-panel chart showing citation counts by date band and every "

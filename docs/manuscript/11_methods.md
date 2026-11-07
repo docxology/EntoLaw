@@ -6,7 +6,7 @@ This reference is built so that the map and the evidence cannot drift apart. All
 
 ## Token closure: every count comes from code
 
-Every magnitude-bearing number in this prose is a double-brace token (a `TOKEN` wrapped in doubled braces) resolved at build time by `src.manuscript_variables.generate_variables`. The closure test asserts that every token referenced in the manuscript is generated and that the generator emits no orphan, so a registry edit that changes a count (say, adding a case) updates the prose automatically, and a hand-typed count that drifts from its registry fails the build. The {{STATUTE_COUNT}} statutes span {{JURISDICTION_COUNT}} jurisdictions, shown in the statutes-by-jurisdiction figure; that number, like the {{CASE_COUNT}} cases and the {{FIGURE_COUNT}} figures, is generated, never typed.
+Every magnitude-bearing number in this prose is a double-brace token (a `TOKEN` wrapped in doubled braces) resolved at build time by `src.manuscript_variables.generate_variables`. The closure test asserts that every token referenced in the manuscript is generated and that the generator emits no orphan, so a registry edit that changes a count (say, adding a case) updates the prose automatically, and a hand-typed count that drifts from its registry fails the build. The {{STATUTE_COUNT}} statutes span {{JURISDICTION_COUNT}} jurisdictions, shown in the statutes-by-jurisdiction figure; that number, like the {{CASE_COUNT}} registry entries and the {{FIGURE_COUNT}} registered inventory figures, is generated, never typed.
 
 ![{{FIGURE_CAPTION_STATUTES_BY_JURISDICTION}}](../output/figures/statutes_by_jurisdiction.png){#fig:statutes_by_jurisdiction width=80%}
 
@@ -73,3 +73,60 @@ rule separately distinguishes administrative and adjudicative records
 proceeding and the court file itself are different acquisition questions. The
 public-source ledger retains current-law retrieval limits, and every request
 plan requires human jurisdiction and scope review before any correspondence.
+
+## Instrument type changes the proposition being tested
+
+A patent grant, an appellate disposition and a statutory eligibility ruling
+are different legal acts. The selected new primary readings are recorded in
+`docs/research/instrument_readings.json`, with host, exact reviewed extent and
+retrieval failures. No full opinion reading or present legal status is inferred
+from those targeted passages.
+
+The OncoMouse patent's front page and claim show an issued instrument and a
+bounded claimed invention, not a judicial ruling that the patent is valid
+[@depth_oncomouse]. The historical PHS agreement identifies patent-related use
+and transfer terms; it is not a current license or validity judgment
+[@depth_phsmou]. The research discriminator is the particular claim, file history
+or agreement and its operative period, rather than a biological category alone.
+
+Westerfield's opening states affirmance and describes the defense's reliance on
+entomological evidence [@depth_westerfield]. That supports the disposition, not
+the former registry inference that a jury discarded a field of expertise. A
+stronger account would require the opinion's actual issue analysis and the
+trial record: what inference was offered, what assumptions were disputed, and
+what ruling resolved which objection. The source selection does not establish
+how jurors reasoned or a general error rate for entomology.
+
+Almond Alliance's introduction and conclusion address eligibility under CESA's
+statutory definitions and listing requirements [@depth_almond]. That does not
+make a universal biological classification or establish a species' current
+listing. The primary opinion was read from the Stanford law clinic's copy;
+the official opinion endpoint was unavailable. Its original disposition is
+distinguished from later treatment, which this targeted reading does not verify.
+
+| Research question | Discriminating evidence | Limit on access or inference |
+| --- | --- | --- |
+| Was an expert inference admitted and on what ground? | Issue, ruling, record citation and alternative explanation | A court file is not a federal-agency FOIA file |
+| What does a patent instrument claim? | Exact claim, specification, prosecution and cited instrument version | Issuance alone is no judicial validity finding |
+| Why did a listing decision cover a taxon? | Statutory definition, eligibility reasoning and separate listing record | Eligibility is not biological identity or current listing |
+| Did an agency use a patented research tool? | A dated agreement, institutional record and custodian linkage | A historical public agreement proves no present agency holding |
+
+No request is sent and no record's existence is presumed. Any justified
+correspondence remains DRAFT — NOT SENT pending human scope and custodian review.
+
+## A prospective review of legal propositions
+
+{{CODING_REVIEW_METHODS}}
+
+The operational definitions below are project-designed. Agreement and validity
+are separate questions [@artstein2008]. The selected units mix authored registry
+summaries with explicitly copied primary passages; they must retain those source
+kinds when reviewed. No coder, independent session or judgment is supplied.
+
+{{CODING_REVIEW_CODEBOOK}}
+
+{{CODING_REVIEW_UNITS}}
+
+{{CODING_REVIEW_RESULTS}}
+
+{{CODING_REVIEW_FIGURES}}

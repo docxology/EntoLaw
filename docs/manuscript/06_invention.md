@@ -1,10 +1,10 @@
 # The Insect as Invention and Product: Biotech, Food, Feed, and Silk {#sec:invention}
 
-The newest frontier: insects deliberately engineered, patented, farmed, and eaten. The registry pins {{INVENTION_CASE_COUNT}} foundational decisions and {{INVENTION_SPECIES_COUNT}} taxa to this role, from the Oxitec mosquito to the house cricket, the yellow mealworm, the black soldier fly, and the silkworm.
+The newest frontier: insects deliberately engineered, patented, farmed, and eaten. The registry pins {{INVENTION_CASE_COUNT}} case and patent entries and {{INVENTION_SPECIES_COUNT}} taxa to this role, from the Oxitec mosquito to the house cricket, the yellow mealworm, the black soldier fly, and the silkworm.
 
 ## Patents for engineered living things
 
-Since *Diamond v. Chakrabarty*, cited at {{CHAKRABARTY_CITATION}}, living organisms are patentable subject matter — "anything under the sun that is made by man" [@chakrabarty1980]. *Ex parte Allen* extended this to multicellular animals [@exparteallen1987], and the Harvard OncoMouse confirmed it for whole engineered animals [@oncomouse1988]. Insects sit squarely within this regime — genetically modified and sterile-insect lines, hundreds of *Bacillus thuringiensis* patents, silk inventions, and a fast-growing insect-biomimicry sector — bounded only by the statutory bar on patenting humans.
+The registry anchors this role in *Diamond v. Chakrabarty*, cited at {{CHAKRABARTY_CITATION}}, and *Ex parte Allen* [@chakrabarty1980; @exparteallen1987]. The Harvard OncoMouse patent supplies an issued claim to a specified transgenic non-human mammal [@depth_oncomouse]. That grant is not a judicial validity ruling and cannot alone establish an insect invention's eligibility, validity or claim coverage. The particular claim, instrument and jurisdiction require examination; a category label cannot replace that analysis.
 
 ## Engineered mosquitoes and gene drives
 

@@ -269,9 +269,9 @@ STATUTES: tuple[Statute, ...] = (
         category="conservation",
         jurisdiction="US-state",
         role="protected",
-        summary="Defines 'fish' to include invertebrates — the hook on which "
-        "Almond Alliance held that bumblebees are 'fish' eligible for CESA "
-        "listing.",
+        summary="Defines 'fish' to include invertebrates. Almond Alliance "
+        "interprets that statutory category to permit terrestrial-invertebrate "
+        "CESA eligibility, subject to the other listing requirements.",
     ),
     Statute(
         slug="co_invertebrate_conservation",

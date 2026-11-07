@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "Selected public-domain instrument excerpts with targeted-reading locators. Website source bytes are not retained, hashed or claimed currently retrievable; these are explicitly local passage copies.",
+  "readings": [
+    {
+      "id": "depth_westerfield",
+      "source_url": "https://www.courts.ca.gov/opinions/archive/S112691.PDF",
+      "reviewed_on": "2026-11-06",
+      "locator": "Printed page 1; the reviewed opening's disposition only.",
+      "excerpt": "We affirm the judgment in its entirety.",
+      "source_bytes_retained": false,
+      "limits": "Targeted opening only. No full issue analysis, trial transcript or inference about actual jury reasoning was reviewed."
+    },
+    {
+      "id": "depth_almond",
+      "source_url": "https://law.stanford.edu/wp-content/uploads/2022/06/2022-05-31-Almond-Alliance-Opinion.pdf",
+      "reviewed_on": "2026-11-06",
+      "locator": "Printed page 35; line wrapping normalized, no words added.",
+      "excerpt": "the Commission may list any invertebrate as an endangered or threatened species under 2062 and 2067, if the invertebrate meets the requirements of those statutes",
+      "source_bytes_retained": false,
+      "limits": "Official court endpoints returned 403. The counsel-hosted original opinion does not verify later treatment, current listing or a universal biological classification."
+    },
+    {
+      "id": "depth_oncomouse",
+      "source_url": "https://patentimages.storage.googleapis.com/76/f3/a5/16327b79a973e5/US4736866.pdf",
+      "reviewed_on": "2026-11-06",
+      "locator": "Front-page title only; not a judicial holding or a complete claim.",
+      "excerpt": "TRANSGENIC NON-HUMAN MAMMALS",
+      "source_bytes_retained": false,
+      "limits": "Official USPTO endpoint returned 403. No prosecution-history, validity adjudication, present enforceability or current license reading."
+    }
+  ]
+}

@@ -147,7 +147,7 @@
       "witness_role_registry",
       "case_registry"
     ],
-    "why_triggered": "The cases registry registers the Frye-to-Kumho gatekeeping line and the state-court PMI-testimony affirmances (Auker) and divergences (Westerfield). Admissibility in any new matter depends on the jurisdiction's test, the expert's method, and the record of error-rate and acceptance — all review questions.",
+    "why_triggered": "The cases registry registers the Frye-to-Kumho gatekeeping line and state-court PMI testimony (Auker) and the appellate disposition in Westerfield. Admissibility in any new matter depends on the jurisdiction's test, the expert's method, and the record of error-rate and acceptance — all review questions.",
     "missing_facts": [
       "governing admissibility test per jurisdiction",
       "expert qualifications and method validation",
