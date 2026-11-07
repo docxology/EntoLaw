@@ -66,6 +66,19 @@
       "review_status": "targeted_primary_source_reading",
       "verified_on": "2026-11-06",
       "retained_source_bytes": false
+    },
+    {
+      "id": "nas2009_targeted_scope",
+      "title": "Strengthening Forensic Science in the United States: A Path Forward",
+      "creator": "National Research Council",
+      "publication": "The National Academies Press (2009), DOI 10.17226/12589",
+      "url": "https://nap.nationalacademies.org/skim.php?chap=111-126&record_id=12589",
+      "review_status": "targeted_primary_publisher_extract_review",
+      "reviewed_locator": "Publisher algorithmically selected Chapter Skim page extracts at printed pages 116, 118, 122 and 124, reviewed in the campaign source-review lane. Consumer inspected the official project description and reader headings; its direct skim retrieval was rate-limited.",
+      "supports": "Method-specific validation and performance, identification and assessment of error, peer review and bias require attention; biological grounding alone supplies no comparative validation ranking.",
+      "limits": "Selected machine-read page extracts, not a complete chapter or report. No comparative entomology ranking, current field-wide validation state or compliance survey was verified. No original website bytes retained.",
+      "verified_on": "2026-11-06",
+      "retained_source_bytes": false
     }
   ],
   "limits": "Targeted public readings only; exact website bytes are not retained or hashed. Prior verification dates are unchanged."
