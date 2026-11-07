@@ -9,3 +9,14 @@ Files: `00_abstract.md`, `01_introduction.md`, `02_witness.md`, `03_threat.md`, 
 
 ## Usage
 - See `EntoLaw/README.md` for how this directory is produced and used.
+
+## Opening graphical abstract
+
+Before hydration, run the sibling engine commands through the qualified offline runner from this project with its locked Python.
+
+```text
+../../Private/legal_informatics/scripts/build_graphical_abstract.py --project-root .
+../../Private/legal_informatics/scripts/build_graphical_abstract.py --project-root . --check
+```
+
+The current local gate runs both steps before hydration. The opening chapter links to the verified figure and provides the dated instrument and entity evidence in text.

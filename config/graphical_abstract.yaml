@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "title": "Entomological law across instruments and roles",
+  "scope": "A selected chronology and entity index from the public case, patent, agreement and legal-role reading layers. The mammal patent is an analogy.",
+  "limit": "The dates and actor labels describe curated records and leave biological categories, method validity and current legal treatment outside scope.",
+  "lanes": [
+    {
+      "id": "instrument",
+      "label": "Patent and agreement"
+    },
+    {
+      "id": "opinion",
+      "label": "Court opinions"
+    }
+  ],
+  "categories": [
+    {
+      "id": "court",
+      "label": "Courts"
+    },
+    {
+      "id": "actors",
+      "label": "Agreement parties"
+    },
+    {
+      "id": "roles",
+      "label": "Registry roles"
+    }
+  ],
+  "events": [
+    {
+      "id": "patent",
+      "label": "Transgenic-mammal patent issued",
+      "lane": "instrument",
+      "date": "1988-04-12",
+      "date_basis": "reported",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/1/publication",
+        "start": 21,
+        "end": 42,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "mou",
+      "label": "PHS and DuPont agreement effective",
+      "lane": "instrument",
+      "date": "1999-07-01",
+      "date_basis": "reported",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/2/publication",
+        "start": 21,
+        "end": 43,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "westerfield",
+      "label": "Westerfield appellate opinion",
+      "lane": "opinion",
+      "date": "2019-02-04",
+      "date_basis": "reported",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/3/publication",
+        "start": 0,
+        "end": 30,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "almond",
+      "label": "Almond Alliance appellate opinion",
+      "lane": "opinion",
+      "date": "2022-05-31",
+      "date_basis": "reported",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/4/publication",
+        "start": 0,
+        "end": 35,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "cal-sc",
+      "label": "Supreme Court of California",
+      "category": "court",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/3/creator",
+        "start": 0,
+        "end": 27,
+        "role": "context",
+        "kind": "metadata"
+      }
+    },
+    {
+      "id": "cal-ca",
+      "label": "California Court of Appeal",
+      "category": "court",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/4/creator",
+        "start": 0,
+        "end": 26,
+        "role": "context",
+        "kind": "metadata"
+      }
+    },
+    {
+      "id": "phs",
+      "label": "U.S. Public Health Service",
+      "category": "actors",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/2/creator",
+        "start": 0,
+        "end": 26,
+        "role": "context",
+        "kind": "metadata"
+      }
+    },
+    {
+      "id": "dupont",
+      "label": "DuPont",
+      "category": "actors",
+      "source_label": "Targeted public reading ledger",
+      "anchor": {
+        "source": "docs/research/depth_readings.json",
+        "sha256": "a476830defb828bf776f5e5f1619b3a5a727055d31a9586dc8cc7eb2a6ea92d5",
+        "pointer": "/readings/2/creator",
+        "start": 31,
+        "end": 67,
+        "role": "context",
+        "kind": "metadata"
+      }
+    },
+    {
+      "id": "witness",
+      "label": "Witness / evidence",
+      "category": "roles",
+      "source_label": "Public role registry",
+      "anchor": {
+        "source": "src/roles.py",
+        "sha256": "c3d0e470bcf6742d3a0e78d8c187892d0c87b9641a5bcd5ee3bf8c8f1422a479",
+        "pointer": "",
+        "start": 1708,
+        "end": 1734,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "protection",
+      "label": "Protected subject",
+      "category": "roles",
+      "source_label": "Public role registry",
+      "anchor": {
+        "source": "src/roles.py",
+        "sha256": "c3d0e470bcf6742d3a0e78d8c187892d0c87b9641a5bcd5ee3bf8c8f1422a479",
+        "pointer": "",
+        "start": 2137,
+        "end": 2162,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    },
+    {
+      "id": "invention",
+      "label": "Invention / product",
+      "category": "roles",
+      "source_label": "Public role registry",
+      "anchor": {
+        "source": "src/roles.py",
+        "sha256": "c3d0e470bcf6742d3a0e78d8c187892d0c87b9641a5bcd5ee3bf8c8f1422a479",
+        "pointer": "",
+        "start": 2589,
+        "end": 2616,
+        "role": "context",
+        "kind": "declared_summary"
+      }
+    }
+  ]
+}
