@@ -7,7 +7,7 @@
 
 ## Layout
 Subfolders: `workflows/`
-Files: `AGENTS.md`, `README.md`
+Files: `AGENTS.md`, `GITHUB.md`
 
 ## Kind
 - Category: **misc**. 
