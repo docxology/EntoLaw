@@ -8,4 +8,4 @@ Part of `EntoLaw/.github`.
 Files: `AGENTS.md`, `README.md`, `ci.yml`
 
 ## Usage
-- See `EntoLaw/.github/README.md` for how this directory is produced and used.
+- See `EntoLaw/.github/GITHUB.md` for how this directory is produced and used.
