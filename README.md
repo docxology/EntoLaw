@@ -13,6 +13,8 @@ larger field map could add. It binds those roles to a machine-readable
 registry of cases, statutes, species, institutions, historical milestones, and
 cross-domain interconnections.
 
+![Entomological Law field map: insects as evidence, threat, property, product, patient and weapon, with the registered roles in this release](output/figures/cover.png)
+
 It is built on the research-template's two-layer, thin-orchestrator,
 claim-sourced pattern: all domain knowledge lives in source-of-truth registries
 under `src/`, every count in the
