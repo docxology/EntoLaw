@@ -112,6 +112,20 @@ def test_pinned_github_action_sha_is_not_a_false_positive(tmp_path):
     assert findings == []
 
 
+def test_deterministic_pdf_trailer_id_is_not_a_false_positive(tmp_path):
+    """The template's pinned PDF /ID lines carry a 32-hex document identifier, not a key."""
+    doc_id = "".join(f"{(i * 5) % 16:x}" for i in range(32))
+    lines = [
+        f"\\special{{pdf:trailerid [ <{doc_id}> <{doc_id}> ]}}",
+        f"\\pdftrailer{{/ID [ <{doc_id}> <{doc_id}> ]}}",
+        f"\\pdfvariable trailerid {{[ <{doc_id}> <{doc_id}> ]}}",
+    ]
+    (tmp_path / "doc.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    assert crb.scan_paths([tmp_path / "doc.tex"], tmp_path, PUBLIC_EMAIL) == []
+    (tmp_path / "loose.tex").write_text(f"token <{doc_id}>\n", encoding="utf-8")
+    assert any("hex token" in f for f in crb.scan_paths([tmp_path / "loose.tex"], tmp_path, PUBLIC_EMAIL))
+
+
 def test_non_public_email_is_caught(tmp_path):
     other_email = _join("someoneelse", "@example.com")
     (tmp_path / "notes.md").write_text(f"cc: {other_email}\n", encoding="utf-8")

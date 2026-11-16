@@ -12,6 +12,7 @@ fails CI if any prose token is unbacked.
 from __future__ import annotations
 import hashlib
 import json
+import os
 import platform
 import re
 from datetime import datetime, timezone
@@ -136,9 +137,9 @@ def generate_variables(project_root: Path) -> dict[str, str]:
 
     # ── Provenance ─────────────────────────────────────────────────────────
     variables["CONFIG_HASH"] = _config_hash(project_root)
-    variables["GENERATION_TIMESTAMP"] = datetime.now(timezone.utc).strftime(
-        "%Y-%m-%dT%H:%M:%SZ"
-    )
+    epoch = build_epoch(project_root)
+    stamp = "N/A" if epoch is None else datetime.fromtimestamp(epoch, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    variables["GENERATION_TIMESTAMP"] = stamp
     variables["PYTHON_VERSION"] = receipt_python_version(project_root)
     variables["PLATFORM"] = f"{platform.system()} {platform.machine()}"
 
@@ -182,6 +183,26 @@ def compute_and_save(project_root: Path) -> tuple[dict[str, str], Path]:
     out_path = project_root / "output" / "data" / "manuscript_variables.json"
     save_variables(variables, out_path)
     return variables, out_path
+
+
+def build_epoch(project_root: Path, environ: dict[str, str] | None = None) -> int | None:
+    """Reproducible build epoch (UTC seconds): numeric ``SOURCE_DATE_EPOCH`` first, else the
+    declared ``paper.date`` in ``docs/manuscript/config.yaml``; ``None`` without that config.
+    Never the wall clock, so clean builds of one commit are byte-identical."""
+    raw = (os.environ if environ is None else environ).get("SOURCE_DATE_EPOCH", "").strip()
+    if raw:
+        if not raw.isdigit():
+            raise ValueError(f"SOURCE_DATE_EPOCH must be non-negative integer seconds, got {raw!r}")
+        return int(raw)
+    config_path = project_root / "docs" / "manuscript" / "config.yaml"
+    if not config_path.is_file():
+        return None
+    paper = (yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}).get("paper") or {}
+    declared = str(paper.get("date") or "").strip()
+    try:
+        return int(datetime.strptime(declared, "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp())
+    except ValueError as exc:
+        raise ValueError(f"paper.date must be YYYY-MM-DD in {config_path}, got {declared!r}") from exc
 
 
 def _config_hash(project_root: Path) -> str:

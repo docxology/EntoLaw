@@ -28,8 +28,10 @@
 gates:
   - command: uv run pytest tests/ -m "not live" --cov=src --cov-fail-under=90
     expect:
-      - '\d+ passed'
-      - '\d+ skipped'
+      # One pattern for the whole count summary: pytest omits "N skipped"
+      # entirely when nothing skips, so a separate skipped pattern would turn
+      # a zero-skip run into a FAILING gate. Duration is excluded.
+      - '\d+ passed(?:, \d+ skipped)?(?:, \d+ deselected)?'
       - 'Required test coverage of [\d.]+% reached\. Total coverage: [\d.]+%'
 
   - command: uv run ruff check src scripts tests

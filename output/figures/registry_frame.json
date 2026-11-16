@@ -1,0 +1,609 @@
+{
+  "schema_version": 1,
+  "unit": "curated_decision_or_patent_entry",
+  "frame": "src.case_records.CASES as encoded in this source revision",
+  "date_basis": "curated registry year; not an event or request date",
+  "denominator": 18,
+  "unit_ids": [
+    "case:frye",
+    "case:daubert",
+    "case:kumho_tire",
+    "case:auker",
+    "case:westerfield",
+    "case:truscott",
+    "case:amazon_usda",
+    "case:home_builders_babbitt",
+    "case:sweet_home",
+    "case:almond_alliance",
+    "case:case_of_swans",
+    "case:goff_kilts",
+    "case:kearry_pattinson",
+    "case:ferreira_dasaro",
+    "case:horsch_terminex",
+    "case:chakrabarty",
+    "case:ex_parte_allen",
+    "case:oncomouse"
+  ],
+  "display_fields": {
+    "group": "jurisdiction",
+    "status": "registered legal role"
+  },
+  "measures": [
+    {
+      "name": "group recorded",
+      "numerator": 18,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:frye",
+        "case:daubert",
+        "case:kumho_tire",
+        "case:auker",
+        "case:westerfield",
+        "case:truscott",
+        "case:amazon_usda",
+        "case:home_builders_babbitt",
+        "case:sweet_home",
+        "case:almond_alliance",
+        "case:case_of_swans",
+        "case:goff_kilts",
+        "case:kearry_pattinson",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex",
+        "case:chakrabarty",
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "group: Canada",
+      "numerator": 1,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:truscott"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "group: England & Wales",
+      "numerator": 2,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:case_of_swans",
+        "case:kearry_pattinson"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "group: U.S. Court of Appeals",
+      "numerator": 3,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:frye",
+        "case:amazon_usda",
+        "case:home_builders_babbitt"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "group: U.S. Patent",
+      "numerator": 2,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "group: U.S. Supreme Court",
+      "numerator": 4,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:daubert",
+        "case:kumho_tire",
+        "case:sweet_home",
+        "case:chakrabarty"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "group: U.S. state court",
+      "numerator": 6,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:auker",
+        "case:westerfield",
+        "case:almond_alliance",
+        "case:goff_kilts",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "status recorded",
+      "numerator": 18,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:frye",
+        "case:daubert",
+        "case:kumho_tire",
+        "case:auker",
+        "case:westerfield",
+        "case:truscott",
+        "case:amazon_usda",
+        "case:home_builders_babbitt",
+        "case:sweet_home",
+        "case:almond_alliance",
+        "case:case_of_swans",
+        "case:goff_kilts",
+        "case:kearry_pattinson",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex",
+        "case:chakrabarty",
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "status: invention",
+      "numerator": 3,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:chakrabarty",
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "status: property",
+      "numerator": 5,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:case_of_swans",
+        "case:goff_kilts",
+        "case:kearry_pattinson",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "status: protected",
+      "numerator": 3,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:home_builders_babbitt",
+        "case:sweet_home",
+        "case:almond_alliance"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "status: threat",
+      "numerator": 1,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:amazon_usda"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "status: witness",
+      "numerator": 6,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:frye",
+        "case:daubert",
+        "case:kumho_tire",
+        "case:auker",
+        "case:westerfield",
+        "case:truscott"
+      ],
+      "missing_ids": []
+    },
+    {
+      "name": "stage recorded",
+      "numerator": 0,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [],
+      "missing_ids": [
+        "case:frye",
+        "case:daubert",
+        "case:kumho_tire",
+        "case:auker",
+        "case:westerfield",
+        "case:truscott",
+        "case:amazon_usda",
+        "case:home_builders_babbitt",
+        "case:sweet_home",
+        "case:almond_alliance",
+        "case:case_of_swans",
+        "case:goff_kilts",
+        "case:kearry_pattinson",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex",
+        "case:chakrabarty",
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ]
+    },
+    {
+      "name": "registered_year recorded",
+      "numerator": 18,
+      "denominator": 18,
+      "unit": "units",
+      "observed_ids": [
+        "case:frye",
+        "case:daubert",
+        "case:kumho_tire",
+        "case:auker",
+        "case:westerfield",
+        "case:truscott",
+        "case:amazon_usda",
+        "case:home_builders_babbitt",
+        "case:sweet_home",
+        "case:almond_alliance",
+        "case:case_of_swans",
+        "case:goff_kilts",
+        "case:kearry_pattinson",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex",
+        "case:chakrabarty",
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ],
+      "missing_ids": []
+    }
+  ],
+  "cells": [
+    {
+      "jurisdiction": "Canada",
+      "role": "witness",
+      "count": 1,
+      "unit_ids": [
+        "case:truscott"
+      ]
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "threat",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "protected",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "property",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "invention",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "defendant",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "moral_patient",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "Canada",
+      "role": "weapon",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "witness",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "threat",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "protected",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "property",
+      "count": 2,
+      "unit_ids": [
+        "case:case_of_swans",
+        "case:kearry_pattinson"
+      ]
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "invention",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "defendant",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "moral_patient",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "England & Wales",
+      "role": "weapon",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "witness",
+      "count": 1,
+      "unit_ids": [
+        "case:frye"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "threat",
+      "count": 1,
+      "unit_ids": [
+        "case:amazon_usda"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "protected",
+      "count": 1,
+      "unit_ids": [
+        "case:home_builders_babbitt"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "property",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "invention",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "defendant",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "moral_patient",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Court of Appeals",
+      "role": "weapon",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "witness",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "threat",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "protected",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "property",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "invention",
+      "count": 2,
+      "unit_ids": [
+        "case:ex_parte_allen",
+        "case:oncomouse"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "defendant",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "moral_patient",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Patent",
+      "role": "weapon",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "witness",
+      "count": 2,
+      "unit_ids": [
+        "case:daubert",
+        "case:kumho_tire"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "threat",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "protected",
+      "count": 1,
+      "unit_ids": [
+        "case:sweet_home"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "property",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "invention",
+      "count": 1,
+      "unit_ids": [
+        "case:chakrabarty"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "defendant",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "moral_patient",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. Supreme Court",
+      "role": "weapon",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "witness",
+      "count": 2,
+      "unit_ids": [
+        "case:auker",
+        "case:westerfield"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "threat",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "protected",
+      "count": 1,
+      "unit_ids": [
+        "case:almond_alliance"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "property",
+      "count": 3,
+      "unit_ids": [
+        "case:goff_kilts",
+        "case:ferreira_dasaro",
+        "case:horsch_terminex"
+      ]
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "invention",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "defendant",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "moral_patient",
+      "count": 0,
+      "unit_ids": []
+    },
+    {
+      "jurisdiction": "U.S. state court",
+      "role": "weapon",
+      "count": 0,
+      "unit_ids": []
+    }
+  ],
+  "limits": [
+    "Selected curated frame; no population inference",
+    "No agency request, production, disclosure or legal-compliance measure",
+    "No source-opinion reading inferred from a registry summary"
+  ],
+  "sources": {
+    "src/case_records.py": "63fd7026bdabb56ddd0d554e7cbe383252133cdb34d55ce8ceccc6ebf3fc3929",
+    "src/roles.py": "c3d0e470bcf6742d3a0e78d8c187892d0c87b9641a5bcd5ee3bf8c8f1422a479",
+    "src/registry_analysis.py": "0dcd29d5671957a0c3d03ebacfc0f3b83903ea12e3c5b6172a25629f18c47856",
+    "engine/analysis_models.py": "8ff67e173dba7625bc0964f007fa6d08081cdccee645f739b0cde6b90bb2d9e7",
+    "engine/descriptive_analysis.py": "50adf72ae79a1d9a21f3c2b3d1ab4b24be08e34d122fd970754aa5314d1fffb9"
+  },
+  "figure_sha256": "306a436a7d8b02a93a757259310aaee39dc224e289bb90c6c58dd35775e767d4"
+}

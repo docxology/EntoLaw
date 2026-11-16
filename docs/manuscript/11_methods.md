@@ -26,7 +26,7 @@ A separate, clearly-bounded pass runs alongside the registries above: `scripts/f
 
 Promoting a candidate into an actual citation, claim, or case-record entry is a human decision made after reading the opinion, never a pipeline step — see `docs/CASE_CANDIDATES.md` for the promotion path and the boundary `tests/test_case_candidates.py` enforces around it.
 
-Finally, this build carries its own provenance: generated on `{{PLATFORM}}` under Python `{{PYTHON_VERSION}}` from configuration hash `{{CONFIG_HASH}}` at `{{GENERATION_TIMESTAMP}}`. The same version-controlled inputs regenerate the inventories, the validation report, the figures, the manuscript variables, and this document with identical registry-derived content, modulo the provenance stamp.
+Finally, this build carries its own provenance: generated on `{{PLATFORM}}` under Python `{{PYTHON_VERSION}}` from configuration hash `{{CONFIG_HASH}}`, with build stamp `{{GENERATION_TIMESTAMP}}`. The stamp is not the wall clock: it is `SOURCE_DATE_EPOCH` when an outer build pins one, and otherwise the manuscript's declared date, so the same version-controlled inputs on the same platform regenerate the inventories, the figures, the manuscript variables, and this document's text and LaTeX source byte-for-byte. One exception remains outside this project: the rendering template's bookend integrity strip still stamps its barcode from the wall clock, so the rendered PDF differs between builds on its first and last pages only and is not kept under version control.
 
 ## Selected-frame statistics and visible limits
 

@@ -1,47 +1,63 @@
 \babel@toc {english}{}\relax
 \contentsline {section}{\numberline {1}Abstract: A Source-Anchored Map of Entomological Law}{4}{section.1}%
-\contentsline {section}{\numberline {2}Mapping Entomological Law: Roles, Evidence, and Limits}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}The role model: what law needs insects to be}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}How the roles cohere: a preview}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Why the registry comes first}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}A legal history from bee swarms to gene drives}{8}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Boundaries of the field map}{9}{subsection.2.5}%
-\contentsline {section}{\numberline {3}The Insect as Witness: Forensic Entomology in Court}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}From larvae to minimum postmortem interval}{10}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Admissibility: Frye, Daubert, and Rule 702}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Cases where insect evidence mattered}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Standards, certifiers, and error controls}{11}{subsection.3.4}%
-\contentsline {section}{\numberline {4}The Insect as Threat: Quarantine, Invasion, and Vector Control}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}US quarantine authority and plant-pest movement}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}International, IPPC, and EU risk layers}{14}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Liability gaps when pest movement is indirect}{14}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Vectors as public-health infrastructure}{14}{subsection.4.4}%
-\contentsline {section}{\numberline {5}The Insect as Protected Subject: Conservation and Recovery Law}{16}{section.5}%
-\contentsline {subsection}{\numberline {5.1}The ESA definition that reaches arthropods}{16}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Commerce Clause protection for tiny species}{16}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}State law and the bumblebee-as-fish problem}{17}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Trade, pollinators, and insect decline}{17}{subsection.5.4}%
-\contentsline {section}{\numberline {6}The Insect as Property: Bees, Specimens, and Qualified Possession}{18}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Capture, hiving, pursuit, and possession}{18}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Neighbor disputes, regulation, and liability}{18}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Owned honeybees and protected wild bees}{19}{subsection.6.3}%
-\contentsline {section}{\numberline {7}The Insect as Invention and Product: Biotech, Food, Feed, and Silk}{20}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Patents for engineered living things}{20}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Engineered mosquitoes and gene drives}{20}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Insect food and feed as regulated markets}{20}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Genetic resources, silk, and colonial development}{21}{subsection.7.4}%
-\contentsline {section}{\numberline {8}The Insect as Defendant: Animal Trials and Legal Ritual}{22}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Chassenée and the prosecuted weevils}{22}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}What animal trials reveal about modern law}{22}{subsection.8.2}%
-\contentsline {section}{\numberline {9}The Insect as Moral Patient: Sentience, Welfare, and Legal Standing}{23}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Sentience evidence and statutory expansion}{23}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Exclusion, scale, and the farmed-insect problem}{23}{subsection.9.2}%
-\contentsline {section}{\numberline {10}The Insect as Weapon: Vectors, Crops, and International Humanitarian Law}{24}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Entomological warfare before biotechnology}{24}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Treaty limits and dual-use insects}{24}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Interconnections: How Insects Move Between Legal Roles}{25}{section.11}%
-\contentsline {section}{\numberline {12}Methods: Registry-First, Claim-Ledgered Legal Synthesis}{28}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Token closure: every count comes from code}{28}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Claim ledger, validation, and reproducibility}{28}{subsection.12.2}%
-\contentsline {section}{\numberline {13}Conclusion: Entomological Law as a Field Map}{31}{section.13}%
-\contentsline {section}{\numberline {14}References: Sources Cited in the Field Map}{32}{section.14}%
+\contentsline {section}{\numberline {2}Graphical abstract}{5}{section.2}%
+\contentsline {section}{\numberline {3}Mapping Entomological Law: Roles, Evidence, and Limits}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The role model: what law needs insects to be}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}How the roles cohere: a preview}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Why the registry comes first}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}A legal history from bee swarms to gene drives}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Boundaries of the field map}{11}{subsection.3.5}%
+\contentsline {section}{\numberline {4}The Insect as Witness: Forensic Entomology in Court}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}From larvae to minimum postmortem interval}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Admissibility: Frye, Daubert, and Rule 702}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Cases where insect evidence mattered}{13}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Standards, certifiers, and error controls}{13}{subsection.4.4}%
+\contentsline {section}{\numberline {5}The Insect as Threat: Quarantine, Invasion, and Vector Control}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}US quarantine authority and plant-pest movement}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}International, IPPC, and EU risk layers}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Liability gaps when pest movement is indirect}{16}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Vectors as public-health infrastructure}{16}{subsection.5.4}%
+\contentsline {section}{\numberline {6}The Insect as Protected Subject: Conservation and Recovery Law}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The ESA definition that reaches arthropods}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Commerce Clause protection for tiny species}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}State law and the bumblebee-as-fish problem}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Trade, pollinators, and insect decline}{19}{subsection.6.4}%
+\contentsline {section}{\numberline {7}The Insect as Property: Bees, Specimens, and Qualified Possession}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Capture, hiving, pursuit, and possession}{20}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Neighbor disputes, regulation, and liability}{20}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Owned honeybees and protected wild bees}{21}{subsection.7.3}%
+\contentsline {section}{\numberline {8}The Insect as Invention and Product: Biotech, Food, Feed, and Silk}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Patents for engineered living things}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Engineered mosquitoes and gene drives}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Insect food and feed as regulated markets}{22}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Genetic resources, silk, and colonial development}{23}{subsection.8.4}%
+\contentsline {section}{\numberline {9}The Insect as Defendant: Animal Trials and Legal Ritual}{24}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Chassenée and the prosecuted weevils}{24}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}What animal trials reveal about modern law}{24}{subsection.9.2}%
+\contentsline {section}{\numberline {10}The Insect as Moral Patient: Sentience, Welfare, and Legal Standing}{25}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Sentience evidence and statutory expansion}{25}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Exclusion, scale, and the farmed-insect problem}{25}{subsection.10.2}%
+\contentsline {section}{\numberline {11}The Insect as Weapon: Vectors, Crops, and International Humanitarian Law}{26}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Entomological warfare before biotechnology}{26}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Treaty limits and dual-use insects}{26}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Interconnections: How Insects Move Between Legal Roles}{27}{section.12}%
+\contentsline {section}{\numberline {13}Methods: Registry-First, Claim-Ledgered Legal Synthesis}{30}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Token closure: every count comes from code}{30}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Claim ledger, validation, and reproducibility}{30}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Candidate case leads (unreviewed)}{31}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Selected-frame statistics and visible limits}{34}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Located argument review and a discriminating acquisition plan}{34}{subsection.13.5}%
+\contentsline {subsection}{\numberline {13.6}Instrument type changes the proposition being tested}{35}{subsection.13.6}%
+\contentsline {subsection}{\numberline {13.7}A prospective review of legal propositions}{35}{subsection.13.7}%
+\contentsline {subsubsection}{\numberline {13.7.1}SCOPE: Explicit scope boundary}{36}{subsubsection.13.7.1}%
+\contentsline {subsubsection}{\numberline {13.7.2}ACT: Attributed documentary act}{36}{subsubsection.13.7.2}%
+\contentsline {subsubsection}{\numberline {13.7.3}BRIDGE: Explicit evidentiary bridge}{36}{subsubsection.13.7.3}%
+\contentsline {subsubsection}{\numberline {13.7.4}QUALIFIER: Qualification of inference}{36}{subsubsection.13.7.4}%
+\contentsline {subsubsection}{\numberline {13.7.5}Selected excerpt depth\_almond-copy}{36}{subsubsection.13.7.5}%
+\contentsline {subsubsection}{\numberline {13.7.6}Selected excerpt depth\_oncomouse-copy}{37}{subsubsection.13.7.6}%
+\contentsline {subsubsection}{\numberline {13.7.7}Selected excerpt depth\_westerfield-copy}{37}{subsubsection.13.7.7}%
+\contentsline {subsubsection}{\numberline {13.7.8}Selected excerpt registry-depth\_almond}{37}{subsubsection.13.7.8}%
+\contentsline {subsubsection}{\numberline {13.7.9}Selected excerpt registry-depth\_oncomouse}{37}{subsubsection.13.7.9}%
+\contentsline {subsubsection}{\numberline {13.7.10}Selected excerpt registry-depth\_westerfield}{37}{subsubsection.13.7.10}%
+\contentsline {section}{\numberline {14}Conclusion: Entomological Law as a Field Map}{39}{section.14}%
+\contentsline {section}{\numberline {15}References: Sources Cited in the Field Map}{40}{section.15}%

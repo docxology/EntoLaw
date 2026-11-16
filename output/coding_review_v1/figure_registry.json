@@ -1,0 +1,50 @@
+{
+  "fig:coding_review_v1_agreement": {
+    "caption": "Complete-case contingency cells for each declared independent coder pair and code, with paired/eligible counts. Each pair remains separate; shared units are not independent replications. Kappa and observed agreement concern coding reproducibility only, not rhetorical validity, intent, legal adequacy or compliance. A missing review is not zero agreement.",
+    "figure_id": "figure_coding_review_v1_agreement",
+    "filename": "coding_review_v1_agreement.png",
+    "generated_by": "coding_review_figures.py::generate_coding_review_figures",
+    "label": "fig:coding_review_v1_agreement",
+    "metadata": {
+      "alt_text": "Complete-case contingency cells for each declared independent coder pair and code, with paired/eligible counts. Each pair remains separate; shared units are not independent replications. Kappa and observed agreement concern coding reproducibility only, not rhetorical validity, intent, legal adequacy or compliance. A missing review is not zero agreement.",
+      "inputs": [
+        {
+          "path": "output/coding_review_v1/review.json",
+          "pointer": "",
+          "sha256": "263caba52bd8c4293265db12ae92a27c906852c61defe72ad811fb1db66a3cf5"
+        }
+      ],
+      "output_path": "output/figures/coding_review_v1_agreement.png",
+      "output_sha256": "00b404c872e769243ee6e2faa9f966852d0e5d80dde331b03159dc42b0a3eb6a",
+      "source": "evidence figures pipeline",
+      "status": "candidate"
+    },
+    "placement": "h",
+    "section": "Coding reproducibility",
+    "width": "0.95\\textwidth"
+  },
+  "fig:coding_review_v1_coverage": {
+    "caption": "Selected-excerpt composition by declared source kind and explicit coding coverage. Present, absent, uncertain and missing remain distinct. The assignment panel pools selected kinds only for display; the results retain separate kind-specific denominators. With no performed reviewers the frame-composition counts remain visible and coding is not assessed. Lexical cues are never judgments. At most 24 assignment rows are displayed; all rows remain in the structured results.",
+    "figure_id": "figure_coding_review_v1_coverage",
+    "filename": "coding_review_v1_coverage.png",
+    "generated_by": "coding_review_figures.py::generate_coding_review_figures",
+    "label": "fig:coding_review_v1_coverage",
+    "metadata": {
+      "alt_text": "Selected-excerpt composition by declared source kind and explicit coding coverage. Present, absent, uncertain and missing remain distinct. The assignment panel pools selected kinds only for display; the results retain separate kind-specific denominators. With no performed reviewers the frame-composition counts remain visible and coding is not assessed. Lexical cues are never judgments. At most 24 assignment rows are displayed; all rows remain in the structured results.",
+      "inputs": [
+        {
+          "path": "output/coding_review_v1/review.json",
+          "pointer": "",
+          "sha256": "263caba52bd8c4293265db12ae92a27c906852c61defe72ad811fb1db66a3cf5"
+        }
+      ],
+      "output_path": "output/figures/coding_review_v1_coverage.png",
+      "output_sha256": "69ddaae3eda770525ef3105c2802bc3bcc09dd2995be2f79474bb7863d93390c",
+      "source": "evidence figures pipeline",
+      "status": "candidate"
+    },
+    "placement": "h",
+    "section": "Coding reproducibility",
+    "width": "0.95\\textwidth"
+  }
+}

@@ -10,9 +10,11 @@
 \section*{BEGINNING OF TRANSMISSION}\label{beginning-of-transmission}
 ```
 
-**State:** published
+**State:** unpublished / pending pairing
 
-**Pairing:** complete (DOI, GitHub, SHA-256, Zenodo URL)
+**Pairing:** pending — unresolved:
+- ✗ GitHub release URL: `pending`
+- ✗ PDF SHA-256: `pending`
 
 ```{=latex}
 \subsubsection*{Release metadata}
@@ -23,11 +25,10 @@
 | Title | Entomological Law |
 | Version | 1.0.0 |
 | Concept DOI | 10.5281/zenodo.21137276 |
-| Version DOI | 10.5281/zenodo.21137277 |
-| GitHub | [https://github.com/docxology/EntoLaw/releases/tag/v1.0.0](https://github.com/docxology/EntoLaw/releases/tag/v1.0.0) |
+| GitHub | docxology/EntoLaw |
 | Zenodo | [https://zenodo.org/records/21137276](https://zenodo.org/records/21137276) |
-| SHA-256 | `5a1891704c285491…` |
-| SHA-512 | `a3e8e04267dbefa7…` |
+| SHA-256 | pending |
+| SHA-512 | pending |
 
 ```{=latex}
 \subsubsection*{How to verify}

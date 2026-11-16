@@ -83,9 +83,12 @@ _CREDENTIAL_PATTERNS: tuple[re.Pattern[str], ...] = (
 #: line carrying the pin/hash markers that make the false-positive case
 #: identifiable, rather than dropped outright -- an embedded 40-hex-char
 #: token with no such marker is still exactly the shape a real leaked
-#: CourtListener-, GitHub-, or Zenodo-style key would have.
+#: CourtListener-, GitHub-, or Zenodo-style key would have. A PDF trailer
+#: ``/ID`` pinned by the template's deterministic render (the
+#: ``trailerid``/``/ID [`` lines of the generated LaTeX) is a document
+#: identifier derived from the build, not a secret.
 _HEX_TOKEN_RE = re.compile(r"\b[0-9a-f]{32,40}\b")
-_HEX_TOKEN_ALLOWED_CONTEXT_RE = re.compile(r"uses:|actions/|commit|sha256|sha1|#\s*v?\d")
+_HEX_TOKEN_ALLOWED_CONTEXT_RE = re.compile(r"uses:|actions/|commit|sha256|sha1|#\s*v?\d|trailerid|/ID \[")
 
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
