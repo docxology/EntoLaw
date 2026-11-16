@@ -2,20 +2,51 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
+
+import pytest
+import yaml
 
 from src import manuscript_variables as mv
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-_PROVENANCE = {"GENERATION_TIMESTAMP"}
 
 
-def test_variables_are_deterministic_modulo_provenance():
+def test_variables_are_deterministic_including_build_stamp():
+    """No wall-clock exemption: the build stamp is pinned, so every token is stable."""
     a = mv.generate_variables(PROJECT_ROOT)
     b = mv.generate_variables(PROJECT_ROOT)
-    a2 = {k: v for k, v in a.items() if k not in _PROVENANCE}
-    b2 = {k: v for k, v in b.items() if k not in _PROVENANCE}
-    assert a2 == b2
+    assert a == b
+    expected = datetime.fromtimestamp(mv.build_epoch(PROJECT_ROOT), tz=timezone.utc)
+    assert a["GENERATION_TIMESTAMP"] == expected.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def test_build_epoch_defaults_to_declared_paper_date():
+    declared = yaml.safe_load((PROJECT_ROOT / "docs/manuscript/config.yaml").read_text(encoding="utf-8"))
+    day = datetime.strptime(str(declared["paper"]["date"]), "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    assert mv.build_epoch(PROJECT_ROOT, environ={}) == int(day.timestamp())
+
+
+def test_build_epoch_honors_source_date_epoch():
+    assert mv.build_epoch(PROJECT_ROOT, environ={"SOURCE_DATE_EPOCH": " 1700000000 "}) == 1700000000
+
+
+def test_build_epoch_refuses_non_numeric_source_date_epoch():
+    with pytest.raises(ValueError, match="SOURCE_DATE_EPOCH"):
+        mv.build_epoch(PROJECT_ROOT, environ={"SOURCE_DATE_EPOCH": "yesterday"})
+
+
+def test_build_epoch_is_absent_without_manuscript_config(tmp_path):
+    assert mv.build_epoch(tmp_path, environ={}) is None
+
+
+def test_build_epoch_refuses_malformed_paper_date(tmp_path):
+    config = tmp_path / "docs/manuscript/config.yaml"
+    config.parent.mkdir(parents=True)
+    config.write_text('paper:\n  date: "July 2026"\n', encoding="utf-8")
+    with pytest.raises(ValueError, match="paper.date"):
+        mv.build_epoch(tmp_path, environ={})
 
 
 def test_case_table_binds_one_row_per_registry_entry_in_order():

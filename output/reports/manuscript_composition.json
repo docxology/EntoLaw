@@ -1,34 +1,34 @@
 {
-  "algorithm": "shared-combined-markdown-v1",
-  "binding_sha256": "27e5ca1f0565e3a3141c6af7bf5bfb33556035e7c3b1a335ede5307d2991f8d2",
+  "algorithm": "web-renderer-combine-v1",
+  "binding_sha256": "b338b215bbf1c44bcb84c48685d0596c01b330208d2780941f78f1a758077c3b",
   "combined_path": "output/web/_combined_manuscript.md",
-  "combined_sha256": "e4bc37ad0f060acd09e1528a2a06c561c7813a24f892bcd5fd583411dd811ece",
-  "combined_size_bytes": 82810,
+  "combined_sha256": "e5c7401c97c0a6943620c2abe7f111893fb0e54a078dc9dce645ed7a172b3c14",
+  "combined_size_bytes": 102417,
   "input_root_kind": "hydrated",
   "ordered_inputs": [
     {
       "ordinal": 1,
       "path": "output/manuscript/00_00_transmission_begin.md",
-      "sha256": "d7061fd7870a2b21809cd7552948b450e6cb4fd638e14b6126a6004186b65d5b",
-      "size_bytes": 1384
+      "sha256": "5b286b7f3adcc86e4f0a0f8e742a23b901092ea92afe34cfc350163e6373decc",
+      "size_bytes": 1280
     },
     {
       "ordinal": 2,
       "path": "output/manuscript/00_abstract.md",
-      "sha256": "0121e744eed422ef47b91149ff266f5a64b073572fc41b1ea57dd4cfd7401475",
-      "size_bytes": 1792
+      "sha256": "d26ade150e7407bb684b326a8b76c938935b7f5a32ce9feb4b37bb5025b408ca",
+      "size_bytes": 3753
     },
     {
       "ordinal": 3,
       "path": "output/manuscript/01_introduction.md",
-      "sha256": "25614bbe1fe8b6053cdaa38a0b06dafa80279eb00d55a4061c548e6b91f7ff91",
-      "size_bytes": 11866
+      "sha256": "f1b56d20789a4733421e0bf72ca78d83ed32ee6f10cdb2c2e1b7bf0080cb8331",
+      "size_bytes": 12013
     },
     {
       "ordinal": 4,
       "path": "output/manuscript/02_witness.md",
-      "sha256": "fd0fa4b1b959d7bcf3cfe9d3bb504cef558a76b32142cdaaa2de59eceef75de5",
-      "size_bytes": 7011
+      "sha256": "3a0d15978124bc36439d3b37a736b1c63597f8a46b2bf154f40abfb5a9edf405",
+      "size_bytes": 7325
     },
     {
       "ordinal": 5,
@@ -39,8 +39,8 @@
     {
       "ordinal": 6,
       "path": "output/manuscript/04_protected.md",
-      "sha256": "76de1f9da3cb5c90a665980ac053ff51e31f72fe4565c7a7ce16aaa1d527c39a",
-      "size_bytes": 6735
+      "sha256": "9b44c567035d9cc320f3ce39b9d89cf0230328bc3094ac6d3c9a202043c83cc4",
+      "size_bytes": 6679
     },
     {
       "ordinal": 7,
@@ -51,8 +51,8 @@
     {
       "ordinal": 8,
       "path": "output/manuscript/06_invention.md",
-      "sha256": "78ac14ebcf836b9f6184df6c2cc3fd448b3f499ac4684795841e376b1a8632e9",
-      "size_bytes": 6942
+      "sha256": "de1a2a9be19fa39d66a4d284418865b062f00f94247d32caa6d3539dab342937",
+      "size_bytes": 6865
     },
     {
       "ordinal": 9,
@@ -81,8 +81,8 @@
     {
       "ordinal": 13,
       "path": "output/manuscript/11_methods.md",
-      "sha256": "c00b6b53012c4002387aad5ee87adb9135d663d1bc2303025a50df20da2c764f",
-      "size_bytes": 5569
+      "sha256": "ddb11e63046809bfa13eacb4df8afd6b94970a1beddc61189127a6f30d278a23",
+      "size_bytes": 23277
     },
     {
       "ordinal": 14,
@@ -99,11 +99,11 @@
     {
       "ordinal": 16,
       "path": "output/manuscript/99_zz_transmission_end.md",
-      "sha256": "0ac679f664bd2359de5e42ad35fc3d0e964c6b0610da89b83ef56a87c0825a57",
-      "size_bytes": 509
+      "sha256": "1dc9baa0239ba8bc16d613d7ee1c96a6cd9670e582d2e2b037ed2022ef23462f",
+      "size_bytes": 537
     }
   ],
-  "ordered_inputs_sha256": "466a9111859edf1ea52bef8cfbddb060110936aa9605a40740a7d1277e5197b9",
-  "project": "working/EntoLaw",
+  "ordered_inputs_sha256": "b88bbae3218c1bd814f32f43c7094b1eaddfc18b3c64fa2b319dc48dedb01498",
+  "project": "EntoLaw",
   "schema_version": "template-manuscript-composition-v1"
 }

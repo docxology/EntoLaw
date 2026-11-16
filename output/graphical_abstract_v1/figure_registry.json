@@ -1,0 +1,26 @@
+{
+  "fig:graphical_abstract_v1": {
+    "caption": "Graphical abstract of selected chronology and entities by evidence role. Dates retain their stated precision and basis. Undated records remain separate. A readable equivalent follows.",
+    "figure_id": "figure_graphical_abstract_v1",
+    "filename": "graphical_abstract_v1.png",
+    "generated_by": "graphical_abstract_figures.py::render_graphical_abstract_png",
+    "label": "fig:graphical_abstract_v1",
+    "metadata": {
+      "alt_text": "Graphical abstract of selected chronology and entities by evidence role. Dates retain their stated precision and basis. Undated records remain separate. A readable equivalent follows.",
+      "inputs": [
+        {
+          "path": "output/graphical_abstract_v1/abstract.json",
+          "pointer": "",
+          "sha256": "33d7a5cf7c55959b4c1e9f60c2b789e9c9abd996c5d5bd8e96b448614ac8b50b"
+        }
+      ],
+      "output_path": "output/figures/graphical_abstract_v1.png",
+      "output_sha256": "fb53a6e9171c103a04e1eac7202f481905197267627fa6cd65bb10575ee331ba",
+      "source": "evidence figures pipeline",
+      "status": "candidate"
+    },
+    "placement": "h",
+    "section": "Graphical abstract",
+    "width": ""
+  }
+}

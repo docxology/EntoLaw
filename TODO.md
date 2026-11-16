@@ -18,10 +18,10 @@ without running anything; freshness is established by
 and exits non-zero when the committed block disagrees.
 
 ```
-uv run pytest tests/ -m "not live" --cov=src --cov-fail-under=90  # 210 passed; 1 skipped; Required test coverage of 90% reached. Total coverage: 97.36%
+uv run pytest tests/ -m "not live" --cov=src --cov-fail-under=90  # 224 passed, 20 deselected; Required test coverage of 90% reached. Total coverage: 97.43%
 uv run ruff check src scripts tests                               # All checks passed!
 uv run python scripts/check_module_map.py                         # module map: 0 violations
-uv run python scripts/check_docs_inventory.py                     # inventory passed: config 13, docs 6, scripts 14, skills 0, source_modules 26, tests 22; markdown files checked: 56
+uv run python scripts/check_docs_inventory.py                     # inventory passed: config 19, docs 7, scripts 16, skills 0, source_modules 27, tests 23; markdown files checked: 62
 uv run python scripts/check_metadata_consistency.py               # metadata consistency: 0 violations
 uv run python scripts/check_release_boundary.py                   # release boundary: 0 findings
 ```

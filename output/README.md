@@ -1,12 +1,23 @@
 # output
 
-Directory `output` inside the `EntoLaw` tree of EntoTech.
-
-Part of `EntoLaw`.
+Generated artifacts for `EntoLaw`. Everything here is produced by the steps in
+`config/local_validation.yaml`; nothing is edited by hand.
 
 ## Contents
-Subfolders: `data/`, `figures/`, `manuscript/`, `pdf/`, `qa/`, `reports/`, `web/`
-Files: `.DS_Store`, `AGENTS.md`, `README.md`
+Tracked subfolders (byte-stable across clean rebuilds of one commit):
+`coding_review_v1/`, `data/`, `figures/`, `graphical_abstract_v1/`,
+`manuscript/`, `pdf/`, `qa/`, `reports/`, `web/`, plus `epub/`, which holds
+only the historical v1.0.0 EPUB and is not regenerated.
+
+Ignored run-local paths (see `.gitignore`): `quality/` (per-step validation
+logs), `rendered/` (the renderer's staging tree), `web/assets/` (the
+regenerated web font bundle), `figures/transmission_integrity_strip.png` and
+`pdf/EntoLaw_manuscript_combined.pdf` (both carry the template's wall-clock
+barcode stamp).
+
+Files: `AGENTS.md`, `README.md`
 
 ## Usage
-- See `EntoLaw/README.md` for how this directory is produced and used.
+- Regenerate with `.venv/bin/python -m legal_informatics.local_validation --project-root .`
+  (see `docs/local_validation.md`). Build stamps come from `SOURCE_DATE_EPOCH`
+  or the declared `paper.date`, never the wall clock.

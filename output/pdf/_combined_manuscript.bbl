@@ -1,4 +1,4 @@
-\begin{thebibliography}{181}
+\begin{thebibliography}{186}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -20,6 +20,13 @@ Jens Amendt, Carlo~P. Campobasso, Emmanuel Gaudry, Christian Reiter, Helene~N.
 \newblock Guideline developed by the European Association for Forensic
   Entomology.
 
+\bibitem[{American Association for Public Opinion
+  Research}(2013)]{methods_aapor_nonprobability}
+{American Association for Public Opinion Research}.
+\newblock Report of the aapor task force on non-probability sampling, 2013.
+\newblock URL
+  \url{https://aapor.org/wp-content/uploads/2022/11/NPS_TF_Report_Final_7_revised_FNL_6_22_13.pdf}.
+
 \bibitem[{American Board of Forensic Entomology}(2024)]{abfe_cert}
 {American Board of Forensic Entomology}.
 \newblock Certification.
@@ -32,6 +39,14 @@ Jens Amendt, Carlo~P. Campobasso, Emmanuel Gaudry, Christian Reiter, Helene~N.
 \newblock
   \url{https://www.gov.uk/government/publications/animal-sentience-committee-impact-of-definitions-of-animals-in-law/animal-sentience-committee-welfare-implications-of-legislative-differences-in-the-definition-of-animals},
   2026.
+
+\bibitem[Artstein and Poesio(2008)]{artstein2008}
+Ron Artstein and Massimo Poesio.
+\newblock Inter-coder agreement for computational linguistics.
+\newblock \emph{Computational Linguistics}, 34\penalty0 (4):\penalty0 555--596,
+  2008.
+\newblock \doi{10.1162/coli.07-034-R2}.
+\newblock URL \url{https://aclanthology.org/J08-4004/}.
 
 \bibitem[{ASTHO}(2020)]{asthovector}
 {ASTHO}.
@@ -122,10 +137,15 @@ Henry~de Bracton.
 \newblock \emph{De Legibus et Consuetudinibus Angliae: When Bees Are in Hives}.
 \newblock Harvard Law School Library, 1250.
 
-\bibitem[{California Court of Appeal, Third District}(2022)]{almond2022}
-{California Court of Appeal, Third District}.
-\newblock Almond alliance of california v. fish \& game commission, 79
-  cal.app.5th 337, 2022.
+\bibitem[{California Court of Appeal, Third Appellate
+  District}(2022)]{depth_almond}
+{California Court of Appeal, Third Appellate District}.
+\newblock Almond alliance of california v. fish and game commission, c093542,
+  2022.
+\newblock URL
+  \url{https://law.stanford.edu/wp-content/uploads/2022/06/2022-05-31-Almond-Alliance-Opinion.pdf}.
+\newblock Primary original opinion on counsel's institutional host; targeted
+  pages 1--5 and 35.
 
 \bibitem[{California Legislature}(1897)]{california_horticulture1897}
 {California Legislature}.
@@ -144,10 +164,6 @@ Henry~de Bracton.
 \newblock
   \url{https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=HSC&division=3.&title=&part=&chapter=1.&article=1.},
   1915.
-
-\bibitem[{California Legislature}(1957)]{cesa_fgc45}
-{California Legislature}.
-\newblock Cal. fish \& game code {\S} 45 (definition of "fish"), 1957.
 
 \bibitem[Cardoso et~al.(2020)Cardoso, Barton, Birkhofer, Chichorro, Deacon,
   Fartmann, et~al.]{cardoso2020scientists_warning}
@@ -363,6 +379,14 @@ Christopher Elderfield.
 \newblock \emph{The Civil Right of Tythes: De Apibus}.
 \newblock 1650.
 
+\bibitem[Entman(1993)]{methods_entman_framing}
+Robert~M. Entman.
+\newblock Framing: Toward clarification of a fractured paradigm.
+\newblock \emph{Journal of Communication}, 43\penalty0 (4):\penalty0 51--58,
+  1993.
+\newblock \doi{10.1111/j.1460-2466.1993.tb01304.x}.
+\newblock URL \url{https://doi.org/10.1111/j.1460-2466.1993.tb01304.x}.
+
 \bibitem[{Entomological Society of America}(2021)]{esa_position2021}
 {Entomological Society of America}.
 \newblock Position statement: endangered insect species, 2021.
@@ -489,6 +513,14 @@ Bernard Greenberg and John~Charles Kunich.
 \newblock \emph{Entomology and the Law: Flies as Forensic Indicators}.
 \newblock Cambridge University Press, 2004.
 
+\bibitem[Grimmer and Stewart(2013)]{methods_grimmer_stewart}
+Justin Grimmer and Brandon~M. Stewart.
+\newblock Text as data: The promise and pitfalls of automatic content analysis
+  methods for political texts.
+\newblock \emph{Political Analysis}, 21\penalty0 (3):\penalty0 267--297, 2013.
+\newblock \doi{10.1093/pan/mps028}.
+\newblock URL \url{https://doi.org/10.1093/pan/mps028}.
+
 \bibitem[Hallmann et~al.(2017)]{hallmann2017}
 Caspar~A. Hallmann et~al.
 \newblock More than 75 percent decline over 27 years in total flying insect
@@ -579,6 +611,13 @@ Brian~D. Joseph.
 \newblock Comparative perspectives on bee law in indo-european.
 \newblock \emph{Chatre\v{s}\v{s}ar}, 2:\penalty0 16--25, 2018.
 
+\bibitem[{Judicial Council of California}(2026)]{methods_ca_judicial_access}
+{Judicial Council of California}.
+\newblock California rules of court, rule 10.500: Public access to judicial
+  administrative records, 2026.
+\newblock URL \url{https://courts.ca.gov/cms/rules/index/ten/rule10_500}.
+\newblock Scope and adjudicative-record distinction checked November 5, 2026.
+
 \bibitem[Justinian(533{\natexlab{a}})]{justinian533}
 Justinian.
 \newblock Institutes 2.1.14 (ferae naturae; bees).
@@ -633,9 +672,12 @@ A.~L{\"a}hteenm{\"a}ki-Uutela, S.~B. Marimuthu, and N.~Meijer.
   849--856, 2021.
 \newblock \doi{10.3920/JIFF2020.0066}.
 
-\bibitem[Leder and Stewart(1988)]{oncomouse1988}
-Philip Leder and Timothy Stewart.
-\newblock Transgenic non-human mammals (u.s. patent 4,736,866), 1988.
+\bibitem[Leder and Stewart(1988)]{depth_oncomouse}
+Philip Leder and Timothy~A. Stewart.
+\newblock Transgenic non-human mammals: U.s. patent 4,736,866, 1988.
+\newblock URL
+  \url{https://patentimages.storage.googleapis.com/76/f3/a5/16327b79a973e5/US4736866.pdf}.
+\newblock Primary issued patent; targeted front-page and claim reading.
 
 \bibitem[Lodge et~al.(2016)Lodge, Simonin, Burgiel, Keller, Bossenbroek, Jerde,
   Kramer, Rutherford, Barnes, Wittmann,
@@ -914,9 +956,11 @@ Christopher~D. Stone.
 \newblock Should trees have standing? toward legal rights for natural objects.
 \newblock \emph{Southern California Law Review}, 45:\penalty0 450--501, 1972.
 
-\bibitem[{Supreme Court of California}(2019)]{westerfield2019}
+\bibitem[{Supreme Court of California}(2019)]{depth_westerfield}
 {Supreme Court of California}.
-\newblock People v. westerfield, 6 cal.5th 632, 2019.
+\newblock People v. westerfield, s112691, 2019.
+\newblock URL \url{https://www.courts.ca.gov/opinions/archive/S112691.PDF}.
+\newblock Targeted opening pages; later retrieval unavailable.
 
 \bibitem[{Supreme Court of Pennsylvania}(1996)]{auker1996}
 {Supreme Court of Pennsylvania}.
@@ -977,6 +1021,14 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
 \newblock Official legislation.gov.uk text; consolidates the Destructive
   Insects and Pests Acts 1877--1927 and treats pests as including insects at
   any stage of existence.
+
+\bibitem[{United States Department of Justice}(2026)]{methods_doj_foia_scope}
+{United States Department of Justice}.
+\newblock Department of justice freedom of information act reference guide,
+  2026.
+\newblock URL
+  \url{https://www.justice.gov/oip/department-justice-freedom-information-act-reference-guide}.
+\newblock Scope passage checked November 5, 2026; online guidance.
 
 \bibitem[{U.S. Congress}(1900)]{lacey42}
 {U.S. Congress}.
@@ -1083,6 +1135,15 @@ Jeffery~K. Tomberlin, Rachel Mohr, M.~Eric Benbow, Aaron~M. Tarone, and Sherah
   \url{https://www.fda.gov/food/ingredients-additives-gras-packaging-guidance-documents-regulatory-information/food-defect-levels-handbook},
   2018.
 
+\bibitem[{U.S. Public Health Service and E. I. du Pont de Nemours and
+  Company}(n.d.)]{depth_phsmou}
+{U.S. Public Health Service and E. I. du Pont de Nemours and Company}.
+\newblock Memorandum of understanding concerning oncomouse, n.d.
+\newblock URL
+  \url{https://www.techtransfer.nih.gov/sites/default/files/documents/pdfs/oncomouse.pdf}.
+\newblock Effective July 1, 1999; PHS signature dated January 18, 2000;
+  publication date not stated; targeted reading.
+
 \bibitem[{U.S. Supreme Court}(1980)]{chakrabarty1980}
 {U.S. Supreme Court}.
 \newblock Diamond v. chakrabarty, 447 u.s. 303, 1980.
@@ -1186,11 +1247,6 @@ Wes Walsh and Laura~L. Figueroa.
 \newblock
   \url{https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/en_chapitre_surveillance_vector.htm},
   2026.
-
-\bibitem[{Xerces Society}(2022)]{xerces_bumblebees}
-{Xerces Society}.
-\newblock California can protect bumble bees under cesa.
-\newblock \url{https://www.xerces.org}, 2022.
 
 \bibitem[Ziety et~al.(2026)Ziety, Zebek, Olba-Ziety, Krzyzaniak, and
   Stolarski]{ziety2026_insect_farming_barriers}

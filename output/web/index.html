@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.11" />
+  <meta name="generator" content="pandoc 3.14" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Daniel Ari Friedman" />
   <meta name="description" content="A Field Map of Insects as Evidence, Threat, Property, Product, Patient, and Weapon" />
@@ -13,7 +13,10 @@
     */
     html {
       color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
       background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
     }
     body {
       margin: 0 auto;
@@ -36,30 +39,11 @@
         font-size: 1.8em;
       }
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
     p {
       margin: 1em 0;
     }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
+    a, a:visited {
+      color: inherit;
     }
     img {
       max-width: 100%;
@@ -88,8 +72,11 @@
     blockquote {
       margin: 1em 0 1em 1.7em;
       padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
       color: #606060;
+      color: light-dark(#606060, #b6b6b6);
     }
     code {
       white-space: pre-wrap;
@@ -113,7 +100,7 @@
     }
     hr {
       border: none;
-      border-top: 1px solid #1a1a1a;
+      border-top: 1px solid currentColor;
       height: 1px;
       margin: 1em 0;
     }
@@ -130,11 +117,11 @@
     }
     tbody {
       margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
     }
     th {
-      border-top: 1px solid #1a1a1a;
+      border-top: 1px solid currentColor;
       padding: 0.25em 0.5em 0.25em 0.5em;
     }
     td {
@@ -157,6 +144,12 @@
       text-decoration: none;
     }
     span.smallcaps{font-variant: small-caps;}
+    em, em em em, em em em em em {
+      font-style: italic;
+    }
+    em em, em em em em {
+      font-style: normal;
+    }
     div.columns{display: flex; gap: 1.5em;}
     div.column{flex: auto;}
     @media screen {
@@ -192,6 +185,26 @@
     }
     div.csl-indent {
       margin-left: 2em;
+    }@media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
     }  </style>
   <script data-template-mathjax-config>
 window.MathJax = window.MathJax || {};
@@ -435,6 +448,9 @@ pre {
 }
 
 pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
   overflow-wrap: inherit;
   white-space: inherit;
   word-break: inherit;
@@ -647,6 +663,7 @@ mjx-container[display="true"] {
 }
 
 </style>
+<script data-template-source-font-loader src="assets/source-web-fonts.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -661,199 +678,264 @@ Property, Product, Patient, and Weapon</p>
 <li><a href="#sec:abstract" id="toc-sec:abstract"><span
 class="toc-section-number">1</span> Abstract: A Source-Anchored Map of
 Entomological Law</a></li>
+<li><a href="#graphical-abstract" id="toc-graphical-abstract"><span
+class="toc-section-number">2</span> Graphical abstract</a></li>
 <li><a href="#sec:introduction" id="toc-sec:introduction"><span
-class="toc-section-number">2</span> Mapping Entomological Law: Roles,
+class="toc-section-number">3</span> Mapping Entomological Law: Roles,
 Evidence, and Limits</a>
 <ul>
 <li><a href="#the-role-model-what-law-needs-insects-to-be"
 id="toc-the-role-model-what-law-needs-insects-to-be"><span
-class="toc-section-number">2.1</span> The role model: what law needs
+class="toc-section-number">3.1</span> The role model: what law needs
 insects to be</a></li>
 <li><a href="#how-the-roles-cohere-a-preview"
 id="toc-how-the-roles-cohere-a-preview"><span
-class="toc-section-number">2.2</span> How the roles cohere: a
+class="toc-section-number">3.2</span> How the roles cohere: a
 preview</a></li>
 <li><a href="#why-the-registry-comes-first"
 id="toc-why-the-registry-comes-first"><span
-class="toc-section-number">2.3</span> Why the registry comes
+class="toc-section-number">3.3</span> Why the registry comes
 first</a></li>
 <li><a href="#a-legal-history-from-bee-swarms-to-gene-drives"
 id="toc-a-legal-history-from-bee-swarms-to-gene-drives"><span
-class="toc-section-number">2.4</span> A legal history from bee swarms to
+class="toc-section-number">3.4</span> A legal history from bee swarms to
 gene drives</a></li>
 <li><a href="#boundaries-of-the-field-map"
 id="toc-boundaries-of-the-field-map"><span
-class="toc-section-number">2.5</span> Boundaries of the field
+class="toc-section-number">3.5</span> Boundaries of the field
 map</a></li>
 </ul></li>
 <li><a href="#sec:witness" id="toc-sec:witness"><span
-class="toc-section-number">3</span> The Insect as Witness: Forensic
+class="toc-section-number">4</span> The Insect as Witness: Forensic
 Entomology in Court</a>
 <ul>
 <li><a href="#from-larvae-to-minimum-postmortem-interval"
 id="toc-from-larvae-to-minimum-postmortem-interval"><span
-class="toc-section-number">3.1</span> From larvae to minimum postmortem
+class="toc-section-number">4.1</span> From larvae to minimum postmortem
 interval</a></li>
 <li><a href="#admissibility-frye-daubert-and-rule-702"
 id="toc-admissibility-frye-daubert-and-rule-702"><span
-class="toc-section-number">3.2</span> Admissibility: Frye, Daubert, and
+class="toc-section-number">4.2</span> Admissibility: Frye, Daubert, and
 Rule 702</a></li>
 <li><a href="#cases-where-insect-evidence-mattered"
 id="toc-cases-where-insect-evidence-mattered"><span
-class="toc-section-number">3.3</span> Cases where insect evidence
+class="toc-section-number">4.3</span> Cases where insect evidence
 mattered</a></li>
 <li><a href="#standards-certifiers-and-error-controls"
 id="toc-standards-certifiers-and-error-controls"><span
-class="toc-section-number">3.4</span> Standards, certifiers, and error
+class="toc-section-number">4.4</span> Standards, certifiers, and error
 controls</a></li>
 </ul></li>
 <li><a href="#sec:threat" id="toc-sec:threat"><span
-class="toc-section-number">4</span> The Insect as Threat: Quarantine,
+class="toc-section-number">5</span> The Insect as Threat: Quarantine,
 Invasion, and Vector Control</a>
 <ul>
 <li><a href="#us-quarantine-authority-and-plant-pest-movement"
 id="toc-us-quarantine-authority-and-plant-pest-movement"><span
-class="toc-section-number">4.1</span> US quarantine authority and
+class="toc-section-number">5.1</span> US quarantine authority and
 plant-pest movement</a></li>
 <li><a href="#international-ippc-and-eu-risk-layers"
 id="toc-international-ippc-and-eu-risk-layers"><span
-class="toc-section-number">4.2</span> International, IPPC, and EU risk
+class="toc-section-number">5.2</span> International, IPPC, and EU risk
 layers</a></li>
 <li><a href="#liability-gaps-when-pest-movement-is-indirect"
 id="toc-liability-gaps-when-pest-movement-is-indirect"><span
-class="toc-section-number">4.3</span> Liability gaps when pest movement
+class="toc-section-number">5.3</span> Liability gaps when pest movement
 is indirect</a></li>
 <li><a href="#vectors-as-public-health-infrastructure"
 id="toc-vectors-as-public-health-infrastructure"><span
-class="toc-section-number">4.4</span> Vectors as public-health
+class="toc-section-number">5.4</span> Vectors as public-health
 infrastructure</a></li>
 </ul></li>
 <li><a href="#sec:protected" id="toc-sec:protected"><span
-class="toc-section-number">5</span> The Insect as Protected Subject:
+class="toc-section-number">6</span> The Insect as Protected Subject:
 Conservation and Recovery Law</a>
 <ul>
 <li><a href="#the-esa-definition-that-reaches-arthropods"
 id="toc-the-esa-definition-that-reaches-arthropods"><span
-class="toc-section-number">5.1</span> The ESA definition that reaches
+class="toc-section-number">6.1</span> The ESA definition that reaches
 arthropods</a></li>
 <li><a href="#commerce-clause-protection-for-tiny-species"
 id="toc-commerce-clause-protection-for-tiny-species"><span
-class="toc-section-number">5.2</span> Commerce Clause protection for
+class="toc-section-number">6.2</span> Commerce Clause protection for
 tiny species</a></li>
 <li><a href="#state-law-and-the-bumblebee-as-fish-problem"
 id="toc-state-law-and-the-bumblebee-as-fish-problem"><span
-class="toc-section-number">5.3</span> State law and the
+class="toc-section-number">6.3</span> State law and the
 bumblebee-as-fish problem</a></li>
 <li><a href="#trade-pollinators-and-insect-decline"
 id="toc-trade-pollinators-and-insect-decline"><span
-class="toc-section-number">5.4</span> Trade, pollinators, and insect
+class="toc-section-number">6.4</span> Trade, pollinators, and insect
 decline</a></li>
 </ul></li>
 <li><a href="#sec:property" id="toc-sec:property"><span
-class="toc-section-number">6</span> The Insect as Property: Bees,
+class="toc-section-number">7</span> The Insect as Property: Bees,
 Specimens, and Qualified Possession</a>
 <ul>
 <li><a href="#capture-hiving-pursuit-and-possession"
 id="toc-capture-hiving-pursuit-and-possession"><span
-class="toc-section-number">6.1</span> Capture, hiving, pursuit, and
+class="toc-section-number">7.1</span> Capture, hiving, pursuit, and
 possession</a></li>
 <li><a href="#neighbor-disputes-regulation-and-liability"
 id="toc-neighbor-disputes-regulation-and-liability"><span
-class="toc-section-number">6.2</span> Neighbor disputes, regulation, and
+class="toc-section-number">7.2</span> Neighbor disputes, regulation, and
 liability</a></li>
 <li><a href="#owned-honeybees-and-protected-wild-bees"
 id="toc-owned-honeybees-and-protected-wild-bees"><span
-class="toc-section-number">6.3</span> Owned honeybees and protected wild
+class="toc-section-number">7.3</span> Owned honeybees and protected wild
 bees</a></li>
 </ul></li>
 <li><a href="#sec:invention" id="toc-sec:invention"><span
-class="toc-section-number">7</span> The Insect as Invention and Product:
+class="toc-section-number">8</span> The Insect as Invention and Product:
 Biotech, Food, Feed, and Silk</a>
 <ul>
 <li><a href="#patents-for-engineered-living-things"
 id="toc-patents-for-engineered-living-things"><span
-class="toc-section-number">7.1</span> Patents for engineered living
+class="toc-section-number">8.1</span> Patents for engineered living
 things</a></li>
 <li><a href="#engineered-mosquitoes-and-gene-drives"
 id="toc-engineered-mosquitoes-and-gene-drives"><span
-class="toc-section-number">7.2</span> Engineered mosquitoes and gene
+class="toc-section-number">8.2</span> Engineered mosquitoes and gene
 drives</a></li>
 <li><a href="#insect-food-and-feed-as-regulated-markets"
 id="toc-insect-food-and-feed-as-regulated-markets"><span
-class="toc-section-number">7.3</span> Insect food and feed as regulated
+class="toc-section-number">8.3</span> Insect food and feed as regulated
 markets</a></li>
 <li><a href="#genetic-resources-silk-and-colonial-development"
 id="toc-genetic-resources-silk-and-colonial-development"><span
-class="toc-section-number">7.4</span> Genetic resources, silk, and
+class="toc-section-number">8.4</span> Genetic resources, silk, and
 colonial development</a></li>
 </ul></li>
 <li><a href="#sec:defendant" id="toc-sec:defendant"><span
-class="toc-section-number">8</span> The Insect as Defendant: Animal
+class="toc-section-number">9</span> The Insect as Defendant: Animal
 Trials and Legal Ritual</a>
 <ul>
 <li><a href="#chassenée-and-the-prosecuted-weevils"
 id="toc-chassenée-and-the-prosecuted-weevils"><span
-class="toc-section-number">8.1</span> Chassenée and the prosecuted
+class="toc-section-number">9.1</span> Chassenée and the prosecuted
 weevils</a></li>
 <li><a href="#what-animal-trials-reveal-about-modern-law"
 id="toc-what-animal-trials-reveal-about-modern-law"><span
-class="toc-section-number">8.2</span> What animal trials reveal about
+class="toc-section-number">9.2</span> What animal trials reveal about
 modern law</a></li>
 </ul></li>
 <li><a href="#sec:welfare" id="toc-sec:welfare"><span
-class="toc-section-number">9</span> The Insect as Moral Patient:
+class="toc-section-number">10</span> The Insect as Moral Patient:
 Sentience, Welfare, and Legal Standing</a>
 <ul>
 <li><a href="#sentience-evidence-and-statutory-expansion"
 id="toc-sentience-evidence-and-statutory-expansion"><span
-class="toc-section-number">9.1</span> Sentience evidence and statutory
+class="toc-section-number">10.1</span> Sentience evidence and statutory
 expansion</a></li>
 <li><a href="#exclusion-scale-and-the-farmed-insect-problem"
 id="toc-exclusion-scale-and-the-farmed-insect-problem"><span
-class="toc-section-number">9.2</span> Exclusion, scale, and the
+class="toc-section-number">10.2</span> Exclusion, scale, and the
 farmed-insect problem</a></li>
 </ul></li>
 <li><a href="#sec:weapon" id="toc-sec:weapon"><span
-class="toc-section-number">10</span> The Insect as Weapon: Vectors,
+class="toc-section-number">11</span> The Insect as Weapon: Vectors,
 Crops, and International Humanitarian Law</a>
 <ul>
 <li><a href="#entomological-warfare-before-biotechnology"
 id="toc-entomological-warfare-before-biotechnology"><span
-class="toc-section-number">10.1</span> Entomological warfare before
+class="toc-section-number">11.1</span> Entomological warfare before
 biotechnology</a></li>
 <li><a href="#treaty-limits-and-dual-use-insects"
 id="toc-treaty-limits-and-dual-use-insects"><span
-class="toc-section-number">10.2</span> Treaty limits and dual-use
+class="toc-section-number">11.2</span> Treaty limits and dual-use
 insects</a></li>
 </ul></li>
 <li><a href="#sec:interconnections" id="toc-sec:interconnections"><span
-class="toc-section-number">11</span> Interconnections: How Insects Move
+class="toc-section-number">12</span> Interconnections: How Insects Move
 Between Legal Roles</a></li>
 <li><a href="#sec:methods" id="toc-sec:methods"><span
-class="toc-section-number">12</span> Methods: Registry-First,
+class="toc-section-number">13</span> Methods: Registry-First,
 Claim-Ledgered Legal Synthesis</a>
 <ul>
 <li><a href="#token-closure-every-count-comes-from-code"
 id="toc-token-closure-every-count-comes-from-code"><span
-class="toc-section-number">12.1</span> Token closure: every count comes
+class="toc-section-number">13.1</span> Token closure: every count comes
 from code</a></li>
 <li><a href="#claim-ledger-validation-and-reproducibility"
 id="toc-claim-ledger-validation-and-reproducibility"><span
-class="toc-section-number">12.2</span> Claim ledger, validation, and
+class="toc-section-number">13.2</span> Claim ledger, validation, and
 reproducibility</a></li>
+<li><a href="#candidate-case-leads-unreviewed"
+id="toc-candidate-case-leads-unreviewed"><span
+class="toc-section-number">13.3</span> Candidate case leads
+(unreviewed)</a></li>
+<li><a href="#selected-frame-statistics-and-visible-limits"
+id="toc-selected-frame-statistics-and-visible-limits"><span
+class="toc-section-number">13.4</span> Selected-frame statistics and
+visible limits</a></li>
+<li><a
+href="#located-argument-review-and-a-discriminating-acquisition-plan"
+id="toc-located-argument-review-and-a-discriminating-acquisition-plan"><span
+class="toc-section-number">13.5</span> Located argument review and a
+discriminating acquisition plan</a></li>
+<li><a href="#instrument-type-changes-the-proposition-being-tested"
+id="toc-instrument-type-changes-the-proposition-being-tested"><span
+class="toc-section-number">13.6</span> Instrument type changes the
+proposition being tested</a></li>
+<li><a href="#a-prospective-review-of-legal-propositions"
+id="toc-a-prospective-review-of-legal-propositions"><span
+class="toc-section-number">13.7</span> A prospective review of legal
+propositions</a>
+<ul>
+<li><a href="#scope-explicit-scope-boundary"
+id="toc-scope-explicit-scope-boundary"><span
+class="toc-section-number">13.7.1</span> SCOPE: Explicit scope
+boundary</a></li>
+<li><a href="#act-attributed-documentary-act"
+id="toc-act-attributed-documentary-act"><span
+class="toc-section-number">13.7.2</span> ACT: Attributed documentary
+act</a></li>
+<li><a href="#bridge-explicit-evidentiary-bridge"
+id="toc-bridge-explicit-evidentiary-bridge"><span
+class="toc-section-number">13.7.3</span> BRIDGE: Explicit evidentiary
+bridge</a></li>
+<li><a href="#qualifier-qualification-of-inference"
+id="toc-qualifier-qualification-of-inference"><span
+class="toc-section-number">13.7.4</span> QUALIFIER: Qualification of
+inference</a></li>
+<li><a href="#selected-excerpt-depth_almond-copy"
+id="toc-selected-excerpt-depth_almond-copy"><span
+class="toc-section-number">13.7.5</span> Selected excerpt
+depth_almond-copy</a></li>
+<li><a href="#selected-excerpt-depth_oncomouse-copy"
+id="toc-selected-excerpt-depth_oncomouse-copy"><span
+class="toc-section-number">13.7.6</span> Selected excerpt
+depth_oncomouse-copy</a></li>
+<li><a href="#selected-excerpt-depth_westerfield-copy"
+id="toc-selected-excerpt-depth_westerfield-copy"><span
+class="toc-section-number">13.7.7</span> Selected excerpt
+depth_westerfield-copy</a></li>
+<li><a href="#selected-excerpt-registry-depth_almond"
+id="toc-selected-excerpt-registry-depth_almond"><span
+class="toc-section-number">13.7.8</span> Selected excerpt
+registry-depth_almond</a></li>
+<li><a href="#selected-excerpt-registry-depth_oncomouse"
+id="toc-selected-excerpt-registry-depth_oncomouse"><span
+class="toc-section-number">13.7.9</span> Selected excerpt
+registry-depth_oncomouse</a></li>
+<li><a href="#selected-excerpt-registry-depth_westerfield"
+id="toc-selected-excerpt-registry-depth_westerfield"><span
+class="toc-section-number">13.7.10</span> Selected excerpt
+registry-depth_westerfield</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#sec:conclusion" id="toc-sec:conclusion"><span
-class="toc-section-number">13</span> Conclusion: Entomological Law as a
+class="toc-section-number">14</span> Conclusion: Entomological Law as a
 Field Map</a></li>
 <li><a href="#sec:references" id="toc-sec:references"><span
-class="toc-section-number">14</span> References: Sources Cited in the
+class="toc-section-number">15</span> References: Sources Cited in the
 Field Map</a></li>
 </ul>
 </nav>
 <main id="main-content" tabindex="-1">
-<p><strong>State:</strong> published</p>
-<p><strong>Pairing:</strong> complete (DOI, GitHub, SHA-256, Zenodo
-URL)</p>
+<p><strong>State:</strong> unpublished / pending pairing</p>
+<p><strong>Pairing:</strong> pending — unresolved: - ✗ GitHub release
+URL: <code>pending</code> - ✗ PDF SHA-256: <code>pending</code></p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table data-responsive-table="true">
 <colgroup>
 <col style="width: 50%" />
@@ -879,13 +961,8 @@ URL)</p>
 <td>10.5281/zenodo.21137276</td>
 </tr>
 <tr>
-<td>Version DOI</td>
-<td>10.5281/zenodo.21137277</td>
-</tr>
-<tr>
 <td>GitHub</td>
-<td><a
-href="https://github.com/docxology/EntoLaw/releases/tag/v1.0.0">https://github.com/docxology/EntoLaw/releases/tag/v1.0.0</a></td>
+<td>docxology/EntoLaw</td>
 </tr>
 <tr>
 <td>Zenodo</td>
@@ -894,11 +971,11 @@ href="https://zenodo.org/records/21137276">https://zenodo.org/records/21137276</
 </tr>
 <tr>
 <td>SHA-256</td>
-<td><code>5a1891704c285491…</code></td>
+<td>pending</td>
 </tr>
 <tr>
 <td>SHA-512</td>
-<td><code>a3e8e04267dbefa7…</code></td>
+<td>pending</td>
 </tr>
 </tbody>
 </table></div>
@@ -938,24 +1015,73 @@ machine-readable and reproducible artifact organized around the legal
 <em>role</em> an insect occupies in a given dispute. It encodes 8 legal
 roles — witness, regulated threat, protected subject, property,
 invention, defendant, moral patient, and weapon — and binds to them 18
-landmark decisions, 43 statutes and treaties across 9 categories and 10
-jurisdictions, 24 insect taxa, 13 certifying and regulatory
-institutions, 44 historical milestones spanning 3676 years, and 5
-cross-domain themes that knit the roles together. Every count in this
-prose is generated from the source registries under <code>src/</code>,
-legal propositions are source-bound in the bibliography, every
-externally-sourced statistic written as a numeral is bound to a
-verification record in the claim ledger, and every figure caption is
-emitted from a source-owned caption registry. The result is both a map
-of a genuinely transdisciplinary field and a reproducibility contract:
-the same version-controlled inputs regenerate the inventories,
+curated case and patent entries, 43 statutes and treaties across 9
+categories and 10 jurisdictions, 24 insect taxa, 13 certifying and
+regulatory institutions, 44 historical milestones spanning 3676 years,
+and 5 cross-domain themes that knit the roles together. Every count in
+this prose is generated from the source registries under
+<code>src/</code>, legal propositions are source-bound in the
+bibliography, every externally-sourced statistic written as a numeral is
+bound to a verification record in the claim ledger, and every figure
+caption is emitted from a source-owned caption registry. The result is
+both a map of a genuinely transdisciplinary field and a reproducibility
+contract: the same version-controlled inputs regenerate the inventories,
 validation report, analytical figures, manuscript variables, and paper
 while preserving explicit caveats about registry scope, jurisdictional
 reach, and the boundary between what the offline gates prove and what
 only a live source check can confirm.</p>
+<h1 data-number="2" id="graphical-abstract"><span
+class="header-section-number">2</span> Graphical abstract</h1>
+<figure id="fig:graphical_abstract_v1" data-latex-placement="H">
+<a class="figure-full-size-link" href="../figures/graphical_abstract_v1.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 1, Graphical abstract of selected chronology and entities by evidence role."><img src="../figures/graphical_abstract_v1.png"
+alt="Figure 1: Graphical abstract of selected chronology and entities by evidence role. Dates retain their stated precision and basis. Undated records remain separate. A readable equivalent follows." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 1: Graphical abstract of selected
+chronology and entities by evidence role. Dates retain their stated
+precision and basis. Undated records remain separate. A readable
+equivalent follows.</figcaption>
+</figure>
+<p>Entomological law across instruments and roles</p>
+<p>A selected chronology and entity index from the public case, patent,
+agreement and legal-role reading layers. The mammal patent is an
+analogy.</p>
+<p><strong>Selected chronology (4 event rows)</strong></p>
+<ul>
+<li>1988-04-12 (day, reported) — Patent and agreement —
+Transgenic-mammal patent issued — source Targeted public reading
+ledger.</li>
+<li>1999-07-01 (day, reported) — Patent and agreement — PHS and DuPont
+agreement effective — source Targeted public reading ledger.</li>
+<li>2019-02-04 (day, reported) — Court opinions — Westerfield appellate
+opinion — source Targeted public reading ledger.</li>
+<li>2022-05-31 (day, reported) — Court opinions — Almond Alliance
+appellate opinion — source Targeted public reading ledger.</li>
+</ul>
+<p>Rows follow the start of each stated date interval. Spacing is
+ordinal. The order of overlapping intervals is uncertain. Undated rows
+are separate.</p>
+<p><strong>Selected entities by evidence role (7 rows)</strong></p>
+<ul>
+<li>Courts — California Court of Appeal — source Targeted public reading
+ledger.</li>
+<li>Courts — Supreme Court of California — source Targeted public
+reading ledger.</li>
+<li>Agreement parties — DuPont — source Targeted public reading
+ledger.</li>
+<li>Agreement parties — U.S. Public Health Service — source Targeted
+public reading ledger.</li>
+<li>Registry roles — Invention / product — source Public role
+registry.</li>
+<li>Registry roles — Protected subject — source Public role
+registry.</li>
+<li>Registry roles — Witness / evidence — source Public role
+registry.</li>
+</ul>
+<p>The dates and actor labels describe curated records and leave
+biological categories, method validity and current legal treatment
+outside scope.</p>
 <hr />
-<h1 data-number="2" id="sec:introduction"><span
-class="header-section-number">2</span> Mapping Entomological Law: Roles,
+<h1 data-number="3" id="sec:introduction"><span
+class="header-section-number">3</span> Mapping Entomological Law: Roles,
 Evidence, and Limits</h1>
 <p>“Entomological law” — or, from the other direction, “legal
 entomology” — is not a single discipline but a multi-domain complex in
@@ -1003,9 +1129,9 @@ data-cites="gieryn1983boundary_work jasanoff2004states_of_knowledge">(<a
 href="#ref-gieryn1983boundary_work" role="doc-biblioref">Gieryn
 1983</a>; <a href="#ref-jasanoff2004states_of_knowledge"
 role="doc-biblioref">Jasanoff 2004</a>)</span>.</p>
-<h2 data-number="2.1"
+<h2 data-number="3.1"
 id="the-role-model-what-law-needs-insects-to-be"><span
-class="header-section-number">2.1</span> The role model: what law needs
+class="header-section-number">3.1</span> The role model: what law needs
 insects to be</h2>
 <p>The field has no master statute and no single agency, yet it coheres.
 Its organizing principle is the <strong>legal status the insect occupies
@@ -1072,9 +1198,9 @@ registry evidence in the roles-overview figure.</p>
 </tbody>
 </table></div>
 <figure id="fig:roles_overview">
-<a class="figure-full-size-link" href="../figures/roles_overview.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 1, The 8 registered legal roles an insect can occupy in this release, with the case, statute…"><img src="../figures/roles_overview.png" style="width:95.0%"
-alt="Figure 1: The 8 registered legal roles an insect can occupy in this release, with the case, statute, species, and milestone evidence encoded for each. Read as: the field is not one doctrine but a set of recurring legal positions that biology can trigger. Why it matters: the figure sets the manuscript’s organizing grammar before the doctrinal sections specialize it. Provenance: src/roles.py and src.metrics.role_coverage_matrix(). Caveat: counts describe the encoded registries, not the entirety of each legal sub-field." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 1: The 8 registered legal roles an
+<a class="figure-full-size-link" href="../figures/roles_overview.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 2, The 8 registered legal roles an insect can occupy in this release, with the case, statute…"><img src="../figures/roles_overview.png" style="width:95.0%"
+alt="Figure 2: The 8 registered legal roles an insect can occupy in this release, with the case, statute, species, and milestone evidence encoded for each. Read as: the field is not one doctrine but a set of recurring legal positions that biology can trigger. Why it matters: the figure sets the manuscript’s organizing grammar before the doctrinal sections specialize it. Provenance: src/roles.py and src.metrics.role_coverage_matrix(). Caveat: counts describe the encoded registries, not the entirety of each legal sub-field." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 2: The 8 registered legal roles an
 insect can occupy in this release, with the case, statute, species, and
 milestone evidence encoded for each. Read as: the field is not one
 doctrine but a set of recurring legal positions that biology can
@@ -1085,20 +1211,20 @@ grammar before the doctrinal sections specialize it. Provenance:
 the encoded registries, not the entirety of each legal
 sub-field.</figcaption>
 </figure>
-<h2 data-number="2.2" id="how-the-roles-cohere-a-preview"><span
-class="header-section-number">2.2</span> How the roles cohere: a
+<h2 data-number="3.2" id="how-the-roles-cohere-a-preview"><span
+class="header-section-number">3.2</span> How the roles cohere: a
 preview</h2>
 <p>The 8 roles above are not silos; the registry also encodes 5
 recurring themes that cut across them, and that synthesis is worth
 seeing before the per-role sections rather than only after them. The
 network below previews the connective tissue sec. <a
-href="#sec:interconnections">11</a> unpacks in full: it is the map the
+href="#sec:interconnections">12</a> unpacks in full: it is the map the
 rest of this reference keeps returning to, so it is placed here as an
 orientation figure rather than left to surface only at the end.</p>
 <figure id="fig:role_interconnections">
-<a class="figure-full-size-link" href="../figures/role_interconnections.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 2, Network of the 5 recurring themes that link the legal roles"><img src="../figures/role_interconnections.png" style="width:85.0%"
-alt="Figure 2: Network of the 5 recurring themes that link the legal roles — the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 2: Network of the 5 recurring
+<a class="figure-full-size-link" href="../figures/role_interconnections.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 3, Network of the 5 recurring themes that link the legal roles"><img src="../figures/role_interconnections.png" style="width:85.0%"
+alt="Figure 3: Network of the 5 recurring themes that link the legal roles — the definitional problem, the expert-testimony bridge, the biotechnology pivot, the property/conservation mirror, and the ancient/modern rhyme. Edge bundles share a theme colour. Read as: category changes, not species names, are what move a dispute from one legal regime into another. Provenance: src/interconnections.py. Why it matters: the synthesis depends on transfers among categories rather than parallel lists of topics. Caveat: the graph encodes declared thematic links, not statistical association." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 3: Network of the 5 recurring
 themes that link the legal roles — the definitional problem, the
 expert-testimony bridge, the biotechnology pivot, the
 property/conservation mirror, and the ancient/modern rhyme. Edge bundles
@@ -1109,8 +1235,8 @@ depends on transfers among categories rather than parallel lists of
 topics. Caveat: the graph encodes declared thematic links, not
 statistical association.</figcaption>
 </figure>
-<h2 data-number="2.3" id="why-the-registry-comes-first"><span
-class="header-section-number">2.3</span> Why the registry comes
+<h2 data-number="3.3" id="why-the-registry-comes-first"><span
+class="header-section-number">3.3</span> Why the registry comes
 first</h2>
 <p>A typical survey of this material mixes prose summaries of statutes
 with anecdotes of famous cases; both rot quickly as section numbers are
@@ -1123,10 +1249,10 @@ taxa” — is a double-brace token resolved at build time by
 this enforces is the same reproducibility model the wider template uses:
 a count that drifts from its registry cannot reach a green PDF without
 the manuscript-token closure test flipping red first (sec. <a
-href="#sec:methods">12</a>).</p>
-<h2 data-number="2.4"
+href="#sec:methods">13</a>).</p>
+<h2 data-number="3.4"
 id="a-legal-history-from-bee-swarms-to-gene-drives"><span
-class="header-section-number">2.4</span> A legal history from bee swarms
+class="header-section-number">3.4</span> A legal history from bee swarms
 to gene drives</h2>
 <p>The field is old in more than one way. Its property lineage now
 reaches back before Rome: the Hittite Laws tariff stolen bees and bee
@@ -1200,9 +1326,9 @@ twentieth-century conservation and biotechnology statutes, and
 twenty-first-century sentience and gene-drive debates shown in the
 timeline figure.</p>
 <figure id="fig:timeline">
-<a class="figure-full-size-link" href="../figures/timeline.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 3, Selected milestones of entomological law across the 3676-year span the registry encodes…"><img src="../figures/timeline.png" style="width:98.0%"
-alt="Figure 3: Selected milestones of entomological law across the 3676-year span the registry encodes, from early bee-theft and bee-property rules to the 2026 monarch-listing suit, coloured by legal role. Read as: old evidentiary and property problems keep reappearing inside new biotechnology, welfare, and conservation disputes. Why it matters: the chronology shows recurrence rather than novelty as the field’s basic pattern. Provenance: src/timeline.py. Caveat: a selected chronology, not a comprehensive history." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 3: Selected milestones of
+<a class="figure-full-size-link" href="../figures/timeline.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 4, Selected milestones of entomological law across the 3676-year span the registry encodes…"><img src="../figures/timeline.png" style="width:98.0%"
+alt="Figure 4: Selected milestones of entomological law across the 3676-year span the registry encodes, from early bee-theft and bee-property rules to the 2026 monarch-listing suit, coloured by legal role. Read as: old evidentiary and property problems keep reappearing inside new biotechnology, welfare, and conservation disputes. Why it matters: the chronology shows recurrence rather than novelty as the field’s basic pattern. Provenance: src/timeline.py. Caveat: a selected chronology, not a comprehensive history." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 4: Selected milestones of
 entomological law across the 3676-year span the registry encodes, from
 early bee-theft and bee-property rules to the 2026 monarch-listing suit,
 coloured by legal role. Read as: old evidentiary and property problems
@@ -1219,12 +1345,12 @@ bibliography entry with a parseable date, not just the ones that became
 milestones. Reading the two side by side up front makes an honesty point
 before any doctrinal argument starts: the evidence base is not a thin
 modern layer with a few decorative antiquities, it has real pre-modern
-depth, and sec. <a href="#sec:methods">12</a> explains exactly how that
+depth, and sec. <a href="#sec:methods">13</a> explains exactly how that
 bibliography is validated.</p>
 <figure id="fig:citation_dates">
-<a class="figure-full-size-link" href="../figures/citation_dates.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 4, Date distribution for every bibliography entry with a parseable year, split into broad bands"><img src="../figures/citation_dates.png" style="width:95.0%"
-alt="Figure 4: Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with pre-1700 and 1700-1999 layers separated from the 2000+ consolidation, including labelled pre-1800 Rus’, Muscovite, and Russian-Imperial legal/scientific sources plus pre-1950 Russian and Soviet entomology/legal sources. Read as: EntoLaw’s evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: manuscript/references.bib parsed by src.viz_citation_dates. Caveat: the date is the bibliography year, so modern editions appear at edition date unless the bibliography declares a source-date anchor." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 4: Date distribution for every
+<a class="figure-full-size-link" href="../figures/citation_dates.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 5, Date distribution for every bibliography entry with a parseable year, split into broad bands"><img src="../figures/citation_dates.png" style="width:95.0%"
+alt="Figure 5: Date distribution for every bibliography entry with a parseable year, split into broad bands and individual source-date strips with pre-1700 and 1700-1999 layers separated from the 2000+ consolidation, including labelled pre-1800 Rus’, Muscovite, and Russian-Imperial legal/scientific sources plus pre-1950 Russian and Soviet entomology/legal sources. Read as: EntoLaw’s evidence base is anchored by early legal, regulatory, and treatise sources but interpreted through modern scholarship, cases, statutes, and official materials. Why it matters: the figure makes the historical depth of the citation stack visible instead of leaving it implicit in the reference list. Provenance: docs/manuscript/references.bib parsed by legal_informatics.viz_citation_dates. Caveat: the date is the bibliography year, so modern editions appear at edition date unless the bibliography declares a source-date anchor. The PHS-DuPont memorandum has no stated publication year; it stays n.d. in the bibliography and is not placed on the date axis." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 5: Date distribution for every
 bibliography entry with a parseable year, split into broad bands and
 individual source-date strips with pre-1700 and 1700-1999 layers
 separated from the 2000+ consolidation, including labelled pre-1800
@@ -1234,27 +1360,30 @@ evidence base is anchored by early legal, regulatory, and treatise
 sources but interpreted through modern scholarship, cases, statutes, and
 official materials. Why it matters: the figure makes the historical
 depth of the citation stack visible instead of leaving it implicit in
-the reference list. Provenance: <code>manuscript/references.bib</code>
-parsed by <code>src.viz_citation_dates</code>. Caveat: the date is the
-bibliography year, so modern editions appear at edition date unless the
-bibliography declares a source-date anchor.</figcaption>
+the reference list. Provenance:
+<code>docs/manuscript/references.bib</code> parsed by
+<code>legal_informatics.viz_citation_dates</code>. Caveat: the date is
+the bibliography year, so modern editions appear at edition date unless
+the bibliography declares a source-date anchor. The PHS-DuPont
+memorandum has no stated publication year; it stays n.d. in the
+bibliography and is not placed on the date axis.</figcaption>
 </figure>
-<h2 data-number="2.5" id="boundaries-of-the-field-map"><span
-class="header-section-number">2.5</span> Boundaries of the field
+<h2 data-number="3.5" id="boundaries-of-the-field-map"><span
+class="header-section-number">3.5</span> Boundaries of the field
 map</h2>
 <p>This reference is a map, not a treatise. The registries are curated
 to anchor each role with its leading authorities, not to enumerate every
 decision, instrument, or species; the figures throughout describe the
 <em>encoded registries</em>, and their captions state that scope
-explicitly. Sections sec. <a href="#sec:witness">3</a> through sec. <a
-href="#sec:weapon">10</a> treat each role in turn; sec. <a
-href="#sec:interconnections">11</a> revisits the synthesis figure above
-in full, theme by theme; and sec. <a href="#sec:methods">12</a>
+explicitly. Sections sec. <a href="#sec:witness">4</a> through sec. <a
+href="#sec:weapon">11</a> treat each role in turn; sec. <a
+href="#sec:interconnections">12</a> revisits the synthesis figure above
+in full, theme by theme; and sec. <a href="#sec:methods">13</a>
 documents the reproducibility contract, the claim ledger, and the
 honesty boundary behind the citation-date figure above.</p>
 <hr />
-<h1 data-number="3" id="sec:witness"><span
-class="header-section-number">3</span> The Insect as Witness: Forensic
+<h1 data-number="4" id="sec:witness"><span
+class="header-section-number">4</span> The Insect as Witness: Forensic
 Entomology in Court</h1>
 <p>Forensic entomology is the oldest evidentiary and most legally mature
 corner of the field: the use of arthropod evidence — chiefly
@@ -1263,36 +1392,36 @@ the <strong>post-mortem interval (PMI)</strong>, detect corpse movement,
 prove neglect, and recover toxicology from larvae. Of the 8 legal roles,
 the witness role is the most case-driven: 5 of the roles carry modern
 reporter case law, and the witness role alone accounts for 6 of the 18
-registered decisions, as shown in the case-by-role and jurisdiction
-figures.</p>
+registered case and patent entries, as shown in the case-by-role and
+jurisdiction figures.</p>
 <figure id="fig:cases_by_role">
-<a class="figure-full-size-link" href="../figures/cases_by_role.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 5, The 18 registered decisions grouped by the legal role of the insect"><img src="../figures/cases_by_role.png" style="width:85.0%"
-alt="Figure 5: The 18 registered decisions grouped by the legal role of the insect; 5 of 8 roles carry modern reporter case law, while the defendant, welfare, and weapon roles are history- and statute-driven. Read as: litigation is concentrated where insects enter court as evidence, property, or regulated biological facts. Why it matters: it separates litigated doctrine from roles that are legally important but less case-law dense. Provenance: src/cases.py via src.metrics. Caveat: only citation-parseable decisions are encoded here." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 5: The 18 registered decisions
-grouped by the legal role of the insect; 5 of 8 roles carry modern
-reporter case law, while the defendant, welfare, and weapon roles are
-history- and statute-driven. Read as: litigation is concentrated where
-insects enter court as evidence, property, or regulated biological
-facts. Why it matters: it separates litigated doctrine from roles that
-are legally important but less case-law dense. Provenance:
-<code>src/cases.py</code> via <code>src.metrics</code>. Caveat: only
-citation-parseable decisions are encoded here.</figcaption>
+<a class="figure-full-size-link" href="../figures/cases_by_role.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 6, The 18 curated case and patent entries grouped by their registered legal role."><img src="../figures/cases_by_role.png" style="width:85.0%"
+alt="Figure 6: The 18 curated case and patent entries grouped by their registered legal role. This mixed frame includes judicial decisions, an administrative patent appeal and an issued patent. Read as: composition of the selected registry, not litigation rates or doctrinal prevalence. Why it matters: different instrument types require separate legal-effect analysis. Provenance: src/cases.py via src.metrics. Caveat: an empty role is no evidence that relevant law or records do not exist." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 6: The 18 curated case and patent
+entries grouped by their registered legal role. This mixed frame
+includes judicial decisions, an administrative patent appeal and an
+issued patent. Read as: composition of the selected registry, not
+litigation rates or doctrinal prevalence. Why it matters: different
+instrument types require separate legal-effect analysis. Provenance:
+<code>src/cases.py</code> via <code>src.metrics</code>. Caveat: an empty
+role is no evidence that relevant law or records do not
+exist.</figcaption>
 </figure>
 <figure id="fig:cases_by_jurisdiction">
-<a class="figure-full-size-link" href="../figures/cases_by_jurisdiction.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 6, The registered case law by issuing court system, spanning the U.S."><img src="../figures/cases_by_jurisdiction.png" style="width:80.0%"
-alt="Figure 6: The registered case law by issuing court system, spanning the U.S. Supreme Court, federal appellate and state courts, England &amp; Wales, Canada, and the U.S. patent system. Read as: the field is jurisdictionally scattered, so doctrine develops through examples rather than a single appellate line. Why it matters: the field has to be assembled comparatively, not read from one reporter series. Provenance: src/cases.py. Caveat: a curated leading-case set, not a census of all decisions." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 6: The registered case law by
-issuing court system, spanning the U.S. Supreme Court, federal appellate
-and state courts, England &amp; Wales, Canada, and the U.S. patent
-system. Read as: the field is jurisdictionally scattered, so doctrine
-develops through examples rather than a single appellate line. Why it
-matters: the field has to be assembled comparatively, not read from one
-reporter series. Provenance: <code>src/cases.py</code>. Caveat: a
-curated leading-case set, not a census of all decisions.</figcaption>
+<a class="figure-full-size-link" href="../figures/cases_by_jurisdiction.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 7, The selected case and patent entries by their declared jurisdiction, including court systems"><img src="../figures/cases_by_jurisdiction.png" style="width:80.0%"
+alt="Figure 7: The selected case and patent entries by their declared jurisdiction, including court systems and the U.S. patent system. Read as: registry composition; an issued patent and a court judgment are not equivalent legal acts. Why it matters: no frequency of litigation or common rule is inferred from this grouping. Provenance: src/cases.py. Caveat: the selected frame supplies neither an exhaustive doctrinal census nor a uniform judicial-holding denominator." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 7: The selected case and patent
+entries by their declared jurisdiction, including court systems and the
+U.S. patent system. Read as: registry composition; an issued patent and
+a court judgment are not equivalent legal acts. Why it matters: no
+frequency of litigation or common rule is inferred from this grouping.
+Provenance: <code>src/cases.py</code>. Caveat: the selected frame
+supplies neither an exhaustive doctrinal census nor a uniform
+judicial-holding denominator.</figcaption>
 </figure>
-<h2 data-number="3.1"
+<h2 data-number="4.1"
 id="from-larvae-to-minimum-postmortem-interval"><span
-class="header-section-number">3.1</span> From larvae to minimum
+class="header-section-number">4.1</span> From larvae to minimum
 postmortem interval</h2>
 <p>Entomologists generally calculate a <strong>minimum PMI</strong> —
 the time since first colonization — using accumulated degree-days,
@@ -1318,8 +1447,8 @@ expressly to prepare both the entomologist and the trial lawyer for the
 courtroom <span class="citation" data-cites="greenberg2004">(<a
 href="#ref-greenberg2004" role="doc-biblioref">Greenberg and Kunich
 2004</a>)</span>.</p>
-<h2 data-number="3.2" id="admissibility-frye-daubert-and-rule-702"><span
-class="header-section-number">3.2</span> Admissibility: Frye, Daubert,
+<h2 data-number="4.2" id="admissibility-frye-daubert-and-rule-702"><span
+class="header-section-number">4.2</span> Admissibility: Frye, Daubert,
 and Rule 702</h2>
 <p>Insect testimony enters US courts through the same gates as all
 scientific evidence. Under <em>Frye</em> the technique must be
@@ -1348,8 +1477,8 @@ excluding forensic entomology wholesale than on <em>application</em> —
 wrong geographic dataset, microsite temperature error, species
 misidentification — and whether reliable principles were reliably
 applied to the case facts.</p>
-<h2 data-number="3.3" id="cases-where-insect-evidence-mattered"><span
-class="header-section-number">3.3</span> Cases where insect evidence
+<h2 data-number="4.3" id="cases-where-insect-evidence-mattered"><span
+class="header-section-number">4.3</span> Cases where insect evidence
 mattered</h2>
 <p>The registry pins the field’s evidentiary arc from the 1235 Sickle
 Murder forward. Bergeret’s original <em>Annales d’hygiène publique et de
@@ -1378,14 +1507,15 @@ the Kirstin Lobato exoneration built on the telling <em>absence</em> of
 blowfly colonization, which proved death after dark <span
 class="citation" data-cites="innocence_lobato">(<a
 href="#ref-innocence_lobato" role="doc-biblioref">Innocence Project
-2018</a>)</span>. The field’s cautionary tale is <em>People v.
-Westerfield</em>, the celebrated “battle of five entomologists” whose
-ten-day divergence led the jury to discard the entomology entirely <span
-class="citation" data-cites="westerfield2019">(<a
-href="#ref-westerfield2019" role="doc-biblioref">Supreme Court of
-California 2019</a>)</span>.</p>
-<h2 data-number="3.4" id="standards-certifiers-and-error-controls"><span
-class="header-section-number">3.4</span> Standards, certifiers, and
+2018</a>)</span>. The targeted opening of <em>People v. Westerfield</em>
+records affirmance and the defense’s reliance on entomological evidence;
+it does not establish how the jury weighed competing experts <span
+class="citation" data-cites="depth_westerfield">(<a
+href="#ref-depth_westerfield" role="doc-biblioref">Supreme Court of
+California 2019</a>)</span>. A claim about juror reasoning requires
+evidence beyond the appellate disposition.</p>
+<h2 data-number="4.4" id="standards-certifiers-and-error-controls"><span
+class="header-section-number">4.4</span> Standards, certifiers, and
 error controls</h2>
 <p>Certification in North America runs through the American Board of
 Forensic Entomology (ABFE) <span class="citation"
@@ -1395,15 +1525,19 @@ role="doc-biblioref">American Board of Forensic Entomology
 institutions, including the ABFE, the European Association for Forensic
 Entomology (EAFE), the North American Forensic Entomology Association
 (NAFEA), and the National Institute of Standards and Technology (NIST)
-Organization of Scientific Area Committees (OSAC) task group. The 2009
-National Academy of Sciences report on forensic science applies with
-comparatively gentle force here, because entomology’s biological
-grounding is stronger than pattern-matching fields, but its calls for
-standardized protocols and documented error rates remain only partly met
-<span class="citation" data-cites="nas2009forensic">(<a
+Organization of Scientific Area Committees (OSAC) task group. The
+National Research Council’s 2009 report discusses the scientific basis
+of forensic methods, validation and performance, error assessment, peer
+review and bias <span class="citation" data-cites="nas2009forensic">(<a
 href="#ref-nas2009forensic" role="doc-biblioref">National Research
-Council 2009</a>)</span>. EAFE’s peer-reviewed best-practice guideline
-and field-wide research roadmaps frame the remaining work as a
+Council 2009</a>)</span>. The targeted publisher extracts support those
+methodological concerns; they establish no comparative validation
+ranking for entomology against pattern-matching disciplines. In this
+project, a review should record which biological model was validated,
+under what conditions, with what uncertainty and how it was applied. No
+current field-wide level of compliance with those requirements is
+established here. EAFE’s peer-reviewed best-practice guideline and
+field-wide research roadmaps frame the remaining work as a
 chain-of-custody, sampling, preservation, identification, reporting, and
 basic-to-applied research problem rather than a single admissibility
 rule <span class="citation"
@@ -1425,8 +1559,8 @@ href="#ref-osac2025entomological_evidence"
 role="doc-biblioref">Organization of Scientific Area Committees for
 Forensic Science 2025</a>)</span>.</p>
 <hr />
-<h1 data-number="4" id="sec:threat"><span
-class="header-section-number">4</span> The Insect as Threat: Quarantine,
+<h1 data-number="5" id="sec:threat"><span
+class="header-section-number">5</span> The Insect as Threat: Quarantine,
 Invasion, and Vector Control</h1>
 <p>Where forensic law asks insects to <em>speak</em>, regulatory law
 tries to <em>stop them from moving</em>. The architecture is dense and
@@ -1435,9 +1569,9 @@ case-driven: it is anchored by 18 instruments spanning the quarantine
 and public-health categories, summarized in the statutes-by-category
 figure.</p>
 <figure id="fig:statutes_by_category">
-<a class="figure-full-size-link" href="../figures/statutes_by_category.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 7, The 43 registered instruments grouped across 9 structural categories"><img src="../figures/statutes_by_category.png" style="width:85.0%"
-alt="Figure 7: The 43 registered instruments grouped across 9 structural categories — forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 7: The 43 registered instruments
+<a class="figure-full-size-link" href="../figures/statutes_by_category.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 8, The 43 registered instruments grouped across 9 structural categories"><img src="../figures/statutes_by_category.png" style="width:85.0%"
+alt="Figure 8: The 43 registered instruments grouped across 9 structural categories — forensic, quarantine, conservation, property, biotech/IP, food, welfare, public-health, and warfare. Read as: regulation follows the legal problem insects pose, not insect taxonomy itself. Why it matters: it shows why the same organism can move between food, biosecurity, conservation, and weapons law. Provenance: src/statutes.py via src.metrics. Caveat: a representative backbone, not every instrument in each category." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 8: The 43 registered instruments
 grouped across 9 structural categories — forensic, quarantine,
 conservation, property, biotech/IP, food, welfare, public-health, and
 warfare. Read as: regulation follows the legal problem insects pose, not
@@ -1447,9 +1581,9 @@ Provenance: <code>src/statutes.py</code> via <code>src.metrics</code>.
 Caveat: a representative backbone, not every instrument in each
 category.</figcaption>
 </figure>
-<h2 data-number="4.1"
+<h2 data-number="5.1"
 id="us-quarantine-authority-and-plant-pest-movement"><span
-class="header-section-number">4.1</span> US quarantine authority and
+class="header-section-number">5.1</span> US quarantine authority and
 plant-pest movement</h2>
 <p>The modern statute sits on a nineteenth-century administrative
 architecture rather than a blank slate. Britain’s Destructive Insects
@@ -1573,8 +1707,8 @@ the first <em>Vespa</em> eradication in North America <span
 class="citation" data-cites="guardian_hornet">(<a
 href="#ref-guardian_hornet" role="doc-biblioref">The Guardian
 2024</a>)</span>.</p>
-<h2 data-number="4.2" id="international-ippc-and-eu-risk-layers"><span
-class="header-section-number">4.2</span> International, IPPC, and EU
+<h2 data-number="5.2" id="international-ippc-and-eu-risk-layers"><span
+class="header-section-number">5.2</span> International, IPPC, and EU
 risk layers</h2>
 <p>Above the US sits the International Plant Protection Convention,
 whose International Standards for Phytosanitary Measures (ISPMs) serve
@@ -1613,9 +1747,9 @@ role="doc-biblioref"><span class="nocase">Lodge et al.</span>
 same shipment, nursery stock, package, or animal wound can be legally
 ordinary until an expert identifies a life stage, pathway, or
 reproductive risk that moves it into quarantine law.</p>
-<h2 data-number="4.3"
+<h2 data-number="5.3"
 id="liability-gaps-when-pest-movement-is-indirect"><span
-class="header-section-number">4.3</span> Liability gaps when pest
+class="header-section-number">5.3</span> Liability gaps when pest
 movement is indirect</h2>
 <p>The Lacey Act’s injurious-species provision at 18 U.S.C. § 42 is a
 strict-liability criminal statute, but it conspicuously <strong>does not
@@ -1636,8 +1770,8 @@ invasive-pest causation cannot be shown without expert insect testimony
 <span class="citation" data-cites="minnlawyer_lac">(<a
 href="#ref-minnlawyer_lac" role="doc-biblioref">Minnesota Lawyer
 2024</a>)</span>.</p>
-<h2 data-number="4.4" id="vectors-as-public-health-infrastructure"><span
-class="header-section-number">4.4</span> Vectors as public-health
+<h2 data-number="5.4" id="vectors-as-public-health-infrastructure"><span
+class="header-section-number">5.4</span> Vectors as public-health
 infrastructure</h2>
 <p>The same regulatory logic extends to insects as disease vectors.
 California has operated mosquito-abatement and vector-control districts
@@ -1656,10 +1790,10 @@ data-cites="woah_vector_surveillance">(<a
 href="#ref-woah_vector_surveillance" role="doc-biblioref">World
 Organisation for Animal Health 2026</a>)</span>. This vector-control
 strand is where the threat role brushes against the weapon role of
-sec. <a href="#sec:weapon">10</a>.</p>
+sec. <a href="#sec:weapon">11</a>.</p>
 <hr />
-<h1 data-number="5" id="sec:protected"><span
-class="header-section-number">5</span> The Insect as Protected Subject:
+<h1 data-number="6" id="sec:protected"><span
+class="header-section-number">6</span> The Insect as Protected Subject:
 Conservation and Recovery Law</h1>
 <p>The mirror image of quarantine law: instead of exterminating insects,
 the state guarantees their survival. The species registry encodes 6 taxa
@@ -1668,9 +1802,9 @@ insects ever listed, to the rusty patched bumble bee, the monarch, and
 the American burying beetle, summarized in the species-by-role
 figure.</p>
 <figure id="fig:species_by_role">
-<a class="figure-full-size-link" href="../figures/species_by_role.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 8, The 24 registered taxa grouped by the legal role they illustrate, from forensic blow flies…"><img src="../figures/species_by_role.png" style="width:85.0%"
-alt="Figure 8: The 24 registered taxa grouped by the legal role they illustrate, from forensic blow flies to quarantined pests, listed species, owned honey bees, engineered and edible insects, the trial weevils, and a weaponized flea. Read as: the same biological class can become evidence, asset, enemy, product, or rights candidate depending on legal context. Why it matters: legal role, not species identity alone, determines which institution acts. Provenance: src/species.py. Caveat: an illustrative set chosen to anchor each role, not a taxonomic survey." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 8: The 24 registered taxa grouped
+<a class="figure-full-size-link" href="../figures/species_by_role.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 9, The 24 registered taxa grouped by the legal role they illustrate, from forensic blow flies…"><img src="../figures/species_by_role.png" style="width:85.0%"
+alt="Figure 9: The 24 registered taxa grouped by the legal role they illustrate, from forensic blow flies to quarantined pests, listed species, owned honey bees, engineered and edible insects, the trial weevils, and a weaponized flea. Read as: the same biological class can become evidence, asset, enemy, product, or rights candidate depending on legal context. Why it matters: legal role, not species identity alone, determines which institution acts. Provenance: src/species.py. Caveat: an illustrative set chosen to anchor each role, not a taxonomic survey." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 9: The 24 registered taxa grouped
 by the legal role they illustrate, from forensic blow flies to
 quarantined pests, listed species, owned honey bees, engineered and
 edible insects, the trial weevils, and a weaponized flea. Read as: the
@@ -1680,9 +1814,9 @@ not species identity alone, determines which institution acts.
 Provenance: <code>src/species.py</code>. Caveat: an illustrative set
 chosen to anchor each role, not a taxonomic survey.</figcaption>
 </figure>
-<h2 data-number="5.1"
+<h2 data-number="6.1"
 id="the-esa-definition-that-reaches-arthropods"><span
-class="header-section-number">5.1</span> The ESA definition that reaches
+class="header-section-number">6.1</span> The ESA definition that reaches
 arthropods</h2>
 <p>The federal Endangered Species Act (ESA), cited here at 16 U.S.C. §
 1531, defines “fish or wildlife” to expressly include any “arthropod or
@@ -1706,9 +1840,9 @@ al. 2025</a>)</span>. Among the first insects listed was the Schaus
 swallowtail in 1976 (with the Bahama swallowtail); the Delhi Sands
 flower-loving fly, listed in 1993, became the first and only fly — and
 the unlikely protagonist of a constitutional landmark.</p>
-<h2 data-number="5.2"
+<h2 data-number="6.2"
 id="commerce-clause-protection-for-tiny-species"><span
-class="header-section-number">5.2</span> Commerce Clause protection for
+class="header-section-number">6.2</span> Commerce Clause protection for
 tiny species</h2>
 <p>In <em>National Association of Home Builders v. Babbitt</em>, cited
 at 130 F.3d 1041, developers argued Congress lacked Commerce Clause
@@ -1730,35 +1864,31 @@ conservation statute and authorizes voluntary programs to conserve,
 protect, and perpetuate invertebrates <span class="citation"
 data-cites="co_hb24_1117">(<a href="#ref-co_hb24_1117"
 role="doc-biblioref">Colorado General Assembly 2024</a>)</span>.</p>
-<h2 data-number="5.3"
+<h2 data-number="6.3"
 id="state-law-and-the-bumblebee-as-fish-problem"><span
-class="header-section-number">5.3</span> State law and the
+class="header-section-number">6.3</span> State law and the
 bumblebee-as-fish problem</h2>
-<p>California produced the field’s most creative ruling. In <em>Almond
-Alliance of California v. Fish &amp; Game Commission</em>, cited at 79
-Cal.App.5th 337, the Court of Appeal held that <strong>bumblebees are
-“fish”</strong> under Fish &amp; Game Code § 45, because that section’s
-definition of “fish” includes “invertebrate” — allowing four
-<em>Bombus</em> species to be listed under the California ESA <span
-class="citation"
-data-cites="almond2022 cesa_fgc45 xerces_bumblebees">(<a
-href="#ref-almond2022" role="doc-biblioref">California Court of Appeal,
-Third District 2022</a>; <a href="#ref-cesa_fgc45"
-role="doc-biblioref">California Legislature 1957</a>; <a
-href="#ref-xerces_bumblebees" role="doc-biblioref">Xerces Society
-2022</a>)</span>. It is the single most-cited “insect is a fish” holding
-in the field and links conservation law directly to the definitional
-question that recurs throughout (sec. <a
-href="#sec:interconnections">11</a>). The monarch butterfly was proposed
-for threatened listing in 2024; as of June 29, 2026, the U.S. Fish and
-Wildlife Service (FWS) still described the species as proposed and said
-protections would not apply until a final rule became effective <span
-class="citation" data-cites="fws2024monarch fws_monarch_status">(<a
+<p>In <em>Almond Alliance of California v. Fish &amp; Game
+Commission</em>, cited at 79 Cal.App.5th 337, the Court of Appeal
+interpreted the statutory definition at Fish &amp; Game Code § 45 to
+permit terrestrial invertebrates to qualify under CESA’s listing and
+candidate provisions when their other requirements are met <span
+class="citation" data-cites="depth_almond">(<a href="#ref-depth_almond"
+role="doc-biblioref">California Court of Appeal, Third Appellate
+District 2022</a>)</span>. This is a rule of statutory scope, not a
+biological classification or proof of current listing. The reviewed
+primary copy is the original opinion on counsel’s institutional host;
+later treatment is not newly verified here. The monarch butterfly was
+proposed for threatened listing in 2024; as of June 29, 2026, the U.S.
+Fish and Wildlife Service (FWS) still described the species as proposed
+and said protections would not apply until a final rule became effective
+<span class="citation"
+data-cites="fws2024monarch fws_monarch_status">(<a
 href="#ref-fws2024monarch" role="doc-biblioref">U.S. Fish and Wildlife
 Service 2024</a>, <a href="#ref-fws_monarch_status"
 role="doc-biblioref">2026</a>)</span>.</p>
-<h2 data-number="5.4" id="trade-pollinators-and-insect-decline"><span
-class="header-section-number">5.4</span> Trade, pollinators, and insect
+<h2 data-number="6.4" id="trade-pollinators-and-insect-decline"><span
+class="header-section-number">6.4</span> Trade, pollinators, and insect
 decline</h2>
 <p>The Convention on International Trade in Endangered Species of Wild
 Fauna and Flora (CITES) supplies the trade-law counterpart: its official
@@ -1829,14 +1959,14 @@ touches both property and threat: the same insect can be valuable enough
 to protect in one setting and disruptive enough to suppress in
 another.</p>
 <hr />
-<h1 data-number="6" id="sec:property"><span
-class="header-section-number">6</span> The Insect as Property: Bees,
+<h1 data-number="7" id="sec:property"><span
+class="header-section-number">7</span> The Insect as Property: Bees,
 Specimens, and Qualified Possession</h1>
 <p>When an insect is neither evidence, threat, nor protected subject, it
 may simply be <em>owned</em>. No insect has generated more property law
 than the honeybee, and the registry pins 5 decisions to this role.</p>
-<h2 data-number="6.1" id="capture-hiving-pursuit-and-possession"><span
-class="header-section-number">6.1</span> Capture, hiving, pursuit, and
+<h2 data-number="7.1" id="capture-hiving-pursuit-and-possession"><span
+class="header-section-number">7.1</span> Capture, hiving, pursuit, and
 possession</h2>
 <p>The oldest directly verified property layer is not Roman. The Hittite
 Laws treat stolen bees in a swarm and stolen bee hives as tariffed
@@ -1954,9 +2084,9 @@ role="doc-biblioref">Elderfield 1650</a>)</span>. That matters
 analytically because it moves bees from possession alone into
 accounting: law is not only asking who captured the swarm, but which
 institution can claim a share of the bee-derived yield.</p>
-<h2 data-number="6.2"
+<h2 data-number="7.2"
 id="neighbor-disputes-regulation-and-liability"><span
-class="header-section-number">6.2</span> Neighbor disputes, regulation,
+class="header-section-number">7.2</span> Neighbor disputes, regulation,
 and liability</h2>
 <p>The neighbor-injury pattern is much older than modern apiary
 statutes. Mishnah Bava Batra’s mustard-and-bees rule places bees inside
@@ -1999,41 +2129,39 @@ role="doc-biblioref">Kansas Court of Appeals 1993</a>)</span>. Bees are
 now serious crime targets as well: within California’s
 almond-pollination economy, large-scale hive thefts have been prosecuted
 as agricultural or livestock theft.</p>
-<h2 data-number="6.3" id="owned-honeybees-and-protected-wild-bees"><span
-class="header-section-number">6.3</span> Owned honeybees and protected
+<h2 data-number="7.3" id="owned-honeybees-and-protected-wild-bees"><span
+class="header-section-number">7.3</span> Owned honeybees and protected
 wild bees</h2>
 <p>The honeybee one can own and the rusty patched bumble bee the state
-now protects (sec. <a href="#sec:protected">5</a>) sit on opposite ends
+now protects (sec. <a href="#sec:protected">6</a>) sit on opposite ends
 of the same <em>ferae naturae</em> doctrine — a mirror symmetry taken up
-directly in sec. <a href="#sec:interconnections">11</a>.</p>
+directly in sec. <a href="#sec:interconnections">12</a>.</p>
 <hr />
-<h1 data-number="7" id="sec:invention"><span
-class="header-section-number">7</span> The Insect as Invention and
+<h1 data-number="8" id="sec:invention"><span
+class="header-section-number">8</span> The Insect as Invention and
 Product: Biotech, Food, Feed, and Silk</h1>
 <p>The newest frontier: insects deliberately engineered, patented,
-farmed, and eaten. The registry pins 3 foundational decisions and 5 taxa
-to this role, from the Oxitec mosquito to the house cricket, the yellow
-mealworm, the black soldier fly, and the silkworm.</p>
-<h2 data-number="7.1" id="patents-for-engineered-living-things"><span
-class="header-section-number">7.1</span> Patents for engineered living
+farmed, and eaten. The registry pins 3 case and patent entries and 5
+taxa to this role, from the Oxitec mosquito to the house cricket, the
+yellow mealworm, the black soldier fly, and the silkworm.</p>
+<h2 data-number="8.1" id="patents-for-engineered-living-things"><span
+class="header-section-number">8.1</span> Patents for engineered living
 things</h2>
-<p>Since <em>Diamond v. Chakrabarty</em>, cited at 447 U.S. 303, living
-organisms are patentable subject matter — “anything under the sun that
-is made by man” <span class="citation" data-cites="chakrabarty1980">(<a
+<p>The registry anchors this role in <em>Diamond v. Chakrabarty</em>,
+cited at 447 U.S. 303, and <em>Ex parte Allen</em> <span
+class="citation" data-cites="chakrabarty1980 exparteallen1987">(<a
 href="#ref-chakrabarty1980" role="doc-biblioref">U.S. Supreme Court
-1980</a>)</span>. <em>Ex parte Allen</em> extended this to multicellular
-animals <span class="citation" data-cites="exparteallen1987">(<a
-href="#ref-exparteallen1987" role="doc-biblioref">Board of Patent
-Appeals 1987</a>)</span>, and the Harvard OncoMouse confirmed it for
-whole engineered animals <span class="citation"
-data-cites="oncomouse1988">(<a href="#ref-oncomouse1988"
-role="doc-biblioref">Leder and Stewart 1988</a>)</span>. Insects sit
-squarely within this regime — genetically modified and sterile-insect
-lines, hundreds of <em>Bacillus thuringiensis</em> patents, silk
-inventions, and a fast-growing insect-biomimicry sector — bounded only
-by the statutory bar on patenting humans.</p>
-<h2 data-number="7.2" id="engineered-mosquitoes-and-gene-drives"><span
-class="header-section-number">7.2</span> Engineered mosquitoes and gene
+1980</a>; <a href="#ref-exparteallen1987" role="doc-biblioref">Board of
+Patent Appeals 1987</a>)</span>. The Harvard OncoMouse patent supplies
+an issued claim to a specified transgenic non-human mammal <span
+class="citation" data-cites="depth_oncomouse">(<a
+href="#ref-depth_oncomouse" role="doc-biblioref">Leder and Stewart
+1988</a>)</span>. That grant is not a judicial validity ruling and
+cannot alone establish an insect invention’s eligibility, validity or
+claim coverage. The particular claim, instrument and jurisdiction
+require examination; a category label cannot replace that analysis.</p>
+<h2 data-number="8.2" id="engineered-mosquitoes-and-gene-drives"><span
+class="header-section-number">8.2</span> Engineered mosquitoes and gene
 drives</h2>
 <p>The 1986 Coordinated Framework splits jurisdiction over genetically
 modified insects among the Environmental Protection Agency (EPA), APHIS,
@@ -2090,9 +2218,9 @@ surveillance and response work <span class="citation"
 data-cites="tahc_nws2026">(<a href="#ref-tahc_nws2026"
 role="doc-biblioref">Texas Animal Health Commission
 2026</a>)</span>.</p>
-<h2 data-number="7.3"
+<h2 data-number="8.3"
 id="insect-food-and-feed-as-regulated-markets"><span
-class="header-section-number">7.3</span> Insect food and feed as
+class="header-section-number">8.3</span> Insect food and feed as
 regulated markets</h2>
 <p>The EU leads via the Novel Food Regulation, cited at Regulation (EU)
 2015/2283, which has authorized several insect products — house cricket,
@@ -2149,9 +2277,9 @@ live insects may be used as feed in the EU except for ruminants <span
 class="citation" data-cites="ziety2026_insect_farming_barriers">(<a
 href="#ref-ziety2026_insect_farming_barriers" role="doc-biblioref">Ziety
 et al. 2026</a>)</span>.</p>
-<h2 data-number="7.4"
+<h2 data-number="8.4"
 id="genetic-resources-silk-and-colonial-development"><span
-class="header-section-number">7.4</span> Genetic resources, silk, and
+class="header-section-number">8.4</span> Genetic resources, silk, and
 colonial development</h2>
 <p>Bioprospecting insect venom peptides, antimicrobials, and silk
 proteins implicates the Nagoya Protocol’s sovereignty and
@@ -2189,13 +2317,13 @@ matter of statutory public interest <span class="citation"
 data-cites="csb1948">(<a href="#ref-csb1948"
 role="doc-biblioref">Parliament of India 1948</a>)</span>. This domain
 loops back to conservation (the biotechnology value of species was a
-Commerce Clause hook in sec. <a href="#sec:protected">5</a>) and forward
-to welfare (sec. <a href="#sec:welfare">9</a>), since industrial insect
+Commerce Clause hook in sec. <a href="#sec:protected">6</a>) and forward
+to welfare (sec. <a href="#sec:welfare">10</a>), since industrial insect
 farming raises animals at a scale no prior welfare regime
 contemplated.</p>
 <hr />
-<h1 data-number="8" id="sec:defendant"><span
-class="header-section-number">8</span> The Insect as Defendant: Animal
+<h1 data-number="9" id="sec:defendant"><span
+class="header-section-number">9</span> The Insect as Defendant: Animal
 Trials and Legal Ritual</h1>
 <p>Across late medieval and early modern Europe, courts literally
 <strong>prosecuted insects</strong>. This is the field’s most
@@ -2218,8 +2346,8 @@ href="#ref-menabrea1846_animal_judgments" role="doc-biblioref">Ménabréa
 role="doc-biblioref">Evans 1884</a>, <a href="#ref-evans1906"
 role="doc-biblioref">1906</a>; <a href="#ref-beirne1994_evans"
 role="doc-biblioref">Beirne 1994</a>)</span>.</p>
-<h2 data-number="8.1" id="chassenée-and-the-prosecuted-weevils"><span
-class="header-section-number">8.1</span> Chassenée and the prosecuted
+<h2 data-number="9.1" id="chassenée-and-the-prosecuted-weevils"><span
+class="header-section-number">9.1</span> Chassenée and the prosecuted
 weevils</h2>
 <p>The jurist Bartholomew Chassenée built his career defending vermin
 and wrote the first legal treatise on insect prosecution. His own
@@ -2251,9 +2379,9 @@ divine scourge and later met with a proposed preserve for the insects;
 earlier proceedings against the slugs of Autun round out the registry’s
 defendant milestones <span class="citation" data-cites="evans1906">(<a
 href="#ref-evans1906" role="doc-biblioref">Evans 1906</a>)</span>.</p>
-<h2 data-number="8.2"
+<h2 data-number="9.2"
 id="what-animal-trials-reveal-about-modern-law"><span
-class="header-section-number">8.2</span> What animal trials reveal about
+class="header-section-number">9.2</span> What animal trials reveal about
 modern law</h2>
 <p>These trials are not merely curiosities. They separate
 <strong>procedure</strong> from <strong>personhood</strong> with unusual
@@ -2262,27 +2390,27 @@ an insect population without deciding that insects possess moral agency
 or ordinary legal capacity. That is why the defendant role matters to
 modern law. The 1587 offer of a land preserve for the weevils
 foreshadows modern <strong>critical-habitat designation</strong>
-(sec. <a href="#sec:protected">5</a>), and the medieval debate over
+(sec. <a href="#sec:protected">6</a>), and the medieval debate over
 whether an animal can be a defendant prefigures the modern debate over
 whether it can be a <em>rights-holder</em> (sec. <a
-href="#sec:welfare">9</a>). Entomological law repeatedly uses legal form
-to manage biological agency: the insect can be summoned, protected,
+href="#sec:welfare">10</a>). Entomological law repeatedly uses legal
+form to manage biological agency: the insect can be summoned, protected,
 patented, quarantined, or excluded before the legal system has a stable
 theory of what kind of subject it is. The defendant role is thus the
 historical hinge of the field’s two most forward-looking questions, a
-connection drawn out in sec. <a href="#sec:interconnections">11</a>.</p>
+connection drawn out in sec. <a href="#sec:interconnections">12</a>.</p>
 <hr />
-<h1 data-number="9" id="sec:welfare"><span
-class="header-section-number">9</span> The Insect as Moral Patient:
+<h1 data-number="10" id="sec:welfare"><span
+class="header-section-number">10</span> The Insect as Moral Patient:
 Sentience, Welfare, and Legal Standing</h1>
 <p>The field’s living edge. The question is no longer whether an insect
 can testify or be owned, but whether it can be <em>wronged</em>. The
 registry pins 1 taxon to this role as an exemplar — the fruit fly — and
 grounds the role in emerging legislation rather than reporter case
 law.</p>
-<h2 data-number="9.1"
+<h2 data-number="10.1"
 id="sentience-evidence-and-statutory-expansion"><span
-class="header-section-number">9.1</span> Sentience evidence and
+class="header-section-number">10.1</span> Sentience evidence and
 statutory expansion</h2>
 <p>The pre-2000 baseline was already explicit but cautious: Eisemann and
 coauthors asked whether insects feel pain and treated nociception,
@@ -2331,9 +2459,9 @@ conclusively <span class="citation"
 data-cites="desouzavalente2025invertebrate_sentience">(<a
 href="#ref-desouzavalente2025invertebrate_sentience"
 role="doc-biblioref">Souza Valente 2025</a>)</span>.</p>
-<h2 data-number="9.2"
+<h2 data-number="10.2"
 id="exclusion-scale-and-the-farmed-insect-problem"><span
-class="header-section-number">9.2</span> Exclusion, scale, and the
+class="header-section-number">10.2</span> Exclusion, scale, and the
 farmed-insect problem</h2>
 <p>EU law shows the same exclusion. Directive 2010/63/EU, governing
 animals in scientific procedures, systematically leaves out insects
@@ -2372,27 +2500,27 @@ href="#ref-favre2010living_property" role="doc-biblioref">Favre
 role="doc-biblioref">Rowe 2025</a>; <a href="#ref-mikhalevich2020minds"
 role="doc-biblioref">Mikhalevich and Powell 2020</a>)</span>. This
 domain is the philosophical counterweight to the commercialization of
-sec. <a href="#sec:invention">7</a> — the same industrial farming that
+sec. <a href="#sec:invention">8</a> — the same industrial farming that
 food and feed law encourages is what welfare law now scrutinizes.</p>
 <hr />
-<h1 data-number="10" id="sec:weapon"><span
-class="header-section-number">10</span> The Insect as Weapon: Vectors,
+<h1 data-number="11" id="sec:weapon"><span
+class="header-section-number">11</span> The Insect as Weapon: Vectors,
 Crops, and International Humanitarian Law</h1>
 <p>Finally, insects as instruments of war, biosecurity, and
 international humanitarian law (IHL). The registry carries this role
 through 3 historical milestones and 1 taxon — the plague-bearing
 oriental rat flea — rather than through litigation.</p>
-<h2 data-number="10.1"
+<h2 data-number="11.1"
 id="entomological-warfare-before-biotechnology"><span
-class="header-section-number">10.1</span> Entomological warfare before
+class="header-section-number">11.1</span> Entomological warfare before
 biotechnology</h2>
 <p>Japan’s Unit 731 conducted plague-flea air-drops; the Ningbo attack
 of 1940 alone caused major civilian casualties, with broader operations
 linked to large-scale civilian deaths. Cold War programs followed,
 including the US Operation Big Itch, which tested uninfected-flea
 dispersal.</p>
-<h2 data-number="10.2" id="treaty-limits-and-dual-use-insects"><span
-class="header-section-number">10.2</span> Treaty limits and dual-use
+<h2 data-number="11.2" id="treaty-limits-and-dual-use-insects"><span
+class="header-section-number">11.2</span> Treaty limits and dual-use
 insects</h2>
 <p>The Biological Weapons Convention (BWC), cited at Biological Weapons
 Convention (1972), treats insect vectors as covered means of delivery
@@ -2413,15 +2541,15 @@ as select agents subject to stringent possession and transfer rules
 <span class="citation" data-cites="agbioterror2002">(<a
 href="#ref-agbioterror2002" role="doc-biblioref">U.S. Congress
 2002</a>)</span>. Insect-warfare law thus connects to the gene-drive
-debates of sec. <a href="#sec:invention">7</a> — the same biotechnology
+debates of sec. <a href="#sec:invention">8</a> — the same biotechnology
 read alternately as agriculture and as weapon, and loosely overseen by
 the Cartagena Protocol <span class="citation"
 data-cites="cartagena2000">(<a href="#ref-cartagena2000"
 role="doc-biblioref">Convention on Biological Diversity
 2000</a>)</span>.</p>
 <hr />
-<h1 data-number="11" id="sec:interconnections"><span
-class="header-section-number">11</span> Interconnections: How Insects
+<h1 data-number="12" id="sec:interconnections"><span
+class="header-section-number">12</span> Interconnections: How Insects
 Move Between Legal Roles</h1>
 <p>The 8 roles are not silos. They share recurring legal machinery,
 encoded as the 5 themes previewed in the interconnections network figure
@@ -2430,9 +2558,9 @@ role-coverage matrix makes the field’s structure visible at a glance:
 some roles are case-driven, some statute-driven, and some — the
 defendant and the weapon — almost entirely history-driven.</p>
 <figure id="fig:role_coverage">
-<a class="figure-full-size-link" href="../figures/role_coverage.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 9, Heatmap of how much evidence each role carries across the four registry kinds"><img src="../figures/role_coverage.png" style="width:80.0%"
-alt="Figure 9: Heatmap of how much evidence each role carries across the four registry kinds (cases, statutes, species, milestones), making the field’s case-driven, statute-driven, and history-driven corners visible at a glance. Read as: a role can be legally central even when its evidence is historical or statutory rather than case-law dense. Why it matters: the figure prevents case-counts from standing in for the whole legal architecture. Provenance: src.metrics.role_coverage_matrix(). Caveat: cell values are registry counts, not weights of legal importance." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 9: Heatmap of how much evidence
+<a class="figure-full-size-link" href="../figures/role_coverage.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 10, Heatmap of how much evidence each role carries across the four registry kinds"><img src="../figures/role_coverage.png" style="width:80.0%"
+alt="Figure 10: Heatmap of how much evidence each role carries across the four registry kinds (cases, statutes, species, milestones), making the field’s case-driven, statute-driven, and history-driven corners visible at a glance. Read as: a role can be legally central even when its evidence is historical or statutory rather than case-law dense. Why it matters: the figure prevents case-counts from standing in for the whole legal architecture. Provenance: src.metrics.role_coverage_matrix(). Caveat: cell values are registry counts, not weights of legal importance." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 10: Heatmap of how much evidence
 each role carries across the four registry kinds (cases, statutes,
 species, milestones), making the field’s case-driven, statute-driven,
 and history-driven corners visible at a glance. Read as: a role can be
@@ -2496,25 +2624,25 @@ insect status.</td>
 </table></div>
 <ul>
 <li><strong>The definitional problem</strong> runs through everything:
-is a bumblebee a “fish” (sec. <a href="#sec:protected">5</a>), a
-screwworm a “plant pest” (sec. <a href="#sec:threat">4</a>), a fly
-“wildlife” (sec. <a href="#sec:protected">5</a>), an insect “made by
-man” and patentable (sec. <a href="#sec:invention">7</a>), or “sentient”
-(sec. <a href="#sec:welfare">9</a>)? Entomological law is, at root, a
+is a bumblebee a “fish” (sec. <a href="#sec:protected">6</a>), a
+screwworm a “plant pest” (sec. <a href="#sec:threat">5</a>), a fly
+“wildlife” (sec. <a href="#sec:protected">6</a>), an insect “made by
+man” and patentable (sec. <a href="#sec:invention">8</a>), or “sentient”
+(sec. <a href="#sec:welfare">10</a>)? Entomological law is, at root, a
 series of fights over what category a bug belongs to.</li>
 <li><strong>Expert testimony binds forensic and regulatory law</strong>:
 proving invasive-pest causation requires the same entomological
-expertise as proving time of death (sec. <a href="#sec:witness">3</a>,
-sec. <a href="#sec:threat">4</a>).</li>
+expertise as proving time of death (sec. <a href="#sec:witness">4</a>,
+sec. <a href="#sec:threat">5</a>).</li>
 <li><strong>Biotechnology is the pivot point</strong>: engineered and
 gene-drive insects are simultaneously regulated products, conservation
 tools or threats, potential weapons, and moral patients (sec. <a
-href="#sec:invention">7</a>, sec. <a href="#sec:protected">5</a>,
-sec. <a href="#sec:weapon">10</a>, sec. <a
-href="#sec:welfare">9</a>).</li>
+href="#sec:invention">8</a>, sec. <a href="#sec:protected">6</a>,
+sec. <a href="#sec:weapon">11</a>, sec. <a
+href="#sec:welfare">10</a>).</li>
 <li><strong>Property and conservation are mirror images</strong>: the
-honeybee one can own (sec. <a href="#sec:property">6</a>) and the
-bumblebee the state protects (sec. <a href="#sec:protected">5</a>) sit
+honeybee one can own (sec. <a href="#sec:property">7</a>) and the
+bumblebee the state protects (sec. <a href="#sec:protected">6</a>) sit
 on opposite ends of the same <em>ferae naturae</em> doctrine, a line
 running from Hittite, rabbinic, Salic, Lombard, Rus’, Muscovite, and
 Irish bee clauses through Justinian, Fleta, and Blackstone to modern
@@ -2539,8 +2667,8 @@ hive theft, rabbinic bee nuisance, Roman bee pursuit, Irish bee
 trespass, Quintilian’s poisoned-flower bee claim, Chasseneuz’s
 insect-process consilium, and the St-Julien weevil proceedings all
 foreshadow modern fights over habitat, rights, and legally actionable
-insect status (sec. <a href="#sec:defendant">8</a>, sec. <a
-href="#sec:protected">5</a>, sec. <a href="#sec:welfare">9</a>) <span
+insect status (sec. <a href="#sec:defendant">9</a>, sec. <a
+href="#sec:protected">6</a>, sec. <a href="#sec:welfare">10</a>) <span
 class="citation"
 data-cites="hittite_laws_bees mishnah_bava_batra2_10_bees justinian_digest41 bechbretha_bee_judgments bechbretha1983 quintilian_decl13_bees chasseneuz1581_consilia bailly1668_monitoires_insectes menabrea1846_animal_judgments evans1884_bugs_beasts">(<a
 href="#ref-hittite_laws_bees" role="doc-biblioref">Hittite Kingdom 1650
@@ -2729,8 +2857,8 @@ class="citation" data-cites="gieryn1983boundary_work">(<a
 href="#ref-gieryn1983boundary_work" role="doc-biblioref">Gieryn
 1983</a>)</span>.</p>
 <hr />
-<h1 data-number="12" id="sec:methods"><span
-class="header-section-number">12</span> Methods: Registry-First,
+<h1 data-number="13" id="sec:methods"><span
+class="header-section-number">13</span> Methods: Registry-First,
 Claim-Ledgered Legal Synthesis</h1>
 <p>This reference is built so that the map and the evidence cannot drift
 apart. All domain knowledge lives in 7 source-of-truth registries under
@@ -2738,21 +2866,21 @@ apart. All domain knowledge lives in 7 source-of-truth registries under
 timeline, and interconnections — and every reader-facing artifact is
 regenerated from them, as shown in the architecture figure.</p>
 <figure id="fig:architecture">
-<a class="figure-full-size-link" href="../figures/architecture.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 10, How 7 source-owned registries become reproducible outputs."><img src="../figures/architecture.png" style="width:95.0%"
-alt="Figure 10: How 7 source-owned registries become reproducible outputs. Pure generator methods — metrics, validation, manuscript-variable generation, and figure rendering — turn registry data into inventories, reports, figures, and the rendered manuscript itself. Read as: the package treats the manuscript as a compiled artifact, not as the source of legal facts. Why it matters: readers can audit whether prose, visuals, and counts share the same inputs. Provenance: src/package_map.py. Caveat: a local build-pipeline description, not a deployment diagram." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 10: How 7 source-owned registries
+<a class="figure-full-size-link" href="../figures/architecture.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 11, How 7 source-owned registries become reproducible outputs."><img src="../figures/architecture.png" style="width:95.0%"
+alt="Figure 11: How 7 source-owned registries become reproducible outputs. Pure generator methods — metrics, validation, manuscript-variable generation, and figure rendering — turn registry data into inventories, reports, figures, and the rendered manuscript itself. Read as: the package treats the manuscript as a compiled artifact, not as the source of legal facts. Why it matters: readers can audit whether prose, visuals, and counts share the same inputs. Provenance: src/viz.py. Caveat: a local build-pipeline description, not a deployment diagram." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 11: How 7 source-owned registries
 become reproducible outputs. Pure generator methods — metrics,
 validation, manuscript-variable generation, and figure rendering — turn
 registry data into inventories, reports, figures, and the rendered
 manuscript itself. Read as: the package treats the manuscript as a
 compiled artifact, not as the source of legal facts. Why it matters:
 readers can audit whether prose, visuals, and counts share the same
-inputs. Provenance: <code>src/package_map.py</code>. Caveat: a local
+inputs. Provenance: <code>src/viz.py</code>. Caveat: a local
 build-pipeline description, not a deployment diagram.</figcaption>
 </figure>
-<h2 data-number="12.1"
+<h2 data-number="13.1"
 id="token-closure-every-count-comes-from-code"><span
-class="header-section-number">12.1</span> Token closure: every count
+class="header-section-number">13.1</span> Token closure: every count
 comes from code</h2>
 <p>Every magnitude-bearing number in this prose is a double-brace token
 (a <code>TOKEN</code> wrapped in doubled braces) resolved at build time
@@ -2762,12 +2890,12 @@ and that the generator emits no orphan, so a registry edit that changes
 a count (say, adding a case) updates the prose automatically, and a
 hand-typed count that drifts from its registry fails the build. The 43
 statutes span 10 jurisdictions, shown in the statutes-by-jurisdiction
-figure; that number, like the 18 cases and the 12 figures, is generated,
-never typed.</p>
+figure; that number, like the 18 registry entries and the 14 registered
+inventory figures, is generated, never typed.</p>
 <figure id="fig:statutes_by_jurisdiction">
-<a class="figure-full-size-link" href="../figures/statutes_by_jurisdiction.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 11, The same 43 instruments partitioned by issuing jurisdiction"><img src="../figures/statutes_by_jurisdiction.png" style="width:80.0%"
-alt="Figure 11: The same 43 instruments partitioned by issuing jurisdiction — US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire, USSR, EU, and international — showing the field’s multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field’s risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 11: The same 43 instruments
+<a class="figure-full-size-link" href="../figures/statutes_by_jurisdiction.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 12, The same 43 instruments partitioned by issuing jurisdiction"><img src="../figures/statutes_by_jurisdiction.png" style="width:80.0%"
+alt="Figure 12: The same 43 instruments partitioned by issuing jurisdiction — US-federal, US-state, US-colonial, UK, India, Muscovy, Russian Empire, USSR, EU, and international — showing the field’s multi-level legal architecture. Read as: insect law is built through stacked authority, with local movement rules, national statutes, and international instruments all operating at once. Why it matters: no single legal layer owns the field’s risk decisions. Provenance: src/statutes.py. Caveat: jurisdiction is the issuing level, not a measure of reach or enforcement." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 12: The same 43 instruments
 partitioned by issuing jurisdiction — US-federal, US-state, US-colonial,
 UK, India, Muscovy, Russian Empire, USSR, EU, and international —
 showing the field’s multi-level legal architecture. Read as: insect law
@@ -2777,9 +2905,9 @@ matters: no single legal layer owns the field’s risk decisions.
 Provenance: <code>src/statutes.py</code>. Caveat: jurisdiction is the
 issuing level, not a measure of reach or enforcement.</figcaption>
 </figure>
-<h2 data-number="12.2"
+<h2 data-number="13.2"
 id="claim-ledger-validation-and-reproducibility"><span
-class="header-section-number">12.2</span> Claim ledger, validation, and
+class="header-section-number">13.2</span> Claim ledger, validation, and
 reproducibility</h2>
 <p>Counts come from the registries; <em>external</em> and volatile
 current-status claims do not. Each externally-sourced statistic written
@@ -2801,9 +2929,9 @@ assertion. This boundary is deliberate and documented: the green offline
 gate guarantees <em>shape and attribution</em>; only the live oracle
 guarantees <em>correspondence to the source</em>.</p>
 <figure id="fig:claim_ledger_coverage">
-<a class="figure-full-size-link" href="../figures/claim_ledger_coverage.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 12, Coverage of the 20 live-checkable claim-ledger entries by declared manuscript section."><img src="../figures/claim_ledger_coverage.png" style="width:80.0%"
-alt="Figure 12: Coverage of the 20 live-checkable claim-ledger entries by declared manuscript section. Provenance: src.claim_ledger.claim_coverage_by_anchor(). Read as: volatile current-status and external magnitude claims are isolated where live evidence, not registry counts, carries the truth burden. Why it matters: it makes the manuscript’s fact-checking boundary auditable by section. Caveat: a section with zero entries may still contain registry-derived facts or qualitative cited claims; this figure shows external/current claims that require a quote-backed verification block." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
-<figcaption>Figure 12: Coverage of the 20
+<a class="figure-full-size-link" href="../figures/claim_ledger_coverage.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 13, Coverage of the 20 live-checkable claim-ledger entries by declared manuscript section."><img src="../figures/claim_ledger_coverage.png" style="width:80.0%"
+alt="Figure 13: Coverage of the 20 live-checkable claim-ledger entries by declared manuscript section. Provenance: src.claim_ledger.claim_coverage_by_anchor(). Read as: volatile current-status and external magnitude claims are isolated where live evidence, not registry counts, carries the truth burden. Why it matters: it makes the manuscript’s fact-checking boundary auditable by section. Caveat: a section with zero entries may still contain registry-derived facts or qualitative cited claims; this figure shows external/current claims that require a quote-backed verification block." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 13: Coverage of the 20
 live-checkable claim-ledger entries by declared manuscript section.
 Provenance: <code>src.claim_ledger.claim_coverage_by_anchor()</code>.
 Read as: volatile current-status and external magnitude claims are
@@ -2828,16 +2956,424 @@ data. The citation-date figure, previewed at the start of this
 reference, parses <code>references.bib</code> directly, so the reader
 can see where the source base is early legal text, where it is modern
 scholarship, and where it is official current-status material.</p>
+<h2 data-number="13.3" id="candidate-case-leads-unreviewed"><span
+class="header-section-number">13.3</span> Candidate case leads
+(unreviewed)</h2>
+<p>A separate, clearly-bounded pass runs alongside the registries above:
+<code>scripts/fetch_case_candidate_queries.py</code> submits 14 declared
+CourtListener opinion-search queries
+(<code>config/case_candidate_queries.yaml</code>) against the 8 legal
+issues in <code>config/legal_issues.yaml</code>, and
+<code>scripts/generate_case_candidates.py</code> rebuilds
+<code>data/case_candidates.yaml</code> deterministically, offline, from
+the recorded responses. <strong>Every one of the 176 rows that register
+holds is an unreviewed search hit, not a finding</strong>: each carries
+<code>status: candidate</code>, meaning CourtListener returned it for a
+declared query and nothing about it has been read, weighed, or admitted.
+No candidate has entered <code>references.bib</code>,
+<code>data/claim_ledger.yaml</code>, or <code>src/case_records.py</code>
+by virtue of appearing here, and no function in
+<code>src/case_candidates.py</code> can write anything but
+<code>candidate</code> into that field. 7 of the 8 declared issues have
+at least one surfaced candidate so far, shown below by
+conservatively-derived court level, with filings by decade
+alongside.</p>
+<figure id="fig:case_candidates_by_issue">
+<a class="figure-full-size-link" href="../figures/case_candidates_by_issue.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 14, The 176 CourtListener case CANDIDATES the candidate-query pipeline has surfaced so far…"><img src="../figures/case_candidates_by_issue.png" style="width:90.0%"
+alt="Figure 14: The 176 CourtListener case CANDIDATES the candidate-query pipeline has surfaced so far, grouped by declared legal issue and a conservatively-derived court level (supreme, appellate, trial, other/unknown), with filings by decade in the side panel. Read as: this is a lead list, not a finding – every bar counts an unreviewed CourtListener opinion-search hit that status: candidate in data/case_candidates.yaml records and nothing more. Why it matters: it shows where the case law the manuscript has not yet reviewed is concentrated, without letting a search hit stand in for a verified authority. Provenance: src.case_candidate_metrics over data/case_candidates.yaml and config/legal_issues.yaml. Caveat: court level is derived from the court name string alone and is conservative – a name this rule cannot place stays other/unknown rather than guessed; see docs/CASE_CANDIDATES.md." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 14: The 176 CourtListener case
+CANDIDATES the candidate-query pipeline has surfaced so far, grouped by
+declared legal issue and a conservatively-derived court level (supreme,
+appellate, trial, other/unknown), with filings by decade in the side
+panel. Read as: this is a lead list, not a finding – every bar counts an
+unreviewed CourtListener opinion-search hit that
+<code>status: candidate</code> in <code>data/case_candidates.yaml</code>
+records and nothing more. Why it matters: it shows where the case law
+the manuscript has not yet reviewed is concentrated, without letting a
+search hit stand in for a verified authority. Provenance:
+<code>src.case_candidate_metrics</code> over
+<code>data/case_candidates.yaml</code> and
+<code>config/legal_issues.yaml</code>. Caveat: court level is derived
+from the court name string alone and is conservative – a name this rule
+cannot place stays other/unknown rather than guessed; see
+<code>docs/CASE_CANDIDATES.md</code>.</figcaption>
+</figure>
+<p>Promoting a candidate into an actual citation, claim, or case-record
+entry is a human decision made after reading the opinion, never a
+pipeline step — see <code>docs/CASE_CANDIDATES.md</code> for the
+promotion path and the boundary
+<code>tests/test_case_candidates.py</code> enforces around it.</p>
 <p>Finally, this build carries its own provenance: generated on
-<code>Darwin arm64</code> under Python <code>3.12.13</code> from
-configuration hash <code>ff3e82bfba8aada9</code> at
-<code>2026-07-02T17:31:17Z</code>. The same version-controlled inputs
-regenerate the inventories, the validation report, the figures, the
-manuscript variables, and this document with identical registry-derived
-content, modulo the provenance stamp.</p>
+<code>Darwin arm64</code> under Python <code>3.15.2</code> from
+configuration hash <code>1ec3a8837d9f0773</code>, with build stamp
+<code>2026-07-02T00:00:00Z</code>. The stamp is not the wall clock: it
+is <code>SOURCE_DATE_EPOCH</code> when an outer build pins one, and
+otherwise the manuscript’s declared date, so the same version-controlled
+inputs on the same platform regenerate the inventories, the figures, the
+manuscript variables, and this document’s text and LaTeX source
+byte-for-byte. One exception remains outside this project: the rendering
+template’s bookend integrity strip still stamps its barcode from the
+wall clock, so the rendered PDF differs between builds on its first and
+last pages only and is not kept under version control.</p>
+<h2 data-number="13.4"
+id="selected-frame-statistics-and-visible-limits"><span
+class="header-section-number">13.4</span> Selected-frame statistics and
+visible limits</h2>
+<p>The registry frame is a curated collection of decisions and patents,
+rather than a probability sample of disputes or a complete doctrinal
+census. <code>src.registry_analysis.analyze_registry</code> adapts its
+stable entry identifiers to the shared engine’s descriptive analysis.
+The adjacent figure table records exact member IDs, numerator and
+denominator, the mapping from generic grouping fields to jurisdiction
+and registered role, and source digests. A year in the registry retains
+year precision; it is not a request, event or production date. No
+disclosure rate, response duration or agency comparison is inferred.</p>
+<figure id="fig:registry_frame">
+<a class="figure-full-size-link" href="../figures/registry_frame.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 15, Read as: jurisdiction by principal registered role"><img src="../figures/registry_frame.png" style="width:95.0%"
+alt="Figure 15: Read as: jurisdiction by principal registered role for the selected curated decision/patent frame. Cells show exact entry counts; the adjacent JSON table retains member identifiers, denominators and source hashes. A zero means no encoded entry, not absence of doctrine or records. Why it matters: the joint table exposes the registry composition hidden by separate role and jurisdiction totals. Provenance: src/registry_analysis.py over src/case_records.py and src/roles.py through the shared descriptive engine. Caveat: authored summaries and year-only dates are not new opinion readings, request durations or a representative sample of legal disputes." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 15: Read as: jurisdiction by
+principal registered role for the selected curated decision/patent
+frame. Cells show exact entry counts; the adjacent JSON table retains
+member identifiers, denominators and source hashes. A zero means no
+encoded entry, not absence of doctrine or records. Why it matters: the
+joint table exposes the registry composition hidden by separate role and
+jurisdiction totals. Provenance: src/registry_analysis.py over
+src/case_records.py and src/roles.py through the shared descriptive
+engine. Caveat: authored summaries and year-only dates are not new
+opinion readings, request durations or a representative sample of legal
+disputes.</figcaption>
+</figure>
+<p>The cross-tab exposes the joint composition hidden by separate role
+and jurisdiction totals. A zero cell describes the encoded frame, not
+absence of case law, an insect role, or agency records. The analysis
+protocol makes this finite-frame estimand explicit. AAPOR’s discussion
+of inferential assumptions motivates that caution; using it for a
+curated legal registry is this project’s adaptation <span
+class="citation" data-cites="methods_aapor_nonprobability">(<a
+href="#ref-methods_aapor_nonprobability" role="doc-biblioref">American
+Association for Public Opinion Research 2013</a>)</span>.</p>
+<h2 data-number="13.5"
+id="located-argument-review-and-a-discriminating-acquisition-plan"><span
+class="header-section-number">13.5</span> Located argument review and a
+discriminating acquisition plan</h2>
+<p>The rhetorical codebook separates the source’s proposition, grounds,
+scope, qualification and an alternative explanation. Entman’s
+selection/salience framework offers a vocabulary for human framing
+memos; Grimmer and Stewart motivate source-specific validation of
+computational text analysis <span class="citation"
+data-cites="methods_entman_framing methods_grimmer_stewart">(<a
+href="#ref-methods_entman_framing" role="doc-biblioref">Entman 1993</a>;
+<a href="#ref-methods_grimmer_stewart" role="doc-biblioref">Grimmer and
+Stewart 2013</a>)</span>. These methods do not convert a registry’s
+authored holding summary into a freshly read opinion, or a legal role
+into a claim about an agency’s intent.</p>
+<p><code>config/records_research.yaml</code> asks role-specific
+questions and names candidate record categories, alternative
+explanations and routing review. Forensic validation, quarantine
+decisions, conservation records, property disputes, patent files,
+historical process, ethics deliberation and public oversight require
+different documentary tests. The declaration asserts no record’s
+existence and sends no request. Each proposed inference needs a located
+source and a record that could also challenge it.</p>
+<p>Custody determines the access route. Federal FOIA does not provide
+access to records held by federal courts; California’s judicial
+administrative access rule separately distinguishes administrative and
+adjudicative records <span class="citation"
+data-cites="methods_doj_foia_scope methods_ca_judicial_access">(<a
+href="#ref-methods_doj_foia_scope" role="doc-biblioref">United States
+Department of Justice 2026</a>; <a
+href="#ref-methods_ca_judicial_access" role="doc-biblioref">Judicial
+Council of California 2026</a>)</span>. An agency record about a
+proceeding and the court file itself are different acquisition
+questions. The public-source ledger retains current-law retrieval
+limits, and every request plan requires human jurisdiction and scope
+review before any correspondence.</p>
+<h2 data-number="13.6"
+id="instrument-type-changes-the-proposition-being-tested"><span
+class="header-section-number">13.6</span> Instrument type changes the
+proposition being tested</h2>
+<p>A patent grant, an appellate disposition and a statutory eligibility
+ruling are different legal acts. The selected new primary readings are
+recorded in <code>docs/research/instrument_readings.json</code>, with
+host, exact reviewed extent and retrieval failures. No full opinion
+reading or present legal status is inferred from those targeted
+passages.</p>
+<p>The OncoMouse patent’s front page and claim show an issued instrument
+and a bounded claimed invention, not a judicial ruling that the patent
+is valid <span class="citation" data-cites="depth_oncomouse">(<a
+href="#ref-depth_oncomouse" role="doc-biblioref">Leder and Stewart
+1988</a>)</span>. The historical PHS agreement identifies patent-related
+use and transfer terms; it is not a current license or validity judgment
+<span class="citation" data-cites="depth_phsmou">(<a
+href="#ref-depth_phsmou" role="doc-biblioref">U.S. Public Health Service
+and E. I. du Pont de Nemours and Company n.d.</a>)</span>. The research
+discriminator is the particular claim, file history or agreement and its
+operative period, rather than a biological category alone.</p>
+<p>Westerfield’s opening states affirmance and describes the defense’s
+reliance on entomological evidence <span class="citation"
+data-cites="depth_westerfield">(<a href="#ref-depth_westerfield"
+role="doc-biblioref">Supreme Court of California 2019</a>)</span>. That
+supports the disposition, not the former registry inference that a jury
+discarded a field of expertise. A stronger account would require the
+opinion’s actual issue analysis and the trial record: what inference was
+offered, what assumptions were disputed, and what ruling resolved which
+objection. The source selection does not establish how jurors reasoned
+or a general error rate for entomology.</p>
+<p>Almond Alliance’s introduction and conclusion address eligibility
+under CESA’s statutory definitions and listing requirements <span
+class="citation" data-cites="depth_almond">(<a href="#ref-depth_almond"
+role="doc-biblioref">California Court of Appeal, Third Appellate
+District 2022</a>)</span>. That does not make a universal biological
+classification or establish a species’ current listing. The primary
+opinion was read from the Stanford law clinic’s copy; the official
+opinion endpoint was unavailable. Its original disposition is
+distinguished from later treatment, which this targeted reading does not
+verify.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table data-responsive-table="true">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Research question</th>
+<th>Discriminating evidence</th>
+<th>Limit on access or inference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Was an expert inference admitted and on what ground?</td>
+<td>Issue, ruling, record citation and alternative explanation</td>
+<td>A court file is not a federal-agency FOIA file</td>
+</tr>
+<tr>
+<td>What does a patent instrument claim?</td>
+<td>Exact claim, specification, prosecution and cited instrument
+version</td>
+<td>Issuance alone is no judicial validity finding</td>
+</tr>
+<tr>
+<td>Why did a listing decision cover a taxon?</td>
+<td>Statutory definition, eligibility reasoning and separate listing
+record</td>
+<td>Eligibility is not biological identity or current listing</td>
+</tr>
+<tr>
+<td>Did an agency use a patented research tool?</td>
+<td>A dated agreement, institutional record and custodian linkage</td>
+<td>A historical public agreement proves no present agency holding</td>
+</tr>
+</tbody>
+</table></div>
+<p>No request is sent and no record’s existence is presumed. Any
+justified correspondence remains DRAFT — NOT SENT pending human scope
+and custodian review.</p>
+<h2 data-number="13.7"
+id="a-prospective-review-of-legal-propositions"><span
+class="header-section-number">13.7</span> A prospective review of legal
+propositions</h2>
+<p>EntoLaw — prospective located argument review</p>
+<p>Unit definition: One declared source span with exact byte digest,
+parsed-text selector and character offsets; the unit is not a complete
+request or instrument.</p>
+<p>Selection: Purposive contrasts among scope, attribution and
+evidentiary-linkage problems already identified in this project; not
+random or exhaustive and not a prevalence denominator.</p>
+<p>Codebook version: 2026-11-06-v1</p>
+<p>Expected codebook SHA256:
+7f204c9f02c470d6db758b796f06ebb613bfb19ec6cd16bdadb34cddf54a0623. Every
+performed judgment must name this exact digest.</p>
+<p>Review plan: Future reviewers would first record source kind and
+apply each code independently using the include/exclude rules, retaining
+uncertain decisions and rationales. Discuss disagreements only after
+preserving original independent judgments; do not backfill them from
+lexical cues or later consensus. No actual reviewers, independent pairs
+or judgments are supplied in this edition.</p>
+<p>Declared frame: 6 located excerpts; 4 codes. Performed reviewer
+aliases: 0; explicit judgments: 0; declared independent pairs: 0.</p>
+<p>Units are a declared finite excerpt frame, not a probability sample
+of records, agencies or rhetorical functions. Source kinds remain
+separate strata; overlapping or repeated passages may be dependent.</p>
+<p>A planned review and automatic lexical cues are not human judgments.
+Missing assignments, explicit uncertainty and explicit absence are
+distinct states; none is imputed.</p>
+<p>Each coefficient uses only the same units and codebook coded
+present/absent by the named pair. Uncertain or missing decisions are
+excluded and enumerated. Complete-case selection can distort apparent
+agreement.</p>
+<p>Independence is a reviewer declaration, not an authenticated fact.
+Consensus/adjudicated labels must not be entered as independent
+judgments. Multiple coder pairs share units and are never pooled as
+independent observations.</p>
+<p>Observed agreement and Cohen’s kappa describe reproducibility of
+these coding decisions, not truth, rhetorical validity, speaker intent,
+search adequacy or legal compliance. No universal acceptability
+threshold, significance test or inferential interval is supplied.</p>
+<p>Kappa uses coder-specific marginal proportions: (observed -
+expected)/(1 - expected). It is withheld for fewer than two complete
+pairs or expected agreement of one; marginal imbalance can make kappa
+diverge from raw agreement. Always inspect the contingency cells and
+coverage.</p>
+<p>The operational definitions below are project-designed. Agreement and
+validity are separate questions <span class="citation"
+data-cites="artstein2008">(<a href="#ref-artstein2008"
+role="doc-biblioref">Artstein and Poesio 2008</a>)</span>. The selected
+units mix authored registry summaries with explicitly copied primary
+passages; they must retain those source kinds when reviewed. No coder,
+independent session or judgment is supplied.</p>
+<h3 data-number="13.7.1" id="scope-explicit-scope-boundary"><span
+class="header-section-number">13.7.1</span> SCOPE: Explicit scope
+boundary</h3>
+<p>Definition: The selected span states a time, component, record,
+instrument or subject boundary relevant to its proposition.</p>
+<p>Include when: A boundary is actually stated and can be transcribed
+with its source kind.</p>
+<p>Exclude when: The reviewer supplies a plausible boundary or treats a
+requester’s proposed scope as an agency’s accepted search.</p>
+<p>Counterexample: A bare closed label states no searched locations or
+period.</p>
+<h3 data-number="13.7.2" id="act-attributed-documentary-act"><span
+class="header-section-number">13.7.2</span> ACT: Attributed documentary
+act</h3>
+<p>Definition: The span identifies an attributed request,
+acknowledgment, routing, search statement, determination, grant or
+judicial act.</p>
+<p>Include when: The act and its speaker or instrument can be identified
+from the unit’s located context; keep summary attribution explicit.</p>
+<p>Exclude when: A platform stage or reader interpretation is promoted
+into the underlying instrument or legal effect.</p>
+<p>Counterexample: A task named appeal is not proof that an appeal was
+filed or decided.</p>
+<h3 data-number="13.7.3" id="bridge-explicit-evidentiary-bridge"><span
+class="header-section-number">13.7.3</span> BRIDGE: Explicit evidentiary
+bridge</h3>
+<p>Definition: The span actually supplies the linkage needed for the
+stronger proposition under review.</p>
+<p>Include when: The instrument’s type, proposition and statutory or
+procedural scope are explicitly linked; issuance, adjudication and
+listing eligibility remain distinct.</p>
+<p>Exclude when: A co-mention, a cultural association, a matching
+surname or a plausible custodian is the only connection.</p>
+<p>Counterexample: A patent title and grant date do not establish a
+judicial decision on patent validity.</p>
+<h3 data-number="13.7.4" id="qualifier-qualification-of-inference"><span
+class="header-section-number">13.7.4</span> QUALIFIER: Qualification of
+inference</h3>
+<p>Definition: The unit explicitly limits what its statement, source
+type or evidence supports.</p>
+<p>Include when: A stated qualification limits the proposition;
+distinguish uncertainty from a definitive negative.</p>
+<p>Exclude when: The reviewer adds a caveat that is absent from the unit
+or treats missing text as an explicit disclaimer.</p>
+<p>Counterexample: The absence of a search description is not a
+statement that no search occurred.</p>
+<h3 data-number="13.7.5" id="selected-excerpt-depth_almond-copy"><span
+class="header-section-number">13.7.5</span> Selected excerpt
+depth_almond-copy</h3>
+<p>Printed page 35; line wrapping normalized, no words added. Local copy
+only; original bytes are not present.</p>
+<p>Expected unit SHA256:
+0ebc0fb2bb204d5f369d71ffc6cd9a323493e7a2dc786d29404dffcf408be56b.</p>
+<p><strong>context; primary_passage_copy</strong></p>
+<p>the Commission may list any invertebrate as an endangered or
+threatened species under 2062 and 2067, if the invertebrate meets the
+requirements of those statutes</p>
+<p>Source: docs/research/instrument_readings.json; pointer:
+/readings/1/excerpt; characters 0:161; SHA256 prefix 8a2706f0556d.</p>
+<h3 data-number="13.7.6"
+id="selected-excerpt-depth_oncomouse-copy"><span
+class="header-section-number">13.7.6</span> Selected excerpt
+depth_oncomouse-copy</h3>
+<p>Front-page title only; not a judicial holding or a complete claim.
+Local copy only; original bytes are not present.</p>
+<p>Expected unit SHA256:
+707fe2d915f445b33629bf621ff4fd42f037086952b757900bc23973152bf210.</p>
+<p><strong>context; primary_passage_copy</strong></p>
+<p>TRANSGENIC NON-HUMAN MAMMALS</p>
+<p>Source: docs/research/instrument_readings.json; pointer:
+/readings/2/excerpt; characters 0:28; SHA256 prefix 8a2706f0556d.</p>
+<h3 data-number="13.7.7"
+id="selected-excerpt-depth_westerfield-copy"><span
+class="header-section-number">13.7.7</span> Selected excerpt
+depth_westerfield-copy</h3>
+<p>Printed page 1; the reviewed opening’s disposition only. Local copy
+only; original bytes are not present.</p>
+<p>Expected unit SHA256:
+008af4d7fa79a0c32dc0ad216be4d42edef5934549e41d3b08ff5edf95ddafcc.</p>
+<p><strong>context; primary_passage_copy</strong></p>
+<p>We affirm the judgment in its entirety.</p>
+<p>Source: docs/research/instrument_readings.json; pointer:
+/readings/0/excerpt; characters 0:39; SHA256 prefix 8a2706f0556d.</p>
+<h3 data-number="13.7.8"
+id="selected-excerpt-registry-depth_almond"><span
+class="header-section-number">13.7.8</span> Selected excerpt
+registry-depth_almond</h3>
+<p>Authored registry holding summary; this source kind cannot
+authenticate an underlying instrument.</p>
+<p>Expected unit SHA256:
+c40f78f33d3b8665b98dc1b02d9ea3bd58d9b0c3b3250874af09648e0f0a4add.</p>
+<p><strong>context; declared_summary</strong></p>
+<p>Terrestrial invertebrates can qualify for CESA listing under
+statutory fish definitions.</p>
+<p>Source: src/case_records.py; pointer: (whole text); characters
+6366:6454; SHA256 prefix 63fd7026bdab.</p>
+<h3 data-number="13.7.9"
+id="selected-excerpt-registry-depth_oncomouse"><span
+class="header-section-number">13.7.9</span> Selected excerpt
+registry-depth_oncomouse</h3>
+<p>Authored registry holding summary; this source kind cannot
+authenticate an underlying instrument.</p>
+<p>Expected unit SHA256:
+705b7c8e4fb4de431322c9c6520bf838ba9c4c6e347c86690253f99352659116.</p>
+<p><strong>context; declared_summary</strong></p>
+<p>The patent issued with claims to a specified transgenic non-human
+mammal.</p>
+<p>Source: src/case_records.py; pointer: (whole text); characters
+10155:10228; SHA256 prefix 63fd7026bdab.</p>
+<h3 data-number="13.7.10"
+id="selected-excerpt-registry-depth_westerfield"><span
+class="header-section-number">13.7.10</span> Selected excerpt
+registry-depth_westerfield</h3>
+<p>Authored registry holding summary; this source kind cannot
+authenticate an underlying instrument.</p>
+<p>Expected unit SHA256:
+8a96cb678660a05a64e900b6a7dd129dc4948865d2df5439c28f599c4f7cf290.</p>
+<p><strong>context; declared_summary</strong></p>
+<p>The judgment was affirmed; the defense relied on entomological
+evidence.</p>
+<p>Source: src/case_records.py; pointer: (whole text); characters
+3509:3581; SHA256 prefix 63fd7026bdab.</p>
+<p>No performed reviewers or judgments declared; reliability is not
+assessed.</p>
+<p>No independent coding pair declared; no agreement or kappa is
+estimated.</p>
+<figure id="fig:coding_review_v1_coverage">
+<a class="figure-full-size-link" href="../figures/coding_review_v1_coverage.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 16, Selected-excerpt composition by declared source kind and explicit coding coverage."><img src="../figures/coding_review_v1_coverage.png"
+alt="Figure 16: Selected-excerpt composition by declared source kind and explicit coding coverage. Present, absent, uncertain and missing remain distinct. The assignment panel pools selected kinds only for display; the results retain separate kind-specific denominators. With no performed reviewers the frame-composition counts remain visible and coding is not assessed. Lexical cues are never judgments. At most 24 assignment rows are displayed; all rows remain in the structured results." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 16: Selected-excerpt composition
+by declared source kind and explicit coding coverage. Present, absent,
+uncertain and missing remain distinct. The assignment panel pools
+selected kinds only for display; the results retain separate
+kind-specific denominators. With no performed reviewers the
+frame-composition counts remain visible and coding is not assessed.
+Lexical cues are never judgments. At most 24 assignment rows are
+displayed; all rows remain in the structured results.</figcaption>
+</figure>
+<figure id="fig:coding_review_v1_agreement">
+<a class="figure-full-size-link" href="../figures/coding_review_v1_agreement.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 17, Complete-case contingency cells for each declared independent coder pair"><img src="../figures/coding_review_v1_agreement.png"
+alt="Figure 17: Complete-case contingency cells for each declared independent coder pair and code, with paired/eligible counts. Each pair remains separate; shared units are not independent replications. Kappa and observed agreement concern coding reproducibility only, not rhetorical validity, intent, legal adequacy or compliance. A missing review is not zero agreement." /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
+<figcaption>Figure 17: Complete-case contingency
+cells for each declared independent coder pair and code, with
+paired/eligible counts. Each pair remains separate; shared units are not
+independent replications. Kappa and observed agreement concern coding
+reproducibility only, not rhetorical validity, intent, legal adequacy or
+compliance. A missing review is not zero agreement.</figcaption>
+</figure>
 <hr />
-<h1 data-number="13" id="sec:conclusion"><span
-class="header-section-number">13</span> Conclusion: Entomological Law as
+<h1 data-number="14" id="sec:conclusion"><span
+class="header-section-number">14</span> Conclusion: Entomological Law as
 a Field Map</h1>
 <p>Entomological law is a genuinely transdisciplinary field whose
 coherence emerges not from a single statute or agency but from the
@@ -2917,11 +3453,11 @@ quotable, re-checkable source. The field has lacked its own treatise;
 what it most needs first is a machine-readable spine that future
 scholarship can extend without the map and the territory drifting apart.
 That spine is what this project supplies, and sec. <a
-href="#sec:methods">12</a> documents exactly how far its guarantees
+href="#sec:methods">13</a> documents exactly how far its guarantees
 reach — and where they stop.</p>
 <hr />
-<h1 data-number="14" id="sec:references"><span
-class="header-section-number">14</span> References: Sources Cited in the
+<h1 data-number="15" id="sec:references"><span
+class="header-section-number">15</span> References: Sources Cited in the
 Field Map</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
@@ -2931,6 +3467,12 @@ Helene N. LeBlanc, and Martin J. R. Hall. 2007. <span>“Best Practice in
 Forensic Entomology–Standards and Guidelines.”</span> <em>International
 Journal of Legal Medicine</em> 121 (2): 90–104. <a
 href="https://doi.org/10.1007/s00414-006-0086-x">https://doi.org/10.1007/s00414-006-0086-x</a>.
+</div>
+<div id="ref-methods_aapor_nonprobability" class="csl-entry"
+role="listitem">
+American Association for Public Opinion Research. 2013. <em>Report of
+the AAPOR Task Force on Non-Probability Sampling</em>. <a
+href="https://aapor.org/wp-content/uploads/2022/11/NPS_TF_Report_Final_7_revised_FNL_6_22_13.pdf">https://aapor.org/wp-content/uploads/2022/11/NPS_TF_Report_Final_7_revised_FNL_6_22_13.pdf</a>.
 </div>
 <div id="ref-abfe_cert" class="csl-entry" role="listitem">
 American Board of Forensic Entomology. 2024. <em>Certification</em>. <a
@@ -2942,6 +3484,12 @@ Animal Sentience Committee. 2026. <em>Welfare Implications of
 Legislative Differences in the Definition of Animals</em>. <a
 href="https://www.gov.uk/government/publications/animal-sentience-committee-impact-of-definitions-of-animals-in-law/animal-sentience-committee-welfare-implications-of-legislative-differences-in-the-definition-of-animals"
 class="uri">Https://www.gov.uk/government/publications/animal-sentience-committee-impact-of-definitions-of-animals-in-law/animal-sentience-committee-welfare-implications-of-legislative-differences-in-the-definition-of-animals</a>.
+</div>
+<div id="ref-artstein2008" class="csl-entry" role="listitem">
+Artstein, Ron, and Massimo Poesio. 2008. <span>“Inter-Coder Agreement
+for Computational Linguistics.”</span> <em>Computational
+Linguistics</em> 34 (4): 555–96. <a
+href="https://doi.org/10.1162/coli.07-034-R2">https://doi.org/10.1162/coli.07-034-R2</a>.
 </div>
 <div id="ref-asthovector" class="csl-entry" role="listitem">
 ASTHO. 2020. <em>State Legal Authorities for Mosquito Control</em>.
@@ -2978,9 +3526,9 @@ Naturelle Du Cadavre. D<span>é</span>couverte Du Cadavre d’un Enfant
 Nouveau-n<span>é</span> Dans Une Chemin<span>é</span>e o<span>ù</span>
 Il s’<span>é</span>tait Momifi<span>é</span>. D<span>é</span>termination
 de l’<span>é</span>poque de La Naissance Par La Pr<span>é</span>sence de
-Nymphes Et de Larves d’insectes Dans Le Cadavre Et Par
+Nymphes et de Larves d’insectes Dans Le Cadavre et Par
 l’<span>é</span>tude de Leurs m<span>é</span>tamorphoses.”</span>
-<em>Annales d’hygi<span>è</span>ne Publique Et de m<span>é</span>decine
+<em>Annales d’hygi<span>è</span>ne Publique et de m<span>é</span>decine
 l<span>é</span>gale</em>, 2nd series, no. 4: 442–52.
 </div>
 <div id="ref-lse_birch2021" class="csl-entry" role="listitem">
@@ -3013,7 +3561,7 @@ class="uri">Https://www.gutenberg.org/ebooks/45315</a>.
 Board of Patent Appeals. 1987. <em>Ex Parte Allen, 2 USPQ2d 1425</em>.
 </div>
 <div id="ref-bowker1999sorting" class="csl-entry" role="listitem">
-Bowker, Geoffrey C., and Susan Leigh Star. 1999. <em>Sorting Things Out:
+Bowker, Geoffrey C., and Susan Leigh Star. 1999. <em>Sorting Things out:
 Classification and Its Consequences</em>. <a
 href="https://doi.org/10.7551/mitpress/6352.001.0001"
 class="uri">Https://doi.org/10.7551/mitpress/6352.001.0001</a>; MIT
@@ -3021,15 +3569,16 @@ Press. <a
 href="https://doi.org/10.7551/mitpress/6352.001.0001">https://doi.org/10.7551/mitpress/6352.001.0001</a>.
 </div>
 <div id="ref-bracton_bees_thorne" class="csl-entry" role="listitem">
-Bracton, Henry de. 1250. <em>De Legibus Et Consuetudinibus Angliae: When
+Bracton, Henry de. 1250. <em>De Legibus et Consuetudinibus Angliae: When
 Bees Are in Hives</em>. Edited by Samuel E. Thorne. <a
 href="https://amesfoundation.law.harvard.edu/Bracton/Unframed/English/v2/43.htm"
 class="uri">Https://amesfoundation.law.harvard.edu/Bracton/Unframed/English/v2/43.htm</a>;
 Harvard Law School Library.
 </div>
-<div id="ref-almond2022" class="csl-entry" role="listitem">
-California Court of Appeal, Third District. 2022. <em>Almond Alliance of
-California v. Fish &amp; Game Commission, 79 Cal.app.5th 337</em>.
+<div id="ref-depth_almond" class="csl-entry" role="listitem">
+California Court of Appeal, Third Appellate District. 2022. <em>Almond
+Alliance of California v. Fish and Game Commission, C093542</em>. <a
+href="https://law.stanford.edu/wp-content/uploads/2022/06/2022-05-31-Almond-Alliance-Opinion.pdf">https://law.stanford.edu/wp-content/uploads/2022/06/2022-05-31-Almond-Alliance-Opinion.pdf</a>.
 </div>
 <div id="ref-california_horticulture1897" class="csl-entry"
 role="listitem">
@@ -3044,10 +3593,6 @@ California Legislature. 1915. <em>Cal. Health &amp; Safety Code
 <span>§</span> 2001 (Mosquito Abatement and Vector Control)</em>. <a
 href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=HSC&amp;division=3.&amp;title=&amp;part=&amp;chapter=1.&amp;article=1."
 class="uri">Https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=HSC&amp;division=3.&amp;title=&amp;part=&amp;chapter=1.&amp;article=1.</a>
-</div>
-<div id="ref-cesa_fgc45" class="csl-entry" role="listitem">
-California Legislature. 1957. <em>Cal. Fish &amp; Game Code
-<span>§</span> 45 (Definition of "Fish")</em>.
 </div>
 <div id="ref-cardoso2020scientists_warning" class="csl-entry"
 role="listitem">
@@ -3233,6 +3778,12 @@ Apibus</em>. <a
 href="https://archive.org/download/bim_early-english-books-1641-1700_the-civil-right-of-tythe_elderfield-christopher_1650/bim_early-english-books-1641-1700_the-civil-right-of-tythe_elderfield-christopher_1650_djvu.txt"
 class="uri">Https://archive.org/download/bim_early-english-books-1641-1700_the-civil-right-of-tythe_elderfield-christopher_1650/bim_early-english-books-1641-1700_the-civil-right-of-tythe_elderfield-christopher_1650_djvu.txt</a>.
 </div>
+<div id="ref-methods_entman_framing" class="csl-entry" role="listitem">
+Entman, Robert M. 1993. <span>“Framing: Toward Clarification of a
+Fractured Paradigm.”</span> <em>Journal of Communication</em> 43 (4):
+51–58. <a
+href="https://doi.org/10.1111/j.1460-2466.1993.tb01304.x">https://doi.org/10.1111/j.1460-2466.1993.tb01304.x</a>.
+</div>
 <div id="ref-esa_position2021" class="csl-entry" role="listitem">
 Entomological Society of America. 2021. <em>Position Statement:
 Endangered Insect Species</em>.
@@ -3290,7 +3841,7 @@ href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1991"
 class="uri">Https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1991</a>.
 </div>
 <div id="ref-evans1884_bugs_beasts" class="csl-entry" role="listitem">
-Evans, E. P. 1884. <span>“Bugs and Beasts Before the Law.”</span>
+Evans, E. P. 1884. <span>“Bugs and Beasts before the Law.”</span>
 <em>The Atlantic Monthly</em>.
 </div>
 <div id="ref-evans1906" class="csl-entry" role="listitem">
@@ -3302,7 +3853,7 @@ Heinemann.
 <div id="ref-favre2010living_property" class="csl-entry"
 role="listitem">
 Favre, David S. 2010. <span>“Living Property: A New Status for Animals
-Within the Legal System.”</span> <em>Marquette Law Review</em> 93:
+within the Legal System.”</span> <em>Marquette Law Review</em> 93:
 1021–71.
 </div>
 <div id="ref-fisher2018genedrives" class="csl-entry" role="listitem">
@@ -3346,9 +3897,15 @@ class="uri">Https://ru.wikisource.org/w/index.php?curid=121399</a>.
 Greenberg, Bernard, and John Charles Kunich. 2004. <em>Entomology and
 the Law: Flies as Forensic Indicators</em>. Cambridge University Press.
 </div>
+<div id="ref-methods_grimmer_stewart" class="csl-entry" role="listitem">
+Grimmer, Justin, and Brandon M. Stewart. 2013. <span>“Text as Data: The
+Promise and Pitfalls of Automatic Content Analysis Methods for Political
+Texts.”</span> <em>Political Analysis</em> 21 (3): 267–97. <a
+href="https://doi.org/10.1093/pan/mps028">https://doi.org/10.1093/pan/mps028</a>.
+</div>
 <div id="ref-hallmann2017" class="csl-entry" role="listitem">
 <span class="nocase">Hallmann, Caspar A. et al.</span> 2017. <span>“More
-Than 75 Percent Decline over 27 Years in Total Flying Insect
+than 75 Percent Decline over 27 Years in Total Flying Insect
 Biomass.”</span> <em>PLoS ONE</em>.
 </div>
 <div id="ref-hartlib1655_silkworm" class="csl-entry" role="listitem">
@@ -3365,7 +3922,7 @@ class="uri">Https://e-edu.nbu.bg/pluginfile.php/743607/mod_resource/content/1/Hi
 </div>
 <div id="ref-howard1898_injurious_insect_laws" class="csl-entry"
 role="listitem">
-Howard, L. O. 1898. <em>Recent Laws Against Injurious Insects in North
+Howard, L. O. 1898. <em>Recent Laws against Injurious Insects in North
 America, Together with the Laws Relative to Foul Brood</em>. <a
 href="https://upload.wikimedia.org/wikipedia/commons/2/25/Recent_laws_against_injurious_insects_in_North_America_-_together_with_the_laws_relative_to_foul_brood_%28IA_recentlawsagains13howa%29.pdf"
 class="uri">Https://upload.wikimedia.org/wikipedia/commons/2/25/Recent_laws_against_injurious_insects_in_North_America_-_together_with_the_laws_relative_to_foul_brood_%28IA_recentlawsagains13howa%29.pdf</a>;
@@ -3391,7 +3948,7 @@ href="https://www.indiacode.nic.in/bitstream/123456789/2354/1/A1914-02.pdf"
 class="uri">Https://www.indiacode.nic.in/bitstream/123456789/2354/1/A1914-02.pdf</a>.
 </div>
 <div id="ref-innocence_lobato" class="csl-entry" role="listitem">
-Innocence Project. 2018. <em>Kirstin Lobato Exonerated After Nearly 16
+Innocence Project. 2018. <em>Kirstin Lobato Exonerated after Nearly 16
 Years</em>. <a
 href="https://innocenceproject.org/news/kirstin-lobato-exonerated-today-after-wrongly-serving-nearly-16-years/"
 class="uri">Https://innocenceproject.org/news/kirstin-lobato-exonerated-today-after-wrongly-serving-nearly-16-years/</a>.
@@ -3440,6 +3997,12 @@ role="listitem">
 Joseph, Brian D. 2018. <span>“Comparative Perspectives on Bee Law in
 Indo-European.”</span> <em>Chatreššar</em> 2: 16–25.
 </div>
+<div id="ref-methods_ca_judicial_access" class="csl-entry"
+role="listitem">
+Judicial Council of California. 2026. <em>California Rules of Court,
+Rule 10.500: Public Access to Judicial Administrative Records</em>. <a
+href="https://courts.ca.gov/cms/rules/index/ten/rule10_500">https://courts.ca.gov/cms/rules/index/ten/rule10_500</a>.
+</div>
 <div id="ref-justinian_digest41" class="csl-entry" role="listitem">
 Justinian. 533 ADa. <em>Digest 41.1.5 (Bee Swarms, Sight, and
 Pursuit)</em>. Translated by S. P. Scott.
@@ -3484,9 +4047,10 @@ Comparison.”</span> <em>Journal of Insects as Food and Feed</em> 7 (5):
 849–56. <a
 href="https://doi.org/10.3920/JIFF2020.0066">https://doi.org/10.3920/JIFF2020.0066</a>.
 </div>
-<div id="ref-oncomouse1988" class="csl-entry" role="listitem">
-Leder, Philip, and Timothy Stewart. 1988. Transgenic non-human mammals
-(u.s. Patent 4,736,866). issued 1988.
+<div id="ref-depth_oncomouse" class="csl-entry" role="listitem">
+Leder, Philip, and Timothy A. Stewart. 1988. <em>Transgenic Non-Human
+Mammals: U.s. Patent 4,736,866</em>. <a
+href="https://patentimages.storage.googleapis.com/76/f3/a5/16327b79a973e5/US4736866.pdf">https://patentimages.storage.googleapis.com/76/f3/a5/16327b79a973e5/US4736866.pdf</a>.
 </div>
 <div id="ref-lodge2016bioeconomics_invasive_species" class="csl-entry"
 role="listitem">
@@ -3511,7 +4075,7 @@ href="https://doi.org/10.1641/0006-3568(2006)56[311:TEVOES]2.0.CO;2">https://doi
 </div>
 <div id="ref-lugo2006insect_conservation_esa" class="csl-entry"
 role="listitem">
-Lugo, Ezequiel. 2006. <span>“Insect Conservation Under the Endangered
+Lugo, Ezequiel. 2006. <span>“Insect Conservation under the Endangered
 Species Act.”</span> <em>UCLA Journal of Environmental Law and
 Policy</em> 25 (1). <a
 href="https://doi.org/10.5070/l5251019538">https://doi.org/10.5070/l5251019538</a>.
@@ -3568,7 +4132,7 @@ Masson et Gauthier-Villars.
 </div>
 <div id="ref-menabrea1846_animal_judgments" class="csl-entry"
 role="listitem">
-Ménabréa, Léon. 1846. <em>De l’origine, de La Forme Et de l’esprit Des
+Ménabréa, Léon. 1846. <em>De l’origine, de La Forme et de l’esprit Des
 Jugements Rendus Au Moyen-Age Contre Les Animaux, Avec Des Documents
 in<span>é</span>dits</em>. <a
 href="https://www.academiesavoie.org/images/memoires/serie1/Memoires_Academie_de_Savoie_serie1-tome-12.pdf"
@@ -3576,7 +4140,7 @@ class="uri">Https://www.academiesavoie.org/images/memoires/serie1/Memoires_Acade
 Puthod.
 </div>
 <div id="ref-mikhalevich2020minds" class="csl-entry" role="listitem">
-Mikhalevich, Irina, and Russell Powell. 2020. <span>“Minds Without
+Mikhalevich, Irina, and Russell Powell. 2020. <span>“Minds without
 Spines: Evolutionarily Inclusive Animal Ethics.”</span> <em>Animal
 Sentience</em> 29 (1). <a
 href="https://doi.org/10.51291/2377-7478.1527">https://doi.org/10.51291/2377-7478.1527</a>.
@@ -3673,7 +4237,7 @@ Ochagovosti Transmissivnykh Boleznei Cheloveka.”</span> <em>Zhurnal
 Obshchei Biologii</em> 7 (1): 3–33.
 </div>
 <div id="ref-quintilian_decl13_bees" class="csl-entry" role="listitem">
-Quintilian. 100 AD. <em>Declamatio Maior XIII: Damni Per Iniuriam Dati
+Quintilian. 100 AD. <em>Declamatio Maior XIII: Damni per Iniuriam Dati
 Sit Actio</em>. <a
 href="https://www.thelatinlibrary.com/quintilian/quintilian.decl.mai13.shtml"
 class="uri">Https://www.thelatinlibrary.com/quintilian/quintilian.decl.mai13.shtml</a>.
@@ -3737,7 +4301,7 @@ class="uri">Https://archive.org/download/bim_early-english-books-1475-1640_the-h
 <div id="ref-shirey2025invertebrate_esa" class="csl-entry"
 role="listitem">
 Shirey, Vaughn M., Jayme M. M. Lewthwaite, Ann Marie Gawel, and Laura
-Melissa Guzman. 2025. <span>“50 Years of Invertebrate Conservation Under
+Melissa Guzman. 2025. <span>“50 Years of Invertebrate Conservation under
 the United States Endangered Species Act–History and Threats to
 Species.”</span> <em>Frontiers in Conservation Science</em> 6: 1505451.
 <a
@@ -3761,9 +4325,10 @@ Stone, Christopher D. 1972. <span>“Should Trees Have Standing? Toward
 Legal Rights for Natural Objects.”</span> <em>Southern California Law
 Review</em> 45: 450–501.
 </div>
-<div id="ref-westerfield2019" class="csl-entry" role="listitem">
-Supreme Court of California. 2019. <em>People v. Westerfield, 6 Cal.5th
-632</em>.
+<div id="ref-depth_westerfield" class="csl-entry" role="listitem">
+Supreme Court of California. 2019. <em>People v. Westerfield,
+S112691</em>. <a
+href="https://www.courts.ca.gov/opinions/archive/S112691.PDF">https://www.courts.ca.gov/opinions/archive/S112691.PDF</a>.
 </div>
 <div id="ref-auker1996" class="csl-entry" role="listitem">
 Supreme Court of Pennsylvania. 1996. <em>Commonwealth v. Auker, 545 Pa.
@@ -3817,6 +4382,11 @@ United Kingdom Parliament. 1967. <em>Plant Health Act 1967, c. 8</em>.
 <a href="https://www.legislation.gov.uk/ukpga/1967/8"
 class="uri">Https://www.legislation.gov.uk/ukpga/1967/8</a>.
 </div>
+<div id="ref-methods_doj_foia_scope" class="csl-entry" role="listitem">
+United States Department of Justice. 2026. <em>Department of Justice
+Freedom of Information Act Reference Guide</em>. <a
+href="https://www.justice.gov/oip/department-justice-freedom-information-act-reference-guide">https://www.justice.gov/oip/department-justice-freedom-information-act-reference-guide</a>.
+</div>
 <div id="ref-lacey42" class="csl-entry" role="listitem">
 U.S. Congress. 1900. <em>Lacey Act Injurious-Species Provision, 18
 u.s.c. <span>§</span> 42</em>.
@@ -3847,7 +4417,7 @@ class="uri">Https://www.law.cornell.edu/uscode/text/16/1532</a>.
 </div>
 <div id="ref-esa1973" class="csl-entry" role="listitem">
 U.S. Congress. 1973b. <em>Endangered Species Act of 1973, 16 u.s.c.
-<span>§</span> 1531 Et Seq.</em>
+<span>§</span> 1531 et Seq.</em>
 </div>
 <div id="ref-usc7_7712" class="csl-entry" role="listitem">
 U.S. Congress. 2000a. <em>7 u.s.c. <span>§</span> 7712 (Prohibition and
@@ -3907,6 +4477,11 @@ U.S. Food and Drug Administration. 2018. <em>Food Defect Levels
 Handbook</em>. <a
 href="https://www.fda.gov/food/ingredients-additives-gras-packaging-guidance-documents-regulatory-information/food-defect-levels-handbook"
 class="uri">Https://www.fda.gov/food/ingredients-additives-gras-packaging-guidance-documents-regulatory-information/food-defect-levels-handbook</a>.
+</div>
+<div id="ref-depth_phsmou" class="csl-entry" role="listitem">
+U.S. Public Health Service and E. I. du Pont de Nemours and Company.
+n.d. <em>Memorandum of Understanding Concerning OncoMouse</em>. <a
+href="https://www.techtransfer.nih.gov/sites/default/files/documents/pdfs/oncomouse.pdf">https://www.techtransfer.nih.gov/sites/default/files/documents/pdfs/oncomouse.pdf</a>.
 </div>
 <div id="ref-chakrabarty1980" class="csl-entry" role="listitem">
 U.S. Supreme Court. 1980. <em>Diamond v. Chakrabarty, 447 u.s. 303</em>.
@@ -3990,11 +4565,6 @@ Diseases</em>. <a
 href="https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/en_chapitre_surveillance_vector.htm"
 class="uri">Https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/en_chapitre_surveillance_vector.htm</a>.
 </div>
-<div id="ref-xerces_bumblebees" class="csl-entry" role="listitem">
-Xerces Society. 2022. <em>California Can Protect Bumble Bees Under
-CESA</em>. <a href="https://www.xerces.org"
-class="uri">Https://www.xerces.org</a>.
-</div>
 <div id="ref-ziety2026_insect_farming_barriers" class="csl-entry"
 role="listitem">
 Ziety, Jakub Jan, Elzbieta Malgorzata Zebek, Ewelina Olba-Ziety, Michal
@@ -4007,14 +4577,15 @@ href="https://doi.org/10.3390/insects17030319">https://doi.org/10.3390/insects17
 </div>
 <hr />
 <p><strong>Release:</strong> v1.0.0 · DOI
-<code>10.5281/zenodo.21137276</code> · SHA-256
-<code>5a1891704c28…</code> · pairing complete</p>
+<code>10.5281/zenodo.21137276</code> · SHA-256 <code>pending…</code> ·
+pairing pending</p>
 <figure>
 <a class="figure-full-size-link" href="../figures/transmission_integrity_strip.png" target="_blank" rel="noopener" aria-label="Open full-size figure, Integrity QR strip"><img src="../figures/transmission_integrity_strip.png"
 style="width:88.0%" alt="Integrity QR strip" /><span class="figure-full-size-label" aria-hidden="true">Open full-size figure</span></a>
 <figcaption>Integrity QR strip</figcaption>
 </figure>
-<p><strong>Prior:</strong> <em>No prior releases.</em></p>
+<p><strong>Prior:</strong> <code>v1.0.0</code> ·
+<code>10.5281/zenodo.21137277</code> · <code>5a189170…</code></p>
 <!-- END OF TRANSMISSION -->
 </main>
 </body>

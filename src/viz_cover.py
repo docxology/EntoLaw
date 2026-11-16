@@ -112,7 +112,7 @@ def cover(path: Path) -> Path:
     left_x = 0.09
     ax.text(left_x, 0.862, "FIELD RECORD  ·  REGISTRY-FIRST REFERENCE", ha="left", va="center", fontsize=9.6, color="#9ca3af", fontweight="bold")
     ax.text(left_x - 0.002, 0.80, "Entomological Law", ha="left", va="center", fontsize=31, fontweight="bold", color=_INK)
-    ax.text(left_x, 0.723, "A field map of insects as evidence, threat, property,\nproduct, patient, and weapon", ha="left", va="center", fontsize=14.2, style="italic", color=_MUTED, linespacing=1.5)
+    ax.text(left_x, 0.723, "A field map of insects as evidence, threat,\nproperty, product, patient, and weapon", ha="left", va="center", fontsize=14.2, style="italic", color=_MUTED, linespacing=1.5)
     ax.plot([left_x, left_x + 0.415], [0.652, 0.652], color="#d8cdb8", linewidth=1.0)
     ax.text(
         left_x,
