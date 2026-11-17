@@ -272,6 +272,7 @@ requires-dist = [
     { name = "pypdf", specifier = ">=6.21.4" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=9.0.3" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.1.0" },
+    { name = "pytest-xdist", marker = "extra == 'dev'", specifier = ">=3.8.0" },
     { name = "python-muckrock", specifier = ">=2.3.0" },
     { name = "python-squarelet", specifier = ">=0.5.0" },
     { name = "pyyaml", specifier = ">=6.0" },
