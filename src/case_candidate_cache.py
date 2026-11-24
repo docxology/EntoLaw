@@ -12,6 +12,7 @@ keep importing from ``src.case_candidates``. Nothing here opens a socket.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -130,9 +131,8 @@ def load_cached_response(
         The cached response.
 
     Raises:
-        CaseCandidateError: If the cache file is missing, malformed, or its
-            recorded ``query_id``/``text`` disagrees with the declared query
-            (a stale cache from a prior, differently-worded query).
+        CaseCandidateError: If the cache is missing, malformed, or its query
+            identity and response-affecting parameters differ from the declaration.
     """
     import json
 
@@ -148,46 +148,57 @@ def load_cached_response(
         raise CaseCandidateError(f"cache file {path} is not valid JSON: {exc}") from exc
     if not isinstance(payload, Mapping):
         raise CaseCandidateError(f"{path}: cache file must contain a JSON object")
-    if str(payload.get("query_id") or "") != query.query_id:
-        raise CaseCandidateError(
-            f"{path}: cache file's query_id {payload.get('query_id')!r} does not match "
-            f"the declared query {query.query_id!r}"
-        )
-    if str(payload.get("text") or "") != query.text:
-        raise CaseCandidateError(
-            f"{path}: cache file's recorded query text disagrees with "
-            f"config/case_candidate_queries.yaml for {query.query_id!r} -- the query "
-            "text changed since this response was fetched; re-run "
-            "scripts/fetch_case_candidate_queries.py --network"
-        )
-    results = tuple(
-        _load_cached_result(row, path) for row in payload.get("results") or []
-    )
+    for key, label in (("query_id", "query ID"), ("text", "query text"), ("search_type", "search type")):
+        if payload.get(key) != getattr(query, key):
+            raise CaseCandidateError(f"{path}: stale cache; recorded {label} disagrees with the declaration")
+    results = payload.get("results")
+    if not isinstance(results, list):
+        raise CaseCandidateError(f"{path}: cached results must be an array")
+    hit_count = payload.get("hit_count")
+    if "hit_count" not in payload or (hit_count is not None and (type(hit_count) is not int or hit_count < 0)):
+        raise CaseCandidateError(f"{path}: cached hit_count must be a nonnegative integer or null")
+    if hit_count == 0 and results:
+        raise CaseCandidateError(f"{path}: zero cached hit_count disagrees with nonempty results")
+    approximate = payload.get("approximate")
+    if type(approximate) is not bool:
+        raise CaseCandidateError(f"{path}: cached approximate must be a boolean")
+    fetched_at = payload.get("fetched_at")
+    try:
+        if not isinstance(fetched_at, str) or datetime.fromisoformat(fetched_at).tzinfo is None:
+            raise ValueError("timezone required")
+    except ValueError as exc:
+        raise CaseCandidateError(f"{path}: cached fetched_at must be an ISO timestamp with a timezone") from exc
     return CachedQueryResponse(
         query_id=query.query_id,
         text=query.text,
-        search_type=str(payload.get("search_type") or query.search_type),
-        fetched_at=str(payload.get("fetched_at") or ""),
-        hit_count=_int_or_none(payload.get("hit_count")),
-        approximate=bool(payload.get("approximate", False)),
-        results=results,
+        search_type=query.search_type,
+        fetched_at=fetched_at,
+        hit_count=hit_count,
+        approximate=approximate,
+        results=tuple(_load_cached_result(row, path) for row in results),
     )
 
 
 def _load_cached_result(raw: Any, path: Path) -> CachedResult:
     if not isinstance(raw, Mapping):
         raise CaseCandidateError(f"{path}: a cached result is not a mapping")
-    citations = raw.get("citations") or ()
-    if isinstance(citations, str):
-        citations = (citations,)
+    def text(key: str) -> str | None:
+        value = raw.get(key)
+        if value is not None and not isinstance(value, str):
+            raise CaseCandidateError(f"{path}: cached result {key} must be a string or null")
+        return value or None
+
+    citations = raw.get("citations")
+    if not isinstance(citations, list) or any(not isinstance(citation, str) for citation in citations):
+        raise CaseCandidateError(f"{path}: cached result citations must be an array of strings")
     return CachedResult(
-        cluster_id=_str_or_none(raw.get("cluster_id")),
-        case_name=_str_or_none(raw.get("case_name")),
-        court=_str_or_none(raw.get("court")),
-        date_filed=_str_or_none(raw.get("date_filed")),
-        absolute_url=_str_or_none(raw.get("absolute_url")),
-        docket_number=_str_or_none(raw.get("docket_number")),
-        citations=tuple(str(c) for c in citations),
+        cluster_id=text("cluster_id"),
+        case_name=text("case_name"),
+        court=text("court"),
+        date_filed=text("date_filed"),
+        absolute_url=text("absolute_url"),
+        docket_number=text("docket_number"),
+        citations=tuple(citations),
     )
 
 
@@ -201,22 +212,6 @@ def load_all_cached_responses(
 # --------------------------------------------------------------------------
 # Building
 # --------------------------------------------------------------------------
-
-
-def _str_or_none(value: Any) -> str | None:
-    if value is None:
-        return None
-    text = str(value)
-    return text if text else None
-
-
-def _int_or_none(value: Any) -> int | None:
-    if value is None:
-        return None
-    try:
-        return int(value)
-    except (TypeError, ValueError):
-        return None
 
 
 # --------------------------------------------------------------------------

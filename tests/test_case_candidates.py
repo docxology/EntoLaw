@@ -12,8 +12,10 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import pytest
@@ -33,6 +35,7 @@ def _run(script: Path, *args: str) -> subprocess.CompletedProcess:
         capture_output=True,
         text=True,
         check=False,
+        timeout=45,
     )
 
 
@@ -152,6 +155,45 @@ def test_cached_response_stale_text_raises(tmp_path):
     queries = cc.load_query_registry(tmp_path)
     with pytest.raises(cc.CaseCandidateError, match="query text disagrees"):
         cc.load_cached_response(tmp_path, queries[0])
+
+
+@pytest.mark.parametrize(
+    ("change", "error"),
+    [
+        ({"text": "different query"}, "stale cache; recorded query text"),
+        ({"search_type": "r"}, "stale cache; recorded search type"),
+        ({"results": {}}, "cached results must be an array"),
+        ({"approximate": "false"}, "cached approximate must be a boolean"),
+        ({"hit_count": True}, "cached hit_count must be a nonnegative integer"),
+        ({"fetched_at": "2026-01-01"}, "cached fetched_at must be an ISO timestamp"),
+        ({"results": [{"case_name": {}, "citations": []}], "hit_count": 1}, "case_name must be a string"),
+    ],
+)
+def test_preview_and_register_check_share_cache_validation(tmp_path, change, error):
+    config = tmp_path / "config"
+    config.mkdir()
+    (config / "case_candidate_queries.yaml").write_text(yaml.safe_dump({"queries": [
+        {"query_id": "q1", "text": "example query", "search_type": "o", "issue_id": "issue_a"}
+    ]}), encoding="utf-8")
+    cache_dir = tmp_path / cc.CACHE_DIR_RELPATH
+    cache_dir.mkdir(parents=True)
+    cache = cache_dir / "q1.json"
+    zero = {
+        "query_id": "q1", "text": "example query", "search_type": "o",
+        "fetched_at": "2026-01-01T00:00:00Z", "hit_count": 0, "approximate": False, "results": [],
+    }
+    cache.write_text(json.dumps(zero), encoding="utf-8")
+    original = _run(GENERATE_SCRIPT, "--project-root", str(tmp_path))
+    assert original.returncode == 0, original.stderr
+    assert "nothing to fetch" in _run(FETCH_SCRIPT, "--project-root", str(tmp_path)).stdout
+
+    cache.write_text(json.dumps(zero | change), encoding="utf-8")
+    preview = _run(FETCH_SCRIPT, "--project-root", str(tmp_path))
+    assert preview.returncode == 0, preview.stderr
+    assert "would be fetched" in preview.stdout and error in preview.stdout
+    check = _run(GENERATE_SCRIPT, "--check", "--project-root", str(tmp_path))
+    assert check.returncode == 2
+    assert error in check.stderr
 
 
 # ── building / merging ──────────────────────────────────────────────────
@@ -432,6 +474,36 @@ def test_generate_case_candidates_rewrite_reproduces_the_committed_file(tmp_path
     written = (work / "data" / "case_candidates.yaml").read_text(encoding="utf-8")
     committed = (PROJECT_ROOT / "data" / "case_candidates.yaml").read_text(encoding="utf-8")
     assert written == committed
+
+    # Atomic publication replaces the inode while preserving serialized bytes and access mode.
+    target = work / "data" / "case_candidates.yaml"
+    target.chmod(0o640)
+    original = target.stat()
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        publications = [executor.submit(_run, GENERATE_SCRIPT, "--project-root", str(work)) for _ in range(2)]
+        for publication in publications:
+            repeat = publication.result(timeout=50)
+            assert repeat.returncode == 0, repeat.stderr
+    assert target.read_text(encoding="utf-8") == written
+    assert target.stat().st_mode == original.st_mode
+    assert target.stat().st_ino != original.st_ino
+
+
+@pytest.mark.skipif(os.geteuid() == 0, reason="root can stage files in a non-writable directory")
+def test_register_publish_failure_leaves_prior_bytes(tmp_path):
+    data = tmp_path / "data"
+    data.mkdir()
+    register = cc.generate_register(PROJECT_ROOT)
+    target = cc.write_candidate_register(tmp_path, register)
+    saved = target.read_bytes()
+    mode = data.stat().st_mode
+    data.chmod(0o500)
+    try:
+        with pytest.raises(PermissionError):
+            cc.write_candidate_register(tmp_path, register)
+        assert target.read_bytes() == saved
+    finally:
+        data.chmod(mode)
 
 
 def test_generate_case_candidates_check_reports_drift_when_missing(tmp_path):
