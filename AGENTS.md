@@ -46,8 +46,8 @@ legal or biological status, bind it to a short live-checkable quote.
 
 The supported runtime is the declared Python 3.15.2 environment. Execute the
 bounded local gate through the vault's qualified offline runner; dependency setup
-is a separate governed operation. The declaration in `config/local_validation.yaml`
-retains the non-live coverage suite and actual local render, and now checks the
+is a separate governed operation. See [local validation](docs/local_validation.md). The declaration in `config/local_validation.yaml`
+retains the non-live coverage suite and actual local render, and checks the
 local research resource contract before accepting the source. Existing source
 verification dates and curated registry facts are not refreshed by this gate.
 

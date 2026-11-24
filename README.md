@@ -42,40 +42,38 @@ verifiable quote in a claim ledger.
 | `docs/REVIEW_PROTOCOL.md` | Deep-review checklist and final gate sequence |
 | `docs/CASE_CANDIDATES.md` | The case-candidate register: what it is, how to rebuild it, how to promote a candidate |
 
-## Quick start
+## Build and review
+
+Use the declared Python 3.15.2 environment, the compatible shared engine and
+the rendering template. [Local validation](docs/local_validation.md) covers
+provisioning, the complete offline gate, and its output and receipt paths.
+[Review protocol](docs/REVIEW_PROTOCOL.md) covers reviewing the source and
+the rendered package.
+
+From the project root, after provisioning:
 
 ```bash
-uv sync --extra dev                       # dev tooling: pytest, pytest-cov, hypothesis, ruff
-uv run ruff check .                       # lint gate
-uv run pytest -m "not live"               # full offline suite (90%+ coverage on src/)
-uv run pytest -m live                     # live claim-ledger oracle (network)
-uv run python scripts/run_inventory.py    # inventories, metrics, validation report
-uv run python scripts/generate_figures.py # render all figures
-uv run python scripts/generate_case_candidates.py --check  # case-candidate register is current (docs/CASE_CANDIDATES.md)
+.venv/bin/python -m legal_informatics.local_validation --project-root .
+.venv/bin/python scripts/generate_case_candidates.py --check
 ```
 
-Render from this project root with the declared template available:
+The first command runs the declared offline gate and builds an actual PDF and
+HTML export. The second verifies the committed case-candidate register
+against the checked-in cache. Run both through the qualified offline runner
+when working in a managed vault. Formal publication is forbidden by the
+distribution declaration.
 
-```bash
-.venv/bin/python scripts/z_generate_manuscript_variables.py
-.venv/bin/python scripts/render_manuscript.py
-.venv/bin/python scripts/finalize_web_export.py
-```
-
-The shared local renderer writes an actual PDF/HTML receipt. Formal release,
-upload and DOI operations remain forbidden by the distribution declaration.
-See [local validation](docs/local_validation.md) for current-runtime provisioning
-and source-bound checks, and [research methods](docs/research/README.md) for the
-registry-frame analysis and prospective records-access plan.
+See the [documentation index](docs/README.md) for CourtListener operations
+and the [research methods](docs/research/README.md) for the selected registry
+frame and prospective records-access plan.
 
 ## Guarantees and their limits
 
 The offline test suite guarantees the manuscript's *internal* numbers are
 generated from the registries and cannot drift, and that every numeral-form
 external statistic is attributed and well-formed. The claim ledger also covers
-volatile current-status claims that the manuscript needs to preserve. Only
-`uv run pytest -m live` confirms that the ledger's quotes still appear at their
-sources. See [`docs/ACCURACY_METHODOLOGY.md`](docs/ACCURACY_METHODOLOGY.md)
+volatile current-status claims that the manuscript needs to preserve. The separately authorized live suite fetches the ledger URLs and checks for
+the recorded quotes. See [`docs/ACCURACY_METHODOLOGY.md`](docs/ACCURACY_METHODOLOGY.md)
 and [`docs/REVIEW_PROTOCOL.md`](docs/REVIEW_PROTOCOL.md) for the full boundary.
 The registries are curated to anchor each role with its leading authorities —
 they are not a census of the entire field, and every figure caption states that

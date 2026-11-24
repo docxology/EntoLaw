@@ -14,7 +14,7 @@ holdings require different access routes; confirm the actual custodian first.
 
 ## Local integrity validation
 
-`config/research_integrity.yaml` declares the local ledgers and file pins checked
+[The research integrity configuration](../../config/research_integrity.yaml) declares the local ledgers and file pins checked
 by the ordinary source gate. From the project root, through the qualified offline
 runner:
 
@@ -28,4 +28,4 @@ The integrity check writes no source files.
 
 ## Located coding review
 
-The new `config/coding_review.yaml` selects exact, hash-bound spans and operational decision rules. No reviewers, independent sessions or judgments are declared; agreement is unassessed. Targeted new public readings, retrieval failures and reading extents are recorded in [depth_readings.json](depth_readings.json). Original verification dates remain unchanged. Local file pins do not authenticate unretained website bytes.
+[The coding plan](../../config/coding_review.yaml) selects exact, hash-bound spans and operational decision rules. No reviewers, independent sessions or judgments are declared; agreement is unassessed. Targeted public readings, retrieval failures and reading extents are recorded in [depth_readings.json](depth_readings.json). Original verification dates remain unchanged. Local file pins do not authenticate unretained website bytes.

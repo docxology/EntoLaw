@@ -1,11 +1,6 @@
-# workflows
+# GitHub Actions
 
-`workflows/` of the parent project.
-
-Part of `EntoLaw/.github`.
-
-## Contents
-Files: `AGENTS.md`, `README.md`, `ci.yml`
-
-## Usage
-- See `EntoLaw/.github/GITHUB.md` for how this directory is produced and used.
+This directory contains workflow documentation. The project runs its
+[declared local gate](../../config/local_validation.yaml) through the
+[local validation runner](../../docs/local_validation.md). Repository
+settings and external checks are visible on the pull request separately.

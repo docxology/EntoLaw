@@ -4,7 +4,7 @@
 Guidance for agents working in this documentation directory.
 
 ## Layout
-- `README.md` — human entry point; repo purpose, layout, run/test commands copied from `pyproject.toml`
+- `README.md` — human entry point; navigation for contributors and operators
 - `ACCURACY_METHODOLOGY.md` — registry-to-manuscript accuracy contract
 - `REVIEW_PROTOCOL.md` — claim and citation review protocol
 - `CASE_CANDIDATES.md` — what `data/case_candidates.yaml` is, how it is

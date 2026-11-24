@@ -70,8 +70,8 @@ correct anything that drifted, then replace `[Unreleased] — DRAFT pending
 proofreading` with the real version number (see step 2) and release date
 once everything above is resolved.
 
-## 8. Only then: publish
+## 8. Review the distribution decision
 
-Tag, `gh release create`, and (if a new version) mint the Zenodo DOI via the
-project's own publishing tooling. None of that is done by this packaging
-pass.
+[The current distribution declaration](config/manuscript_metadata.yaml)
+forbids formal publication. Any future tag, GitHub release or Zenodo deposit
+requires a separate owner decision and publication workflow.
