@@ -131,11 +131,11 @@ def _imported_legal_informatics_modules() -> set[str]:
                     if node.module == "legal_informatics":
                         modules.update(alias.name for alias in node.names)
                     elif node.module.startswith("legal_informatics."):
-                        modules.add(node.module.split(".", 2)[1])
+                        modules.add(node.module.removeprefix("legal_informatics."))
                 elif isinstance(node, ast.Import):
                     for alias in node.names:
                         if alias.name.startswith("legal_informatics.") and alias.name != "legal_informatics":
-                            modules.add(alias.name.split(".", 2)[1])
+                            modules.add(alias.name.removeprefix("legal_informatics."))
     return modules
 
 
