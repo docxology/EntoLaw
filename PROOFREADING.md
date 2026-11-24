@@ -36,21 +36,18 @@ The machine-local `.codegraph` symlink was untracked and added to `.gitignore`;
 `uv run python scripts/check_release_boundary.py` reports `0 findings`, and the
 boundary tests now allow no exemptions.
 
-## 4. Regenerate the gate-state block
+## 4. Verify the candidate's local receipt
 
-`TODO.md`'s gate-state block is written by
-`uv run python scripts/render_gate_state.py` (full suite; budget tens of
-minutes). It was last regenerated with all 6 declared gates declared and
-passing — including `check_release_boundary.py`, which step 3 above cleared.
-Re-run it, or `--check` (which re-runs every gate and exits non-zero when the
-committed block disagrees), and confirm all 6 still pass before release.
+Run the [declared offline gate](docs/local_validation.md) and verify its
+receipt against the exact candidate. Review the rendered PDF and HTML and
+record the results for the owner.
 
-## 5. Re-run the live claim-ledger oracle
+## 5. Re-run the live claim quote check
 
-`uv run pytest -m live` was not run as part of this packaging pass (network
-access was out of scope for this unit). Confirm the claim ledger's 20
-external sources still resolve and still say what the manuscript quotes
-before treating the release as accurate as of its publish date.
+With separate network authorization, run
+`.venv/bin/python -m pytest -m live` to fetch the current claim-ledger
+source URLs and check for the recorded quotes. Record failures and review
+the source evidence before updating a verification date.
 
 ## 6. Re-check the known Zenodo description residual
 

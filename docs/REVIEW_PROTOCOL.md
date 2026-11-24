@@ -37,7 +37,7 @@ search material.
 Inspect the rendered surfaces for unresolved manuscript tokens, raw citation
 markers and broken figure references:
 
-- `output/rendered/manuscript/EntoLaw_manuscript_combined.pdf`
+- `output/rendered/manuscript/<checkout-name>_manuscript_combined.pdf`
 - `output/web/index.html`
 - `output/data/manuscript_variables.json`
 - `output/reports/validation.json`

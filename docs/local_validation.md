@@ -27,7 +27,7 @@ uv sync --locked --offline --extra dev --no-python-downloads
 ```
 
 The render also needs the declared template, Pandoc and XeLaTeX. Set
-`TEMPLATE_REPO_ROOT` to an approved template checkout when discovery cannot
+`LEGAL_INFORMATICS_TEMPLATE_ROOT` to an approved template checkout when discovery cannot
 find it. The relative engine path in
 `pyproject.toml` follows the owned Public/Private storage layout; a standalone
 checkout must deliberately set its own engine source location and re-lock.

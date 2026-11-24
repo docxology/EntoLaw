@@ -1,7 +1,7 @@
 # EntoLaw TODO
 
-Forward-only backlog. Closed work is in `git log`, not here. Measured counts
-live in their generators; re-run the gates before trusting any number below.
+Backlog and historical gate evidence. Use the current validation receipt
+when reviewing a candidate.
 
 ## Historical gate snapshot
 
