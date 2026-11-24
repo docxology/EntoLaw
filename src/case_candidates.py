@@ -27,6 +27,8 @@ from typing import Any
 
 import yaml  # type: ignore[import-untyped]
 
+from legal_informatics.muckraker.atomic import atomic_write_text
+
 from src.case_candidate_cache import (  # noqa: F401 - re-exported public names
     CACHE_DIR_RELPATH,
     QUERY_REGISTRY_RELPATH,
@@ -36,9 +38,7 @@ from src.case_candidate_cache import (  # noqa: F401 - re-exported public names
     CaseCandidateError,
     _cache_path,
     _candidate_key,
-    _int_or_none,
     _load_cached_result,
-    _str_or_none,
     build_cache_payload,
     known_issue_ids,
     load_all_cached_responses,
@@ -261,8 +261,7 @@ def write_candidate_register(project_root: Path, register: CandidateRegister) ->
     """Write the rendered register to ``data/case_candidates.yaml``; return its path."""
     path = project_root / REGISTER_RELPATH
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(render_candidate_register(register), encoding="utf-8")
-    return path
+    return atomic_write_text(path, render_candidate_register(register))
 
 
 def generate_register(project_root: Path) -> CandidateRegister:

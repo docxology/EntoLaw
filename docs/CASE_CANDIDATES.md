@@ -33,11 +33,14 @@ Two steps, one of which touches the network and one of which never does:
 
 1. **`scripts/fetch_case_candidate_queries.py --network`** — the only
    network-touching step. It reads `config/case_candidate_queries.yaml`,
-   performs one CourtListener Search API request per query not already
-   cached, and writes the normalized response to
+   performs one CourtListener Search API request per query without a current,
+   valid cache, and atomically writes the normalized response to
    `data/courtlistener_cache/<query_id>.json`. Without `--network` it only
    lists what it would fetch and how many requests that costs, so a caller
-   can check the count against a rate budget first. It uses the engine's own
+   can check the count against a rate budget first. The preview and register
+   check use the same validation for the cached query ID, text, search type
+   and response fields. An empty result array is usable when its coverage
+   fields are valid. The fetch uses the engine's own
    `legal_informatics.courtlistener_client` / `legal_informatics.courtlistener_search`
    modules directly; it builds no HTTP request itself, honors a `429`'s
    backoff by stopping rather than retrying, and never reads, prints, or
@@ -55,9 +58,10 @@ reproducible by anyone who has the repository, with no CourtListener account
 required — the recorded responses in `data/courtlistener_cache/` *are* the
 input, checked in for exactly that reason.
 
-Re-running step 1 for one query (a `409`/stale-registry fix, a reworded
-query) is `--only <query_id> --force`; re-running step 2 always regenerates
-the whole file from whatever is currently cached and declared.
+A stale or invalid cache is selected for refresh automatically. Use
+`--only <query_id> --force` to refresh an otherwise valid entry. Previously
+completed entries remain readable throughout a refresh. Re-running step 2
+atomically replaces the entire generated register from the declared inputs.
 
 ## What it explicitly is not
 

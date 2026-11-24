@@ -58,7 +58,7 @@ def main() -> int:
             return 1 if findings else 0
         register = generate_register(root)
         written = write_candidate_register(root, register)
-    except CaseCandidateError as exc:
+    except (CaseCandidateError, OSError) as exc:
         print(f"case candidate register error: {exc}", file=sys.stderr)
         return 2
     print(

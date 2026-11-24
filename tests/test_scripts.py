@@ -1,6 +1,12 @@
 from __future__ import annotations
 
 import json
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+import yaml
 
 from scripts import (
     finalize_web_export,
@@ -8,6 +14,26 @@ from scripts import (
     generate_manuscript_variables,
     run_inventory,
 )
+
+
+def test_declared_engine_tools_build_and_check_in_an_alternate_layout(tmp_path):
+    project = Path(__file__).resolve().parents[1]
+    alternate = tmp_path / "relocated" / "analysis"
+    for relative in ("config", "docs/research", "src"):
+        shutil.copytree(project / relative, alternate / relative, ignore=shutil.ignore_patterns("__pycache__"))
+    declaration = yaml.safe_load((alternate / "config/local_validation.yaml").read_text(encoding="utf-8"))
+    tooling = [
+        step for step in declaration["steps"]
+        if step["name"] in {"coding-review", "coding-review-check", "graphical-abstract", "graphical-abstract-check"}
+    ]
+    assert len(tooling) == 4
+    for step in tooling:
+        assert step["argv"][1:3] == ["-m", "legal_informatics.muckraker.domain_cli"]
+        result = subprocess.run(
+            [sys.executable, *step["argv"][1:]], cwd=alternate,
+            capture_output=True, text=True, timeout=90, check=False,
+        )
+        assert result.returncode == 0, result.stdout + result.stderr
 
 
 def test_generate_manuscript_variables_writes_canonical_data_json(tmp_path):

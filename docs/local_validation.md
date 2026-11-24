@@ -23,7 +23,11 @@ its pointer. Current-runtime provisioning uses the locked project and explicit
 dev extra, with no interpreter downloads. The relative engine path in
 `pyproject.toml` follows the owned Public/Private storage layout; a standalone
 checkout must deliberately set its own engine source location and re-lock.
-No machine-absolute source path belongs in the tracked configuration.
+The coding-review and graphical-abstract build and check steps run as modules
+of that installed engine. Provision an engine that supplies those commands
+before running the gate. An unavailable declared module stops the gate before
+artifact generation. No machine-absolute source path belongs in the tracked
+configuration.
 
 `output/data/local_validation_receipt.json` binds a passing result to the
 actual interpreter, locked dependencies and source/config/docs/data bytes.

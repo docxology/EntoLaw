@@ -28,16 +28,16 @@ steps:
     argv: ['{python}', scripts/check_release_boundary.py]
     timeout: 180
   - name: coding-review
-    argv: ['{python}', ../../Private/legal_informatics/scripts/build_coding_review.py, --project-root, .]
+    argv: ['{python}', -m, 'legal_informatics.muckraker.domain_cli', coding-review, --project-root, .]
     timeout: 180
   - name: coding-review-check
-    argv: ['{python}', ../../Private/legal_informatics/scripts/build_coding_review.py, --project-root, ., --check]
+    argv: ['{python}', -m, 'legal_informatics.muckraker.domain_cli', coding-review, --project-root, ., --check]
     timeout: 180
   - name: graphical-abstract
-    argv: ['{python}', ../../Private/legal_informatics/scripts/build_graphical_abstract.py, --project-root, .]
+    argv: ['{python}', -m, 'legal_informatics.muckraker.domain_cli', graphical-abstract, --project-root, .]
     timeout: 180
   - name: graphical-abstract-check
-    argv: ['{python}', ../../Private/legal_informatics/scripts/build_graphical_abstract.py, --project-root, ., --check]
+    argv: ['{python}', -m, 'legal_informatics.muckraker.domain_cli', graphical-abstract, --project-root, ., --check]
     timeout: 180
   - name: hydrate
     argv: ['{python}', scripts/z_generate_manuscript_variables.py]
