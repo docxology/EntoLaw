@@ -64,14 +64,13 @@ A `--network` watch run is bounded twice: each watch's own `max_pages`
 (every watch above declares `1`), and the whole run's `--max-requests`
 budget (default `12`), checked **before** each watch's first page request —
 a watch with no budget left is skipped without a socket opening, and every
-watch after a 429 is skipped rather than retried. That default keeps a run
-comfortably under the provider's published anonymous throttle (5/min,
-50/hr, 125/day). The three search alerts above are weekly or monthly, well
-under the provider's ~30-estimated-hits/day alert ceiling.
+watch after a 429 is skipped rather than retried. A request count caps the work for one invocation. Plan the invocation
+around the provider's current rate limits and any other requests using the
+same account or network.
 
-## Live state
+## Historical account observations
 
-The declared alerts exist on the account, created 2026-09-25 by
+The 2026-09-25 receipt recorded creation of the declared alerts by
 `sync_courtlistener_alerts.py --apply`. The first attempt hit the provider's per-minute limit
 (HTTP 429); the idempotent re-run after the stated backoff created all three:
 
@@ -95,38 +94,41 @@ live in this project; both live in the `legal_informatics` engine. The engine sh
 its registry as package data, resolved by
 `legal_informatics.courtlistener_client.default_registry_path()` under any install
 topology; `scripts/fetch_case_candidate_queries.py` loads it that way unless
-`--registry` names another. Run from this project's own environment, pointed at the
-engine's scripts and client registry:
+`--registry` names another. From this project's root, set `ENGINE_ROOT` to the compatible engine
+checkout used for provisioning. In the default checkout layout, use the
+value shown below. Run the engine scripts with the project interpreter:
 
 ```bash
+ENGINE_ROOT=../../Private/legal_informatics
+
 # offline: build and write the credential-free query plan, no socket opens
-uv run python ../legal_informatics/scripts/run_courtlistener_watch.py \
+.venv/bin/python "$ENGINE_ROOT/scripts/run_courtlistener_watch.py" \
   --project-root . \
-  --config-path ../legal_informatics/config/courtlistener.yaml
+  --config-path "$ENGINE_ROOT/config/courtlistener.yaml"
 
 # opt-in: run every watch, write a content-addressed snapshot per watch,
 # report result ids new since the previous run
-uv run python ../legal_informatics/scripts/run_courtlistener_watch.py \
+.venv/bin/python "$ENGINE_ROOT/scripts/run_courtlistener_watch.py" \
   --project-root . \
-  --config-path ../legal_informatics/config/courtlistener.yaml \
+  --config-path "$ENGINE_ROOT/config/courtlistener.yaml" \
   --network --max-requests 6
 
 # offline: load and validate the alert registry only
-uv run python ../legal_informatics/scripts/sync_courtlistener_alerts.py \
+.venv/bin/python "$ENGINE_ROOT/scripts/sync_courtlistener_alerts.py" \
   --project-root . \
-  --config-path ../legal_informatics/config/courtlistener.yaml
+  --config-path "$ENGINE_ROOT/config/courtlistener.yaml"
 
 # read-only, authenticated: compute the real plan against the live account
 # (requires COURTLISTENER_API_KEY)
-uv run python ../legal_informatics/scripts/sync_courtlistener_alerts.py \
+.venv/bin/python "$ENGINE_ROOT/scripts/sync_courtlistener_alerts.py" \
   --project-root . \
-  --config-path ../legal_informatics/config/courtlistener.yaml \
+  --config-path "$ENGINE_ROOT/config/courtlistener.yaml" \
   --list-live
 
 # authenticated mutation: create only what plan_alert_sync finds missing
-uv run python ../legal_informatics/scripts/sync_courtlistener_alerts.py \
+.venv/bin/python "$ENGINE_ROOT/scripts/sync_courtlistener_alerts.py" \
   --project-root . \
-  --config-path ../legal_informatics/config/courtlistener.yaml \
+  --config-path "$ENGINE_ROOT/config/courtlistener.yaml" \
   --apply
 ```
 

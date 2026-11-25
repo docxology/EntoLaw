@@ -1,53 +1,10 @@
-# EntoLaw — Documentation
+# EntoLaw documentation
 
-**EntoLaw** (`entolaw`, v1.0.0) is a source-anchored registry and claim-sourced
-manuscript project mapping registered legal roles of the insect. Registries
-under `src/` (cases, statutes, species, institutions, roles, citations,
-interconnections, timeline) drive every number in `docs/manuscript/` via
-`{{TOKEN}}` injection; see [ACCURACY_METHODOLOGY.md](ACCURACY_METHODOLOGY.md)
-and [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md).
-
-## Layout
-
-- `src/` — registry models, claim-ledger validation, figure generation
-- `scripts/` — thin orchestrators (figures, manuscript variables, inventory, web export)
-- `docs/manuscript/` — section files `00_abstract.md` … `12_conclusion.md`, `99_references.md`
-- `data/`, `output/` — registry inputs and generated figures/variables
-- `tests/` — registry and ledger validation tests
-
-## Run / test (from pyproject.toml)
-
-```bash
-uv sync --extra dev           # pytest lives in the dev extra
-uv run pytest -m "not live"   # testpaths = ["tests"]; `-m live` hits the network
-```
-
-## Documentation in this directory
-
-- [ACCURACY_METHODOLOGY.md](ACCURACY_METHODOLOGY.md) — how registry-derived facts stay true by construction
-- [REVIEW_PROTOCOL.md](REVIEW_PROTOCOL.md) — review discipline for claims and citations
-- [CASE_CANDIDATES.md](CASE_CANDIDATES.md) — the CourtListener case-candidate
-  register (`data/case_candidates.yaml`): never a claim source, and how to
-  promote a candidate into one
-- [COURTLISTENER_WATCH.md](COURTLISTENER_WATCH.md) — the declared saved-search
-  watches and search alerts this project monitors over time, dry-run default,
-  no-delete guarantee, and the rate budget
-
-## Status
-
-Docs hub created by the docs-audit pass (2026-08-29); the two existing docs
-files were audited and left unchanged.
-
-## Research design and records-access planning
-
-The [research map](research/README.md) links the statistical and rhetorical
-protocols, targeted source ledger and role-specific prospective record plan.
-The registry frame figure pairs a selected-frame cross-tab with exact member
-IDs and source hashes. Neither the figure nor the plan asserts an agency-held
-record or authorizes correspondence.
-
-## Current-runtime validation
-
-[Local validation](local_validation.md) describes the independent source-bound
-gate and the correct relative engine source location. The declaration in
-`config/local_validation.yaml` replaces hosted Actions execution.
+- [Local validation](local_validation.md) covers the locked runtime, offline gate, render output and receipts.
+- [Review protocol](REVIEW_PROTOCOL.md) follows the manuscript from registry edits to rendered review.
+- [Accuracy methodology](ACCURACY_METHODOLOGY.md) distinguishes registry-derived figures from external claims and describes the quote check.
+- [Manuscript source](manuscript/README.md) describes the source files and the opening figure build.
+- [Case candidates](CASE_CANDIDATES.md) covers cache refresh, offline register generation and human review of search leads.
+- [CourtListener operations](COURTLISTENER_WATCH.md) covers the watch and alert plans and network opt-ins.
+- [Research methods](research/README.md) links the framed analysis, source ledgers and records-access plan.
+- [Proofreading](../PROOFREADING.md) tracks review and publication decisions.

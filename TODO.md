@@ -1,9 +1,14 @@
 # EntoLaw TODO
 
-Forward-only backlog. Closed work is in `git log`, not here. Measured counts
-live in their generators; re-run the gates before trusting any number below.
+Backlog and historical gate evidence. Use the current validation receipt
+when reviewing a candidate.
 
-## Gate state
+## Historical gate snapshot
+
+The generated block below records an earlier six-command run. Use the
+[local validation receipt](docs/local_validation.md) for the current
+candidate, including the render and research-integrity checks.
+
 
 <!-- BEGIN GENERATED gate-state: scripts/render_gate_state.py -->
 
@@ -34,9 +39,9 @@ uv run python scripts/check_release_boundary.py                   # release boun
 `config/legal_issues.yaml`'s eight issues — see `docs/CASE_CANDIDATES.md` for
 the full contract and `data/case_candidates.yaml`'s own `queries` section for
 current row/hit-count figures (generated; not restated here). It is a lead
-list, not a claim source: nothing here is wired into the manuscript,
-`references.bib`, or `data/claim_ledger.yaml`, and
-`tests/test_case_candidates.py` enforces that boundary.
+list. The manuscript reports aggregate candidate counts and labels them as
+unreviewed. Bibliography and claim-ledger promotion requires human review,
+as covered by `tests/test_case_candidates.py`.
 
 - [ ] Promotion pass: a human reads the candidates from the lowest-`hit_count`,
   most on-point queries first and decides which, if any, belong in

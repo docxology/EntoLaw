@@ -43,8 +43,8 @@ Two steps, one of which touches the network and one of which never does:
    fields are valid. The fetch uses the engine's own
    `legal_informatics.courtlistener_client` / `legal_informatics.courtlistener_search`
    modules directly; it builds no HTTP request itself, honors a `429`'s
-   backoff by stopping rather than retrying, and never reads, prints, or
-   writes the API credential.
+   backoff by stopping rather than retrying. The shared client resolves the
+   credential for authenticated requests.
 2. **`scripts/generate_case_candidates.py`** — fully offline. It rebuilds
    `data/case_candidates.yaml` from `config/case_candidate_queries.yaml` and
    the recorded responses under `data/courtlistener_cache/`, deterministically:
@@ -58,7 +58,9 @@ reproducible by anyone who has the repository, with no CourtListener account
 required — the recorded responses in `data/courtlistener_cache/` *are* the
 input, checked in for exactly that reason.
 
-A stale or invalid cache is selected for refresh automatically. Use
+A cache that disagrees with its query declaration or fails validation is
+selected for refresh. The fetch date records when the response was captured.
+The fetcher does not expire entries by age. Use
 `--only <query_id> --force` to refresh an otherwise valid entry. Previously
 completed entries remain readable throughout a refresh. Re-running step 2
 atomically replaces the entire generated register from the declared inputs.

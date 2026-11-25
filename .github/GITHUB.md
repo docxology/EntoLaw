@@ -1,12 +1,10 @@
-# .github
+# GitHub repository operations
 
-Directory `.github` inside the `EntoLaw` tree of EntoTech.
+GitHub hosts the public source and the historical releases. Use pull requests
+to review source changes and attach the candidate SHA and the result of the
+[local validation gate](../docs/local_validation.md). Review the pull
+request's current checks before merging.
 
-Part of `EntoLaw`.
-
-## Contents
-Subfolders: `workflows/`
-Files: `AGENTS.md`, `README.md`
-
-## Usage
-- See `EntoLaw/README.md` for how this directory is produced and used.
+See the [workflow directory](workflows/README.md) for the current automation
+setup and the [review protocol](../docs/REVIEW_PROTOCOL.md) for manuscript
+review and publication policy.

@@ -1,7 +1,7 @@
 # output
 
-Generated artifacts for `EntoLaw`. Everything here is produced by the steps in
-`config/local_validation.yaml`; nothing is edited by hand.
+The [local gate](../config/local_validation.yaml) produces the current build
+outputs. Edit the corresponding source or generator to change them.
 
 ## Contents
 Tracked subfolders (byte-stable across clean rebuilds of one commit):

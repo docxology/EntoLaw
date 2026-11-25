@@ -28,34 +28,27 @@ sit across the manuscript sections.
 
 ## Final Gates
 
-Run these before claiming the package is ready:
+Run the [declared local validation gate](local_validation.md). It builds the
+inventories and figures, hydrates the manuscript, renders PDF and HTML,
+finalizes web assets, and runs the non-live tests with the coverage floor.
+Use the [case-candidate check](CASE_CANDIDATES.md) when reviewing cached
+search material.
 
-```bash
-uv run ruff check .
-uv run python scripts/run_inventory.py
-uv run python scripts/generate_figures.py
-uv run pytest -m "not live" --cov=src --cov-fail-under=90
-uv run pytest -m live
-```
+Inspect the rendered surfaces for unresolved manuscript tokens, raw citation
+markers and broken figure references:
 
-Then render locally using the declared template:
-
-```bash
-.venv/bin/python scripts/z_generate_manuscript_variables.py
-.venv/bin/python scripts/render_manuscript.py
-.venv/bin/python scripts/finalize_web_export.py
-```
-
-The renderer uses the template's actual RenderManager and writes a source-bound
-local receipt; it does not run a publishing stage. A missing template fails the
-declared render step. The source distribution declaration is public/forbidden:
-public source metadata and historical DOIs do not authorize a new formal release.
-
-Confirm the rendered surfaces exist and contain no unresolved manuscript
-tokens, raw citation markers, or broken figure references:
-
-- `output/rendered/manuscript/EntoLaw_manuscript_combined.pdf`
+- `output/rendered/manuscript/<checkout-name>_manuscript_combined.pdf`
 - `output/web/index.html`
 - `output/data/manuscript_variables.json`
 - `output/reports/validation.json`
-- every captioned `output/figures/*.png`
+- every captioned PNG in `output/figures/`
+
+Run the live claim quote check only with separate network authorization.
+From the provisioned project environment, use
+`.venv/bin/python -m pytest -m live`. An offline receipt records the local build
+and structure checks. Preserve original verification dates unless the source
+was fetched and reviewed again.
+
+The distribution declaration permits public source and forbids formal
+publication. [Proofreading](../PROOFREADING.md) records the owner decisions
+and review needed before considering a separate publication workflow.

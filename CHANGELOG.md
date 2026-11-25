@@ -4,17 +4,10 @@ All notable changes to EntoLaw are documented here.
 
 ## [Unreleased] — DRAFT pending proofreading
 
-Publication-packaging preparation only. **Not published**: no tag, no GitHub
-release, no Zenodo upload has been made for this entry. See
-[`PROOFREADING.md`](PROOFREADING.md) for what the owner reads before that
-happens, and `TODO.md`'s generated gate-state block (re-run
-`uv run python scripts/render_gate_state.py` for the current pass/fail — this
-entry does not repeat it; `--check` re-runs every gate and fails when the
-committed block disagrees).
-
-Derived from `git log --oneline v1.0.0..HEAD` and the registries; no count in
-this entry is hand-typed where a generator can be re-run instead
-(`uv run python scripts/run_inventory.py`, `scripts/render_gate_state.py`).
+This entry tracks source changes since the historical release. See
+[Proofreading](PROOFREADING.md) for owner decisions and
+[local validation](docs/local_validation.md) for the current source-bound
+gate and receipt.
 
 ### Changed
 

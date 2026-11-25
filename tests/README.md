@@ -1,17 +1,12 @@
-# tests
+# Tests
 
-`tests/` of the parent project.
+Run the [declared local gate](../docs/local_validation.md) for acceptance.
+It renders the manuscript before testing the rendered outputs and enforces
+the branch coverage floor for `src/`. For a focused offline check, use the
+same project environment with
+`.venv/bin/python -m pytest -m 'not live' tests/test_case_candidates.py`.
 
-Part of `EntoLaw`.
-
-## Contents
-Files: `AGENTS.md`, `README.md`, `__init__.py`, `conftest.py`, `test_bibliography.py`, `test_citations.py`, `test_claim_ledger.py`, `test_figures.py`, `test_idempotency.py`, `test_live_claim_sources.py`, `test_manuscript_no_hardcoded_stats.py`, `test_manuscript_variables.py`, `test_metrics_and_package.py`, `test_publication_readiness.py`, `test_registries.py`, `test_render_hydration.py`, `test_scripts.py`, `test_validation.py`
-
-## Usage
-- See `EntoLaw/README.md` for how this directory is produced and used.
-
-## Selected-frame checks
-
-`test_registry_analysis.py` checks that joint cells partition the real curated
-frame, duplicates and unknown roles refuse, empty frames stay empty, and the
-rendered figure is bound to its exact data and source digests.
+The separately authorized live suite fetches claim-ledger sources.
+`test_registry_analysis.py` checks the selected registry frame, including
+partition counts, duplicate and unknown-role rejection, and the provenance
+digests attached to the figure.

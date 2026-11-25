@@ -1,18 +1,5 @@
-# AGENTS.md — `EntoLaw/.github/workflows`
+# Workflow guidance
 
-> `workflows/` of the parent project. Verified by direct listing (fleet doc pass, 2026-08-29).
-
-## Scope
-- Repository-wide policy for template projects is maintained in the template repository, not restated here; parent project docs: `EntoLaw/.github/AGENTS.md`.
-
-## Layout
-Files: `AGENTS.md`, `README.md`, `ci.yml`
-
-## Kind
-- Category: **src**. `workflows/` of the parent project.
-
-## Agent notes
-- See the parent project's AGENTS.md/README.md for the authoritative description.
-
-## Gotchas
-- None.
+Follow the [GitHub operations guide](../GITHUB.md) and the
+[local validation guide](../../docs/local_validation.md). Update this
+directory's [README](README.md) if the execution setup changes.

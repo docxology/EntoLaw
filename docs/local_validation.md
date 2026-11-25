@@ -1,6 +1,6 @@
 # Local validation on the current runtime
 
-The project pins Python3.15.2 and uses the engine's Pillow13 floor. Ruff uses
+The project pins Python 3.15.2 and uses the engine's Pillow 13 floor. Ruff uses
 the reviewed current minor. Actions workflows and scheduled dependency-update
 configuration are absent; independent local validation records the checks
 that actually ran. Vulnerability alerts and any free internal dependency-graph
@@ -19,8 +19,16 @@ outputs. The template is discovered through its declared environment contract. R
 In a managed vault use its qualified offline test runner and repository
 admission. Provision before the offline gate; the runner installs nothing and
 fetches no source evidence. Preserve an existing environment before replacing
-its pointer. Current-runtime provisioning uses the locked project and explicit
-dev extra, with no interpreter downloads. The relative engine path in
+its pointer. With the pinned interpreter, compatible engine source and uv cache already
+available, provision the environment from the project root in a separate step:
+
+```bash
+uv sync --locked --offline --extra dev --no-python-downloads
+```
+
+The render also needs the declared template, Pandoc and XeLaTeX. Set
+`LEGAL_INFORMATICS_TEMPLATE_ROOT` to an approved template checkout when discovery cannot
+find it. The relative engine path in
 `pyproject.toml` follows the owned Public/Private storage layout; a standalone
 checkout must deliberately set its own engine source location and re-lock.
 The coding-review and graphical-abstract build and check steps run as modules
@@ -31,6 +39,11 @@ configuration.
 
 `output/data/local_validation_receipt.json` binds a passing result to the
 actual interpreter, locked dependencies and source/config/docs/data bytes.
+Verify the receipt against the current inputs and per-step diagnostics:
+
+```bash
+.venv/bin/python -m legal_informatics.local_validation --project-root . --verify-receipt
+```
 An offline gate proves neither current-source quote correspondence nor
 vulnerability status. The separately authorized live quote oracle and dependency
 audit retain their own results. A local receipt is not a hosted Actions run.
