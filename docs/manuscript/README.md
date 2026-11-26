@@ -1,14 +1,23 @@
-# manuscript
+# Entomological Law manuscript
 
-Manuscript/documentation sources of the parent project.
+Daniel Ari Friedman’s field map follows eight legal roles from forensic evidence and
+regulated threats through conservation, property, invention, defendants, welfare,
+and the law of biological weapons. The final sections explain the connections,
+methods, evidence limits and bibliography.
 
-Part of `EntoLaw`.
+Start with the [abstract](00_abstract.md), [introduction](01_introduction.md)
+and [methods](11_methods.md). The [render configuration](config.yaml) sets the
+section order and output formats. It travels with the [preamble](preamble.md)
+and [bibliography](references.bib).
 
-## Contents
-Files: `00_abstract.md`, `01_introduction.md`, `02_witness.md`, `03_threat.md`, `04_protected.md`, `05_property.md`, `06_invention.md`, `07_defendant.md`, `08_welfare.md`, `09_weapon.md`, `10_interconnections.md`, `11_methods.md`, `12_conclusion.md`, `99_references.md`, `AGENTS.md`, `README.md`, `config.yaml`, `preamble.md`, `references.bib`
+Edit these numbered sources and keep registry-derived values as tokens.
+The renderer hydrates them into `output/manuscript/` and generates the
+opening and closing transmission bookends. The checked-in files under
+`output/` include historical evidence and published artifacts.
 
-## Usage
-- See [the project README](../../README.md) for how this directory is produced and used.
+Use the [native gate](../local_validation.md) with the shared engine, or
+the [pinned public replay](../local_validation.md#replay-the-public-snapshot)
+to build PDF, HTML and EPUB from the checked-in variables and figures.
 
 ## Opening graphical abstract
 

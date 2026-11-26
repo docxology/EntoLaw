@@ -1,7 +1,10 @@
-# Manuscript Status
+# Manuscript status
 
-- **Project:** EntoLaw
-- **Manuscript title:** Entomological Law
-- **Location:** `docs/manuscript/` — the populated manuscript tree. The conventional top-level `manuscript/` directory holds no sources in this project, so `infrastructure.core.project_paths.resolve_source_manuscript_dir` resolves here without a compatibility symlink.
-- **Type:** Active manuscript with local PDF and HTML validation
-- **Status file purpose:** Tracks publication-readiness of the manuscript content in this directory.
+*Entomological Law* by Daniel Ari Friedman is maintained in this directory.
+The native build and the pinned Template replay both start from the numbered
+sources here. The configuration enables PDF, HTML and EPUB.
+
+The [version 1.0.0 record](https://zenodo.org/records/21137277) is the
+published record. The current checkout's publication status is
+`unreleased`. See [local validation](../local_validation.md) for the
+distinction between a local build, source review and publication.

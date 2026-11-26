@@ -1,10 +1,6 @@
 domain: legal-scholarship
-focus: entomological-law
-expected_outputs:
-  - source-of-truth registries (roles, cases, statutes, species, institutions, timeline, interconnections)
-  - claim-sourced modular manuscript with {{TOKEN}} interpolation
-  - matplotlib figures rendered from the registries
-  - cross-registry validation report and inventory CSVs
+display_name: Entomological Law
+preferred_outputs: [pdf, html, epub]
 review_gates:
   - test coverage on src/ at 90 percent or higher
   - manuscript token closure test passes
@@ -17,11 +13,15 @@ source_policy:
   - cite the reported decision (or docket) directly
   - register every external statistic in the claim ledger with a verifiable quote
 artifact_expectations:
+  - source-of-truth registries (roles, cases, statutes, species, institutions, timeline, interconnections)
+  - claim-sourced modular manuscript with {{TOKEN}} interpolation
+  - matplotlib figures rendered from the registries
+  - cross-registry validation report and inventory CSVs
   - inventory CSVs under output/data/
   - field metrics JSON under output/reports/
   - validation JSON under output/reports/
   - PNG figures under output/figures/
-  - manuscript variables JSON under output/reports/
+  - manuscript variables JSON under output/data/
 benchmark_rubric:
   registry_completeness: 0.3
   legal_accuracy: 0.25

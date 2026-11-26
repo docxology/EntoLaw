@@ -5,7 +5,7 @@ All notable changes to EntoLaw are documented here.
 ## [Unreleased] — DRAFT pending proofreading
 
 This entry tracks source changes since the historical release. See
-[Proofreading](PROOFREADING.md) for owner decisions and
+[Proofreading](docs/PROOFREADING.md) for owner decisions and
 [local validation](docs/local_validation.md) for the current source-bound
 gate and receipt.
 

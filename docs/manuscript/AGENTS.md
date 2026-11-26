@@ -1,18 +1,8 @@
-# AGENTS.md — `EntoLaw/manuscript`
+# EntoLaw manuscript guidance
 
-> Manuscript/documentation sources of the parent project. Verified by direct listing (fleet doc pass, 2026-08-29).
+Follow the [project guidance](../../AGENTS.md) and the [documentation guidance](../AGENTS.md).
 
-## Scope
-- Parent standard: the `AGENTS.md` of the lifecycle directory this project sits in; parent project docs: `EntoLaw/AGENTS.md`.
-
-## Layout
-Files: `00_abstract.md`, `01_introduction.md`, `02_witness.md`, `03_threat.md`, `04_protected.md`, `05_property.md`, `06_invention.md`, `07_defendant.md`, `08_welfare.md`, `09_weapon.md`, `10_interconnections.md`, `11_methods.md`, `12_conclusion.md`, `99_references.md`, `AGENTS.md`, `README.md`, `config.yaml`, `preamble.md`, `references.bib`
-
-## Kind
-- Category: **src**. Manuscript/documentation sources of the parent project.
-
-## Agent notes
-- Author-facing sources. Edit these, not the rendered copies under `output/`.
-
-## Gotchas
-- None.
+- Edit the numbered sources here. Follow the [review protocol](../REVIEW_PROTOCOL.md) for registry tokens, linked figures, citations and external claims.
+- Keep the [render configuration](config.yaml), [preamble](preamble.md) and [bibliography](references.bib) with the sections. Preserve section and figure IDs used in cross-references.
+- Link checked-in figures relative to this directory. Hydration writes an equally nested copy under `output/manuscript/`.
+- Keep author information, dated source boundaries and publication history intact. See the [manuscript guide](README.md) for build and replay instructions.
