@@ -2,7 +2,7 @@
 
 The {{ROLE_COUNT}} roles are not silos. They share recurring legal machinery, encoded as the {{INTERCONNECTION_COUNT}} themes previewed in the interconnections network figure at the start of this reference and unpacked theme by theme below. The role-coverage matrix makes the field's structure visible at a glance: some roles are case-driven, some statute-driven, and some — the defendant and the weapon — almost entirely history-driven.
 
-![{{FIGURE_CAPTION_ROLE_COVERAGE}}](../output/figures/role_coverage.png){#fig:role_coverage width=80%}
+![{{FIGURE_CAPTION_ROLE_COVERAGE}}](../../output/figures/role_coverage.png){#fig:role_coverage width=80%}
 
 The themes, and the roles each links, are catalogued below.
 

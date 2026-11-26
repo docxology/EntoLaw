@@ -1,8 +1,8 @@
 # PROOFREADING — before publishing this release
 
 What the owner reads and decides before this release ships (no tag, no
-GitHub release, no Zenodo upload — see `CHANGELOG.md`'s `[Unreleased]`
-entry and `TODO.md`). Packaging preparation is done; this list is what
+GitHub release, no Zenodo upload — see [changelog](../CHANGELOG.md)'s `[Unreleased]`
+entry and the [gate backlog](../TODO.md)). Packaging preparation is done; this list is what
 remains.
 
 ## 1. Read the manuscript prose
@@ -22,7 +22,7 @@ and `pyproject.toml` all currently declare `1.0.0` — the version already
 published in the last release (`v1.0.0`, DOI `10.5281/zenodo.21137277`).
 Since that tag, `git log --oneline v1.0.0..HEAD` shows a real architecture
 change (this project became a thin orchestrator of the `legal_informatics`
-engine) plus the gate/docs work in `CHANGELOG.md`'s `[Unreleased]` entry.
+engine) plus the gate/docs work in [changelog](../CHANGELOG.md)'s `[Unreleased]` entry.
 Decide: does this warrant bumping to `1.1.0` (or later) before the next
 tag, or is it correctly still `1.0.0`-labeled content with no user-facing
 change? If bumping, update the version in all five files listed above (or
@@ -38,7 +38,7 @@ boundary tests now allow no exemptions.
 
 ## 4. Verify the candidate's local receipt
 
-Run the [declared offline gate](docs/local_validation.md) and verify its
+Run the [declared offline gate](local_validation.md) and verify its
 receipt against the exact candidate. Review the rendered PDF and HTML and
 record the results for the owner.
 
@@ -51,7 +51,7 @@ the source evidence before updating a verification date.
 
 ## 6. Re-check the known Zenodo description residual
 
-ISA.md's Decisions log records that the live Zenodo record's description
+The [project design record](ISA.md)'s Decisions log records that the live Zenodo record's description
 still carried redundant restated-title text after the last publish, fixed in
 code (`markdown.py`'s `strip_leading_abstract_heading()`) but never patched
 on the already-published record (Zenodo metadata isn't editable over the
@@ -61,7 +61,7 @@ edit is still the only way to fix the existing `v1.0.0` record's text.
 
 ## 7. Confirm the `[Unreleased]` changelog entry before it gets a version and date
 
-`CHANGELOG.md`'s `[Unreleased]` section was drafted from `git log` and this
+[changelog](../CHANGELOG.md)'s `[Unreleased]` section was drafted from `git log` and this
 session's own changes. Read it against the actual diff being published,
 correct anything that drifted, then replace `[Unreleased] — DRAFT pending
 proofreading` with the real version number (see step 2) and release date
@@ -69,6 +69,6 @@ once everything above is resolved.
 
 ## 8. Review the distribution decision
 
-[The current distribution declaration](config/manuscript_metadata.yaml)
+[The current distribution declaration](../config/manuscript_metadata.yaml)
 forbids formal publication. Any future tag, GitHub release or Zenodo deposit
 requires a separate owner decision and publication workflow.

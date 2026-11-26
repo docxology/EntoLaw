@@ -57,15 +57,15 @@ From the project root, after provisioning:
 .venv/bin/python scripts/generate_case_candidates.py --check
 ```
 
-The first command runs the declared offline gate and builds an actual PDF and
-HTML export. The second verifies the committed case-candidate register
+The first command runs the declared offline gate, including the configured
+manuscript render. The [public snapshot replay](docs/local_validation.md#replay-the-public-snapshot)
+builds PDF, HTML and EPUB with the pinned Template checkout and checked-in inputs. The second verifies the committed case-candidate register
 against the checked-in cache. Run both through the qualified offline runner
 when working in a managed vault. Formal publication is forbidden by the
 distribution declaration.
 
-See the [documentation index](docs/README.md) for CourtListener operations
-and the [research methods](docs/research/README.md) for the selected registry
-frame and prospective records-access plan.
+See the [documentation index](docs/README.md) for manuscript sources, evidence
+review, case candidates and the prospective records-access plan.
 
 ## Guarantees and their limits
 

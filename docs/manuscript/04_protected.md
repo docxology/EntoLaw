@@ -2,7 +2,7 @@
 
 The mirror image of quarantine law: instead of exterminating insects, the state guarantees their survival. The species registry encodes {{PROTECTED_SPECIES_COUNT}} taxa in the protected role — from the Schaus swallowtail, among the first insects ever listed, to the rusty patched bumble bee, the monarch, and the American burying beetle, summarized in the species-by-role figure.
 
-![{{FIGURE_CAPTION_SPECIES_BY_ROLE}}](../output/figures/species_by_role.png){#fig:species_by_role width=85%}
+![{{FIGURE_CAPTION_SPECIES_BY_ROLE}}](../../output/figures/species_by_role.png){#fig:species_by_role width=85%}
 
 ## The ESA definition that reaches arthropods
 

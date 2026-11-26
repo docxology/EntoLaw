@@ -2,9 +2,9 @@
 
 Forensic entomology is the oldest evidentiary and most legally mature corner of the field: the use of arthropod evidence — chiefly necrophagous blow flies (Calliphoridae) colonizing remains — to estimate the **post-mortem interval (PMI)**, detect corpse movement, prove neglect, and recover toxicology from larvae. Of the {{ROLE_COUNT}} legal roles, the witness role is the most case-driven: {{ROLES_WITH_CASE_LAW}} of the roles carry modern reporter case law, and the witness role alone accounts for {{WITNESS_CASE_COUNT}} of the {{CASE_COUNT}} registered case and patent entries, as shown in the case-by-role and jurisdiction figures.
 
-![{{FIGURE_CAPTION_CASES_BY_ROLE}}](../output/figures/cases_by_role.png){#fig:cases_by_role width=85%}
+![{{FIGURE_CAPTION_CASES_BY_ROLE}}](../../output/figures/cases_by_role.png){#fig:cases_by_role width=85%}
 
-![{{FIGURE_CAPTION_CASES_BY_JURISDICTION}}](../output/figures/cases_by_jurisdiction.png){#fig:cases_by_jurisdiction width=80%}
+![{{FIGURE_CAPTION_CASES_BY_JURISDICTION}}](../../output/figures/cases_by_jurisdiction.png){#fig:cases_by_jurisdiction width=80%}
 
 ## From larvae to minimum postmortem interval
 

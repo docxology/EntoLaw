@@ -2,7 +2,7 @@
 
 Where forensic law asks insects to *speak*, regulatory law tries to *stop them from moving*. The architecture is dense and federal. In the registry the threat role is statute-driven rather than case-driven: it is anchored by {{THREAT_STATUTE_COUNT}} instruments spanning the quarantine and public-health categories, summarized in the statutes-by-category figure.
 
-![{{FIGURE_CAPTION_STATUTES_BY_CATEGORY}}](../output/figures/statutes_by_category.png){#fig:statutes_by_category width=85%}
+![{{FIGURE_CAPTION_STATUTES_BY_CATEGORY}}](../../output/figures/statutes_by_category.png){#fig:statutes_by_category width=85%}
 
 ## US quarantine authority and plant-pest movement
 

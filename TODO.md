@@ -61,7 +61,7 @@ as covered by `tests/test_case_candidates.py`.
 ## Active publication-readiness work
 
 Publication packaging is prepared; proofreading and the publish step are not
-done. See `PROOFREADING.md` for the full checklist.
+done. See [Proofreading](docs/PROOFREADING.md) for the full checklist.
 
 - [x] Repository metadata consistency: version/title/license/keywords/authors/DOI
   now agree across `pyproject.toml`, `CITATION.cff`, `codemeta.json`,
@@ -78,7 +78,7 @@ done. See `PROOFREADING.md` for the full checklist.
   absolute-path leaks in tracked docs, and untracked the machine-local
   `.codegraph` symlink (2026-09-24); the scan reports 0 findings.
 - [ ] Proofreading: manuscript prose, the version-bump decision, gate-state regeneration, the live claim-ledger
-  re-run, and the `[Unreleased]` entry's accuracy — see `PROOFREADING.md`.
+  re-run, and the `[Unreleased]` entry's accuracy — see [Proofreading](docs/PROOFREADING.md).
 - [ ] Publish: tag, GitHub release, Zenodo upload. Not started; out of scope
   for this packaging pass.
 - [x] Git-history secret exposure: an earlier `git commit --amend`

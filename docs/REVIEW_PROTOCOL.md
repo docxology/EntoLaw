@@ -50,5 +50,5 @@ and structure checks. Preserve original verification dates unless the source
 was fetched and reviewed again.
 
 The distribution declaration permits public source and forbids formal
-publication. [Proofreading](../PROOFREADING.md) records the owner decisions
+publication. [Proofreading](PROOFREADING.md) records the owner decisions
 and review needed before considering a separate publication workflow.
